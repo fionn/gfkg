@@ -1,0 +1,122 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[tracking=true, kerning=true]{microtype}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{inconsolata}
+\usepackage{parskip}
+
+\DeclareMicrotypeAlias{lmss}{cmr}
+
+\frenchspacing
+
+\renewcommand*{\d}{\ensuremath{\mathrm{d}}}
+\renewcommand*{\thesection}{\Roman{section}}
+\newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Exercise}[section]
+\newtheorem{sol}{Solution}[section]
+
+\title{Gauge Fields, Knots and Gravity Solutions}
+\author{Fionn Fitzmaurice}
+\date{}
+
+\makeatletter
+\hypersetup{pdftitle = \@title,
+            pdfauthor = \@author,
+            pdfcreator = TeX,
+            hidelinks,
+            pdfpagemode = UseNone
+}
+\makeatother
+
+\author{Fionn Fitzmaurice \hspace{20pt} \email{fionn@maths.tcd.ie}}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\section{Electromagnetism}
+
+\subsection{Maxwell's Equations}
+
+\begin{ex}
+
+Let $\vec{k}$ be a vector in $\mathbb{R}^3$ and let $\omega = |\vec{k}|$. Fix $\vec{E} \in \mathbb{C}^3$ with $\vec{k} \cdot \vec{E} = 0$ and $i \vec{k} \times \vec{E} = \omega \vec{E}$. Show that
+\[
+    \vec{\mathcal{E}}(t, \vec{x}) = \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})}
+\]
+satisfies the vacuum Maxwell equations.
+
+\end{ex}
+
+\begin{sol}
+
+Recall that Maxwell's equations (where $c = 1$) are
+\begin{align*}
+    \nabla \cdot \vec{B} &= 0, \tag{M1}\\
+    \nabla \times \vec{E} + \frac{\partial \vec{B}}{\partial t} &= 0, \tag{M2}\\
+    \nabla \cdot \vec{E} &= \rho, \tag{M3} \\
+    \nabla \times \vec{B} - \frac{\partial \vec{E}}{\partial t} &= \vec{\jmath}. \tag{M4}
+\end{align*}
+The vacuum equations are invariant under
+\[
+    \vec{B} \mapsto \vec{E}, \qquad \vec{E} \mapsto - \vec{B}
+\]
+(electromagnetic duality) or, equivalently, for a complex-valued vector field $\vec{\mathcal{E}} = \vec{E} + i \vec{B}$,
+\[
+    \vec{\mathcal{E}} \mapsto i \vec{\mathcal{E}}.
+\]
+This lets us express the vacuum equations in terms of $\vec{\mathcal{E}}$ as
+\[
+    \nabla \cdot \vec{\mathcal{E}} = 0, \qquad \nabla \times \vec{\mathcal{E}} = i \frac{\partial \vec{\mathcal{E}}}{\partial t}.
+\]
+
+We'll rely on
+\[
+    \partial_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} = i k_j e^{-i(\omega t - \vec{k} \cdot \vec{x})}
+\]
+to show that our $\vec{\mathcal{E}}$ satisfies the vacuum equations.
+
+For the divergence,
+\begin{align*}
+    \nabla \cdot \vec{\mathcal{E}} &= \nabla \cdot \left(\vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})}\right) \\
+        &= \sum_{j = 1}^3 \partial_j \left( E_j  e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right) \\
+        &= \sum_{j = 1}^3 E_j \partial_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
+        &= \sum_{j = 1}^3 E_j i k_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
+        &= i \vec{k} \cdot \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
+        &= 0.
+\end{align*}
+
+For the curl (dropping the summation and using Einstein notation),
+\begin{align*}
+    {\left( \nabla \times \vec{\mathcal{E}} \right)}_i &= \epsilon_{ijk} \partial_j \mathcal{E}_k \\
+        &= \epsilon_{ijk} \partial_j \left(E_k e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right) \\
+        &= \epsilon_{ijk} E_k \partial_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
+        &= \epsilon_{ijk}i k_j E_k e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
+        &= {\left(i \vec{k} \times \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right)}_i \\
+        &= \omega \vec{E}_i e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
+        &= \omega \vec{\mathcal{E}}_i,
+\end{align*}
+so $\nabla \times \vec{\mathcal{E}} = \omega \vec{\mathcal{E}}$.
+But
+\begin{align*}
+    \frac{\partial \vec{\mathcal{E}}}{\partial t} &= \frac{\partial}{\partial t} \left(\vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right) \\
+        &= -i \omega \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
+        &= -i \omega \vec{\mathcal{E}},
+\end{align*}
+giving
+\[
+    \nabla \times \vec{\mathcal{E}} = \omega \vec{\mathcal{E}} = i \frac{\partial \vec{\mathcal{E}}}{\partial t}
+\]
+and satisfying the second vacuum equation.
+
+\end{sol}
+
+\end{document}
