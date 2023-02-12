@@ -17,6 +17,7 @@
 \renewcommand*{\d}{\ensuremath{\mathrm{d}}}
 \renewcommand*{\thesection}{\Roman{section}}
 \newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
+\newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
 \theoremstyle{definition}
 \newtheorem{ex}{Exercise}[section]
@@ -116,6 +117,38 @@ giving
     \nabla \times \vec{\mathcal{E}} = \omega \vec{\mathcal{E}} = i \frac{\partial \vec{\mathcal{E}}}{\partial t}
 \]
 and satisfying the second vacuum equation.
+
+\end{sol}
+
+\subsection{Manifolds}
+
+A function $f: X \to Y$ from one topological space to another is defined to be continuous if, given any open set $U \subseteq Y$, the inverse image $f^{-1}(U) \subseteq X$ is open.
+
+\begin{ex}
+
+Show that a function $f: \mathbb{R}^n \to \mathbb{R}^m$ is continuous according to the above definition if and only if it is continuous according to the epsilon--delta definition: for all $x \in \mathbb{R}^n$ and all $\epsilon > 0$, there exists $\delta > 0$ such that $\norm{y - x} < \delta$ implies $\norm{f(y) - f(x)} < \epsilon$.
+
+\end{ex}
+
+\begin{sol}
+
+Suppose $f$ is continuous according to the epsilon--delta definition of continuity.
+Let $V \subseteq \mathbb{R}^m$ be an open set.
+For any $x \in f^{-1}(V)$, since $f(x) \in V$ there exists a ball of radius $\epsilon$, $B(f(x), \epsilon) \subseteq V$, centered at $f(x)$.
+Then by the epsilon--delta condition there exists a ball of radius $\delta$, $B(x, \delta) \subseteq \mathbb{R}^n$ such that
+\[
+    f(B(x, \delta)) \subset B(f(x), \epsilon).
+\]
+Since $x$ was arbitrary, $f^{-1}(V)$ is open as all points sufficiently close to $x$ are also in $f^{-1}(V)$.
+
+Suppose $f$ is continuous according to the topological definition of continuity.
+Let $x \in \mathbb{R}^n$ and $\epsilon > 0$.
+Consider the open set $f^{-1}(B(f(x), \epsilon)) \subseteq \mathbb{R}^n$.
+There exists a $\delta > 0$ such that
+\[
+    B(x, \delta) \subset f^{-1}(B(f(x), \epsilon)).
+\]
+Therefore for any point $y \in B(x,\delta)$, $f(y) \in B(f(x), \epsilon)$ or, equivalently, $\norm{y - x} < \delta$ implies $\norm{f(y) - f(x)} < \epsilon$.
 
 \end{sol}
 
