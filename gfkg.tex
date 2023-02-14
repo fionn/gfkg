@@ -152,4 +152,88 @@ Therefore for any point $y \in B(x,\delta)$, $f(y) \in B(f(x), \epsilon)$ or, eq
 
 \end{sol}
 
+\begin{ex}
+
+Given a topological space $X$ and a subset $S \subseteq X$, define the \emph{induced topology} on $S$ to be the topology in which the open sets are of the form $U \cap S$, where $U$ is open in $X$.
+
+Let $S^n$, the $n$-sphere, be the unit sphere in $\mathbb{R}^{n + 1}$:
+\[
+    S^n = \biggl\{\vec{x} \in \mathbb{R}^{n + 1} \Bigm| \sum_{i = 1}^{n + 1} {(x^i)}^2 = 1 \biggr\}.
+\]
+Show that $S^n \subset \mathbb{R}^{n + 1}$ with its induced topology is a manifold.
+
+\end{ex}
+
+\begin{sol}
+
+We need to show that:
+\begin{itemize}
+    \item the open sets of the induced topology $\{U_\alpha\}$ cover $S^n$,
+    \item there exists an atlas of charts $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ for all $\alpha$,
+    \item the transition functions $\varphi_\alpha \circ \varphi_\beta^{-1}: \mathbb{R}^n \to \mathbb{R}^n$ are smooth where defined (since we include ``smooth'' in our definition of a manifold).
+\end{itemize}
+
+Consider the sets
+\[
+    U_1 = S^n \setminus \left\{(0, \ldots, 0, 1)\right\}, \qquad
+    U_{-1} = S^n \setminus \left\{(0, \ldots, 0, -1)\right\}
+\]
+which each exclude a single pole. Each $U_\alpha$ is of the form $U \cap S^n$ where $U$ is open in $\mathbb{R}^{n + 1}$.
+The induced topology $\left\{U_1, U_{-1}\right\}$ is a cover of $S^n$.
+
+Let $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ be the stereographic projection (for $\alpha \in \{-1, 1\})$.
+For some $\vec{p} \in S^n$, $\varphi_\alpha(\vec{p}) \in \mathbb{R}^n$ should be a point on the line that intersects $S^n$ at $\vec{s}_\alpha = (0, \ldots, 0, \alpha)$.
+Take a segment of this line parameterised by $t \in [0, 1]$ as
+\begin{align*}
+    (1 - t) \vec{s}_\alpha + t\vec{p} &= (t p_1, \ldots t p_n, \alpha(1 - t) + tp_{n + 1}) \\
+        &= (t p_1, \ldots t p_n, \alpha + t(p_{n + 1} - \alpha)).
+\end{align*}
+This intersects $\mathbb{R}^n$ when the last coordinate $\alpha + t(p_{n + 1} - \alpha) = 0$, so $t = \frac{1}{1 - \alpha p_{n + 1}}$ and the projection is therefore given by
+\[
+    \varphi_\alpha: \vec{p} \mapsto \left(\frac{p_1}{1 - \alpha p_{n + 1}}, \ldots, \frac{p_n}{1 - \alpha p_{n + 1}}\right).
+\]
+Each projection is a chart and the collection of these charts is an atlas, since the union of their domains covers $S^n$.
+
+Denoting $\varphi_\alpha(\vec{p}) = \vec{x}_\alpha = \left(x_\alpha^1, \ldots, x_\alpha^n\right)$, the $L\!^2$-norm
+\begin{align*}
+    r_\alpha^2 &= \sum_{i = 1}^n {(x_\alpha^i)}^2 \\
+               &= \frac{p_1^2 + \cdots + p_n^2}{{(1 - \alpha p_{n + 1})}^2} \\
+               &= \frac{1 - p_{n + 1}^2}{{(1 - \alpha p_{n + 1})}^2} \\
+               &= \frac{(1 + p_{n + 1})(1 - p_{n + 1})}{{(1 - \alpha p_{n + 1})}^2} \\
+               &= {\left(\frac{1 + p_{n + 1}}{1 - p_{n + 1}}\right)}^\alpha,
+\end{align*}
+so
+\[
+    p_{n + 1} = \alpha\frac{r_\alpha^2 - 1}{r_\alpha^2 + 1}.
+\]
+This gives us a general expression for the points $p_1, \ldots, p_n$ on the manifold in terms of our chart's coordinate system as
+\begin{align*}
+    p_i &= x_\alpha^i (1 - \alpha p_{n + 1}) \\
+        &= \frac{2 x_\alpha^i}{r_\alpha^2 + 1},
+\end{align*}
+so the inverse projections $\varphi_\alpha^{-1}: \mathbb{R}^n \to S^n$ are given by
+\[
+    \varphi_\alpha^{-1}: \vec{x} \mapsto \left(\frac{2 x^1}{r^2 + 1}, \ldots, \frac{2 x^n}{r^2 + 1}, \alpha \frac{r^2 - 1}{r^2 + 1} \right).
+\]
+For inverse map $\varphi_\beta^{-1}$, note that the point $p_{n + 1}$ is given by
+\[
+    p_{n + 1} = \beta \frac{r^2 - 1}{r^2 + 1}.
+\]
+From this, and assuming $\alpha$, $\beta$ are distinct so $\alpha \beta = -1$, we get that
+\[
+    \frac{1}{1 - \alpha p_{n + 1}} = \frac{r^2 + 1}{2 r^2}.
+\]
+The transition functions $\varphi_\alpha \circ \varphi_\beta^{-1}: \mathbb{R}^n \to \mathbb{R}^n$ (with distinct $\alpha$, $\beta$) are then given by
+\begin{align*}
+    \varphi_\alpha \circ \varphi_\beta^{-1} (\vec{x}) &= \varphi_\alpha \left(\left(\frac{2 x^1}{r^2 + 1}, \ldots, \frac{2 x^n}{r^2 + 1}, \beta \frac{r^2 - 1}{r^2 + 1} \right)\right) \\
+        &= \left(\frac{2 x^1}{r^2 + 1} \cdot \frac{r^2 + 1}{2 r^2},
+                 \ldots,
+                 \frac{2 x^n}{r^2 + 1} \cdot \frac{r^2 + 1}{2 r^2}
+            \right) \\
+        &= \frac{\vec{x}}{\norm{x}^2}.
+\end{align*}
+These transition functions are inversions on the $n$-sphere and are smooth where they are defined.
+
+\end{sol}
+
 \end{document}
