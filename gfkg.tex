@@ -431,4 +431,26 @@ If $v^\mu\partial_\mu = 0$, we get $v^\mu$ = 0 from above.
 
 \end{sol}
 
+\subsection{Tangent Vectors}
+
+\begin{ex}
+
+Let $v, w \in \text{Vect}(M)$. Show that $v = w$ if and only if $v_p = w_p$ for all $p \in M$.
+
+\end{ex}
+
+\begin{sol}
+
+Recall the definition $v_p(f) = v(f)(p)$.
+
+If $v = w$, then
+\[
+    v_p(f) = v(f)(p) = w(f)(p) = w_p(f)
+\]
+so $v_p = w_p$.
+
+The other way around, if $v_p(f) = w_p(f)$ then $v(f)(p) = w(f)(p)$, which must be true for all $p \in M$, so $v(f) = w(f)$ and therefore $v = w$.
+
+\end{sol}
+
 \end{document}
