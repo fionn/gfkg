@@ -372,4 +372,47 @@ For the multiplication,
 
 \end{sol}
 
+\begin{ex}
+
+Show that the following rules [hold] for all $v, w \in \text{Vect}(M)$ and $f, g \in C^\infty(M)$:
+\begin{align*}
+    f(v + w) &= fv + fw, \\
+    (f + g)v &= fv + gv, \\
+    (fg)v &= f(gv), \\
+    1v &= v.
+\end{align*}
+(Here ``$1$'' denotes the constant function equal to $1$ on all of $M$.) Mathematically, we summarize these rules by saying that $\text{Vect}(M)$ is a \emph{module over} $C^\infty(M)$.
+
+\end{ex}
+
+\begin{sol}
+
+For all $g \in C^\infty(M)$,
+\[
+    f(v + w)g = fv(g) + fw(g) = (fv + fw)(g),
+\]
+so $f(v + w) = fv + fw$.
+
+For all $h \in C^\infty(M)$,
+\[
+    (f + g)v(h) = fv(h) + gv(h) = (fv + gv)(h),
+\]
+so $(f + g)v = fv + gv$.
+
+
+For all $h \in C^\infty(M)$,
+\[
+    (fg)v(h) = f \cdot gv(h) = f(gv)(h)
+\]
+so $(fg)v = f(gv)$.
+
+For all $f \in C^\infty(M)$,
+\[
+    (1v)(f) = 1v(f) = v(f).
+\]
+
+Therefore $\text{Vect}(M)$ is a module over $C^\infty(M)$.
+
+\end{sol}
+
 \end{document}
