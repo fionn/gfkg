@@ -236,4 +236,24 @@ These transition functions are inversions on the $n$-sphere and are smooth where
 
 \end{sol}
 
+\begin{ex}
+
+Show that if $M$ is a manifold and $U$ is an open subset of $M$, then $U$ with its induced topology is a manifold.
+
+\end{ex}
+
+\begin{sol}
+
+All subsets $U_\alpha \subset U$ are of the form $V \cap U$ where $V$ is open in $M$, so the open sets of the induced topology cover $U$.
+
+We can construct an atlas by taking the charts on $M$, $\varphi_\alpha: V_\alpha \to \mathbb{R}^n$, and defining
+\begin{align*}
+    \varphi^U_\alpha&: U_\alpha \to \mathbb{R}^n, \\
+                    &: u \mapsto \varphi_\alpha(u),
+\end{align*}
+i.e. $\varphi^U_\alpha = \varphi_\alpha$ for all $U_\alpha$.
+Since $U_\alpha$ is open, we have well defined transition functions so $U$ with the induced topology is a manifold.
+
+\end{sol}
+
 \end{document}
