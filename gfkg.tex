@@ -326,4 +326,50 @@ Since the transition functions exist independently, they are automatically smoot
 
 \end{sol}
 
+\subsection{Vector Fields}
+
+\begin{ex}
+
+Show that $v + w$ and $gw \in \text{Vect}(M)$.
+
+\end{ex}
+
+\begin{sol}
+
+For the sum,
+\begin{align*}
+    (v + w)(f + g) &= v(f + g) + w(f + g) \\
+        &= v(f) + v(g) + w(f) + w(g) \\
+        &= (v + w)(f) + (v + w)(g),
+\end{align*}
+\begin{align*}
+    (v + w)(\alpha f) &= v(\alpha f) + w(\alpha f) \\
+        &= \alpha v(f) + \alpha w(f) \\
+        &= \alpha (v(f) + w(f)) \\
+        &= \alpha (v + w)(f),
+\end{align*}
+\begin{align*}
+    (v + w)(fg) &= v(fg) + w(fg) \\
+        &= v(f)g + fv(g) + w(f)g + fw(g) \\
+        &= (v(f) + w(f))g + f \cdot (v(g) + w(g)) \\
+        &= (v + w)(f)g + f \cdot (v + w)(g).
+\end{align*}
+
+For the multiplication,
+\begin{align*}
+    gw(f + h) &= g \cdot (w(f) + w(h)) \\
+        &= gw(f) + gw(h),
+\end{align*}
+\begin{align*}
+    gw(\alpha f) &= g \cdot \alpha w(f) \\
+        &= \alpha g w(f),
+\end{align*}
+\begin{align*}
+    gw(fh) &= g \cdot (w(f)h + f w(h)) \\
+        &= g w(f) h + g f w(h) \\
+        &= gw(f) h + fgw(h).
+\end{align*}
+
+\end{sol}
+
 \end{document}
