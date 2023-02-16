@@ -385,7 +385,7 @@ Show that the following rules [hold] for all $v, w \in \text{Vect}(M)$ and $f, g
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:module}
 
 For all $g \in C^\infty(M)$,
 \[
@@ -450,6 +450,55 @@ If $v = w$, then
 so $v_p = w_p$.
 
 The other way around, if $v_p(f) = w_p(f)$ then $v(f)(p) = w(f)(p)$, which must be true for all $p \in M$, so $v(f) = w(f)$ and therefore $v = w$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that $T_p M$ is a vector space over the real numbers.
+
+\end{ex}
+
+\begin{sol}
+
+We must show that tangent vectors $v_p \in T_p M$ satisfy the axioms of vector spaces.
+
+Let $u, v, w \in T_p M$ and $\alpha, \beta \in \mathbb{R}$.
+
+To check associativity,
+\begin{align*}
+    (u + (v + w))(f) &= u(f) + (v + w)(f) \\
+        &= u(f) + v(f) + w(f) \\
+        &= (u(f) + v(f)) + w(f) \\
+        &= (u + v)(f) + w(f),
+\end{align*}
+so $u + (v + w) = (u + v) + w$.
+
+Commutativity holds since $\mathbb{R}$ is commutative.
+
+An additive identity vector $0$ exists since
+\[
+    (v + 0)(f) = v(f) + 0(f) = v(f)
+\]
+by defining $0: C^\infty(\mathbb{R}) \to \mathbb{R}$ to be the tangent vector that maps all functions to $0 \in \mathbb{R}$.
+
+We can construct for every tangent vector $v$ an additive inverse $-v$ as $(-v)(f) = -v(f)$.
+
+We have compatibility of scalar and field multiplication since
+\[
+    \alpha(\beta v)(f) = \alpha (\beta v(f)) = \alpha \beta v(f) = (\alpha \beta) v(f).
+\]
+
+The existence of a scalar multiplicative identity follows from solution~\ref{sol:module}.
+
+For distributivity,
+\[
+    \alpha(u + v)(f) = \alpha (u(f) + v(f)) = \alpha u(f) + \alpha v(f)
+\]
+and
+\[
+    (\alpha + \beta) v(f) = \alpha v(f) + \beta v(f).
+\]
 
 \end{sol}
 
