@@ -256,4 +256,52 @@ Since $U_\alpha$ is open, we have well defined transition functions so $U$ with 
 
 \end{sol}
 
+\begin{ex}
+
+Given topological spaces $X$ and $Y$, we give $X \times Y$ the \emph{product topology} in which a set is open if and only if it is a union of sets of the form $U \times V$, where $U$ is open in $X$ and $V$ is open in $Y$. Show that if $M$ is an $m$-dimensional manifold and $N$ is an $n$-dimensional manifold, $M \times N$ is an $(m + n)$-dimensional manifold.
+
+\end{ex}
+
+\begin{sol}
+
+For every point $(u, v) \in M \times N$, there exists a set $U \times V$ where $U$ is open in $M$ and $V$ is open in $N$ such that $u \in U$, $v \in V$.
+Therefore $U \times V$ is an open set under the product topology and $M \times N$ is a topological space.
+
+Given $M$, $N$ are manifolds, they have atlases
+\[
+    \left\{\varphi^M_\alpha : U_\alpha \to \mathbb{R}^m \right\}, \qquad
+    \left\{\varphi^N_\beta : V_\beta \to \mathbb{R}^n \right\}
+\]
+for all $U_\alpha$ open in $M$, $V_\beta$ open in $N$.
+
+For some $u \in U_\alpha$, $v \in V_\beta$, denote
+\[
+    \varphi^M_\alpha: u \mapsto \vec{x} = (x_1, \ldots, x_m), \quad
+    \varphi^N_\beta: v \mapsto \vec{y} = (y_1, \ldots, y_n).
+\]
+
+We can construct maps $\tilde{\varphi}_{\alpha\beta}:\ U_\alpha \times V_\beta \to \mathbb{R}^m \times \mathbb{R}^n$ as
+\begin{align*}
+    \tilde{\varphi}_{\alpha\beta} (u, v) &= \left(\varphi^M_\alpha(u), \varphi^N_\beta(v)\right) \\
+        &= (\vec{x}, \vec{y}).
+\end{align*}
+This is obviously invertible via
+\[
+    \tilde{\varphi}_{\alpha\beta}^{-1}(\vec{x}, \vec{y}) = \left({(\varphi^M_\alpha)}^{-1}(\vec{x}), {(\varphi^N_\beta)}^{-1}(\vec{y})\right) = (u, v).
+\]
+because the inverse charts are guaranteed to exist.
+
+The product space $\mathbb{R}^m \times \mathbb{R}^n$ is homeomorphic to $\mathbb{R}^{m + n}$ under
+\[
+    h(\vec{x}, \vec{y}) = (x_1, \ldots, x_m, y_1, \ldots, y_n),
+\]
+so we can construct new smooth maps $\varphi_{\alpha\beta} = h \circ \tilde{\varphi}_{\alpha\beta}$ that target $\mathbb{R}^{m + n}$.
+The transition functions
+\[
+    \varphi_{\alpha\beta} \circ \varphi_{\alpha\beta}^{-1}: \mathbb{R}^{m + n} \to \mathbb{R}^{m + n}
+\]
+are similarly obviously smooth where defined, so $\varphi_{\alpha\beta}$ is a chart and the collection of these charts for all $U_\alpha$, $V_\beta$ is an atlas, therefore $M \times N$ is a manifold.
+
+\end{sol}
+
 \end{document}
