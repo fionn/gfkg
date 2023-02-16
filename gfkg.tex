@@ -304,4 +304,26 @@ are similarly obviously smooth where defined, so $\varphi_{\alpha\beta}$ is a ch
 
 \end{sol}
 
+\begin{ex}
+
+Given topological spaces $X$ and $Y$, we give $X \cup Y$ the \emph{disjoint union topology} in which a set is open if and only if it is the union of an open subset of $X$ and an open subset of $Y$.
+Show that if $M$ and $N$ are $n$-dimensional manifolds the disjoint union $M \cup N$ is an $n$-dimensional manifold.
+
+\end{ex}
+
+\begin{sol}
+
+Any point $p \in M \cup N$ is either in $M$ or $N$. Consider a neighbourhood $X$ of $p$. This will be of the form $U \cup V$ for $U$, $V$ open subsets of $M$, $N$ since $p \in X$ is equivalent to $p \in X \cup \varnothing$.
+
+Given $M$, $N$ are manifolds, they have atlases
+\[
+    \left\{\varphi^M_\alpha : U_\alpha \to \mathbb{R}^n \right\}, \qquad
+    \left\{\varphi^N_\beta : V_\beta \to \mathbb{R}^n \right\}
+\]
+for all $U_\alpha$ open in $M$, $V_\beta$ open in $N$. Therefore any neighbourhood of $p \in M \cup N$ has a chart, for all $p$.
+
+Since the transition functions exist independently, they are automatically smooth. Therefore $M \cup N$ is an $n$-dimensional manifold.
+
+\end{sol}
+
 \end{document}
