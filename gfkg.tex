@@ -644,4 +644,26 @@ The pushforward $\phi_*: T_p M \to T_{\phi(p)} N$ of $v \in T_p M$ by $\phi: M \
 
 \end{sol}
 
+\begin{ex}
+
+Show that the pushforward operation
+\[
+    \phi_*: T_p M \to T_{\phi(p)} N
+\]
+is linear.
+
+\end{ex}
+
+\begin{sol}
+
+Let $v, w \in T_p M$, $\alpha, \beta \in \mathbb{R}$, $f \in C^\infty(N)$. $\phi_*$ is linear since
+\begin{align*}
+    \left(\phi_*(\alpha v + \beta w)\right)(f) &= (\alpha v + \beta w) (\phi^* f) \\
+        &= \alpha v (\phi^* f) + \beta w (\phi^* f) \\
+        &= \alpha (\phi_* v)(f) + \beta (\phi_* w)(f) \\
+        &= \left(\alpha (\phi_* v) + \beta (\phi_* w)\right)(f).
+\end{align*}
+
+\end{sol}
+
 \end{document}
