@@ -547,4 +547,46 @@ Since our manifold is $\mathbb{R}$, the ``usual coordinate function'' in this ca
 
 \end{sol}
 
+\begin{ex}
+
+Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be rotation counterclockwise by an angle $\theta$. Let $x$, $y$ be the usual coordinate functions on $\mathbb{R}^2$. Show that
+\begin{align*}
+    \phi^* x &= \cos(\theta) x - \sin(\theta) y, \\
+    \phi^* y &= \sin(\theta) x + \cos(\theta) y.
+\end{align*}
+
+\end{ex}
+
+\begin{sol}
+
+If $\phi$ is a positive rotation by a (fixed) angle $\theta$, we can express it as
+\[
+    \phi: \begin{pmatrix}
+            u \\ v
+        \end{pmatrix}
+        \mapsto
+        \begin{pmatrix}
+            \cos(\theta) & -\sin(\theta) \\
+            \sin(\theta) & \cos(\theta)
+        \end{pmatrix}
+        \begin{pmatrix}
+            u \\ v
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            \cos(\theta) u - \sin(\theta) v \\
+            \sin(\theta) u + \cos(\theta) v
+        \end{pmatrix}.
+\]
+As before, consider the chart $\varphi(p) = \left\{x^\mu(p)\right\} = \left\{x(p), y(p)\right\}$.
+Then $\phi^* x(p) = x(\phi(p))$ is the $x$-coordinate, so for $p = (u, v)$,
+\begin{align*}
+    \phi^* x(p) &= x(\phi(p)) \\
+        &= \cos(\theta) u - \sin(\theta) v \\
+        &= \cos(\theta) x(p) - \sin(\theta) y(p)
+\end{align*}
+and similarly for $\phi^* y$.
+
+\end{sol}
+
 \end{document}
