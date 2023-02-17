@@ -624,4 +624,24 @@ Since $\gamma^* f = f \circ \gamma$, $\gamma^* f$ is smooth too.
 
 \end{sol}
 
+\begin{ex}
+
+Prove that $(\phi \circ \gamma)'(t) = \phi_*(\gamma'(t))$.
+
+\end{ex}
+
+\begin{sol}
+
+The pushforward $\phi_*: T_p M \to T_{\phi(p)} N$ of $v \in T_p M$ by $\phi: M \to N$ is given by $(\phi_* v) (f) = v (\phi^* f)$.
+\begin{align*}
+    (\phi \circ \gamma)'(t)(f) &= \frac{\d}{\d t} f\left((\phi \circ \gamma)(t)\right) \\
+        &= \frac{\d}{\d t} (f \circ \phi \circ \gamma)(t) \\
+        &= \frac{\d}{\d t} (f \circ \phi) (\gamma(t)) \\
+        &= \gamma'(t)(f \circ \phi) \\
+        &= \gamma'(t)(\phi^* f) \\
+        &= (\phi_* (\gamma'(t)))(f).
+\end{align*}
+
+\end{sol}
+
 \end{document}
