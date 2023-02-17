@@ -589,4 +589,39 @@ and similarly for $\phi^* y$.
 
 \end{sol}
 
+\begin{ex}
+
+Show that this definition of smoothness is consistent with the previous definitions of smooth functions $f: M \to \mathbb{R}$ and smooth curves $\gamma: \mathbb{R} \to M$.
+
+\end{ex}
+
+\begin{sol}
+
+Recall the definition of smooth functions between manifolds.
+
+\begin{quote}
+$\phi: M \to N$ is smooth if $f \in C^\infty(N)$ implies that $\phi^* f \in C^\infty(M)$.
+\end{quote}
+
+Our other two definitions of smooth functions and smooth curves are:
+\begin{itemize}
+    \item a function $f: M \to \mathbb{R}$ is smooth if for all $\alpha$, $f \circ \varphi_\alpha^{-1}: \mathbb{R}^n \to \mathbb{R}$ is smooth,
+    \item a curve $\gamma: \mathbb{R} \to M$ is smooth if $f(\gamma(t))$ depends smoothly on $t$ for any $f \in C^\infty(M)$.
+\end{itemize}
+
+If $N = \mathbb{R}$, our definition of smooth functions between manifolds is that $\phi: M \to \mathbb{R}$ is smooth if $f \in C^\infty(\mathbb{R})$ implies that $\phi^* f \in C^\infty(M)$.
+But if we assume $f \in C^\infty(\mathbb{R})$ then $\phi^* f = f \circ \phi \in C^\infty(M)$ requires that $\phi \in C^\infty(M)$ and $\phi: M \to \mathbb{R}$ is smooth if for all $\alpha$, $\phi \circ \varphi_\alpha^{-1}: \mathbb{R}^n \to \mathbb{R}$ is smooth.
+
+Let $\phi: M \to \mathbb{R}$ be a smooth function (i.e.\ for all $\alpha$, $\phi \circ \varphi_\alpha^{-1}: \mathbb{R}^n \to \mathbb{R}$).
+Let $f \in C^\infty(\mathbb{R})$.
+Then $f \circ \phi \circ \varphi_\alpha^{-1}$ is smooth since it is the composition of smooth functions, so $f \circ \phi = \phi^* f$ is smooth.
+
+If the domain is $\mathbb{R}$, our definition of smooth functions between manifolds is that $\gamma: \mathbb{R} \to M$ is smooth if $f \in C^\infty(M)$ implies that $\gamma^* f \in C^\infty(\mathbb{R})$.
+But if we assume $f \in C^\infty(M)$ then $\gamma^* f = f \circ \gamma \in C^\infty(\mathbb{R})$ is smooth by the definition of smooth curves.
+
+Let $\gamma: \mathbb{R} \to M$ be smooth, i.e. $f\circ \gamma$ is smooth for all $f \in C^\infty(M)$.
+Since $\gamma^* f = f \circ \gamma$, $\gamma^* f$ is smooth too.
+
+\end{sol}
+
 \end{document}
