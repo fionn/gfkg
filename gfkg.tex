@@ -524,4 +524,27 @@ so $\gamma'(t)$ is a tangent vector.
 
 \end{sol}
 
+\subsection{Covariant Versus Contravariant}
+
+\begin{ex}
+
+Let $\phi: \mathbb{R} \to \mathbb{R}$ be given by $\phi(t) = e^t$.
+Let $x$ be the usual coordinate function on $\mathbb{R}$.
+Show that $\phi^* x = e^x$.
+
+\end{ex}
+
+\begin{sol}
+
+Consider a chart $\varphi: M \to \mathbb{R}^n$ mapping $p \in M$ to $\varphi(p) = \left\{x^\mu(p)\right\}$.
+Note that each $x^\mu$ is a function taking $p$ to the $\mu$\textsuperscript{th} coordinate of its image in $\mathbb{R}^n$.
+
+Since our manifold is $\mathbb{R}$, the ``usual coordinate function'' in this case is the identity (under trivial coordinate transformation $t \to x$, say), so
+\[
+    (\phi^* x)(t) = x(\phi(t)) = x(e^t) = e^x
+\]
+(where we abuse notation and identify the coordinate transformation function and its target as $x$).
+
+\end{sol}
+
 \end{document}
