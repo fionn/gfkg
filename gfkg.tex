@@ -666,4 +666,28 @@ Let $v, w \in T_p M$, $\alpha, \beta \in \mathbb{R}$, $f \in C^\infty(N)$. $\phi
 
 \end{sol}
 
+\begin{ex}
+
+Show that if $\phi: M \to N$ we can push forward a vector field $v$ on $M$ to obtain a vector field $\phi_*v$ on $N$ satisfying
+\[
+    {(\phi_* v)}_q = \phi_*(v_p)
+\]
+whenever $\phi(p) = q$.
+
+\end{ex}
+
+\begin{sol}
+
+Looking at the action of $\phi_* v$ on a function $f \in C^\infty (N)$,
+\begin{align*}
+    {(\phi_* v)}_q (f) &= (\phi_* v) (f) (q) \\
+        &= v(\phi^* f)(\phi^{-1}(q)) \\
+        &= v_{\phi^{-1}(q)} (\phi^* f) \\
+        &= \phi_* (v_{\phi^{-1}(q)})(f) \\
+        &= \phi_* (v_p) (f)
+\end{align*}
+when $\phi(p) = q$.
+
+\end{sol}
+
 \end{document}
