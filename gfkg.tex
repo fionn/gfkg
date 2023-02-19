@@ -534,7 +534,7 @@ Show that $\phi^* x = e^x$.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:pullbackexponential}
 
 Consider a chart $\varphi: M \to \mathbb{R}^n$ mapping $p \in M$ to $\varphi(p) = \left\{x^\mu(p)\right\}$.
 Note that each $x^\mu$ is a function taking $p$ to the $\mu$\textsuperscript{th} coordinate of its image in $\mathbb{R}^n$.
@@ -557,7 +557,7 @@ Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be rotation counterclockwise by an ang
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:pullbackrotation}
 
 If $\phi$ is a positive rotation by a (fixed) angle $\theta$, we can express it as
 \[
@@ -687,6 +687,51 @@ Looking at the action of $\phi_* v$ on a function $f \in C^\infty (N)$,
         &= \phi_* (v_p) (f)
 \end{align*}
 when $\phi(p) = q$.
+
+\end{sol}
+
+\begin{ex}
+
+Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be [a] rotation counterclockwise by an angle $\theta$. Let $\partial_x$, $\partial_y$ be the coordinate vector fields on $\mathbb{R}^2$. Show that at any point of $\mathbb{R}^2$,
+\begin{align*}
+    \phi_* \partial_x = \cos(\theta)\partial_x - \sin(\theta)\partial_y, \\
+    \phi_* \partial_y = \sin(\theta)\partial_x + \cos(\theta)\partial_y.
+\end{align*}
+
+\end{ex}
+
+\begin{sol}
+
+Denote $\phi: (x, y) \mapsto (u(x, y), v(x, y))$ where $u, v$ are functions as per Solution~\ref{sol:pullbackrotation} and let $f \in C^\infty(\mathbb{R}^2)$.
+
+For a vector $\partial_i$, the pushforward acting on $f$ is
+\begin{align*}
+    (\phi_* \partial_i)(f) &= \partial_i (\phi^* f) \\
+        &= \partial_i (f \circ \phi) \\
+        &= \partial_u f \cdot \partial_i u + \partial_v f \cdot \partial_i v
+\end{align*}
+and at a point $p = (x, y) \in \mathbb{R}^2$,
+\[
+     (\phi_* \partial_i)(f)(p) = \partial_i u \cdot \partial_u f(u, v) + \partial_i v \cdot \partial_v f(u, v).
+\]
+Consider $\phi_* \partial_x$,
+\begin{align*}
+    (\phi_* \partial_x)(f)(p) &= \partial_x u \cdot \partial_u f(u, v) + \partial_x v \cdot \partial_v f(u, v) \\
+        &= \cos(\theta) \partial_u f(u, v) + \sin(\theta) \partial_v f(u, v),
+\end{align*}
+so
+\[
+    \phi_* \partial_x = \cos(\theta) \partial_u + \sin(\theta) \partial_v
+\]
+and similarly for $\phi_* \partial_y$,
+\[
+    \phi_* \partial_y = -\sin(\theta) \partial_u + \cos(\theta) \partial_v.
+\]
+But we can denote by $x$, $y$ the coordinates in the target manifold ($\mathbb{R}^2$ rotated by $\theta$, this is a similar abuse of notation as Solution~\ref{sol:pullbackexponential}) and therefore write\footnote{Note the sign difference.}
+\begin{align*}
+    \phi_* \partial_x &= \cos(\theta) \partial_x + \sin(\theta) \partial_y, \\
+    \phi_* \partial_y &= -\sin(\theta) \partial_x + \cos(\theta) \partial_y.
+\end{align*}
 
 \end{sol}
 
