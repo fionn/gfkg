@@ -734,4 +734,34 @@ But we can denote by $x$, $y$ the coordinates in the target manifold ($\mathbb{R
 
 \end{sol}
 
+\subsection{Flows and the Lie Bracket}
+
+\begin{ex}
+
+Let $v$ be the vector field $x^2 \partial_x + y \partial_y$ on $\mathbb{R}^2$. Calculate the integral curves $\gamma(t)$ and see which ones are defined for all $t$.
+
+\end{ex}
+
+\begin{sol}
+
+Integral curves satisfy $\gamma'(t) = v_{\gamma(t)}$, $\gamma(0) = p$.
+
+Denote $\gamma(t) = (x(t), y(t)) \in \mathbb{R}^2$. Then from the definition of tangent curves,
+\begin{align*}
+    \frac{\d}{\d t} f(\gamma(t)) &= \frac{\d}{\d t} f(x, y) \\
+    &= \partial_x f(x, y) \dot{x} + \partial_y f(x, y) \dot{y} \\
+    &\overset{!}{=} x^2 \partial_x f(x, y) + y \partial_y f(x, y)
+\end{align*}
+giving us differential equations $\dot{x}(t) = {x(t)}^2$, $\dot{y}(t) = y(t)$ with solutions
+\[
+    x(t) = \frac{1}{\alpha - t}, \qquad y(t) = \beta e^t.
+\]
+Fix the constants $\alpha$, $\beta$ with initial condition $\gamma(0) = p = (x(0), y(0))$. Then
+\[
+    x(t) = \frac{x(0)}{1 - x(0)t}, \qquad y(t) = y(0) e^t.
+\]
+When $x(0) = 0$ we get $x(t) = 0$ for all $t$. Otherwise, we get a singularity at $t = \frac{1}{x(0)}$, so the integral curves $\gamma$ are defined for all $t$ when starting at $p = (0, b)$ for any $b \in \mathbb{R}$.
+
+\end{sol}
+
 \end{document}
