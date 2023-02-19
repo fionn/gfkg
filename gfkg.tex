@@ -15,13 +15,12 @@
 \frenchspacing
 
 \renewcommand*{\d}{\ensuremath{\mathrm{d}}}
-\renewcommand*{\thesection}{\Roman{section}}
 \newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
 \theoremstyle{definition}
-\newtheorem{ex}{Exercise}[section]
-\newtheorem{sol}{Solution}[section]
+\newtheorem{ex}{Exercise}[part]
+\newtheorem{sol}{Solution}[part]
 
 \title{Gauge Fields, Knots and Gravity Solutions}
 \author{Fionn Fitzmaurice}
@@ -43,9 +42,9 @@
 \maketitle
 \thispagestyle{empty}
 
-\section{Electromagnetism}
+\part{Electromagnetism}
 
-\subsection{Maxwell's Equations}
+\section{Maxwell's Equations}
 
 \begin{ex}
 
@@ -120,7 +119,7 @@ and satisfying the second vacuum equation.
 
 \end{sol}
 
-\subsection{Manifolds}
+\section{Manifolds}
 
 A function $f: X \to Y$ from one topological space to another is defined to be continuous if, given any open set $U \subseteq Y$, the inverse image $f^{-1}(U) \subseteq X$ is open.
 
@@ -326,7 +325,7 @@ Since the transition functions exist independently, they are automatically smoot
 
 \end{sol}
 
-\subsection{Vector Fields}
+\section{Vector Fields}
 
 \begin{ex}
 
