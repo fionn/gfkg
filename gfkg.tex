@@ -763,4 +763,22 @@ When $x(0) = 0$ we get $x(t) = 0$ for all $t$. Otherwise, we get a singularity a
 
 \end{sol}
 
+\begin{ex}
+
+Show that $\phi_0$ is the identity map $\text{id}: X \to X$ and that for all $s, t \in \mathbb{R}$ we have $\phi_t \circ \phi_s = \phi_{t + s}$.
+
+\end{ex}
+
+\begin{sol}
+
+By definition, the flow $\phi_t(p)$ is defined to be the point on the integral curve a parameter distance $t$ from $p$, therefore at $t = 0$, $\phi_0(p) = p$.
+
+Pick some value $t = t_0$ and label the point $\phi_{t_0}(p) = q$. Let $t_1 = t_0 + s$, so $\phi_{t_1}(p) = \phi_{t_0 + s}(p)$. But this is a parameter distance $s$ from $q$, so $\phi_{t_1}(p) = \phi_s(q)$ and thus
+\[
+    \phi_{t_0 + s}(p) = \phi_s \circ \phi_{t_0}(p).
+\]
+It follows from this that $\phi_s^{-1} = \phi_{-s}$, so the flow is an Abelian group.
+
+\end{sol}
+
 \end{document}
