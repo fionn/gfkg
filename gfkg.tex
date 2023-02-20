@@ -14,7 +14,6 @@
 
 \frenchspacing
 
-\renewcommand*{\d}{\ensuremath{\mathrm{d}}}
 \newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
@@ -511,7 +510,7 @@ Check that $\gamma'(t) \in T_{\gamma(t)}M$ using the definitions.
 
 We have that
 \[
-    \gamma'(t): f \mapsto \frac{\d}{\d t} f\left( \gamma(t) \right).
+    \gamma'(t): f \mapsto \frac{d}{dt} f\left( \gamma(t) \right).
 \]
 Notice that
 \begin{align*}
@@ -633,9 +632,9 @@ Prove that $(\phi \circ \gamma)'(t) = \phi_*(\gamma'(t))$.
 
 The pushforward $\phi_*: T_p M \to T_{\phi(p)} N$ of $v \in T_p M$ by $\phi: M \to N$ is given by $(\phi_* v) (f) = v (\phi^* f)$.
 \begin{align*}
-    (\phi \circ \gamma)'(t)(f) &= \frac{\d}{\d t} f\left((\phi \circ \gamma)(t)\right) \\
-        &= \frac{\d}{\d t} (f \circ \phi \circ \gamma)(t) \\
-        &= \frac{\d}{\d t} (f \circ \phi) (\gamma(t)) \\
+    (\phi \circ \gamma)'(t)(f) &= \frac{d}{dt} f\left((\phi \circ \gamma)(t)\right) \\
+        &= \frac{d}{dt} (f \circ \phi \circ \gamma)(t) \\
+        &= \frac{d}{dt} (f \circ \phi) (\gamma(t)) \\
         &= \gamma'(t)(f \circ \phi) \\
         &= \gamma'(t)(\phi^* f) \\
         &= (\phi_* (\gamma'(t)))(f).
@@ -748,7 +747,7 @@ Integral curves satisfy $\gamma'(t) = v_{\gamma(t)}$, $\gamma(0) = p$.
 
 Denote $\gamma(t) = (x(t), y(t)) \in \mathbb{R}^2$. Then from the definition of tangent curves,
 \begin{align*}
-    \frac{\d}{\d t} f(\gamma(t)) &= \frac{\d}{\d t} f(x, y) \\
+    \frac{d}{dt} f(\gamma(t)) &= \frac{d}{dt} f(x, y) \\
     &= \partial_x f(x, y) \dot{x} + \partial_y f(x, y) \dot{y} \\
     &\overset{!}{=} x^2 \partial_x f(x, y) + y \partial_y f(x, y)
 \end{align*}
