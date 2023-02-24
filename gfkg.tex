@@ -676,15 +676,25 @@ whenever $\phi(p) = q$.
 
 \begin{sol}
 
-Looking at the action of $\phi_* v$ on a function $f \in C^\infty (N)$,
+Note that the definition of the pushforward is sloppy, since the left side must be evaluated on $N$ while the right side is on $M$.
+
+Looking at the action of $\phi_* v$ on a function $f \in C^\infty (N)$ and denoting the points that each side act on as $p \in M$, $q \in N$,
 \begin{align*}
     {(\phi_* v)}_q (f) &= (\phi_* v) (f) (q) \\
-        &= v(\phi^* f)(\phi^{-1}(q)) \\
-        &= v_{\phi^{-1}(q)} (\phi^* f) \\
-        &= \phi_* (v_{\phi^{-1}(q)})(f) \\
-        &= \phi_* (v_p) (f)
+        &= v(\phi^* f)(p) \\
+        &= v_p(\phi^* f) \\
+        &= (\phi_* (v_p))(f).
 \end{align*}
-when $\phi(p) = q$.
+But
+\begin{align*}
+    v_p (\phi^* f) &= v_p (f \circ \phi) \\
+            &= v(f(\phi(p))) \\
+            &= w_{\phi(p)}(f)
+\end{align*}
+for some $w \in \text{Vect}(N)$.
+
+It's tempting to write this as $v_{\phi(p)}(f)$, but $v \in \text{Vect}(M)$ whereas $\phi(p) \in N$.
+Instead we need exactly the pushforward of $v$, so we get $w_{\phi(p)} = {(\phi_* v)}_{\phi(p)}$ and the equality holds when $\phi(p) = q$.
 
 \end{sol}
 
