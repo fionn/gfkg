@@ -797,4 +797,52 @@ It follows from this that $\phi_s^{-1} = \phi_{-s}$, so the flow is an Abelian g
 
 \end{sol}
 
+\begin{ex}
+
+Consider the normalised vector fields in the $r$ and $\theta$ directions on the plane in polar coordinates (not defined at the origin):
+\[
+    v = \frac{x \partial_x + y \partial_y}{\sqrt{x^2 + y^2}}, \qquad w = \frac{x \partial_y - y \partial_x}{\sqrt{x^2 + y^2}}.
+\]
+Calculate $[v, w]$.
+
+\end{ex}
+
+\begin{sol}
+
+Since $x = r \cos(\theta)$, $y = r \sin(\theta)$, we have for some $f \in C^\infty(\mathbb{R}^2)$,
+\begin{align*}
+    \partial_r f &=\cos(\theta)  \partial_x f + \sin(\theta) \partial_y f \\
+    \partial_\theta f &= -r \sin(\theta) \partial_x f + r \cos(\theta) \partial_y f
+\end{align*}
+so $v = \partial_r$, $w = \frac{\partial_\theta}{r}$.
+Then
+\begin{align*}
+    [v, w]f &= v(w(f)) - w(v(f)) \\
+        &= v\left(\frac{\partial_\theta f}{r}\right) - w(\partial_r f) \\
+        &= \partial_r\left(\frac{\partial_\theta f}{r}\right) - \frac{\partial_\theta}{r}(\partial_r f) \\
+        &= \frac{r \partial_r \partial_\theta f - \partial_\theta f}{r^2} - \frac{\partial_\theta \partial_r f}{r} \\
+        &= \frac{1}{r} \left(\partial_r \partial_\theta f - \frac{\partial_\theta f}{r} - \partial_\theta \partial_r f\right) \\
+        &= -\frac{\partial_\theta f}{r^2} \\
+        &= -\frac{w}{r} f
+\end{align*}
+so $[v, w] = -\frac{w}{r}$.
+
+We could also do this the hard way,
+\begin{align*}
+    [v, w]f &= v(w(f)) - w(v(f)) \\
+        &= \frac{(x \partial_x + y \partial_y)(x \partial_y f - y \partial_x f) - (x \partial_y - y \partial_x)(x \partial_x f + y \partial_y f)}{x^2 + y^2} \\
+        &= \frac{1}{x^2 + y^2}
+            \begin{pmatrix}
+                x \partial_x (x\partial_y f) - x\partial_x(y \partial_x f) + y \partial_y(x\partial_y f) - y \partial_y(y \partial_x f) \\
+                -\, x\partial_y(x\partial_x f) - x\partial_y(y\partial_y f) + y\partial_x(x \partial_x f) + y\partial_x (y \partial_y f)
+            \end{pmatrix} \\
+        &= \frac{y \partial_x f - x \partial_y f}{x^2 + y^2}
+\end{align*}
+giving the same result
+\[
+    [v, w] = \frac{y \partial_x - x \partial_y}{x^2 + y^2} = -\frac{w}{r}.
+\]
+
+\end{sol}
+
 \end{document}
