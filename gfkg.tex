@@ -878,4 +878,55 @@ The result follows immediately.
 
 \end{sol}
 
+\begin{ex}
+
+Show that for all vector fields $u$, $v$, $w$ on a manifold, and all real numbers $\alpha$, $\beta$, we have:
+\begin{enumerate}
+    \item $[v, w] = - [w, v]$,
+    \item $[u, \alpha v + \beta w] = \alpha[u, v] + \beta [u, w]$,
+    \item the \emph{Jacobi identity}: $\big[u, [v, w]\big] + \big[v, [w, u]\big] + \big[w, [u, v]\big] = 0$.
+\end{enumerate}
+
+\end{ex}
+
+\begin{sol}
+\mbox{}
+
+\begin{enumerate}
+
+\item The Lie bracket is antisymmetric.
+    \[
+        [v, w] = vw - wv = -(wv - vw) = -[w, v].
+    \]
+
+\item The Lie bracket is linear.
+    \begin{align*}
+        [u, \alpha v + \beta w] &= u (\alpha v + \beta w) - (\alpha v + \beta w) u \\
+            &= \alpha uv + \beta uw - \alpha vu - \beta wu \\
+            &= \alpha(uv - vu) + \beta(uw - wu) \\
+            &= \alpha [u, v] + \beta [u, w].
+    \end{align*}
+
+\item The Lie bracket satisfies the Jacobi identity.
+    \begin{align*}
+        \big[u, [v, w]\big] &= u[v, w] - [v, w]u \\
+            &= u(vw - wv) - (vw - wv)u \\
+            &= uvw - uwv - vwu + wvu,
+    \end{align*}
+    so similarly,
+    \begin{align*}
+        \big[v, [w, u]\big] &= vwu - vuw - wuv + uwv, \\
+        \big[w, [u, v]\big] &= wuv - wvu - uvw + vuw.
+    \end{align*}
+    Combining everything, we get
+    \begin{align*}
+        \big[u, [v, w]\big] + \big[v, [w, u]\big] + \big[w, [u, v]\big] =&\ uvw - uwv - vwu + wvu \\
+            &+ vwu - vuw - wuv + uwv \\
+            &+ wuv - wvu - uvw + vuw \\
+            =&\ 0.
+    \end{align*}
+\end{enumerate}
+
+\end{sol}
+
 \end{document}
