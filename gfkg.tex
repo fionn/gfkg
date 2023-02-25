@@ -666,7 +666,7 @@ Let $v, w \in T_p M$, $\alpha, \beta \in \mathbb{R}$, $f \in C^\infty(N)$. $\phi
 
 \begin{ex}
 
-Show that if $\phi: M \to N$ we can push forward a vector field $v$ on $M$ to obtain a vector field $\phi_*v$ on $N$ satisfying
+Show that if $\phi: M \to N$ is a diffeomorphism, we can push forward a vector field $v$ on $M$ to obtain a vector field $\phi_*v$ on $N$ satisfying
 \[
     {(\phi_* v)}_q = \phi_*(v_p)
 \]
@@ -702,15 +702,15 @@ Instead we need exactly the pushforward of $v$, so we get $w_{\phi(p)} = {(\phi_
 
 Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be [a] rotation counterclockwise by an angle $\theta$. Let $\partial_x$, $\partial_y$ be the coordinate vector fields on $\mathbb{R}^2$. Show that at any point of $\mathbb{R}^2$,
 \begin{align*}
-    \phi_* \partial_x = \cos(\theta)\partial_x - \sin(\theta)\partial_y, \\
-    \phi_* \partial_y = \sin(\theta)\partial_x + \cos(\theta)\partial_y.
+    \phi_* \partial_x &= \cos(\theta)\partial_x + \sin(\theta)\partial_y, \\
+    \phi_* \partial_y &= - \sin(\theta)\partial_x + \cos(\theta)\partial_y.
 \end{align*}
 
 \end{ex}
 
 \begin{sol}
 
-Denote $\phi: (x, y) \mapsto (u(x, y), v(x, y))$ where $u, v$ are functions as per Solution~\ref{sol:pullbackrotation} and let $f \in C^\infty(\mathbb{R}^2)$.
+Denote $\phi: (x, y) \mapsto (u(x, y), v(x, y))$ where $u, v$ are functions as per solution~\ref{sol:pullbackrotation} and let $f \in C^\infty(\mathbb{R}^2)$.
 
 For a vector $\partial_i$, the pushforward acting on $f$ is
 \begin{align*}
@@ -733,7 +733,7 @@ Consider $\phi_* \partial_x$ and $\phi_* \partial_y$,
     (\phi_* \partial_y)_p(f) &= \partial_x u \cdot \partial_x f(x, y) + \partial_y v \cdot \partial_y f(x, y) \\
         &= -\sin(\theta) \partial_x f(x, y) + \cos(\theta) \partial_y f(x, y),
 \end{align*}
-giving us\footnote{Note the sign difference.}  % Error in errata.
+giving us
 \begin{align*}
     \phi_* \partial_x &= \cos(\theta) \partial_x + \sin(\theta) \partial_y, \\
     \phi_* \partial_y &= -\sin(\theta) \partial_x + \cos(\theta) \partial_y.
