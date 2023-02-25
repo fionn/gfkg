@@ -720,20 +720,20 @@ For a vector $\partial_i$, the pushforward acting on $f$ is
 \end{align*}
 and at a point $p = (x, y) \in \mathbb{R}^2$,
 \[
-     (\phi_* \partial_i)(f)(p) = \partial_i u \cdot \partial_u f(u, v) + \partial_i v \cdot \partial_v f(u, v).
+     (\phi_* \partial_i)_p(f) = \partial_i u \cdot \partial_u f(u, v) + \partial_i v \cdot \partial_v f(u, v).
 \]
-We want to consider $f$ at $p$ rather than at $\phi(p)$, so we simply change variables as $\partial_u f(u, v) = \partial_x f(x, y)$, $\partial_v f(u, v) = \partial_y f(x, y)$.
+We want to consider $f$ at $p$ rather than at $\phi(p)$, so change variables as $\partial_u f(u, v) = \partial_x f(x, y)$, $\partial_v f(u, v) = \partial_y f(x, y)$.
 
 Consider $\phi_* \partial_x$ and $\phi_* \partial_y$,
 \begin{align*}
-    (\phi_* \partial_x)(f)(p) &= \partial_x u \cdot \partial_x f(x, y) + \partial_x v \cdot \partial_y f(x, y) \\
+    (\phi_* \partial_x)_p(f) &= \partial_x u \cdot \partial_x f(x, y) + \partial_x v \cdot \partial_y f(x, y) \\
         &= \cos(\theta) \partial_x f(x, y) + \sin(\theta) \partial_y f(x, y),
 \end{align*}
 \begin{align*}
-    (\phi_* \partial_y)(f)(p) &= \partial_x u \cdot \partial_x f(x, y) + \partial_y v \cdot \partial_y f(x, y) \\
+    (\phi_* \partial_y)_p(f) &= \partial_x u \cdot \partial_x f(x, y) + \partial_y v \cdot \partial_y f(x, y) \\
         &= -\sin(\theta) \partial_x f(x, y) + \cos(\theta) \partial_y f(x, y),
 \end{align*}
-giving us\footnote{Note the sign difference.}
+giving us\footnote{Note the sign difference.}  % Error in errata.
 \begin{align*}
     \phi_* \partial_x &= \cos(\theta) \partial_x + \sin(\theta) \partial_y, \\
     \phi_* \partial_y &= -\sin(\theta) \partial_x + \cos(\theta) \partial_y.
