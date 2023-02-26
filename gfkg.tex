@@ -929,4 +929,36 @@ Show that for all vector fields $u$, $v$, $w$ on a manifold, and all real number
 
 \end{sol}
 
+\section{Differential Forms}
+
+\subsection{1-forms}
+
+\begin{ex}
+
+Show that $\omega + \mu$ and $f\omega$ are really 1-forms, i.e., show linearity over $C^\infty(M)$.
+
+\end{ex}
+
+\begin{sol}
+
+Let $g, h \in C^\infty(M)$, $v, w \in \text{Vect}(M)$.
+
+$\omega + \mu$ is linear over $C^\infty(M)$ since
+\begin{align*}
+    (\omega + \mu)(gv + hw) &= (\omega + \mu)(gv) + (\omega + \mu)(hw) \\
+        &= \omega(gv) + \mu(gv) + \omega(hw) + \mu(hw) \\
+        &= g\omega(v) + g\mu(v) + h\omega(w) + h\mu(w) \\
+        &= g(\omega + \mu)(v)  + h(\omega + \mu)(w)
+\end{align*}
+and $f\omega$ is linear over $C^\infty(M)$ since
+\begin{align*}
+    (f\omega)(gv + hw) &= f\omega(gv + hw) \\
+        &= fg\omega(v) + fh\omega(w) \\
+        &= gf\omega(v) + hf\omega(w) \\
+        &= g(f\omega)(v) + h(f\omega)(w)
+\end{align*}
+(this is a product, not composition, so $fg = gf$).
+
+\end{sol}
+
 \end{document}
