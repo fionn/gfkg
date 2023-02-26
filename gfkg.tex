@@ -370,7 +370,7 @@ For the multiplication,
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:module}
 
 Show that the following rules [hold] for all $v, w \in \text{Vect}(M)$ and $f, g \in C^\infty(M)$:
 \begin{align*}
@@ -958,6 +958,43 @@ and $f\omega$ is linear over $C^\infty(M)$ since
         &= g(f\omega)(v) + h(f\omega)(w)
 \end{align*}
 (this is a product, not composition, so $fg = gf$).
+
+\end{sol}
+
+\begin{ex}
+
+Show that $\Omega^1(M)$ is a module over $C^\infty(M)$ (see the definition in exercise~\ref{ex:module}).
+
+\end{ex}
+
+\begin{sol}
+
+Let $\omega, \mu \in \Omega^1(M)$, $v\in \text{Vect}(M)$.
+
+For all $f \in C^\infty(M)$,
+\[
+    f(\omega + \mu)(v) = f(\omega v + \mu v) = f\omega v + f\mu v
+\]
+so $f(\omega + \mu) = f\omega + f\mu$.
+
+For all $f, g \in C^\infty(M)$,
+\[
+    (f + g)\omega(v) = f\omega(v) + g\omega(v)
+\]
+so $(f + g)\omega = f\omega + g\omega$.
+
+For all $f, g \in C^\infty(M)$,
+\[
+    (fg)\omega(v) = f(g\omega)(v) = (fg\omega)(v)
+\]
+so $(fg)\omega = fg\omega$.
+
+Let $1$ be the constant function equal to $1$ on all of $M$. Then
+\[
+    (1\omega)(v) = 1\omega(v) = \omega(v).
+\]
+
+Therefore $\Omega^1(M)$ is a module over $C^\infty(M)$.
 
 \end{sol}
 
