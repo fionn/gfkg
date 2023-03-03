@@ -424,7 +424,7 @@ Show that if $v^\mu\partial_\mu = 0$, that is, $v^\mu \partial_\mu f = 0$ for al
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:basis}
 
 Choose a function $f: \vec{x} \mapsto x^\nu$ for some index $0 < \nu \leq n$. Then
 \[
@@ -1043,6 +1043,32 @@ The Leibniz law holds since
         &= f v(g) + g v(f) \\
         &= f \, dg(v) + g \, df(v).
 \end{align*}
+
+\end{sol}
+
+\begin{ex}
+
+Suppose $f(x^1, \ldots, x^n)$ is a function on $\mathbb{R}^n$. Show that
+\[
+    df = \partial_\mu f \, dx^\mu.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Recall from solution~\ref{sol:basis} that $\left\{\partial_\mu\right\}$ forms a basis for $\mathbb{R}^n$, so $v = v^\mu \partial_\mu$ for some components $\left\{v^\mu\right\}$, $v \in \text{Vect}(\mathbb{R}^n)$. Consider some test vector $v$,
+\[
+    df(v) = v(f) = v^\mu \partial_\mu f.
+\]
+On the other hand,
+\begin{align*}
+    \partial_\mu f \, dx^\mu (v) &= \partial_\mu f v(x^\mu) \\
+    &= v^\nu \partial_\mu f \partial_\nu x^\mu \\
+    &= v^\nu \partial_\mu f \delta_\nu^\mu \\
+    &= v^\mu \partial_\mu f,
+\end{align*}
+giving $df(v) = \partial_\mu f\, dx^\mu(v)$ and therefore $df = \partial_\mu f\, dx^\mu$.
 
 \end{sol}
 
