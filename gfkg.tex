@@ -1007,4 +1007,43 @@ Therefore $\Omega^1(M)$ is a module over $C^\infty(M)$.
 
 \end{sol}
 
+\begin{ex}
+
+Show that
+\begin{align*}
+    & d(f + g) = df + dg, \\
+    & d(\alpha f) = \alpha\, df, \\
+    & (f + g) dh = f\, dh + g\, dh, \\
+    & d(fg) = f \, dg + g\, df
+\end{align*}
+for any $f, g, h \in C^\infty(M)$ and any $\alpha \in \mathbb{R}$.
+
+\end{ex}
+
+\begin{sol}
+
+Let $v \in \text{Vect}(M)$. First consider linearity.
+\begin{align*}
+    d(f + g)v &= v(f + g) \\
+        &= vf + vg \\
+        &= df(v) + dg(v) \\
+        &= (df + dg)(v),
+\end{align*}
+\[
+    d(\alpha f)(v) = v(\alpha f) = \alpha v(f) = \alpha \, df(v),
+\]
+\begin{align*}
+    (f + g)dh(v) &= (f + g)v(h) \\
+        &= fv(h) + gv(h) \\
+        &= f\, dh(v) + g \, dh(v).
+\end{align*}
+The Leibniz law holds since
+\begin{align*}
+    d(fg)(v) &= v(fg) \\
+        &= f v(g) + g v(f) \\
+        &= f \, dg(v) + g \, df(v).
+\end{align*}
+
+\end{sol}
+
 \end{document}
