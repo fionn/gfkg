@@ -1,8 +1,8 @@
 \documentclass[11pt, a4paper]{article}
 
-\usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
+\usepackage{mathtools}
 \usepackage[tracking=true, kerning=true]{microtype}
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
@@ -13,6 +13,11 @@
 \DeclareMicrotypeAlias{lmss}{cmr}
 
 \frenchspacing
+
+\mathtoolsset{%
+    showonlyrefs,
+    showmanualtags
+}
 
 \newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
@@ -831,11 +836,15 @@ We could also do this the hard way,
 \begin{align*}
     [v, w]f &= v(w(f)) - w(v(f)) \\
         &= \frac{(x \partial_x + y \partial_y)(x \partial_y f - y \partial_x f) - (x \partial_y - y \partial_x)(x \partial_x f + y \partial_y f)}{x^2 + y^2} \\
-        &= \frac{1}{x^2 + y^2}
-            \begin{pmatrix}
-                x \partial_x (x\partial_y f) - x\partial_x(y \partial_x f) + y \partial_y(x\partial_y f) - y \partial_y(y \partial_x f) \\
-                -\, x\partial_y(x\partial_x f) - x\partial_y(y\partial_y f) + y\partial_x(x \partial_x f) + y\partial_x (y \partial_y f)
-            \end{pmatrix} \\
+        &= \frac{\splitdfrac{x \partial_x (x\partial_y f)
+                             - x\partial_x(y \partial_x f)
+                             + y \partial_y(x\partial_y f)
+                             - y \partial_y(y \partial_x f)}
+                            {{}-x\partial_y(x\partial_x f)
+                             - x\partial_y(y\partial_y f)
+                             + y\partial_x(x \partial_x f)
+                             + y\partial_x (y \partial_y f)}
+                 }{x^2 + y^2} \\
         &= \frac{y \partial_x f - x \partial_y f}{x^2 + y^2}
 \end{align*}
 giving the same result
