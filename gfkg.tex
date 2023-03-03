@@ -1055,7 +1055,7 @@ Suppose $f(x^1, \ldots, x^n)$ is a function on $\mathbb{R}^n$. Show that
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:gradient}
 
 Recall from solution~\ref{sol:basis} that $\left\{\partial_\mu\right\}$ forms a basis for $\mathbb{R}^n$, so $v = v^\mu \partial_\mu$ for some components $\left\{v^\mu\right\}$, $v \in \text{Vect}(\mathbb{R}^n)$. Consider some test vector $v$,
 \[
@@ -1069,6 +1069,29 @@ On the other hand,
     &= v^\mu \partial_\mu f,
 \end{align*}
 giving $df(v) = \partial_\mu f\, dx^\mu(v)$ and therefore $df = \partial_\mu f\, dx^\mu$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that the 1-forms $\left\{dx^\mu\right\}$ are linearly independent, i.e., if
+\[
+    \omega = \omega_\mu dx^\mu = 0
+\]
+then all the functions $\omega_\mu$ are zero.
+
+\end{ex}
+
+\begin{sol}
+
+As in solution~\ref{sol:gradient}, consider some vector field $v$.
+\begin{align*}
+    \omega (v) &= \omega_\mu dx^\mu (v) \\
+        &= \omega_\mu v(x^\mu) \\
+        &= v^\nu \omega_\mu \delta_\nu^\mu \\
+        &= v^\mu \omega_\mu
+\end{align*}
+so $\omega(v) = 0$ implies $v^\mu \omega_\mu = 0$. But since $v$ is arbitrary, $\omega_\mu = 0$ for all $\mu$.
 
 \end{sol}
 
