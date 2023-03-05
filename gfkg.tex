@@ -1138,4 +1138,46 @@ for all $p \in M$ and therefore, since $v$ is arbitrary, $\omega = \nu$.
 
 \end{sol}
 
+\begin{ex}
+
+Show that the dual of the identity map on a vector space $V$ is the identity map on $V^*$.
+Suppose that we have linear maps $f: V \to W$ and $g: W \to X$. Show that ${(gf)}^* = f^* g^*$.
+
+\end{ex}
+
+\begin{sol}
+
+The dual of a linear map $f: V \to W$ is defined by
+\[
+    (f^*\omega)(v) = \omega(f(v))
+\]
+where $f^*: W^* \to V^*$.
+
+Let $\text{id}: V \to V$ be the identity map on $V$. For some $v \in V$,
+\begin{align*}
+    (\text{id}^*\omega)(v) &= \omega(\text{id}(v)) \\
+        &= \omega(v)
+\end{align*}
+giving $\text{id}^*\omega = \omega$, therefore $\text{id}^*: V^* \to V^*$ is the identity map in the dual space.
+
+For the composition $gf = g \circ f$, recall the definition of the \ref{eq:pullbackfunction}. %chktex 2
+Let $h: X \to Y$ and consider the pullback
+\begin{align*}
+    {(g \circ f)}^* h &= h \circ (g \circ f) \\
+        &= h \circ g \circ f \\
+        &= (h \circ g) \circ f \\
+        &= (g^* h) \circ f \\
+        &= f^* g^* h,
+\end{align*}
+giving ${(gf)}^* = f^* g^*$.
+
+We can also pretend that we don't know this is a pullback and use only the definition of the dual space above, by saying
+\begin{align*}
+    ({(g \circ f)}^*\omega)(v) &= \omega((g \circ f)(v)) \\
+        &= (g^* \omega)(f(v)) \\
+        &= (f^* g^* \omega)(v).
+\end{align*}
+
+\end{sol}
+
 \end{document}
