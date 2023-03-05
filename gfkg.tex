@@ -539,6 +539,10 @@ Show that $\phi^* x = e^x$.
 
 \begin{sol}\label{sol:pullbackexponential}
 
+The pullback $\phi^*: C^\infty(N) \to C^\infty(M) $ of $f: N \to \mathbb{R}$ by $\phi: M \to N$ is defined as
+\[
+    \phi^*f = f \circ \phi. \tag{pullback of a function}\label{eq:pullbackfunction}
+\]
 Consider a chart $\varphi: M \to \mathbb{R}^n$ mapping $p \in M$ to $\varphi(p) = \left\{x^\mu(p)\right\}$.
 Note that each $x^\mu$ is a function taking $p$ to the $\mu$\textsuperscript{th} coordinate of its image in $\mathbb{R}^n$.
 
@@ -635,7 +639,11 @@ Prove that $(\phi \circ \gamma)'(t) = \phi_*(\gamma'(t))$.
 
 \begin{sol}
 
-The pushforward $\phi_*: T_p M \to T_{\phi(p)} N$ of $v \in T_p M$ by $\phi: M \to N$ is given by $(\phi_* v) (f) = v (\phi^* f)$.
+The pushforward $\phi_*: T_p M \to T_{\phi(p)} N$ of $v \in T_p M$ by $\phi: M \to N$ is given by
+\[
+    (\phi_* v) (f) = v (\phi^* f). \tag{pushforward of a vector}\label{eq:pushforwardvector}
+\]
+Then
 \begin{align*}
     (\phi \circ \gamma)'(t)(f) &= \frac{d}{dt} f\left((\phi \circ \gamma)(t)\right) \\
         &= \frac{d}{dt} (f \circ \phi \circ \gamma)(t) \\
