@@ -442,7 +442,7 @@ Let $v, w \in \text{Vect}(M)$. Show that $v = w$ if and only if $v_p = w_p$ for 
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:tangentvectorpointequality}
 
 Recall the definition $v_p(f) = v(f)(p)$.
 
@@ -1092,6 +1092,41 @@ As in solution~\ref{sol:gradient}, consider some vector field $v$.
         &= v^\mu \omega_\mu
 \end{align*}
 so $\omega(v) = 0$ implies $v^\mu \omega_\mu = 0$. But since $v$ is arbitrary, $\omega_\mu = 0$ for all $\mu$.
+
+\end{sol}
+
+\subsection{Cotangent Vectors}
+
+\begin{ex}
+
+For the mathematically inclined: show that the $\omega_p$ is really well-defined by the formula above.
+That is, show that $\omega(v)(p)$ really depends only on $v_p$, not on the values of $v$ at other points.
+Also, show that a 1-form is determined by its values at points.
+In other words, if $\omega, \nu$ are two 1-forms on $M$ with $\omega_p = \nu_p$ for every point $p \in M$, then $\omega = \nu$.
+
+\end{ex}
+
+\begin{sol}
+
+Let $u, w \in \text{Vect}(M)$ with $u \neq w$. Let $u_p = w_p$, with $u_q \neq w_q$ necessarily, $q \in M, q \neq p$.
+Consider the vector field $v = u - w$. Then to show that $\omega_p$ is well-defined, it is sufficient to show that for any $\omega = df$,
+\begin{align*}
+    \omega_p(v_p) &= \omega(v)(p) \\
+        &= df(v)(p) \\
+        &= v(f)(p) \\
+        &= (u - w)(f)(p) \\
+        &= u(f)(p) - w(f)(p) \\
+        &= u_p(f) - w_p(f) \\
+        &= (u_p - w_p)(f) \\
+        &= 0.
+\end{align*}
+Just as in solution~\ref{sol:tangentvectorpointequality}, if $\omega_p = \nu_p$ for every point $p \in M$ then $\omega_p(v_p) = \nu_p(v_p)$ for some $v_p \in T_p M$. But
+\begin{align*}
+\omega (v)(p) &= \omega_p(v_p) \\
+    &= \nu_p(v_p) \\
+    &= \nu (v)(p)
+\end{align*}
+for all $p \in M$ and therefore, since $v$ is arbitrary, $\omega = \nu$.
 
 \end{sol}
 
