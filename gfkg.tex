@@ -1206,4 +1206,27 @@ Let $\phi^*\nu \in T_p^* M$ be some 1-form where ${(\phi^*\omega)}_p = {(\phi^*\
 
 \end{sol}
 
+\begin{ex}
+
+Let $\phi: \mathbb{R} \to \mathbb{R}$ be given by $\phi(t) = \sin(t)$. Let $dx$ be the usual 1-form on $\mathbb{R}$. Show that $\phi^*dx = \cos(t) dt$.
+
+\end{ex}
+
+\begin{sol}
+
+Using the fact that the exterior derivative is \emph{natural}, i.e. $\phi^*(df) = d(\phi^*f)$, for some vector $v = f(t)\partial_t$
+\begin{align*}
+    {(\phi^* dx)}_t v &= d(\phi^* x) (v)(t) \\
+        &= v(\phi^* x) (t) \\
+        &= v(x \circ \phi)(t) \\
+        &= v(\sin(t)) \\
+        &= f(t) \partial_t \sin(t) \\
+        &= f(t) \cos(t) \\
+        &= f(t) \cos(t) \partial_t t \\
+        &= \cos(t) v(t) \\
+        &= \cos(t) \, dt(v).
+\end{align*}
+
+\end{sol}
+
 \end{document}
