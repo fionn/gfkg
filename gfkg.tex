@@ -1257,4 +1257,27 @@ and similarly for $\phi^* dy$.
 
 \end{sol}
 
+\subsection{Change of Coordinates}
+
+\begin{ex}
+
+Show that the coordinate 1-forms $dx^\mu$ really are the differentials of the local coordinates $x^\mu$ on $U$.
+
+\end{ex}
+
+\begin{sol}
+
+The statement requires us to be ``working in the chart'', so for now we'll be explicit and denote the local coordinates on $U$ as $\varphi^*x^\mu$. Then the exterior derivative is
+\[
+    d(\varphi^*x^\mu) = \varphi^* dx^\mu.
+\]
+To show that this really forms a basis of coordinate 1-forms, consider the basis vectors ``in the chart'', $\varphi_*^{-1}\partial_\mu$.
+\begin{align*}
+    d(\varphi^* x^\mu)(\varphi_*^{-1}\partial_\nu) &= \varphi_*^{-1}\partial_\nu (\varphi^* x^\mu) \\
+        &= \partial_\nu ((\phi^* x^\mu) \circ \varphi^{-1}) \\
+        &= \delta_\nu^\mu.
+\end{align*}
+
+\end{sol}
+
 \end{document}
