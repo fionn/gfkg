@@ -687,7 +687,7 @@ whenever $\phi(p) = q$.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:pushforwardvectorfield}
 
 Note that the definition of the pushforward is sloppy, since the left side must be evaluated on $N$ while the right side is on $M$.
 
@@ -1114,7 +1114,7 @@ In other words, if $\omega, \nu$ are two 1-forms on $M$ with $\omega_p = \nu_p$ 
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:welldefined1forms}
 
 Let $u, w \in \text{Vect}(M)$ with $u \neq w$. Let $u_p = w_p$, with $u_q \neq w_q$ necessarily, $q \in M, q \neq p$.
 Consider the vector field $v = u - w$. Then to show that $\omega_p$ is well-defined, it is sufficient to show that for any $\omega = df$,
@@ -1177,6 +1177,32 @@ We can also pretend that we don't know this is a pullback and use only the defin
         &= (g^* \omega)(f(v)) \\
         &= (f^* g^* \omega)(v).
 \end{align*}
+
+\end{sol}
+
+\begin{ex}
+
+Show that the pullback of 1-forms defined by the formula above really exists and is unique.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\phi: M \to N$, $p \mapsto \phi(p) = q$. Then for\footnote{$\omega$ is in $T_q^* N$, see \url{https://math.ucr.edu/home/baez/errata.html}.} $v \in T_p M$, $\omega \in T_q^* N$, the pullback $\phi^*: T_q^* N \to T_p^* M$ of $\omega$ by $\phi$ is defined as
+\[
+    (\phi^* \omega)(v) = \omega(\phi_* v) \tag{pullback of a 1-form}\label{eq:pullback1form}
+\]
+and globally we get ${(\phi^* \omega)}_p = \phi^*(\omega_q)$.
+
+To see this, take a test vector $v \in T_p M$ and, similar to solution~\ref{sol:pushforwardvectorfield},
+\begin{align*}
+    {(\phi^* \omega)}_p v_p &= (\phi^* \omega) (v) (p) \\
+        &= \omega(\phi_* v)(q) \\
+        &= \omega_q (\phi_* v_q) \\
+        &= \phi^* (\omega_q) v_q.
+\end{align*}
+
+Let $\phi^*\nu \in T_p^* M$ be some 1-form where ${(\phi^*\omega)}_p = {(\phi^*\nu)}_p$. It follows from solution~\ref{sol:welldefined1forms} that $\omega = \nu$.
 
 \end{sol}
 
