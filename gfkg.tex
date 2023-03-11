@@ -721,7 +721,7 @@ Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be [a] rotation counterclockwise by an
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:pushforwardrotation}
 
 Denote $\phi: (x, y) \mapsto (u(x, y), v(x, y))$ where $u, v$ are functions as per solution~\ref{sol:pullbackrotation} and let $f \in C^\infty(\mathbb{R}^2)$.
 
@@ -1226,6 +1226,34 @@ Using the fact that the exterior derivative is \emph{natural}, i.e. $\phi^*(df) 
         &= \cos(t) v(t) \\
         &= \cos(t) \, dt(v).
 \end{align*}
+
+\end{sol}
+
+\begin{ex}
+
+Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ denote rotation counterclockwise by the angle $\theta$. Let $dx$, $dy$ be the usual basis of 1-forms on $\mathbb{R}^2$. Show that
+\begin{align*}
+    \phi^* dx &= \cos(\theta) dx - \sin(\theta) dy, \\
+    \phi^* dy &= \sin(\theta) dx + \cos(\theta) dy.
+\end{align*}
+
+\end{ex}
+
+\begin{sol}
+
+Let $v = f_i(x, y)\partial_i$ be some vector in $\text{Vect}(\mathbb{R}^2)$ and $p = (x, y) \in \mathbb{R}^2$. For $\phi$ as in solutions~\ref{sol:pullbackrotation},~\ref{sol:pushforwardrotation},
+\begin{align*}
+    {(\phi^* dx)}_p v &= d(\phi^* x)(v)(p) \\
+        &= d(x \circ \phi)(v)(p) \\
+        &= v(\cos(\theta)x - \sin(\theta)y) \\
+        &= f_1(x, y) \partial_x (\cos(\theta)x - \sin(\theta)y) \\
+        &\mathrel{\phantom{=}}{} + f_2(x, y) \partial_y (\cos(\theta)x - \sin(\theta)y) \\
+        &= f_1(x, y) \cos(\theta) - f_2(x, y) \sin(\theta) \\
+        &= \cos(\theta) f_1(x, y) \partial_x x - \sin(\theta) f_2(x, y) \partial_y y \\
+        &= \cos(\theta) v(x) - \sin(\theta) v(y) \\
+        &= \cos(\theta) dx(v) - \sin(\theta) dy(v)
+\end{align*}
+and similarly for $\phi^* dy$.
 
 \end{sol}
 
