@@ -1280,4 +1280,55 @@ To show that this really forms a basis of coordinate 1-forms, consider the basis
 
 \end{sol}
 
+\begin{ex}
+
+In the situation above, show that
+\[
+    dx'^\nu = \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu.
+\]
+Show that for any 1-form $\omega$ on $\mathbb{R}^n$, writing
+\[
+    \omega = \omega_\mu dx^\mu = \omega'_\nu dx'^\nu,
+\]
+your components $\omega'_\nu$ are related to my components $\omega_\mu$ by
+\[
+    \omega'_\nu = \frac{\partial x^\mu}{\partial x'^\nu} \omega_\mu.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Since 1-forms form a basis, we can write
+\[
+    dx'^\nu = T_\mu^\nu dx^\mu
+\]
+for some linear transformation $T_\mu^\nu$. Acting on $\partial_\mu$, we get
+\begin{align*}
+    dx'^\nu \partial_\mu &= T_\lambda^\nu dx^\lambda \partial_\mu \\
+        &= T_\lambda^\nu \delta_\mu^\lambda \\
+        &= T_\mu^\nu,
+\end{align*}
+but
+\begin{align*}
+    dx'^\nu\partial_\mu &= \partial_\mu x'^\nu \\
+        &= \frac{\partial x'^\lambda}{\partial x^\mu} \partial'_\lambda x'^\nu \\
+        &= \frac{\partial x'^\lambda}{\partial x^\mu} \delta_\lambda^\nu \\
+        &= \frac{\partial x'^\nu}{\partial x^\mu}
+\end{align*}
+so the transformation rule for coordinate 1-forms is
+\[
+    dx'^\nu = \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu.
+\]
+We can use this to write any 1-form $\omega$ on $\mathbb{R}^n$ in a different basis, as
+\[
+    \omega = \omega_\mu dx^\mu = \omega_\mu \frac{\partial x^\mu}{\partial x'^\nu} dx'^\nu.
+\]
+In this coordinate system, we identify $\omega$'s components as
+\[
+    \omega'_\nu = \frac{\partial x^\mu}{\partial x'^\nu} \omega_\mu.
+\]
+
+\end{sol}
+
 \end{document}
