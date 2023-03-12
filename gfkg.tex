@@ -1259,7 +1259,7 @@ and similarly for $\phi^* dy$.
 
 \subsection{Change of Coordinates}
 
-\begin{ex}
+\begin{ex}\label{ex:coordinatetransformation1form}
 
 Show that the coordinate 1-forms $dx^\mu$ really are the differentials of the local coordinates $x^\mu$ on $U$.
 
@@ -1328,6 +1328,36 @@ In this coordinate system, we identify $\omega$'s components as
 \[
     \omega'_\nu = \frac{\partial x^\mu}{\partial x'^\nu} \omega_\mu.
 \]
+
+\end{sol}
+
+\begin{ex}
+
+Show that
+\[
+    \phi^*(dx'^\nu) = \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Consider the action on the coordinate vector field $\partial_\lambda$,
+\begin{align*}
+    \phi^*(dx'^\nu)\partial_\lambda &= d(\phi^*x'^\nu) \partial_\lambda \\
+        &= \partial_\lambda(\phi^*x'^\nu) \\
+        &\equiv \frac{\partial x'^\nu}{\partial x^\lambda} \tag{``get used to it''}\\
+        &= \frac{\partial x'^\nu}{\partial x^\mu} \delta_\lambda^\mu \\
+        &= \frac{\partial x'^\nu}{\partial x^\mu} \partial_\lambda x^\mu \\
+        &= \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \partial_\lambda.
+\end{align*}
+We could instead use the result from exercise~\ref{ex:coordinatetransformation1form}, again acting on the coordinate vector field $\partial_\lambda$,
+\begin{align*}
+   \phi^*(dx'^\nu)\partial_\lambda &= \phi^*\left(\frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \right) \partial_\lambda \\
+    &= \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu (\phi_* \partial_\lambda) \\
+    &\equiv \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \partial_\lambda
+\end{align*}
+where we are sloppy about the pullback in the last line, as is the convention.
 
 \end{sol}
 
