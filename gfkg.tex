@@ -1361,7 +1361,7 @@ where we are sloppy about the pullback in the last line, as is the convention.
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:changebasisinvertible}
 
 Let
 \[
@@ -1394,6 +1394,37 @@ Assume $\left\{e_\mu\right\}$ forms a basis for $U$. Then for some smooth functi
         &= S_\mu^\nu T_\nu^\lambda \partial_\lambda.
 \end{align*}
 We must identify $S_\mu^\nu T_\nu^\lambda = \delta_\mu^\lambda$, so $T$ is invertible.
+
+\end{sol}
+
+\begin{ex}
+
+Use \hyperref[ex:changebasisinvertible]{the previous exercise} to show that the dual basis exists and is unique.
+
+\end{ex}
+
+\begin{sol}
+
+If $\left\{e_\mu\right\}$ is a basis of vector fields on $U$, we automatically get a dual basis of 1-forms $\left\{f^\mu\right\}$ satisfying
+\[
+    f^\mu(e_\nu) = \delta_\nu^\mu.
+\]
+
+We can express
+\[
+    f^\mu = S_\nu^\mu dx^\nu
+\]
+for some smooth functions $S_\nu^\mu$ on $U$. Then
+\begin{align*}
+    f^\mu(e_\nu) &= S_\kappa^\mu dx^\kappa (T_\nu^\lambda \partial_\lambda) \\
+        &= S_\kappa^\mu T_\nu^\lambda dx^\kappa \partial_\lambda \\
+        &= S_\kappa^\mu T_\nu^\lambda \delta_\lambda^\kappa \\
+        &= S_\lambda^\mu T_\nu^\lambda
+\end{align*}
+so the dual basis exists, since $T$ is invertible (from exercise~\ref{ex:changebasisinvertible}).
+
+Suppose there exists 1-forms $\left\{g^\mu\right\}$ also satisfying $g^\mu(e_\nu) = \delta^\mu_\nu$.
+Then for some smooth functions $S'^\mu_\nu$ on $U$, $g^\mu = S'^\mu_\nu dx^\nu$ and, eventually, $S'^\mu_\lambda T^\lambda_\nu = \delta ^\mu_\nu$. But the inverse of $T$ is unique, so $S' = S$ and therefore $g^\mu = f^\mu$.
 
 \end{sol}
 
