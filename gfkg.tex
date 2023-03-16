@@ -740,9 +740,7 @@ We want to consider $f$ at $p$ rather than at $\phi(p)$, so change variables as 
 Consider $\phi_* \partial_x$ and $\phi_* \partial_y$,
 \begin{align*}
     {(\phi_* \partial_x)}_p(f) &= \partial_x u \cdot \partial_x f(x, y) + \partial_x v \cdot \partial_y f(x, y) \\
-        &= \cos(\theta) \partial_x f(x, y) + \sin(\theta) \partial_y f(x, y),
-\end{align*}
-\begin{align*}
+        &= \cos(\theta) \partial_x f(x, y) + \sin(\theta) \partial_y f(x, y), \\[2\jot]
     {(\phi_* \partial_y)}_p(f) &= \partial_x u \cdot \partial_x f(x, y) + \partial_y v \cdot \partial_y f(x, y) \\
         &= -\sin(\theta) \partial_x f(x, y) + \cos(\theta) \partial_y f(x, y),
 \end{align*}
@@ -885,9 +883,7 @@ so
 \begin{align*}
     (vw)(f)(p) &= \frac{d}{dt} wf(\phi_t(p)) \Big|_{t = 0} \\
         &= \frac{\partial^2}{\partial t \partial s} f(\psi_s(\phi_t(p))) \Big|_{s = t = 0}
-\end{align*}
-and similarly
-\begin{align*}
+\intertext{and similarly}
     (wv)(f)(p) &= \frac{d}{ds} vf(\psi_s(p)) \Big|_{s = 0} \\
     &= \frac{\partial^2}{\partial s \partial t} f(\phi_t(\psi_s(p))) \Big|_{t = s = 0}.
 \end{align*}
@@ -1308,9 +1304,7 @@ for some linear transformation $T_\mu^\nu$. Acting on $\partial_\mu$, we get
     dx'^\nu \partial_\mu &= T_\lambda^\nu dx^\lambda \partial_\mu \\
         &= T_\lambda^\nu \delta_\mu^\lambda \\
         &= T_\mu^\nu,
-\end{align*}
-but
-\begin{align*}
+\shortintertext{but}
     dx'^\nu\partial_\mu &= \partial_\mu x'^\nu \\
         &= \frac{\partial x'^\lambda}{\partial x^\mu} \partial'_\lambda x'^\nu \\
         &= \frac{\partial x'^\lambda}{\partial x^\mu} \delta_\lambda^\nu \\
