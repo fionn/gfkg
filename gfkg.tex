@@ -1397,7 +1397,7 @@ We must identify $S_\mu^\nu T_\nu^\lambda = \delta_\mu^\lambda$, so $T$ is inver
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:dualbasisexists}
 
 Use \hyperref[ex:changebasisinvertible]{the previous exercise} to show that the dual basis exists and is unique.
 
@@ -1425,6 +1425,60 @@ so the dual basis exists, since $T$ is invertible (from exercise~\ref{ex:changeb
 
 Suppose there exists 1-forms $\left\{g^\mu\right\}$ also satisfying $g^\mu(e_\nu) = \delta^\mu_\nu$.
 Then for some smooth functions $S'^\mu_\nu$ on $U$, $g^\mu = S'^\mu_\nu dx^\nu$ and, eventually, $S'^\mu_\lambda T^\lambda_\nu = \delta ^\mu_\nu$. But the inverse of $T$ is unique, so $S' = S$ and therefore $g^\mu = f^\mu$.
+
+\end{sol}
+
+\begin{ex}
+
+Let $e_\mu$ be a basis of vector fields on $U$ and let $f^\mu$ be the dual basis of 1-forms. Let
+\[
+    e'_\mu = T_\mu^\nu e_\nu
+\]
+be another basis of vector fields and let $f'^\mu$ be the corresponding basis of 1-forms. Show that
+\[
+    f'^\mu = {(T^{-1})}^\mu_\nu f^\nu.
+\]
+Show that if $v = v^\mu e_\mu = v'^\mu e'_\mu$, then
+\[
+    v'^\mu = {(T^{-1})}^\mu_\nu v^\nu
+\]
+and that if $\omega = \omega_\mu f^\mu = \omega'_\mu f'^\mu$, then
+\[
+    \omega'_\mu = T_\mu^\nu \omega_\nu.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+We know that $f'^\mu = S_\nu^\mu f^\nu$ for some functions $S_\nu^\mu$ on $U$.
+Then
+\begin{align*}
+    f'^\mu(e'_\nu) &= f'^\mu(T^\lambda_\nu e_\lambda) \\
+        &= S^\mu_\kappa f^\kappa T^\lambda_\nu e_\lambda \\
+        &= S^\mu_\kappa T^\lambda_\nu f^\kappa e_\lambda \\
+        &= S^\mu_\kappa T^\lambda_\nu \delta^\kappa\lambda \\
+        &= S^\mu_\lambda T^\lambda_\nu.
+\end{align*}
+But $f'^\mu(e'_\nu) = \delta^\mu_\nu$ from the definition of the dual basis, so $S = T^{-1}$.
+
+If $v = v^\mu e_\mu = v'^\mu e'_\mu$, then $v^\nu e_\nu = v'^\lambda T_\lambda^\nu e_\nu$ and equating coefficients gets us $v^\nu = T_\lambda^\nu v'^\lambda$.
+Applying $S = T^{-1}$,
+\begin{align*}
+    S^\mu_\nu v^\nu &= S^\mu_\nu T_\lambda^\nu v'^\lambda \\
+        &= \delta^\mu_\lambda v'^\lambda \\
+        &= v'^\mu
+\end{align*}
+so the components of a vector are contravariant.
+
+If $\omega = \omega_\mu f^\mu = \omega'_\mu f'^\mu$, then $\omega_\nu f^\nu = \omega'_\lambda S^\lambda_\nu f^\nu$ and equating coefficients gets us $\omega_\nu = S_\nu^\lambda \omega'_\lambda$.
+Applying $T$,
+\begin{align*}
+    T_\mu^\nu \omega_\nu &= T_\mu^\nu S_\nu^\lambda \omega'_\lambda \\
+        &= \delta^\lambda_\mu \omega'_\lambda \\
+        &= \omega'_\mu
+\end{align*}
+so the components of a 1-form are covariant.
 
 \end{sol}
 
