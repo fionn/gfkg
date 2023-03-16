@@ -1361,4 +1361,40 @@ where we are sloppy about the pullback in the last line, as is the convention.
 
 \end{sol}
 
+\begin{ex}
+
+Let
+\[
+    e_\mu = T_\mu^\nu\partial_\nu
+\]
+where $\partial_\nu$ are the coordinate vector fields associated to local coordinates on an open set $U$, and $T_\mu^\nu$ are functions on $U$.
+Show that the vector fields $e_\mu$ are a basis of vector fields on $U$ if and only if for each $p \in U$ the matrix $T_\mu^\nu(p)$ is invertible.
+
+\end{ex}
+
+\begin{sol}
+
+For $\left\{e_\mu\right\}$ to form a basis, they must be linearly independent and span $U$.
+
+Suppose $T$ is invertible at $p$. Then acting on both sides by $S$ gives us
+\begin{align*}
+    S_\mu^\lambda e_\lambda &= S_\mu^\lambda T_\lambda^\nu \partial_\nu \\
+        &= \delta_\mu^\nu \partial_\nu \\
+        &= \partial_\mu.
+\end{align*}
+Any vector $u \in U$ can therefore be expressed as
+\[
+    u = u^\mu \partial_\mu = u^\mu S_\mu^\lambda e_\lambda = u'^\mu e_\mu
+\]
+so $\left\{e_\mu\right\}$ forms a basis for $U$.
+
+Assume $\left\{e_\mu\right\}$ forms a basis for $U$. Then for some smooth functions on $U$, $S_\mu^\nu$,
+\begin{align*}
+    \partial_\mu &= S_\mu^\nu e_\nu \\
+        &= S_\mu^\nu T_\nu^\lambda \partial_\lambda.
+\end{align*}
+We must identify $S_\mu^\nu T_\nu^\lambda = \delta_\mu^\lambda$, so $T$ is invertible.
+
+\end{sol}
+
 \end{document}
