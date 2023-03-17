@@ -1476,4 +1476,65 @@ so the components of a 1-form are covariant.
 
 \end{sol}
 
+\subsection{\emph{p}-forms}
+
+\begin{ex}
+
+Show that
+\[
+    u \wedge v \wedge w = \det \begin{pmatrix}
+        u_x & u_y & u_z \\
+        v_x & v_y & v_z \\
+        w_x & w_y & w_z
+    \end{pmatrix} dx \wedge dy \wedge dz.
+\]
+Compare this to $\vec{u} \cdot (\vec{v} \times \vec{w})$.
+
+\end{ex}
+
+\begin{sol}
+
+Let $u, v, w$ be vectors,
+\begin{align*}
+    u &= u_x dx + u_y dy + u_z dz, \\
+    v &= v_x dx + v_y dy + v_z dz, \\
+    w &= w_x dx + w_y dy + w_z dz.
+\end{align*}
+Then
+\begin{align*}
+    v \wedge w =&\ (v_x w_y - v_y w_x) \, dx \wedge dy \\
+        &+ (v_y w_z - v_z w_y) \, dy \wedge dz \\
+        &+ (v_z w_x - v_x w_z) \, dz \wedge dx,
+\end{align*}
+so the triple product
+\begin{align*}
+u \wedge v \wedge w =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
+    &+ u_y (v_z w_x - v_x w_z) \, dy \wedge dz \wedge dx \\
+    &+ u_z (v_x w_y - v_y w_x) \, dz \wedge dx \wedge dy \\
+    =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
+    &- u_y (v_x w_z - v_z w_x) \, dx \wedge dy \wedge dz \\
+    &+ u_z (v_x w_y - v_y w_x) \, dx \wedge dy \wedge dz \\
+    =&\ \det \begin{pmatrix}
+        u_x & u_y & u_z \\
+        v_x & v_y & v_z \\
+        w_x & w_y & w_z
+    \end{pmatrix} dx \wedge dy \wedge dz.
+\end{align*}
+
+Consider the traditional vectors $\vec{u}, \vec{v}, \vec{w}$ on $\mathbb{R}^3$. Then
+\[
+    \vec{v} \times \vec{w} = (v_y w_z - v_z w_y) \vec{\imath}
+        - (v_z w_x - v_x w_z) \vec{\jmath}
+        + (v_x w_y - v_y w_x) \vec{k},
+\]
+so the triple product
+\begin{align*}
+    \vec{u} \cdot (\vec{v} \times \vec{w}) = u_x (v_y w_z - v_z w_y)
+        - u_y (v_x w_z - v_z w_x)
+        + u_z (v_x w_y - v_y w_x),
+\end{align*}
+the single component of $u \wedge v \wedge w$.
+
+\end{sol}
+
 \end{document}
