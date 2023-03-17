@@ -1478,7 +1478,7 @@ so the components of a 1-form are covariant.
 
 \subsection{\emph{p}-forms}
 
-\begin{ex}
+\begin{ex}\label{ex:triplewedgeproduct}
 
 Show that
 \[
@@ -1534,6 +1534,36 @@ so the triple product
         + u_z (v_x w_y - v_y w_x),
 \end{align*}
 the single component of $u \wedge v \wedge w$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that if $a, b, c, d$ are four vectors in a 3-dimensional space then $a \wedge b \wedge c \wedge d = 0$.
+
+\end{ex}
+
+\begin{sol}
+
+Using $dx, dy, dz$ as a basis, we have from exercise~\ref{ex:triplewedgeproduct} that
+\[
+    b \wedge c \wedge d = \alpha \, dx \wedge dy \wedge dz, \qquad
+    \alpha = \det \begin{pmatrix}
+        b_x & b_y & b_z \\
+        c_x & c_y & c_z \\
+        d_x & d_y & d_z
+    \end{pmatrix}.
+\]
+Then
+\begin{align*}
+    a \wedge b \wedge c \wedge d =&\ a \wedge \alpha \, dx \wedge dy \wedge dz \\
+        =&\ (a_x dx + a_y dy + a_z dz) \wedge \alpha \, dx \wedge dy \wedge dz \\
+        =&\ \alpha a_x \, dx \wedge dx \wedge dy \wedge dz \\
+        &+ \alpha a_y \, dy \wedge dx \wedge dy \wedge dz \\
+        &+ \alpha a_z \, dz \wedge dx \wedge dy \wedge dz \\
+        =&\ 0
+\end{align*}
+since $w \wedge w = 0$ by antisymmetry and each term contains one repeated basis element.
 
 \end{sol}
 
