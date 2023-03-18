@@ -1567,4 +1567,48 @@ since $w \wedge w = 0$ by antisymmetry and each term contains one repeated basis
 
 \end{sol}
 
+\begin{ex}
+
+Describe $\Lambda V$ if $V$ is 1-dimensional, 2-dimensional, or 4-dimensional.
+
+\end{ex}
+
+\begin{sol}
+
+Let $u, v \in V$ over a field $\mathbb{F}$.
+
+If $\dim(V) = 1$,
+\[
+    u = u_x dx, \quad v = v_x dx
+\]
+so $u \wedge v = 0$ by antisymmetry. Therefore $\Lambda V$ consists of $\mathbb{F}$ and all linear combinations of $dx$ (i.e. $V$).
+
+If $\dim(V) = 2$,
+\[
+    u = u_x dx + u_y dy, \quad v = v_x dx + v_y dy
+\]
+so
+\begin{align*}
+    u \wedge v &= u_x v_y dx \wedge dy + u_y v_x dy \wedge dx \\
+        &= (u_x v_y - u_y v_x) \, dx \wedge dy.
+\end{align*}
+Therefore $\Lambda V$ consists of $\mathbb{F}$, $V$ and all linear combinations of the 2-forms $dx \wedge dy$ above.
+
+If $\dim(V) = 4$ with basis $\left\{dt, dx, dy, dz\right\}$, $\Lambda V$ will consist of $\mathbb{F}$, $V$ and all linear combinations of
+\begin{gather*}
+    dt \wedge dx, \quad
+    dt \wedge dy, \quad
+    dt \wedge dz, \quad
+    dx \wedge dy, \quad
+    dx \wedge dz, \quad
+    dy \wedge dz, \\
+    dt \wedge dx \wedge dy, \quad
+    dt \wedge dx \wedge dz, \quad
+    dt \wedge dy \wedge dz, \quad
+    dx \wedge dy \wedge dz, \\
+    dt \wedge dx \wedge dy \wedge dz.
+\end{gather*}
+
+\end{sol}
+
 \end{document}
