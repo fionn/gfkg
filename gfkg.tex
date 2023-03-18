@@ -1611,4 +1611,26 @@ If $\dim(V) = 4$ with basis $\left\{dt, dx, dy, dz\right\}$, $\Lambda V$ will co
 
 \end{sol}
 
+\begin{ex}
+
+Let $V$ be an $n$-dimensional vector space. Show that $\Lambda^p V$ is empty for $p > n$ and that for $0 \leq p \leq n$ the dimension of $\Lambda^p V$ is $\frac{n!}{p! (n - p)!}$.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\left\{e_1, \ldots, e_n\right\}$ be a basis for $V$.
+The subspace $\Lambda^p V$ consists of all linear combinations of the form $e_{i_1} \wedge \cdots \wedge e_{i_p}$.
+
+$\Lambda^n V$ has the single basis element $e_1 \wedge \cdots \wedge e_n$.
+The exterior product of any element of $\Lambda^n V$ with any $v \in V$ is necessarily zero since we have exhausted our supply of linearly independent vectors $e_i \in V$. Therefore $\Lambda^p V$ is empty for $p > n$.
+
+The dimension of $\Lambda^p V$ is the number of subsets of size $p$ we can form from the set of $n$ basis vectors of $V$, so
+\[
+    \dim(\Lambda^p V) = \binom{n}{p} = \frac{n!}{p! (n - p)!}.
+\]
+This correctly reproduces edge cases such as $\dim(\Lambda^0 V) = \binom{n}{0} = 1$ (for a vector space $V(\mathbb{F})$, this is the underlying field $\mathbb{F}$) and $\dim(\Lambda^{n+1}V) = 0$.
+
+\end{sol}
+
 \end{document}
