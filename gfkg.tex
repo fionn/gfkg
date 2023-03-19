@@ -1663,4 +1663,37 @@ by the binomial theorem.
 
 \end{sol}
 
+\begin{ex}
+
+Given a vector space $V$, show that $\Lambda V$ is a \emph{graded commutative} or \emph{supercommutative} algebra, that is, if $\omega \in \Lambda^p V$ and $\mu \in \Lambda^q V$ then
+\[
+    \omega \wedge \mu = {(-1)}^{pq} \mu \wedge \omega.
+\]
+Show that for any manifold $M$, $\Omega(M)$ is graded commutative.
+
+\end{ex}
+
+\begin{sol}
+
+Let
+\begin{align*}
+    \omega &= \omega_{i_1,\ldots,i_p} e_{i_1} \wedge \cdots \wedge e_{i_p}, \\
+    \mu &= \mu_{j_1,\ldots,j_q} e_{j_1} \wedge \cdots \wedge e_{j_q}.
+\end{align*}
+Then
+\begin{align*}
+    \omega \wedge \mu &= \omega_{i_1,\ldots,i_p} e_{i_1} \wedge \cdots \wedge e_{i_p} \wedge \mu_{j_1,\ldots,j_q} e_{j_1} \wedge \cdots \wedge e_{j_q} \\
+        &= \omega_{i_1,\ldots,i_p} \mu_{j_1,\ldots,j_q} e_{i_1} \wedge \cdots \wedge e_{i_p} \wedge e_{j_1} \cdots \wedge e_{j_q} \\
+        &= {(-1)}^p \omega_{i_1,\ldots,i_p} \mu_{j_1,\ldots,j_q} e_{j_1} \wedge e_{i_1} \wedge \cdots \wedge e_{i_p} \wedge e_{j_2} \cdots \wedge e_{j_q} \\
+        &= {(-1)}^{2p} \omega_{i_1,\ldots,i_p} \mu_{j_1,\ldots,j_q} e_{j_1} \wedge e_{j_2} \wedge e_{i_1} \wedge \cdots \wedge e_{i_p} \wedge e_{j_3} \cdots \wedge e_{j_q} \\
+        &\vdotswithin{=} \\
+        &= {(-1)}^{pq} \omega_{i_1,\ldots,i_p} \mu_{j_1,\ldots,j_q} e_{j_1} \wedge \cdots \wedge e_{j_q} \wedge e_{i_1} \wedge \cdots \wedge e_{i_p} \\
+        &= {(-1)}^{pq} \mu_{j_1,\ldots,j_q} e_{j_1} \wedge \cdots \wedge e_{j_q} \wedge \omega_{i_1,\ldots,i_p} e_{i_1} \wedge \cdots \wedge e_{i_p} \\
+        &= {(-1)}^{pq} \mu \wedge \omega.
+\end{align*}
+
+The above result holds analogously for any $\omega \in \Omega^p(M)$ and $\mu \in \Omega^q(M)$. Since $\Omega(M) = \bigoplus \Omega^p(M)$, $\Omega(M)$ is graded commutative over any manifold $M$.
+
+\end{sol}
+
 \end{document}
