@@ -1633,4 +1633,34 @@ This correctly reproduces edge cases such as $\dim(\Lambda^0 V) = \binom{n}{0} =
 
 \end{sol}
 
+\begin{ex}
+
+Show that $\Lambda V$ is the direct sum of the subspaces $\Lambda^p V$:
+\[
+    \Lambda V = \bigoplus \Lambda^p V,
+\]
+and that the dimension of $\Lambda V$ is $2^n$ if $V$ is $n$-dimensional.
+\end{ex}
+
+\begin{sol}
+
+$\Lambda^p V$ is the subspace of $\Lambda V$ consisting of linear combinations of $p$-fold products of vectors in $V$.
+
+For any $q \neq p$, the elements of $\Lambda^q V$ and $\Lambda^p V$ are linearly independent. Therefore for any $w \in \Lambda V$,
+$w = w_0 + \cdots + w_n$
+where each $w_p \in \Lambda^p V$, so
+\begin{align*}
+    \Lambda V &= \Lambda^0 V \oplus \cdots \oplus \Lambda^n V \\
+        &= \bigoplus_{p=0}^n \Lambda^p V.
+\end{align*}
+The dimension of $\Lambda V$ is therefore
+\begin{align*}
+    \dim(\Lambda V) &= \sum_{p = 0}^n \dim(\Lambda^p V) \\
+        &= \sum_{p = 0}^n \binom{n}{p} \\
+        &= 2^n
+\end{align*}
+by the binomial theorem.
+
+\end{sol}
+
 \end{document}
