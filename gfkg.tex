@@ -1821,7 +1821,7 @@ Show that any 2-form $F$ on $\mathbb{R} \times S$ can be uniquely expressed as $
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:bplusedt}
 
 Since $\mathbb{R} \times S$ is a manifold, we have an atlas $\left\{\varphi_\alpha\right\}$ for all open sets $U_\alpha$ giving local coordinates $x^\mu = \varphi_\alpha(u)$, $u \in U_\alpha$.
 
@@ -1838,6 +1838,30 @@ where $F_{0i} = -F_{i0}$ by antisymmetry. Comparing coefficients, we get
     F = B + E \wedge dt
 \]
 where $F_{ij} = B_{ij}$ and $F_{i0} = E_i$. Uniqueness is automatic since each component is determined by its basis 2-form.
+
+\end{sol}
+
+\begin{ex}
+
+Show that for any form $\omega$ on $\mathbb{R} \times S$ there is a unique way to write $d\omega = dt \wedge \partial_t \omega + d_S \omega$ such that for any local coordinates $x^i$ on $S$, writing $t = x^0$, we have
+\begin{align*}
+    d_S\omega &= \partial_i \omega_I dx^i \wedge dx^I, \\
+    dt \wedge \partial_t \omega &= \partial_0 \omega_I dx^0 \wedge dx^I.
+\end{align*}
+
+\end{ex}
+
+\begin{sol}
+
+Similarly to solution~\ref{sol:bplusedt}, since $\omega \in \Omega(U_\alpha)$ we have that $\omega = \omega_I dx^I$, so
+\begin{align*}
+    d\omega &= \partial_\mu \omega_I dx^\mu \wedge dx^I \\
+        &= \partial_0 \omega_I dx^0 \wedge dx^I + \partial_i \omega_I dx^i \wedge dx^I \\
+        &= dx^0 \wedge \partial_0 \omega_I \wedge dx^I + \partial_i \omega_I dx^i \wedge dx^I \\
+        &= dx^0 \wedge \partial_0 \omega + \partial_i \omega_I dx^i \wedge dx^I \\
+        &= dt \wedge \partial_t \omega + d_S \omega.
+\end{align*}
+Again, this is guaranteed to be unique by linearity.
 
 \end{sol}
 
