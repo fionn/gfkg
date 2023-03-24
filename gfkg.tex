@@ -1750,4 +1750,42 @@ so $\phi^* (\alpha \omega) = \alpha \phi^* \omega$.
 
 \end{sol}
 
+\begin{ex}
+
+Compare how 1-forms and 2-forms on $\mathbb{R}^3$ transform under \emph{parity}. That is, let $P: \mathbb{R}^3 \to \mathbb{R}^3$ be the map
+\[
+    P(x, y, z) = (-x, -y, -z),
+\]
+known as the ``parity transformation''. Note that $P$ maps right-handed bases to left-handed bases and vice versa. Compute $\phi^*(\omega)$ when $\omega$ is the 1-form $\omega_\mu dx^\mu$ and when it is the 2-form $\frac{1}{2}\omega_{\mu\nu}dx^\mu \wedge dx^\nu$.
+
+\end{ex}
+
+\begin{sol}
+
+Assume $\phi^*$ is the pullback by $P$. Consider the pullback of $dx^\mu$ acting on the coordinate vector field $\partial_\nu$,
+\begin{align*}
+    (\phi^* dx^\mu) \partial_\nu &= d(\phi^* x^\mu) \partial_\nu \\
+        &= \partial_\nu (\phi^* x^\mu) \\
+        &= \partial_\nu (x^\mu \circ \phi) \\
+        &= -\delta_\nu^\mu \\
+        &= -\partial_\nu x^\mu \\
+        &= - dx^\mu \partial_\nu,
+\end{align*}
+so $\phi^* dx^\mu = -dx^\mu$.
+
+If $\omega \in \Omega^1(\mathbb{R}^3)$, then
+\[
+    \phi^* \omega = \phi^*(\omega_\mu dx^\mu) = -\omega
+\]
+and if $\omega \in \Omega^2(\mathbb{R}^3)$, then
+\begin{align*}
+    \phi^* \omega &= \phi^*\left(\tfrac{1}{2}\omega_{\mu\nu} dx^\mu \wedge dx^\nu\right) \\
+        &= \tfrac{1}{2}\omega_{\mu\nu} \, \phi^*(dx^\mu \wedge dx^\nu) \\
+        &= \tfrac{1}{2}\omega_{\mu\nu} \, \phi^* dx^\mu \wedge \phi^* dx^\nu \\
+        &= \tfrac{1}{2}\omega_{\mu\nu} (-dx^\mu) \wedge (-dx^\nu) \\
+        &= \omega.
+\end{align*}
+
+\end{sol}
+
 \end{document}
