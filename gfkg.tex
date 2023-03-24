@@ -1811,4 +1811,34 @@ Since $\omega_\mu$ is a 0-form,
 
 \end{sol}
 
+\section{Rewriting Maxwell's Equations}
+
+\subsection{The First Pair of Equations}
+
+\begin{ex}
+
+Show that any 2-form $F$ on $\mathbb{R} \times S$ can be uniquely expressed as $B + E \wedge dt$ in such a way that for any local coordinates $x^i$ on $S$ we have $E = E_i dx^i$ and $B = \frac{1}{2}B_{ij}dx^i \wedge dx^j$.
+
+\end{ex}
+
+\begin{sol}
+
+Since $\mathbb{R} \times S$ is a manifold, we have an atlas $\left\{\varphi_\alpha\right\}$ for all open sets $U_\alpha$ giving local coordinates $x^\mu = \varphi_\alpha(u)$, $u \in U_\alpha$.
+
+Notice that $\left\{dx^i \wedge dt, dx^i \wedge dx^j\right\}$ spans $\Omega^2(U_\alpha)$.
+If $F \in \Omega^2(U_\alpha)$, we can express it as
+\begin{align*}
+    F &= \frac{1}{2}F_{\mu\nu}dx^\mu \wedge dx^\nu \\
+      &= \frac{1}{2} (F_{0i} dt \wedge dx^i + F_{i0} dx^i \wedge dt + F_{ij} dx^i \wedge dx^j) \\
+      &= \frac{1}{2} (2F_{i0} dx^i \wedge dt + F_{ij} dx^i \wedge dx^j) \\
+      &= \frac{1}{2} F_{ij} dx^i \wedge dx^j + F_{i0} dx^i \wedge dt
+\end{align*}
+where $F_{0i} = -F_{i0}$ by antisymmetry. Comparing coefficients, we get
+\[
+    F = B + E \wedge dt
+\]
+where $F_{ij} = B_{ij}$ and $F_{i0} = E_i$. Uniqueness is automatic since each component is determined by its basis 2-form.
+
+\end{sol}
+
 \end{document}
