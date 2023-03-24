@@ -1788,4 +1788,27 @@ and if $\omega \in \Omega^2(\mathbb{R}^3)$, then
 
 \end{sol}
 
+\subsection{The Exterior Derivative}
+
+\begin{ex}
+
+Show that on $\mathbb{R}^n$ the exterior derivative of any 1-form is given by
+\[
+    d(\omega_\mu dx^\mu) = \partial_\nu \omega_\mu \, dx^\nu \wedge dx^\mu.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Since $\omega_\mu$ is a 0-form,
+\begin{align*}
+    d(\omega_\mu dx^\mu) &= d(\omega_\mu \wedge dx^\mu) \\
+        &= d\omega_\mu \wedge dx^\mu + \omega_\mu \wedge d(dx^\mu) \\
+        &= d\omega_\mu \wedge dx^\mu \\
+        &= \partial_\nu \omega_\mu \, dx^\nu \wedge dx^\mu.
+\end{align*}
+
+\end{sol}
+
 \end{document}
