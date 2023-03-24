@@ -1877,7 +1877,7 @@ is an isomorphism, that is, one-to-one and onto.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:metricisomorphism}
 
 Let $v, w \in V$. By bilinearity,
 \[
@@ -1897,6 +1897,32 @@ We claim that we can express any $\omega \in V^*$ as $\omega = g(v,\cdot)$ for s
         &= v^\mu g(e_\mu, e_\nu) g(e_\nu, \cdot).
 \end{align*}
 Because $g$ is non-degenerate, the above is solvable for $v^\mu$ and therefore the map is surjective.
+
+\end{sol}
+
+\begin{ex}
+
+Let $v = v^\mu e_\mu$ be a vector field on a chart. Show that the corresponding 1-form $g(v, \cdot)$ is equal to $v_\nu f^\nu$, where $f^\nu$ is the dual basis of 1-forms and
+\[
+    v_\nu = g_{\mu\nu}v^\mu.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+We'll use the same argument as in solution~\ref{sol:metricisomorphism}. Denote $\omega = g(v, \cdot)$, but since $\omega$ is a 1-form we can express it in components as
+\begin{align*}
+    \omega &= \omega_\nu f^\nu \\
+        &= \omega(e_\nu) f^\nu \\
+        &= g(v, e_\nu) f^\nu \\
+        &= g(v^\mu e_\mu, e_\nu) f^\nu \\
+        &= v^\mu g(e_\mu e_\nu) f^\nu \\
+        &= v^\mu g_{\mu\nu} f^\nu \\
+        &= g_{\mu\nu} v^\mu f^\nu \\
+        &= v_\nu f^\nu
+\end{align*}
+where we identify $g_{\mu\nu}v^\mu = v_\nu$.
 
 \end{sol}
 
