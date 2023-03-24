@@ -1865,4 +1865,39 @@ Again, this is guaranteed to be unique by linearity.
 
 \end{sol}
 
+\subsection{The Metric}
+
+\begin{ex}
+
+Use the non-degeneracy of the metric to show that the map from $V$ to $V^*$ given by
+\[
+    v \mapsto g(v, \cdot)
+\]
+is an isomorphism, that is, one-to-one and onto.
+
+\end{ex}
+
+\begin{sol}
+
+Let $v, w \in V$. By bilinearity,
+\[
+    g(v,\cdot) - g(w,\cdot) = g(v - w, \cdot)
+\]
+so $g(v,\cdot) - g(w,\cdot) = 0$ implies $v - w = 0$ by non-degeneracy or, equivalently, $g(v,\cdot) = g(w,\cdot)$ implies $v = w$. Therefore the map is injective.
+
+Since the map is injective and, from solution~\ref{sol:gradient}, $\dim(V) = \dim(V^*)$, pick a basis $\left\{e_\mu\right\}$ for $V$ and we get a corresponding basis $\left\{f^\mu\right\}$ for $V^*$.
+
+We claim that we can express any $\omega \in V^*$ as $\omega = g(v,\cdot)$ for some $v \in V$.
+\begin{align*}
+    \omega &= \omega_\nu f^\nu \\
+        &= \omega_\nu g(e_\nu, \cdot) \\
+        &= \omega(e_\nu) g(e_\nu, \cdot) \\
+        &= g(v, e_\nu) g(e_\nu, \cdot) \\
+        &= g(v^\mu e_\mu, e_\nu) g(e_\nu, \cdot) \\
+        &= v^\mu g(e_\mu, e_\nu) g(e_\nu, \cdot).
+\end{align*}
+Because $g$ is non-degenerate, the above is solvable for $v^\mu$ and therefore the map is surjective.
+
+\end{sol}
+
 \end{document}
