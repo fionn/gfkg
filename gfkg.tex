@@ -1182,7 +1182,7 @@ Show that the pullback of 1-forms defined by the formula above really exists and
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:pullback1form}
 
 Let $\phi: M \to N$, $p \mapsto \phi(p) = q$. Then for\footnote{$\omega$ is in $T_q^* N$, see \url{https://math.ucr.edu/home/baez/errata.html}.} $v \in T_p M$, $\omega \in T_q^* N$, the pullback $\phi^*: T_q^* N \to T_p^* M$ of $\omega$ by $\phi$ is defined as
 \[
@@ -1687,6 +1687,66 @@ Then
 \end{align*}
 
 The above result holds analogously for any $\omega \in \Omega^p(M)$ and $\mu \in \Omega^q(M)$. Since $\Omega(M) = \bigoplus \Omega^p(M)$, $\Omega(M)$ is graded commutative over any manifold $M$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that differential forms are contravariant. That is, show that if $\phi: M \to N$ is a map from the manifold $M$ to the manifold $N$, there is a unique pullback map
+\[
+    \phi^*: \Omega(N) \to \Omega(M)
+\]
+agreeing with the usual pullback on 0-forms (functions) and 1-forms and satisfying
+\begin{align*}
+    \phi^* (\alpha \omega) &= \alpha \phi^* \omega \\
+    \phi^*(\omega + \mu) &= \phi^* \omega + \phi^* \mu \\
+    \phi^*(\omega \wedge \mu) &= \phi^* \omega \wedge \phi^* \mu
+\end{align*}
+for all $\omega, \mu \in \Omega(N)$ and $\alpha \in \mathbb{R}$.
+
+\end{ex}
+
+\begin{sol}
+
+Since any $\mu \in \Omega(N)$ can be expressed as $\mu = \mu_0 + \cdots + \mu_n$ where each $\mu_p \in \Omega^p(N)$, we can construct a pullback $\phi^*$ satisfying
+\begin{align*}
+    \phi^* \mu &= \phi^* (\mu_0 + \cdots + \mu_n) \\
+        &= \phi^* \mu_0 + \cdots + \phi^* \mu_n
+\end{align*}
+by linearity and reduce this to considering how $\phi^*$ acts on each $p$-form.
+
+The pullback of a $p$-form $\omega = \omega_1 \wedge \cdots \wedge \omega_p \in \Omega^p(N)$ should generalise the \ref{eq:pullback1form}.  %chktex 2
+So on a collection of vectors $v_1, \ldots, v_p \in \text{Vect}(M)$ we would like to get
+\begin{align*}
+    (\phi^* \omega)(v_1, \ldots, v_p) &= \omega(\phi_* v_1, \ldots, \phi_* v_p) \\
+        &=\omega_1 \wedge \cdots \wedge \omega_p (\phi_* v_1, \ldots, \phi_* v_p) \\
+        &= \phi^* \omega_1 \wedge \cdots \wedge \phi^* \omega_p (v_1, \ldots, v_p).
+\end{align*}
+which holds since each $\omega_i$ acts on $\phi_* v_i$ independently. Then in terms of components,
+\begin{align*}
+    \phi^* \omega &= \phi^* (\tfrac{1}{p!}\omega_{i_1,\ldots,i_p}\, e^{i_1} \wedge \cdots \wedge e^{i_p}) \\
+        &= \phi^* \tfrac{1}{p!} \omega_{i_1,\ldots,i_p} \phi^* (e^{i_1} \wedge \cdots \wedge e^{i_p}) \\
+        &= \tfrac{1}{p!} \phi^* \omega_{i_1,\ldots,i_p} \phi^* e_{i^1} \wedge \cdots \wedge \phi^* e_{i^p}.
+\end{align*}
+
+Let $\omega, \mu \in \Omega^p(N)$. Then
+\begin{align*}
+    \phi^* (\alpha \omega) (v_1, \ldots, v_p) &= \alpha \omega (\phi_* v_1, \ldots, \phi_* v_p) \\
+        &= \alpha \phi^* \omega (v_1, \ldots, v_p)
+\end{align*}
+so $\phi^* (\alpha \omega) = \alpha \phi^* \omega$,
+\begin{align*}
+    \phi^*(\omega + \mu) (v_1, \ldots, v_p) &= (\omega + \mu) (\phi_* v_1, \ldots, \phi_* v_p) \\
+        &= \omega(\phi_* v_1, \ldots, \phi_* v_p) + \mu(\phi_* v_1, \ldots, \phi_* v_p) \\
+        &= \phi^* \omega (v_1, \ldots, v_p) + \phi^* \mu (v_1, \ldots, v_p) \\
+        &= (\phi^* \omega + \phi^* \mu) (v_1, \ldots, v_p)
+\end{align*}
+so $\phi^*(\omega + \mu) = \phi^* \omega + \phi^* \mu$,
+\begin{align*}
+    \phi^*(\omega \wedge \mu) (v_1, \ldots, v_p) &= (\omega \wedge \mu) (\phi_* v_1, \ldots, \phi_* v_p) \\
+        &= \phi^*\omega \wedge \phi^*\mu (v_1, \ldots, v_p)
+\end{align*}
+so $\phi^* (\alpha \omega) = \alpha \phi^* \omega$.
 
 \end{sol}
 
