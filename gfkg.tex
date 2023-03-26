@@ -1900,7 +1900,7 @@ Because $g$ is non-degenerate, the above is solvable for $v^\mu$ and therefore t
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:loweringindex}
 
 Let $v = v^\mu e_\mu$ be a vector field on a chart. Show that the corresponding 1-form $g(v, \cdot)$ is equal to $v_\nu f^\nu$, where $f^\nu$ is the dual basis of 1-forms and
 \[
@@ -1923,6 +1923,30 @@ We'll use the same argument as in solution~\ref{sol:metricisomorphism}. Denote $
         &= v_\nu f^\nu
 \end{align*}
 where we identify $g_{\mu\nu}v^\mu = v_\nu$.
+
+\end{sol}
+
+\begin{ex}
+
+Let $\omega = \omega_\mu f^\mu$ be a 1-form on a chart. Show that the corresponding vector field is equal to $\omega^\nu e_\nu$, where
+\[
+    \omega^\nu = g^{\mu\nu} \omega_\mu.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Recall that the metric $g$ is symmetric, so $g_{\mu\nu} = g(e_\mu, e_\nu) = g(e_\nu, e_\mu) = g_{\nu\mu}$.
+From exercise~\ref{ex:loweringindex} we have that for a vector field $\omega^\mu e_\mu$, the corresponding 1-form is
+\[
+    \omega = \omega_\mu f^\mu = g_{\mu\nu}\omega^\nu f^\mu.
+\]
+Applying the inverse $g^{\mu\nu}$ to the components $\omega_\mu = g_{\mu\nu}\omega^\nu$,
+\begin{align*}
+    g^{\mu\nu} \omega_\mu &= g^{\mu\nu} g_{\mu\nu} \omega^\nu \\
+        &= \omega^\nu.
+\end{align*}
 
 \end{sol}
 
