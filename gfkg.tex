@@ -1950,4 +1950,37 @@ Applying the inverse $g^{\mu\nu}$ to the components $\omega_\mu = g_{\mu\nu}\ome
 
 \end{sol}
 
+\begin{ex}
+
+Let $\eta$ be the Minkowski metric on $\mathbb{R}^4$ as defined above.
+Show that its components in the standard basis are
+\[
+    \eta_{\mu\nu} = \begin{pmatrix}
+        -1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1
+    \end{pmatrix}.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+For $v, w \in \text{Vect}(\mathbb{R}^4)$, the Minkowski metric $\eta$ is defined by
+\[
+    \eta(v, w) = -v^0 w^0 + v^1 w^1 + v^2 w^2 + v^3 w^3.
+\]
+Then in an orthonormal basis $\left\{e_\mu\right\}$,
+\[
+    \eta_{\mu\nu} = \eta(e_\mu, e_\nu) = \begin{dcases*}
+            -1            & if $\mu = \nu = 0$, \\ %chktex 1
+            \phantom{-} 1 & if $\mu = \nu$, $1 \leq \mu \leq 3$, \\ %chktex 1
+            \phantom{-} 0 & otherwise,
+        \end{dcases*}
+\]
+which we can write in matrix form as above.
+
+\end{sol}
+
 \end{document}
