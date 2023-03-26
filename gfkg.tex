@@ -2051,7 +2051,7 @@ since $g^{ij}$ is diagonal. Therefore $\left\{e^{i_1} \wedge \cdots \wedge e^{i_
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:esquaredbsquared}
 
 Let $E = E_x dx + E_y dy + E_z dz$ be a 1-form on $\mathbb{R}^3$ with its Euclidean metric. Show that
 \[
@@ -2071,7 +2071,7 @@ In physics, the quantity
 \]
 is called the \emph{energy density} of the electromagnetic field. The quantity
 \[
-    \frac{1}{2}(\innerp{E}{E} - \innerp{B}{B})
+    \frac{1}{2}(\innerp{E}{E} - \innerp{B}{B}) \label{eq:lagrangianvacuumem}
 \]
 is called the \emph{Lagrangian} for the vacuum Maxwell's equations, which we discuss more in Chapter 4 of Part II in greater generality.
 
@@ -2105,6 +2105,37 @@ so by bilinearity,
         =&\ B_x^2 + B_y^2 + B_z^2.
 \end{align*}
 Alternatively, we could use the Hodge star and calculate $\innerp{\star B}{\star B}$ instead.
+
+\end{sol}
+
+\begin{ex}
+
+In $\mathbb{R}^4$, let $F$ be the 2-form given by $F = B + E \wedge dt$, where $E$ and $B$ are given by \hyperref[ex:esquaredbsquared]{the formulae above}. Using the Minkowski metric on $\mathbb{R}^4$, calculate $-\frac{1}{2} \innerp{F}{F}$ and relate it to \hyperref[eq:lagrangianvacuumem]{the Lagrangian above}.
+
+\end{ex}
+
+\begin{sol}
+
+The inner product of the 2-form $F$ with itself is
+\begin{align*}
+    \innerp{F}{F} &= \innerp{B + E \wedge dt}{B + E \wedge dt} \\
+        &= \innerp{B}{B} + \innerp{B}{E \wedge dt} + \innerp{E \wedge dt}{B} + \innerp{E \wedge dt}{E \wedge dt} \\
+        &= \innerp{B}{B} + \innerp{E \wedge dt}{E \wedge dt}
+\end{align*}
+since each component of $B$ is orthogonal to each component of $E \wedge dt$.
+Focusing on the electric term,
+\begin{align*}
+    \innerp{E \wedge dt}{E \wedge dt} &= \det \begin{pmatrix}
+            \eta(E, E) & \eta(E, dt) \\
+            \eta(dt, E) & \eta(dt, dt)
+        \end{pmatrix} \\
+    &= -\innerp{E}{E}
+\end{align*}
+so
+\[
+    -\frac{1}{2} \innerp{F}{F} = \frac{1}{2}(\innerp{E}{E} - \innerp{B}{B}),
+\]
+the Lagrangian density for electromagnetism in a vacuum on Minkowski spacetime.
 
 \end{sol}
 
