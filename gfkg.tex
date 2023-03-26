@@ -22,6 +22,8 @@
 \newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
+\DeclarePairedDelimiterX{\innerp}[2]{\langle}{\rangle}{#1, #2}
+
 \theoremstyle{definition}
 \newtheorem{ex}{Exercise}[part]
 \newtheorem{sol}{Solution}[part]
@@ -1996,6 +1998,56 @@ But $g_{\lambda\nu} = g_{\mu\lambda}\delta^\mu_\nu$, so we identify $g^\mu_\nu =
 
 Alternatively, since $g_{\mu\nu}$ and $g^{\mu\nu}$ are inverses, $g^{\mu\lambda} g_{\lambda\nu} = \delta^\mu_\nu$ by definition.
 But $g^{\mu\lambda} g_{\lambda\nu} = g^\mu_\nu$ so $g^\mu_\nu = \delta^\mu_\nu$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that the inner product of $p$-forms is non-degenerate by supposing that $(e^1, \ldots, e^n)$ is any orthonormal basis of $1$-forms in some chart, with
+\[
+    g(e^i, e^i) = \epsilon(i),
+\]
+where $\epsilon(i) = \pm 1$. Show the $p$-fold wedge products
+\[
+    e^{i_1} \wedge \cdots \wedge e^{i_p}
+\]
+form an orthonormal basis of $p$-forms with
+\[
+    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{i_1} \wedge \cdots \wedge e^{i_p}} = \epsilon(i_1) \cdots \epsilon(i_p).
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Let $\mu = \mu^1 \wedge \cdots \wedge \mu^p$ be a $p$-form. If $\innerp{\mu}{ \omega} = 0$ for all $p$-forms $\omega = \omega^1 \wedge \cdots \wedge \omega^p$, then
+\begin{align*}
+    \innerp{\mu}{\omega} &= \innerp{\mu^1 \wedge \cdots \wedge \mu^p}{\omega^1 \wedge \cdots \wedge \omega^p} \\
+        &= \det\big(g(\mu^i, \omega^j)\big) \\
+        &= 0.
+\end{align*}
+But $g$ is non-degenerate, so the determinant of $g(\mu^i, \omega^j)$ must be non-zero unless $\mu = 0$.
+
+The inner product of basis 1-forms is
+\[
+    g(e^i, e^j) = g^{ij} = \begin{pmatrix}
+        \epsilon(1) & & \\
+        & \ddots & \\
+        & & \epsilon(p)
+    \end{pmatrix}.
+\]
+From the definition of the inner product of $p$-forms,
+\[
+    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{j_1} \wedge \cdots \wedge e^{j_p}} = \det\big(g(e^{i_k}, e^{j_k})\big),
+\]
+but $g(e^{i_k}, e^{j_k}) = 0$ if $i_k \neq j_k$ and so too is its determinant.
+Taking the inner product of a basis $p$-form with itself,
+\begin{align*}
+    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{i_1} \wedge \cdots \wedge e^{i_p}} &= \det\big(g(e^{i_k}, e^{i_k})\big) \\
+        &= \prod_{k = 1}^p \epsilon(i_k) \\
+        &= \epsilon(i_1) \cdots \epsilon(i_p)
+\end{align*}
+since $g^{ij}$ is diagonal. Therefore $\left\{e^{i_1} \wedge \cdots \wedge e^{i_p}\right\}$ forms an orthonormal basis.
 
 \end{sol}
 
