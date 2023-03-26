@@ -64,16 +64,17 @@ satisfies the vacuum Maxwell equations.
 
 \begin{sol}
 
-Recall that Maxwell's equations (where $c = 1$) are
-\begin{align*}
-    \nabla \cdot \vec{B} &= 0, \tag{M1}\\
-    \nabla \times \vec{E} + \frac{\partial \vec{B}}{\partial t} &= 0, \tag{M2}\\
-    \nabla \cdot \vec{E} &= \rho, \tag{M3} \\
-    \nabla \times \vec{B} - \frac{\partial \vec{E}}{\partial t} &= \vec{\jmath}. \tag{M4}
-\end{align*}
+Recall that Maxwell's equations are
+\begin{gather*}
+    \nabla \cdot \vec{B} = 0, \qquad
+    \nabla \times \vec{E} + \frac{\partial \vec{B}}{\partial t} = 0, \\
+    \nabla \cdot \vec{E} = \rho, \qquad
+    \nabla \times \vec{B} - \frac{\partial \vec{E}}{\partial t} = \vec{\jmath}.
+\end{gather*}
 The vacuum equations are invariant under
 \[
-    \vec{B} \mapsto \vec{E}, \qquad \vec{E} \mapsto - \vec{B}
+    \vec{B} \mapsto \vec{E}, \qquad
+    \vec{E} \mapsto - \vec{B}
 \]
 (electromagnetic duality) or, equivalently, for a complex-valued vector field $\vec{\mathcal{E}} = \vec{E} + i \vec{B}$,
 \[
@@ -81,7 +82,8 @@ The vacuum equations are invariant under
 \]
 This lets us express the vacuum equations in terms of $\vec{\mathcal{E}}$ as
 \[
-    \nabla \cdot \vec{\mathcal{E}} = 0, \qquad \nabla \times \vec{\mathcal{E}} = i \frac{\partial \vec{\mathcal{E}}}{\partial t}.
+    \nabla \cdot \vec{\mathcal{E}} = 0, \qquad
+    \nabla \times \vec{\mathcal{E}} = i \frac{\partial \vec{\mathcal{E}}}{\partial t}.
 \]
 
 We'll rely on
@@ -107,8 +109,8 @@ For the curl (dropping the summation and using Einstein notation),
         &= \epsilon_{ijk} E_k \partial_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
         &= \epsilon_{ijk}i k_j E_k e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
         &= {\left(i \vec{k} \times \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right)}_i \\
-        &= \omega \vec{E}_i e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
-        &= \omega \vec{\mathcal{E}}_i,
+        &= \omega E_i e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
+        &= \omega \mathcal{E}_i,
 \end{align*}
 so $\nabla \times \vec{\mathcal{E}} = \omega \vec{\mathcal{E}}$.
 But
@@ -127,8 +129,6 @@ and satisfying the second vacuum equation.
 
 \section{Manifolds}
 
-A function $f: X \to Y$ from one topological space to another is defined to be continuous if, given any open set $U \subseteq Y$, the inverse image $f^{-1}(U) \subseteq X$ is open.
-
 \begin{ex}
 
 Show that a function $f: \mathbb{R}^n \to \mathbb{R}^m$ is continuous according to the above definition if and only if it is continuous according to the epsilon--delta definition: for all $x \in \mathbb{R}^n$ and all $\epsilon > 0$, there exists $\delta > 0$ such that $\norm{y - x} < \delta$ implies $\norm{f(y) - f(x)} < \epsilon$.
@@ -136,6 +136,8 @@ Show that a function $f: \mathbb{R}^n \to \mathbb{R}^m$ is continuous according 
 \end{ex}
 
 \begin{sol}
+
+A function $f: X \to Y$ from one topological space to another is defined to be continuous if, given any open set $U \subseteq Y$, the inverse image $f^{-1}(U) \subseteq X$ is open.
 
 Suppose $f$ is continuous according to the epsilon--delta definition of continuity.
 Let $V \subseteq \mathbb{R}^m$ be an open set.
@@ -199,7 +201,7 @@ This intersects $\mathbb{R}^n$ when the last coordinate $\alpha + t(p_{n + 1} - 
 \]
 Each projection is a chart and the collection of these charts is an atlas, since the union of their domains covers $S^n$.
 
-Denoting $\varphi_\alpha(\vec{p}) = \vec{x}_\alpha = \left(x_\alpha^1, \ldots, x_\alpha^n\right)$, the $L\!^2$-norm
+Denoting $\varphi_\alpha: \vec{p} \mapsto \vec{x}_\alpha = \left(x_\alpha^1, \ldots, x_\alpha^n\right)$, the $L\!^2$-norm
 \begin{align*}
     r_\alpha^2 &= \sum_{i = 1}^n {(x_\alpha^i)}^2 \\
                &= \frac{p_1^2 + \cdots + p_n^2}{{(1 - \alpha p_{n + 1})}^2} \\
@@ -211,7 +213,7 @@ so
 \[
     p_{n + 1} = \alpha\frac{r_\alpha^2 - 1}{r_\alpha^2 + 1}.
 \]
-This gives us a general expression for the points $p_1, \ldots, p_n$ on the manifold in terms of our chart's coordinate system as
+This gives us a general expression for the points $\vec{p} = (p_1, \ldots, p_n)$ on the manifold in terms of our chart's coordinate system as
 \begin{align*}
     p_i &= x_\alpha^i (1 - \alpha p_{n + 1}) \\
         &= \frac{2 x_\alpha^i}{r_\alpha^2 + 1},
@@ -253,6 +255,7 @@ All subsets $U_\alpha \subset U$ are of the form $V \cap U$ where $V$ is open in
 
 We can construct an atlas by taking the charts on $M$, $\varphi_\alpha: V_\alpha \to \mathbb{R}^n$, and defining
 \begin{align*}
+    \SwapAboveDisplaySkip
     \varphi^U_\alpha&: U_\alpha \to \mathbb{R}^n, \\
                     &: u \mapsto \varphi_\alpha(u),
 \end{align*}
@@ -274,8 +277,8 @@ Therefore $U \times V$ is an open set under the product topology and $M \times N
 
 Given $M$, $N$ are manifolds, they have atlases
 \[
-    \left\{\varphi^M_\alpha : U_\alpha \to \mathbb{R}^m \right\}, \qquad
-    \left\{\varphi^N_\beta : V_\beta \to \mathbb{R}^n \right\}
+    \left\{\varphi^M_\alpha: U_\alpha \to \mathbb{R}^m \right\}, \qquad
+    \left\{\varphi^N_\beta: V_\beta \to \mathbb{R}^n \right\}
 \]
 for all $U_\alpha$ open in $M$, $V_\beta$ open in $N$.
 
@@ -292,7 +295,7 @@ We can construct maps $\tilde{\varphi}_{\alpha\beta}:\ U_\alpha \times V_\beta \
 \end{align*}
 This is obviously invertible via
 \[
-    \tilde{\varphi}_{\alpha\beta}^{-1}(\vec{x}, \vec{y}) = \left({(\varphi^M_\alpha)}^{-1}(\vec{x}), {(\varphi^N_\beta)}^{-1}(\vec{y})\right) = (u, v).
+    \tilde{\varphi}_{\alpha\beta}^{-1}(\vec{x}, \vec{y}) = \left({(\varphi^M_\alpha)}^{-1}(\vec{x}), {(\varphi^N_\beta)}^{-1}(\vec{y})\right) = (u, v)
 \]
 because the inverse charts are guaranteed to exist.
 
@@ -322,8 +325,8 @@ Any point $p \in M \cup N$ is either in $M$ or $N$. Consider a neighbourhood $X$
 
 Given $M$, $N$ are manifolds, they have atlases
 \[
-    \left\{\varphi^M_\alpha : U_\alpha \to \mathbb{R}^n \right\}, \qquad
-    \left\{\varphi^N_\beta : V_\beta \to \mathbb{R}^n \right\}
+    \left\{\varphi^M_\alpha: U_\alpha \to \mathbb{R}^n \right\}, \qquad
+    \left\{\varphi^N_\beta: V_\beta \to \mathbb{R}^n \right\}
 \]
 for all $U_\alpha$ open in $M$, $V_\beta$ open in $N$. Therefore any neighbourhood of $p \in M \cup N$ has a chart, for all $p$.
 
@@ -344,26 +347,26 @@ Show that $v + w$ and $gw \in \text{Vect}(M)$.
 For the sum,
 \begin{align*}
     (v + w)(f + g) &= v(f + g) + w(f + g) \\
-        &= v(f) + v(g) + w(f) + w(g) \\
-        &= (v + w)(f) + (v + w)(g),
+                   &= v(f) + v(g) + w(f) + w(g) \\
+                   &= (v + w)(f) + (v + w)(g),
 \end{align*}
 \begin{align*}
     (v + w)(\alpha f) &= v(\alpha f) + w(\alpha f) \\
-        &= \alpha v(f) + \alpha w(f) \\
-        &= \alpha (v(f) + w(f)) \\
-        &= \alpha (v + w)(f),
+                      &= \alpha v(f) + \alpha w(f) \\
+                      &= \alpha (v(f) + w(f)) \\
+                      &= \alpha (v + w)(f),
 \end{align*}
 \begin{align*}
     (v + w)(fg) &= v(fg) + w(fg) \\
-        &= v(f)g + fv(g) + w(f)g + fw(g) \\
-        &= (v(f) + w(f))g + f \cdot (v(g) + w(g)) \\
-        &= (v + w)(f)g + f \cdot (v + w)(g).
+                &= v(f)g + fv(g) + w(f)g + fw(g) \\
+                &= (v(f) + w(f))g + f \cdot (v(g) + w(g)) \\
+                &= (v + w)(f)g + f \cdot (v + w)(g).
 \end{align*}
 
-For the multiplication,
+For the product,
 \begin{align*}
     gw(f + h) &= g \cdot (w(f) + w(h)) \\
-        &= gw(f) + gw(h),
+              &= gw(f) + gw(h),
 \end{align*}
 \begin{align*}
     gw(\alpha f) &= g \cdot \alpha w(f) \\
@@ -371,8 +374,8 @@ For the multiplication,
 \end{align*}
 \begin{align*}
     gw(fh) &= g \cdot (w(f)h + f w(h)) \\
-        &= g w(f) h + g f w(h) \\
-        &= gw(f) h + fgw(h).
+           &= g w(f) h + g f w(h) \\
+           &= gw(f) h + fgw(h).
 \end{align*}
 
 \end{sol}
@@ -446,8 +449,6 @@ Let $v, w \in \text{Vect}(M)$. Show that $v = w$ if and only if $v_p = w_p$ for 
 
 \begin{sol}\label{sol:tangentvectorpointequality}
 
-Recall the definition $v_p(f) = v(f)(p)$.
-
 If $v = w$, then
 \[
     v_p(f) = v(f)(p) = w(f)(p) = w_p(f)
@@ -473,9 +474,9 @@ Let $u, v, w \in T_p M$ and $\alpha, \beta \in \mathbb{R}$.
 To check associativity,
 \begin{align*}
     (u + (v + w))(f) &= u(f) + (v + w)(f) \\
-        &= u(f) + v(f) + w(f) \\
-        &= (u(f) + v(f)) + w(f) \\
-        &= (u + v)(f) + w(f),
+                     &= u(f) + v(f) + w(f) \\
+                     &= (u(f) + v(f)) + w(f) \\
+                     &= (u + v)(f) + w(f),
 \end{align*}
 so $u + (v + w) = (u + v) + w$.
 
@@ -491,7 +492,8 @@ We can construct for every tangent vector $v$ an additive inverse $-v$ as $(-v)(
 
 We have compatibility of scalar and field multiplication since
 \[
-    \alpha(\beta v)(f) = \alpha (\beta v(f)) = \alpha \beta v(f) = (\alpha \beta) v(f).
+    \alpha(\beta v)(f) = \alpha (\beta v(f))
+        = \alpha \beta v(f) = (\alpha \beta) v(f).
 \]
 
 The existence of a scalar multiplicative identity follows from solution~\ref{sol:module}.
@@ -521,6 +523,7 @@ We have that
 \]
 Notice that
 \begin{align*}
+    \SwapAboveDisplaySkip
     &\gamma'(t)(f + g) = \gamma'(t)(f) + \gamma'(t)(g), \\
     &\gamma'(t)(\alpha f) = \alpha \gamma'(t)(f), \\
     &\gamma'(t)(f g) = \gamma'(t)(f) g + f \gamma'(t)(g),
@@ -574,10 +577,10 @@ If $\phi$ is a positive rotation by a (fixed) angle $\theta$, we can express it 
             u \\ v
         \end{pmatrix}
         \mapsto
-        \begin{pmatrix}
+        \begin{pmatrix*}[r]
             \cos(\theta) & -\sin(\theta) \\
             \sin(\theta) & \cos(\theta)
-        \end{pmatrix}
+        \end{pmatrix*}
         \begin{pmatrix}
             u \\ v
         \end{pmatrix}
@@ -591,8 +594,8 @@ As before, consider the chart $\varphi(p) = \left\{x^\mu(p)\right\} = \left\{x(p
 Then $\phi^* x(p) = x(\phi(p))$ is the $x$-coordinate, so for $p = (u, v)$,
 \begin{align*}
     \phi^* x(p) &= x(\phi(p)) \\
-        &= \cos(\theta) u - \sin(\theta) v \\
-        &= \cos(\theta) x(p) - \sin(\theta) y(p)
+                &= \cos(\theta) u - \sin(\theta) v \\
+                &= \cos(\theta) x(p) - \sin(\theta) y(p)
 \end{align*}
 and similarly for $\phi^* y$.
 
@@ -609,10 +612,10 @@ Show that this definition of smoothness is consistent with the previous definiti
 Recall the definition of smooth functions between manifolds.
 
 \begin{quote}
-$\phi: M \to N$ is smooth if $f \in C^\infty(N)$ implies that $\phi^* f \in C^\infty(M)$.
+    $\phi: M \to N$ is smooth if $f \in C^\infty(N)$ implies that $\phi^* f \in C^\infty(M)$.
 \end{quote}
 
-Our other two definitions of smooth functions and smooth curves are:
+Our other two definitions of smoothness are:
 \begin{itemize}
     \item a function $f: M \to \mathbb{R}$ is smooth if for all $\alpha$, $f \circ \varphi_\alpha^{-1}: \mathbb{R}^n \to \mathbb{R}$ is smooth,
     \item a curve $\gamma: \mathbb{R} \to M$ is smooth if $f(\gamma(t))$ depends smoothly on $t$ for any $f \in C^\infty(M)$.
@@ -647,6 +650,7 @@ The pushforward $\phi_*: T_p M \to T_{\phi(p)} N$ of $v \in T_p M$ by $\phi: M \
 \]
 Then
 \begin{align*}
+    \SwapAboveDisplaySkip
     (\phi \circ \gamma)'(t)(f) &= \frac{d}{dt} f\left((\phi \circ \gamma)(t)\right) \\
         &= \frac{d}{dt} (f \circ \phi \circ \gamma)(t) \\
         &= \frac{d}{dt} (f \circ \phi) (\gamma(t)) \\
@@ -691,20 +695,21 @@ whenever $\phi(p) = q$.
 
 \begin{sol}\label{sol:pushforwardvectorfield}
 
-Note that the definition of the pushforward is sloppy, since the left side must be evaluated on $N$ while the right side is on $M$.
+Note that the definition of the pushforward is sloppy, since the left side must be evaluated on $N$ while the right side is evaluated on $M$.
 
 Looking at the action of $\phi_* v$ on a function $f \in C^\infty (N)$ and denoting the points that each side act on as $p \in M$, $q \in N$,
 \begin{align*}
     {(\phi_* v)}_q (f) &= (\phi_* v) (f) (q) \\
-        &= v(\phi^* f)(p) \\
-        &= v_p(\phi^* f) \\
-        &= (\phi_* (v_p))(f).
+                       &= v(\phi^* f)(p) \\
+                       &= v_p(\phi^* f) \\
+                       &= (\phi_* (v_p))(f).
 \end{align*}
 But
 \begin{align*}
+    \SwapAboveDisplaySkip
     v_p (\phi^* f) &= v_p (f \circ \phi) \\
-            &= v(f(\phi(p))) \\
-            &= w_{\phi(p)}(f)
+                   &= v(f(\phi(p))) \\
+                   &= w_{\phi(p)}(f)
 \end{align*}
 for some $w \in \text{Vect}(N)$.
 
@@ -717,8 +722,9 @@ Instead we need exactly the pushforward of $v$, so we get $w_{\phi(p)} = {(\phi_
 
 Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be [a] rotation counterclockwise by an angle $\theta$. Let $\partial_x$, $\partial_y$ be the coordinate vector fields on $\mathbb{R}^2$. Show that at any point of $\mathbb{R}^2$,
 \begin{align*}
-    \phi_* \partial_x &= \cos(\theta)\partial_x + \sin(\theta)\partial_y, \\
-    \phi_* \partial_y &= - \sin(\theta)\partial_x + \cos(\theta)\partial_y.
+    \SwapAboveDisplaySkip
+    \phi_* \partial_x &= \cos(\theta) \partial_x + \sin(\theta) \partial_y, \\
+    \phi_* \partial_y &= -\sin(\theta) \partial_x + \cos(\theta) \partial_y.
 \end{align*}
 
 \end{ex}
@@ -748,6 +754,7 @@ Consider $\phi_* \partial_x$ and $\phi_* \partial_y$,
 \end{align*}
 giving us
 \begin{align*}
+    \SwapAboveDisplaySkip
     \phi_* \partial_x &= \cos(\theta) \partial_x + \sin(\theta) \partial_y, \\
     \phi_* \partial_y &= -\sin(\theta) \partial_x + \cos(\theta) \partial_y.
 \end{align*}
@@ -777,16 +784,18 @@ Integral curves satisfy $\gamma'(t) = v_{\gamma(t)}$, $\gamma(0) = p$.
 Denote $\gamma(t) = (x(t), y(t)) \in \mathbb{R}^2$. Then from the definition of tangent curves,
 \begin{align*}
     \frac{d}{dt} f(\gamma(t)) &= \frac{d}{dt} f(x, y) \\
-    &= \partial_x f(x, y) \dot{x} + \partial_y f(x, y) \dot{y} \\
-    &\overset{!}{=} x^2 \partial_x f(x, y) + y \partial_y f(x, y)
+        &= \partial_x f(x, y) \dot{x} + \partial_y f(x, y) \dot{y} \\
+        &\overset{!}{=} x^2 \partial_x f(x, y) + y \partial_y f(x, y)
 \end{align*}
 giving us differential equations $\dot{x}(t) = {x(t)}^2$, $\dot{y}(t) = y(t)$ with solutions
 \[
-    x(t) = \frac{1}{\alpha - t}, \qquad y(t) = \beta e^t.
+    x(t) = \frac{1}{\alpha - t}, \qquad
+    y(t) = \beta e^t.
 \]
 Fix the constants $\alpha$, $\beta$ with initial condition $\gamma(0) = p = (x(0), y(0))$. Then
 \[
-    x(t) = \frac{x(0)}{1 - x(0)t}, \qquad y(t) = y(0) e^t.
+    x(t) = \frac{x(0)}{1 - x(0)t}, \qquad
+    y(t) = y(0) e^t.
 \]
 When $x(0) = 0$ we get $x(t) = 0$ for all $t$. Otherwise, we get a singularity at $t = \frac{1}{x(0)}$, so the integral curves $\gamma$ are defined for all $t$ when starting at $p = (0, b)$ for any $b \in \mathbb{R}$.
 
@@ -814,7 +823,8 @@ It follows from this that $\phi_s^{-1} = \phi_{-s}$, so the flow is an Abelian g
 
 Consider the normalised vector fields in the $r$ and $\theta$ directions on the plane in polar coordinates (not defined at the origin):
 \[
-    v = \frac{x \partial_x + y \partial_y}{\sqrt{x^2 + y^2}}, \qquad w = \frac{x \partial_y - y \partial_x}{\sqrt{x^2 + y^2}}.
+    v = \frac{x \partial_x + y \partial_y}{\sqrt{x^2 + y^2}}, \qquad
+    w = \frac{x \partial_y - y \partial_x}{\sqrt{x^2 + y^2}}.
 \]
 Calculate $[v, w]$.
 
@@ -824,7 +834,8 @@ Calculate $[v, w]$.
 
 Since $x = r \cos(\theta)$, $y = r \sin(\theta)$, we have for some $f \in C^\infty(\mathbb{R}^2)$,
 \begin{align*}
-    \partial_r f &=\cos(\theta)  \partial_x f + \sin(\theta) \partial_y f \\
+    \SwapAboveDisplaySkip
+    \partial_r f &=\cos(\theta) \partial_x f + \sin(\theta) \partial_y f \\
     \partial_\theta f &= -r \sin(\theta) \partial_x f + r \cos(\theta) \partial_y f
 \end{align*}
 so $v = \partial_r$, $w = \frac{\partial_\theta}{r}$.
@@ -832,9 +843,12 @@ Then
 \begin{align*}
     [v, w]f &= v(w(f)) - w(v(f)) \\
         &= v\left(\frac{\partial_\theta f}{r}\right) - w(\partial_r f) \\
-        &= \partial_r\left(\frac{\partial_\theta f}{r}\right) - \frac{\partial_\theta}{r}(\partial_r f) \\
-        &= \frac{r \partial_r \partial_\theta f - \partial_\theta f}{r^2} - \frac{\partial_\theta \partial_r f}{r} \\
-        &= \frac{1}{r} \left(\partial_r \partial_\theta f - \frac{\partial_\theta f}{r} - \partial_\theta \partial_r f\right) \\
+        &= \partial_r\left(\frac{\partial_\theta f}{r}\right)
+            - \frac{\partial_\theta}{r}(\partial_r f) \\
+        &= \frac{r \partial_r \partial_\theta f - \partial_\theta f}{r^2}
+            - \frac{\partial_\theta \partial_r f}{r} \\
+        &= \frac{1}{r} \left(\partial_r \partial_\theta f - \frac{\partial_\theta f}{r}
+            - \partial_\theta \partial_r f\right) \\
         &= -\frac{\partial_\theta f}{r^2} \\
         &= -\frac{w}{r} f
 \end{align*}
@@ -852,7 +866,7 @@ We could also do this the hard way,
                              - x\partial_y(y\partial_y f)
                              + y\partial_x(x \partial_x f)
                              + y\partial_x (y \partial_y f)}
-                 }{x^2 + y^2} \\
+                }{x^2 + y^2} \\
         &= \frac{y \partial_x f - x \partial_y f}{x^2 + y^2}
 \end{align*}
 giving the same result
@@ -872,7 +886,7 @@ Check the equation above.
 
 We need to check that for any $f \in C^\infty(M)$,
 \[
-    [v, w](f)(p) = \frac{\partial^2}{\partial t \partial s} \Bigl( f(\psi_s(\phi_t(p))) - f(\phi_t(\psi_s(p))) \Bigr) \Big|_{s = t = 0}
+    [v, w](f)(p) = \frac{\partial^2}{\partial t\, \partial s} \Bigl( f(\psi_s(\phi_t(p))) - f(\phi_t(\psi_s(p))) \Bigr) \Big|_{s = t = 0}
 \]
 where $\phi_t$, $\psi_s$ are flows generated by $v$ and $w$, respectively.
 
@@ -883,11 +897,12 @@ We have that
 \]
 so
 \begin{align*}
+    \SwapAboveDisplaySkip
     (vw)(f)(p) &= \frac{d}{dt} wf(\phi_t(p)) \Big|_{t = 0} \\
-        &= \frac{\partial^2}{\partial t \partial s} f(\psi_s(\phi_t(p))) \Big|_{s = t = 0}
+        &= \frac{\partial^2}{\partial t \, \partial s} f(\psi_s(\phi_t(p))) \Big|_{s = t = 0}
 \intertext{and similarly}
     (wv)(f)(p) &= \frac{d}{ds} vf(\psi_s(p)) \Big|_{s = 0} \\
-    &= \frac{\partial^2}{\partial s \partial t} f(\phi_t(\psi_s(p))) \Big|_{t = s = 0}.
+        &= \frac{\partial^2}{\partial s \, \partial t} f(\phi_t(\psi_s(p))) \Big|_{t = s = 0}.
 \end{align*}
 The result follows immediately.
 
@@ -968,11 +983,10 @@ $\omega + \mu$ is linear over $C^\infty(M)$ since
 and $f\omega$ is linear over $C^\infty(M)$ since
 \begin{align*}
     (f\omega)(gv + hw) &= f\omega(gv + hw) \\
-        &= fg\omega(v) + fh\omega(w) \\
-        &= gf\omega(v) + hf\omega(w) \\
-        &= g(f\omega)(v) + h(f\omega)(w)
+                       &= fg\omega(v) + fh\omega(w) \\
+                       &= gf\omega(v) + hf\omega(w) \\
+                       &= g(f\omega)(v) + h(f\omega)(w).
 \end{align*}
-(this is a product, not composition, so $fg = gf$).
 
 \end{sol}
 
@@ -1031,23 +1045,23 @@ for any $f, g, h \in C^\infty(M)$ and any $\alpha \in \mathbb{R}$.
 Let $v \in \text{Vect}(M)$. First consider linearity.
 \begin{align*}
     d(f + g)v &= v(f + g) \\
-        &= vf + vg \\
-        &= df(v) + dg(v) \\
-        &= (df + dg)(v),
+              &= vf + vg \\
+              &= df(v) + dg(v) \\
+              &= (df + dg)(v),
 \end{align*}
 \[
     d(\alpha f)(v) = v(\alpha f) = \alpha v(f) = \alpha \, df(v),
 \]
 \begin{align*}
     (f + g)dh(v) &= (f + g)v(h) \\
-        &= fv(h) + gv(h) \\
-        &= f\, dh(v) + g \, dh(v).
+                 &= fv(h) + gv(h) \\
+                 &= f\, dh(v) + g \, dh(v).
 \end{align*}
 The Leibniz law holds since
 \begin{align*}
     d(fg)(v) &= v(fg) \\
-        &= f v(g) + g v(f) \\
-        &= f \, dg(v) + g \, df(v).
+             &= f v(g) + g v(f) \\
+             &= f \, dg(v) + g \, df(v).
 \end{align*}
 
 \end{sol}
@@ -1070,9 +1084,9 @@ Recall from solution~\ref{sol:basis} that $\left\{\partial_\mu\right\}$ forms a 
 On the other hand,
 \begin{align*}
     \partial_\mu f \, dx^\mu (v) &= \partial_\mu f v(x^\mu) \\
-    &= v^\nu \partial_\mu f \partial_\nu x^\mu \\
-    &= v^\nu \partial_\mu f \delta_\nu^\mu \\
-    &= v^\mu \partial_\mu f,
+        &= v^\nu \partial_\mu f \partial_\nu x^\mu \\
+        &= v^\nu \partial_\mu f \delta_\nu^\mu \\
+        &= v^\mu \partial_\mu f,
 \end{align*}
 giving $df(v) = \partial_\mu f\, dx^\mu(v)$ and therefore $df = \partial_\mu f\, dx^\mu$.
 
@@ -1093,9 +1107,9 @@ then all the functions $\omega_\mu$ are zero.
 As in solution~\ref{sol:gradient}, consider some vector field $v$.
 \begin{align*}
     \omega (v) &= \omega_\mu dx^\mu (v) \\
-        &= \omega_\mu v(x^\mu) \\
-        &= v^\nu \omega_\mu \delta_\nu^\mu \\
-        &= v^\mu \omega_\mu
+               &= \omega_\mu v(x^\mu) \\
+               &= v^\nu \omega_\mu \delta_\nu^\mu \\
+               &= v^\mu \omega_\mu
 \end{align*}
 so $\omega(v) = 0$ implies $v^\mu \omega_\mu = 0$. But since $v$ is arbitrary, $\omega_\mu = 0$ for all $\mu$.
 
@@ -1118,19 +1132,19 @@ Let $u, w \in \text{Vect}(M)$ with $u \neq w$. Let $u_p = w_p$, with $u_q \neq w
 Consider the vector field $v = u - w$. Then to show that $\omega_p$ is well-defined, it is sufficient to show that for any $\omega = df$,
 \begin{align*}
     \omega_p(v_p) &= \omega(v)(p) \\
-        &= df(v)(p) \\
-        &= v(f)(p) \\
-        &= (u - w)(f)(p) \\
-        &= u(f)(p) - w(f)(p) \\
-        &= u_p(f) - w_p(f) \\
-        &= (u_p - w_p)(f) \\
-        &= 0.
+                  &= df(v)(p) \\
+                  &= v(f)(p) \\
+                  &= (u - w)(f)(p) \\
+                  &= u(f)(p) - w(f)(p) \\
+                  &= u_p(f) - w_p(f) \\
+                  &= (u_p - w_p)(f) \\
+                  &= 0.
 \end{align*}
 Just as in solution~\ref{sol:tangentvectorpointequality}, if $\omega_p = \nu_p$ for every point $p \in M$ then $\omega_p(v_p) = \nu_p(v_p)$ for some $v_p \in T_p M$. But
 \begin{align*}
 \omega (v)(p) &= \omega_p(v_p) \\
-    &= \nu_p(v_p) \\
-    &= \nu (v)(p)
+              &= \nu_p(v_p) \\
+              &= \nu (v)(p)
 \end{align*}
 for all $p \in M$ and therefore, since $v$ is arbitrary, $\omega = \nu$.
 
@@ -1154,7 +1168,7 @@ where $f^*: W^* \to V^*$.
 Let $\text{id}: V \to V$ be the identity map on $V$. For some $v \in V$,
 \begin{align*}
     (\text{id}^*\omega)(v) &= \omega(\text{id}(v)) \\
-        &= \omega(v)
+                           &= \omega(v)
 \end{align*}
 giving $\text{id}^*\omega = \omega$, therefore $\text{id}^*: V^* \to V^*$ is the identity map in the dual space.
 
@@ -1162,10 +1176,10 @@ For the composition $gf = g \circ f$, recall the definition of the \ref{eq:pullb
 Let $h: X \to Y$ and consider the pullback
 \begin{align*}
     {(g \circ f)}^* h &= h \circ (g \circ f) \\
-        &= h \circ g \circ f \\
-        &= (h \circ g) \circ f \\
-        &= (g^* h) \circ f \\
-        &= f^* g^* h,
+                      &= h \circ g \circ f \\
+                      &= (h \circ g) \circ f \\
+                      &= (g^* h) \circ f \\
+                      &= f^* g^* h,
 \end{align*}
 giving ${(gf)}^* = f^* g^*$.
 
@@ -1243,11 +1257,13 @@ Let $v = f_i(x, y)\partial_i$ be some vector in $\text{Vect}(\mathbb{R}^2)$ and 
 \begin{align*}
     {(\phi^* dx)}_p v &= d(\phi^* x)(v)(p) \\
         &= d(x \circ \phi)(v)(p) \\
-        &= v(\cos(\theta)x - \sin(\theta)y) \\
-        &= f_1(x, y) \partial_x (\cos(\theta)x - \sin(\theta)y) \\
-        &\mathrel{\phantom{=}}{} + f_2(x, y) \partial_y (\cos(\theta)x - \sin(\theta)y) \\
+        &= v(\cos(\theta) x - \sin(\theta) y) \\
+        &= f_1(x, y) \partial_x (\cos(\theta) x - \sin(\theta) y) \\
+        &\mathrel{\phantom{=}}{} + f_2(x, y) \partial_y (\cos(\theta) x
+                                 - \sin(\theta) y) \\
         &= f_1(x, y) \cos(\theta) - f_2(x, y) \sin(\theta) \\
-        &= \cos(\theta) f_1(x, y) \partial_x x - \sin(\theta) f_2(x, y) \partial_y y \\
+        &= \cos(\theta) f_1(x, y) \partial_x x
+           - \sin(\theta) f_2(x, y) \partial_y y \\
         &= \cos(\theta) v(x) - \sin(\theta) v(y) \\
         &= \cos(\theta) dx(v) - \sin(\theta) dy(v)
 \end{align*}
@@ -1272,7 +1288,7 @@ The statement requires us to be ``working in the chart'', so for now we'll be ex
 To show that this really forms a basis of coordinate 1-forms, consider the basis vectors ``in the chart'', $\varphi_*^{-1}\partial_\mu$.
 \begin{align*}
     d(\varphi^* x^\mu)(\varphi_*^{-1}\partial_\nu) &= \varphi_*^{-1}\partial_\nu (\varphi^* x^\mu) \\
-        &= \partial_\nu ((\phi^* x^\mu) \circ \varphi^{-1}) \\
+        &= \partial_\nu ((\varphi^* x^\mu) \circ \varphi^{-1}) \\
         &= \delta_\nu^\mu.
 \end{align*}
 
@@ -1320,7 +1336,7 @@ We can use this to write any 1-form $\omega$ on $\mathbb{R}^n$ in a different ba
 \[
     \omega = \omega_\mu dx^\mu = \omega_\mu \frac{\partial x^\mu}{\partial x'^\nu} dx'^\nu.
 \]
-In this coordinate system, we identify $\omega$'s components as
+In this coordinate system, we identify the components of $\omega$ as
 \[
     \omega'_\nu = \frac{\partial x^\mu}{\partial x'^\nu} \omega_\mu.
 \]
@@ -1350,8 +1366,8 @@ Consider the action on the coordinate vector field $\partial_\lambda$,
 We could instead use the result from exercise~\ref{ex:coordinatetransformation1form}, again acting on the coordinate vector field $\partial_\lambda$,
 \begin{align*}
    \phi^*(dx'^\nu)\partial_\lambda &= \phi^*\left(\frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \right) \partial_\lambda \\
-    &= \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu (\phi_* \partial_\lambda) \\
-    &\equiv \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \partial_\lambda
+        &= \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu (\phi_* \partial_\lambda) \\
+        &\equiv \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \partial_\lambda
 \end{align*}
 where we are sloppy about the pullback in the last line, as is the convention.
 
@@ -1372,7 +1388,7 @@ Show that the vector fields $e_\mu$ are a basis of vector fields on $U$ if and o
 
 For $\left\{e_\mu\right\}$ to form a basis, they must be linearly independent and span $U$.
 
-Suppose $T$ is invertible at $p$. Then acting on both sides by $S$ gives us
+Suppose $T$ is invertible at $p$. Then acting on both sides by $S = T^{-1}$ gives us
 \begin{align*}
     S_\mu^\lambda e_\lambda &= S_\mu^\lambda T_\lambda^\nu \partial_\nu \\
         &= \delta_\mu^\nu \partial_\nu \\
@@ -1387,7 +1403,7 @@ so $\left\{e_\mu\right\}$ forms a basis for $U$.
 Assume $\left\{e_\mu\right\}$ forms a basis for $U$. Then for some smooth functions on $U$, $S_\mu^\nu$,
 \begin{align*}
     \partial_\mu &= S_\mu^\nu e_\nu \\
-        &= S_\mu^\nu T_\nu^\lambda \partial_\lambda.
+                 &= S_\mu^\nu T_\nu^\lambda \partial_\lambda.
 \end{align*}
 We must identify $S_\mu^\nu T_\nu^\lambda = \delta_\mu^\lambda$, so $T$ is invertible.
 
@@ -1413,9 +1429,9 @@ We can express
 for some smooth functions $S_\nu^\mu$ on $U$. Then
 \begin{align*}
     f^\mu(e_\nu) &= S_\kappa^\mu dx^\kappa (T_\nu^\lambda \partial_\lambda) \\
-        &= S_\kappa^\mu T_\nu^\lambda dx^\kappa \partial_\lambda \\
-        &= S_\kappa^\mu T_\nu^\lambda \delta_\lambda^\kappa \\
-        &= S_\lambda^\mu T_\nu^\lambda
+                 &= S_\kappa^\mu T_\nu^\lambda dx^\kappa \partial_\lambda \\
+                 &= S_\kappa^\mu T_\nu^\lambda \delta_\lambda^\kappa \\
+                 &= S_\lambda^\mu T_\nu^\lambda
 \end{align*}
 so the dual basis exists, since $T$ is invertible (from exercise~\ref{ex:changebasisinvertible}).
 
@@ -1451,10 +1467,10 @@ We know that $f'^\mu = S_\nu^\mu f^\nu$ for some functions $S_\nu^\mu$ on $U$.
 Then
 \begin{align*}
     f'^\mu(e'_\nu) &= f'^\mu(T^\lambda_\nu e_\lambda) \\
-        &= S^\mu_\kappa f^\kappa T^\lambda_\nu e_\lambda \\
-        &= S^\mu_\kappa T^\lambda_\nu f^\kappa e_\lambda \\
-        &= S^\mu_\kappa T^\lambda_\nu \delta^\kappa\lambda \\
-        &= S^\mu_\lambda T^\lambda_\nu.
+                   &= S^\mu_\kappa f^\kappa T^\lambda_\nu e_\lambda \\
+                   &= S^\mu_\kappa T^\lambda_\nu f^\kappa e_\lambda \\
+                   &= S^\mu_\kappa T^\lambda_\nu \delta^\kappa\lambda \\
+                   &= S^\mu_\lambda T^\lambda_\nu.
 \end{align*}
 But $f'^\mu(e'_\nu) = \delta^\mu_\nu$ from the definition of the dual basis, so $S = T^{-1}$.
 
@@ -1462,8 +1478,8 @@ If $v = v^\mu e_\mu = v'^\mu e'_\mu$, then $v^\nu e_\nu = v'^\lambda T_\lambda^\
 Applying $S = T^{-1}$,
 \begin{align*}
     S^\mu_\nu v^\nu &= S^\mu_\nu T_\lambda^\nu v'^\lambda \\
-        &= \delta^\mu_\lambda v'^\lambda \\
-        &= v'^\mu
+                    &= \delta^\mu_\lambda v'^\lambda \\
+                    &= v'^\mu
 \end{align*}
 so the components of a vector are contravariant.
 
@@ -1471,8 +1487,8 @@ If $\omega = \omega_\mu f^\mu = \omega'_\mu f'^\mu$, then $\omega_\nu f^\nu = \o
 Applying $T$,
 \begin{align*}
     T_\mu^\nu \omega_\nu &= T_\mu^\nu S_\nu^\lambda \omega'_\lambda \\
-        &= \delta^\lambda_\mu \omega'_\lambda \\
-        &= \omega'_\mu
+                         &= \delta^\lambda_\mu \omega'_\lambda \\
+                         &= \omega'_\mu
 \end{align*}
 so the components of a 1-form are covariant.
 
@@ -1485,10 +1501,10 @@ so the components of a 1-form are covariant.
 Show that
 \[
     u \wedge v \wedge w = \det \begin{pmatrix}
-        u_x & u_y & u_z \\
-        v_x & v_y & v_z \\
-        w_x & w_y & w_z
-    \end{pmatrix} dx \wedge dy \wedge dz.
+            u_x & u_y & u_z \\
+            v_x & v_y & v_z \\
+            w_x & w_y & w_z
+        \end{pmatrix} dx \wedge dy \wedge dz.
 \]
 Compare this to $\vec{u} \cdot (\vec{v} \times \vec{w})$.
 
@@ -1504,37 +1520,40 @@ Let $u, v, w$ be vectors,
 \end{align*}
 Then
 \begin{align*}
+    \SwapAboveDisplaySkip
     v \wedge w =&\ (v_x w_y - v_y w_x) \, dx \wedge dy \\
-        &+ (v_y w_z - v_z w_y) \, dy \wedge dz \\
-        &+ (v_z w_x - v_x w_z) \, dz \wedge dx,
+                &+ (v_y w_z - v_z w_y) \, dy \wedge dz \\
+                &+ (v_z w_x - v_x w_z) \, dz \wedge dx,
 \end{align*}
 so the triple product
 \begin{align*}
-u \wedge v \wedge w =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
-    &+ u_y (v_z w_x - v_x w_z) \, dy \wedge dz \wedge dx \\
-    &+ u_z (v_x w_y - v_y w_x) \, dz \wedge dx \wedge dy \\
-    =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
-    &- u_y (v_x w_z - v_z w_x) \, dx \wedge dy \wedge dz \\
-    &+ u_z (v_x w_y - v_y w_x) \, dx \wedge dy \wedge dz \\
-    =&\ \det \begin{pmatrix}
-        u_x & u_y & u_z \\
-        v_x & v_y & v_z \\
-        w_x & w_y & w_z
-    \end{pmatrix} dx \wedge dy \wedge dz.
+    u \wedge v \wedge w =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
+        &+ u_y (v_z w_x - v_x w_z) \, dy \wedge dz \wedge dx \\
+        &+ u_z (v_x w_y - v_y w_x) \, dz \wedge dx \wedge dy \\
+        =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
+        &- u_y (v_x w_z - v_z w_x) \, dx \wedge dy \wedge dz \\
+        &+ u_z (v_x w_y - v_y w_x) \, dx \wedge dy \wedge dz \\
+        =&\ \det \begin{pmatrix}
+                u_x & u_y & u_z \\
+                v_x & v_y & v_z \\
+                w_x & w_y & w_z
+            \end{pmatrix} dx \wedge dy \wedge dz.
 \end{align*}
 
-Consider the traditional vectors $\vec{u}, \vec{v}, \vec{w}$ on $\mathbb{R}^3$. Then
+Consider the traditional vectors $\vec{u}, \vec{v}, \vec{w}$ on $\mathbb{R}^3$.
 \[
-    \vec{v} \times \vec{w} = (v_y w_z - v_z w_y) \vec{\imath}
-        - (v_z w_x - v_x w_z) \vec{\jmath}
-        + (v_x w_y - v_y w_x) \vec{k},
+    \vec{v} \times \vec{w}
+        = (v_y w_z - v_z w_y) \vec{\imath}
+          - (v_z w_x - v_x w_z) \vec{\jmath}
+          + (v_x w_y - v_y w_x) \vec{k},
 \]
 so the triple product
-\begin{align*}
-    \vec{u} \cdot (\vec{v} \times \vec{w}) = u_x (v_y w_z - v_z w_y)
-        - u_y (v_x w_z - v_z w_x)
-        + u_z (v_x w_y - v_y w_x),
-\end{align*}
+\[
+    \vec{u} \cdot (\vec{v} \times \vec{w})
+        = u_x (v_y w_z - v_z w_y)
+          - u_y (v_x w_z - v_z w_x)
+          + u_z (v_x w_y - v_y w_x),
+\]
 the single component of $u \wedge v \wedge w$.
 
 \end{sol}
@@ -1549,7 +1568,7 @@ Show that if $a, b, c, d$ are four vectors in a 3-dimensional space then $a \wed
 
 Using $dx, dy, dz$ as a basis, we have from exercise~\ref{ex:triplewedgeproduct} that
 \[
-    b \wedge c \wedge d = \alpha \, dx \wedge dy \wedge dz, \qquad
+    b \wedge c \wedge d = \alpha \, dx \wedge dy \wedge dz, \quad
     \alpha = \det \begin{pmatrix}
         b_x & b_y & b_z \\
         c_x & c_y & c_z \\
@@ -1591,8 +1610,9 @@ If $\dim(V) = 2$,
 \]
 so
 \begin{align*}
+    \SwapAboveDisplaySkip
     u \wedge v &= u_x v_y dx \wedge dy + u_y v_x dy \wedge dx \\
-        &= (u_x v_y - u_y v_x) \, dx \wedge dy.
+               &= (u_x v_y - u_y v_x) \, dx \wedge dy.
 \end{align*}
 Therefore $\Lambda V$ consists of $\mathbb{F}$, $V$ and all linear combinations of the 2-forms $dx \wedge dy$ above.
 
@@ -1653,13 +1673,13 @@ $w = w_0 + \cdots + w_n$
 where each $w_p \in \Lambda^p V$, so
 \begin{align*}
     \Lambda V &= \Lambda^0 V \oplus \cdots \oplus \Lambda^n V \\
-        &= \bigoplus_{p=0}^n \Lambda^p V.
+              &= \bigoplus_{p=0}^n \Lambda^p V.
 \end{align*}
 The dimension of $\Lambda V$ is therefore
 \begin{align*}
     \dim(\Lambda V) &= \sum_{p = 0}^n \dim(\Lambda^p V) \\
-        &= \sum_{p = 0}^n \binom{n}{p} \\
-        &= 2^n
+                    &= \sum_{p = 0}^n \binom{n}{p} \\
+                    &= 2^n
 \end{align*}
 by the binomial theorem.
 
@@ -1700,6 +1720,7 @@ Show that differential forms are contravariant. That is, show that if $\phi: M \
 \]
 agreeing with the usual pullback on 0-forms (functions) and 1-forms and satisfying
 \begin{align*}
+    \SwapAboveDisplaySkip
     \phi^* (\alpha \omega) &= \alpha \phi^* \omega \\
     \phi^*(\omega + \mu) &= \phi^* \omega + \phi^* \mu \\
     \phi^*(\omega \wedge \mu) &= \phi^* \omega \wedge \phi^* \mu
@@ -1713,9 +1734,9 @@ for all $\omega, \mu \in \Omega(N)$ and $\alpha \in \mathbb{R}$.
 Since any $\mu \in \Omega(N)$ can be expressed as $\mu = \mu_0 + \cdots + \mu_n$ where each $\mu_p \in \Omega^p(N)$, we can construct a pullback $\phi^*$ satisfying
 \begin{align*}
     \phi^* \mu &= \phi^* (\mu_0 + \cdots + \mu_n) \\
-        &= \phi^* \mu_0 + \cdots + \phi^* \mu_n
+               &= \phi^* \mu_0 + \cdots + \phi^* \mu_n
 \end{align*}
-by linearity and reduce this to considering how $\phi^*$ acts on each $p$-form.
+by linearity and only consider how $\phi^*$ acts on each $p$-form.
 
 The pullback of a $p$-form $\omega = \omega_1 \wedge \cdots \wedge \omega_p \in \Omega^p(N)$ should generalise the \ref{eq:pullback1form}.  %chktex 2
 So on a collection of vectors $v_1, \ldots, v_p \in \text{Vect}(M)$ we would like to get
@@ -1748,7 +1769,7 @@ so $\phi^*(\omega + \mu) = \phi^* \omega + \phi^* \mu$,
     \phi^*(\omega \wedge \mu) (v_1, \ldots, v_p) &= (\omega \wedge \mu) (\phi_* v_1, \ldots, \phi_* v_p) \\
         &= \phi^*\omega \wedge \phi^*\mu (v_1, \ldots, v_p)
 \end{align*}
-so $\phi^* (\alpha \omega) = \alpha \phi^* \omega$.
+so $\phi^* (\omega \wedge \mu) = \phi^* \omega \wedge \phi^* \mu$.
 
 \end{sol}
 
@@ -1892,11 +1913,11 @@ Since the map is injective and, from solution~\ref{sol:gradient}, $\dim(V) = \di
 We claim that we can express any $\omega \in V^*$ as $\omega = g(v,\cdot)$ for some $v \in V$.
 \begin{align*}
     \omega &= \omega_\nu f^\nu \\
-        &= \omega_\nu g(e_\nu, \cdot) \\
-        &= \omega(e_\nu) g(e_\nu, \cdot) \\
-        &= g(v, e_\nu) g(e_\nu, \cdot) \\
-        &= g(v^\mu e_\mu, e_\nu) g(e_\nu, \cdot) \\
-        &= v^\mu g(e_\mu, e_\nu) g(e_\nu, \cdot).
+           &= \omega_\nu g(e_\nu, \cdot) \\
+           &= \omega(e_\nu) g(e_\nu, \cdot) \\
+           &= g(v, e_\nu) g(e_\nu, \cdot) \\
+           &= g(v^\mu e_\mu, e_\nu) g(e_\nu, \cdot) \\
+           &= v^\mu g(e_\mu, e_\nu) g(e_\nu, \cdot).
 \end{align*}
 Because $g$ is non-degenerate, the above is solvable for $v^\mu$ and therefore the map is surjective.
 
@@ -1916,13 +1937,13 @@ Let $v = v^\mu e_\mu$ be a vector field on a chart. Show that the corresponding 
 We'll use the same argument as in solution~\ref{sol:metricisomorphism}. Denote $\omega = g(v, \cdot)$, but since $\omega$ is a 1-form we can express it in components as
 \begin{align*}
     \omega &= \omega_\nu f^\nu \\
-        &= \omega(e_\nu) f^\nu \\
-        &= g(v, e_\nu) f^\nu \\
-        &= g(v^\mu e_\mu, e_\nu) f^\nu \\
-        &= v^\mu g(e_\mu e_\nu) f^\nu \\
-        &= v^\mu g_{\mu\nu} f^\nu \\
-        &= g_{\mu\nu} v^\mu f^\nu \\
-        &= v_\nu f^\nu
+           &= \omega(e_\nu) f^\nu \\
+           &= g(v, e_\nu) f^\nu \\
+           &= g(v^\mu e_\mu, e_\nu) f^\nu \\
+           &= v^\mu g(e_\mu e_\nu) f^\nu \\
+           &= v^\mu g_{\mu\nu} f^\nu \\
+           &= g_{\mu\nu} v^\mu f^\nu \\
+           &= v_\nu f^\nu
 \end{align*}
 where we identify $g_{\mu\nu}v^\mu = v_\nu$.
 
@@ -1947,7 +1968,7 @@ From exercise~\ref{ex:loweringindex} we have that for a vector field $\omega^\mu
 Applying the inverse $g^{\mu\nu}$ to the components $\omega_\mu = g_{\mu\nu}\omega^\nu$,
 \begin{align*}
     g^{\mu\nu} \omega_\mu &= g^{\mu\nu} g_{\mu\nu} \omega^\nu \\
-        &= \omega^\nu.
+                          &= \omega^\nu.
 \end{align*}
 
 \end{sol}
@@ -1957,12 +1978,12 @@ Applying the inverse $g^{\mu\nu}$ to the components $\omega_\mu = g_{\mu\nu}\ome
 Let $\eta$ be the Minkowski metric on $\mathbb{R}^4$ as defined above.
 Show that its components in the standard basis are
 \[
-    \eta_{\mu\nu} = \begin{pmatrix}
-        -1 & 0 & 0 & 0 \\
-        0 & 1 & 0 & 0 \\
-        0 & 0 & 1 & 0 \\
-        0 & 0 & 0 & 1
-    \end{pmatrix}.
+    \eta_{\mu\nu} = \begin{pmatrix*}[r]
+            -1 & 0 & 0 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+        \end{pmatrix*}.
 \]
 
 \end{ex}
@@ -2013,7 +2034,9 @@ where $\epsilon(i) = \pm 1$. Show the $p$-fold wedge products
 \]
 form an orthonormal basis of $p$-forms with
 \[
-    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{i_1} \wedge \cdots \wedge e^{i_p}} = \epsilon(i_1) \cdots \epsilon(i_p).
+    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}
+           {e^{i_1} \wedge \cdots \wedge e^{i_p}}
+        = \epsilon(i_1) \cdots \epsilon(i_p).
 \]
 
 \end{ex}
@@ -2022,7 +2045,8 @@ form an orthonormal basis of $p$-forms with
 
 Let $\mu = \mu^1 \wedge \cdots \wedge \mu^p$ be a $p$-form. If $\innerp{\mu}{ \omega} = 0$ for all $p$-forms $\omega = \omega^1 \wedge \cdots \wedge \omega^p$, then
 \begin{align*}
-    \innerp{\mu}{\omega} &= \innerp{\mu^1 \wedge \cdots \wedge \mu^p}{\omega^1 \wedge \cdots \wedge \omega^p} \\
+    \innerp{\mu}{\omega} &= \innerp{\mu^1 \wedge \cdots \wedge \mu^p}
+                                   {\omega^1 \wedge \cdots \wedge \omega^p} \\
         &= \det\big(g(\mu^i, \omega^j)\big) \\
         &= 0.
 \end{align*}
@@ -2031,19 +2055,23 @@ But $g$ is non-degenerate, so the determinant of $g(\mu^i, \omega^j)$ must be no
 The inner product of basis 1-forms is
 \[
     g(e^i, e^j) = g^{ij} = \begin{pmatrix}
-        \epsilon(1) & & \\
-        & \ddots & \\
-        & & \epsilon(p)
-    \end{pmatrix}.
+            \epsilon(1) & & \\
+            & \ddots & \\
+            & & \epsilon(p)
+        \end{pmatrix}.
 \]
 From the definition of the inner product of $p$-forms,
 \[
-    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{j_1} \wedge \cdots \wedge e^{j_p}} = \det\big(g(e^{i_k}, e^{j_k})\big),
+    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}
+           {e^{j_1} \wedge \cdots \wedge e^{j_p}}
+        = \det\big(g(e^{i_k}, e^{j_k})\big),
 \]
 but $g(e^{i_k}, e^{j_k}) = 0$ if $i_k \neq j_k$ and so too is its determinant.
 Taking the inner product of a basis $p$-form with itself,
 \begin{align*}
-    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{i_1} \wedge \cdots \wedge e^{i_p}} &= \det\big(g(e^{i_k}, e^{i_k})\big) \\
+    \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}
+           {e^{i_1} \wedge \cdots \wedge e^{i_p}}
+        &= \det\big(g(e^{i_k}, e^{i_k})\big) \\
         &= \prod_{k = 1}^p \epsilon(i_k) \\
         &= \epsilon(i_1) \cdots \epsilon(i_p)
 \end{align*}
@@ -2082,8 +2110,8 @@ is called the \emph{Lagrangian} for the vacuum Maxwell's equations, which we dis
 From the definition of the inner product of 1-forms,
 \begin{align*}
     \innerp{E}{E} &= g^{ij} E_i E_j \\
-        &= \delta^{ij} E_i E_j \\
-        &= E_x^2 + E_y^2 + E_z^2.
+                  &= \delta^{ij} E_i E_j \\
+                  &= E_x^2 + E_y^2 + E_z^2.
 \end{align*}
 From exercise~\ref{ex:innerproductpforms},
 \begin{align*}
@@ -2094,10 +2122,15 @@ From exercise~\ref{ex:innerproductpforms},
 so by bilinearity,
 \begin{align*}
     \innerp{B}{B} =&\ \innerp{B}{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy} \\
-        =&\ \innerp{B}{B_x dy \wedge dz} + \innerp{B}{B_y dz \wedge dx} + \innerp{B}{B_z dx \wedge dy} \\
-        =&\ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}{B_x dy \wedge dz} \\
-        &+ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}{B_y dz \wedge dx} \\
-        &+ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}{B_z dx \wedge dy} \\
+        =&\ \innerp{B}{B_x dy \wedge dz}
+            + \innerp{B}{B_y dz \wedge dx}
+            + \innerp{B}{B_z dx \wedge dy} \\
+        =&\ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}
+                   {B_x dy \wedge dz} \\
+        &+ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}
+                  {B_y dz \wedge dx} \\
+        &+ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}
+                  {B_z dx \wedge dy} \\
         &+ \innerp{B_z dx \wedge dy}{B_x dy \wedge dz} \\
         =&\ \innerp{B_x dy \wedge dz}{B_x dy \wedge dz} \\
         &+ \innerp{B_y dz \wedge dx}{B_y dz \wedge dx} \\
@@ -2110,7 +2143,7 @@ Alternatively, we could use the Hodge star and calculate $\innerp{\star B}{\star
 
 \begin{ex}
 
-In $\mathbb{R}^4$, let $F$ be the 2-form given by $F = B + E \wedge dt$, where $E$ and $B$ are given by \hyperref[ex:esquaredbsquared]{the formulae above}. Using the Minkowski metric on $\mathbb{R}^4$, calculate $-\frac{1}{2} \innerp{F}{F}$ and relate it to \hyperref[eq:lagrangianvacuumem]{the Lagrangian above}.
+In $\mathbb{R}^4$, let $F$ be the 2-form given by $F = B + E \wedge dt$, where $E$ and $B$ are given by \hyperref[ex:esquaredbsquared]{the formul\ae\ above}. Using the Minkowski metric on $\mathbb{R}^4$, calculate $-\frac{1}{2} \innerp{F}{F}$ and relate it to \hyperref[eq:lagrangianvacuumem]{the Lagrangian above}.
 
 \end{ex}
 
@@ -2126,16 +2159,16 @@ since each component of $B$ is orthogonal to each component of $E \wedge dt$.
 Focusing on the electric term,
 \begin{align*}
     \innerp{E \wedge dt}{E \wedge dt} &= \det \begin{pmatrix}
-            \eta(E, E) & \eta(E, dt) \\
-            \eta(dt, E) & \eta(dt, dt)
-        \end{pmatrix} \\
-    &= -\innerp{E}{E}
+                \eta(E, E) & \eta(E, dt) \\
+                \eta(dt, E) & \eta(dt, dt)
+            \end{pmatrix} \\
+        &= -\innerp{E}{E}
 \end{align*}
 so
 \[
     -\frac{1}{2} \innerp{F}{F} = \frac{1}{2}(\innerp{E}{E} - \innerp{B}{B}),
 \]
-the Lagrangian density for electromagnetism in a vacuum on Minkowski spacetime.
+the Lagrangian density for vacuum electromagnetism on Minkowski spacetime.
 
 \end{sol}
 
