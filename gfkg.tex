@@ -1983,4 +1983,20 @@ which we can write in matrix form as above.
 
 \end{sol}
 
+\begin{ex}
+
+Show that $g^\mu_\nu$ is equal to the Kronecker delta $\delta^\mu_\nu$, that is, $1$ if $\mu = \nu$ and $0$ otherwise. Note that here the order of indices does not matter, since $g_{\mu\nu} = g_{\nu\mu}$.
+
+\end{ex}
+
+\begin{sol}
+
+Lowering the index, $g_{\mu\lambda}g^\mu_\nu = g_{\lambda\nu}$.
+But $g_{\lambda\nu} = g_{\mu\lambda}\delta^\mu_\nu$, so we identify $g^\mu_\nu = \delta^\mu_\nu$.
+
+Alternatively, since $g_{\mu\nu}$ and $g^{\mu\nu}$ are inverses, $g^{\mu\lambda} g_{\lambda\nu} = \delta^\mu_\nu$ by definition.
+But $g^{\mu\lambda} g_{\lambda\nu} = g^\mu_\nu$ so $g^\mu_\nu = \delta^\mu_\nu$.
+
+\end{sol}
+
 \end{document}
