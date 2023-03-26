@@ -2001,7 +2001,7 @@ But $g^{\mu\lambda} g_{\lambda\nu} = g^\mu_\nu$ so $g^\mu_\nu = \delta^\mu_\nu$.
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:innerproductpforms}
 
 Show that the inner product of $p$-forms is non-degenerate by supposing that $(e^1, \ldots, e^n)$ is any orthonormal basis of $1$-forms in some chart, with
 \[
@@ -2048,6 +2048,63 @@ Taking the inner product of a basis $p$-form with itself,
         &= \epsilon(i_1) \cdots \epsilon(i_p)
 \end{align*}
 since $g^{ij}$ is diagonal. Therefore $\left\{e^{i_1} \wedge \cdots \wedge e^{i_p}\right\}$ forms an orthonormal basis.
+
+\end{sol}
+
+\begin{ex}
+
+Let $E = E_x dx + E_y dy + E_z dz$ be a 1-form on $\mathbb{R}^3$ with its Euclidean metric. Show that
+\[
+    \innerp{E}{E} = E_x^2 + E_y^2 + E_z^2.
+\]
+Similarly, let
+\[
+    B = B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy
+\]
+be a 2-form. Show that
+\[
+    \innerp{B}{B} = B_x^2 + B_y^2 + B_z^2.
+\]
+In physics, the quantity
+\[
+    \frac{1}{2}(\innerp{E}{E} + \innerp{B}{B})
+\]
+is called the \emph{energy density} of the electromagnetic field. The quantity
+\[
+    \frac{1}{2}(\innerp{E}{E} - \innerp{B}{B})
+\]
+is called the \emph{Lagrangian} for the vacuum Maxwell's equations, which we discuss more in Chapter 4 of Part II in greater generality.
+
+\end{ex}
+
+\begin{sol}
+
+From the definition of the inner product of 1-forms,
+\begin{align*}
+    \innerp{E}{E} &= g^{ij} E_i E_j \\
+        &= \delta^{ij} E_i E_j \\
+        &= E_x^2 + E_y^2 + E_z^2.
+\end{align*}
+From exercise~\ref{ex:innerproductpforms},
+\begin{align*}
+    \innerp{dx^a \wedge dx^b}{dx^c \wedge dx^d} &= \det(g(dx^i, dx^j)) \\
+        &= g(dx^a, dx^c) g(dx^b, dx^d) \\
+        &= \delta^{ac} \delta^{bd},
+\end{align*}
+so by bilinearity,
+\begin{align*}
+    \innerp{B}{B} =&\ \innerp{B}{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy} \\
+        =&\ \innerp{B}{B_x dy \wedge dz} + \innerp{B}{B_y dz \wedge dx} + \innerp{B}{B_z dx \wedge dy} \\
+        =&\ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}{B_x dy \wedge dz} \\
+        &+ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}{B_y dz \wedge dx} \\
+        &+ \innerp{B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy}{B_z dx \wedge dy} \\
+        &+ \innerp{B_z dx \wedge dy}{B_x dy \wedge dz} \\
+        =&\ \innerp{B_x dy \wedge dz}{B_x dy \wedge dz} \\
+        &+ \innerp{B_y dz \wedge dx}{B_y dz \wedge dx} \\
+        &+ \innerp{B_z dx \wedge dy}{B_z dx \wedge dy} \\
+        =&\ B_x^2 + B_y^2 + B_z^2.
+\end{align*}
+Alternatively, we could use the Hodge star and calculate $\innerp{\star B}{\star B}$ instead.
 
 \end{sol}
 
