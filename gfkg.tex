@@ -2188,4 +2188,29 @@ Permuting the basis by some permutation $\pi$ corresponds to a transformation by
 
 \end{sol}
 
+\begin{ex}
+
+Let $M$ be an oriented manifold. Show that we can cover $M$ with \emph{oriented charts} $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$, that is, charts such that the basis $dx^\mu$ of cotangent vectors on $\mathbb{R}^n$, pulled back to $U_\alpha$ by $\varphi_\alpha$, is positively oriented.
+
+\end{ex}
+
+\begin{sol}
+
+Let $p \in U_\alpha$ and $\dim(M) = n$. We have an oriented chart $\varphi_\alpha: p \mapsto x^\mu(p)$ which gives us a basis $\left\{dx^\mu\right\}$ of the cotangent space $T_p^*M$.
+Pulling back by $\varphi_\alpha^*$, we get a basis of $U_\alpha$, $\left\{\varphi_\alpha^*dx^\mu\right\} = \left\{d\varphi_\alpha^*x^\mu\right\}$.
+
+The cotangent basis $\left\{dx^\mu\right\}$ admits a volume form
+\[
+    \omega = dx^1 \wedge \cdots \wedge dx^n.
+\]
+Pulling back,
+\begin{align*}
+    \varphi_\alpha^* \omega &= \varphi_\alpha^* (dx^1 \wedge \cdots \wedge dx^n) \\
+        &= \varphi_\alpha^* dx^1 \wedge \cdots \wedge \varphi_\alpha^* dx^n \\
+        &= d\varphi_\alpha^* x^1 \wedge \cdots \wedge d\varphi_\alpha^* x^n,
+\end{align*}
+but this is the volume form corresponding to our basis of $U_\alpha$ and is positively oriented. Since $M$ is oriented, we can cover $M$ in such charts.
+
+\end{sol}
+
 \end{document}
