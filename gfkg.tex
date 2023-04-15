@@ -1343,7 +1343,7 @@ In this coordinate system, we identify the components of $\omega$ as
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:pullbackdx}
 
 Show that
 \[
@@ -2210,6 +2210,35 @@ Pulling back,
         &= d\varphi_\alpha^* x^1 \wedge \cdots \wedge d\varphi_\alpha^* x^n,
 \end{align*}
 but this is the volume form corresponding to our basis of $U_\alpha$ and is positively oriented. Since $M$ is oriented, we can cover $M$ in such charts.
+
+\end{sol}
+
+\begin{ex}
+
+Given a diffeomorphism $\phi: M \to N$ from one oriented manifold to another, we say that $\phi$ is \emph{orientation-preserving} if the pullback of any right-handed basis of a cotangent space in $N$ is a right-handed basis of a cotangent space in $M$. Show that if we can cover $M$ with charts such that the transition functions $\varphi_\alpha \circ \varphi_\beta^{-1}$ are orientation-preserving, we can make $M$ into an oriented manifold by using the charts to transfer the standard orientation on $\mathbb{R}^n$ to an orientation on $M$.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\dim(M) = n$ and let $p \in U_\alpha$, $q \in U_\beta$ where $U_\alpha$, $U_\beta$ are overlapping open sets with charts $\varphi_\alpha: p \mapsto \left\{x^\mu\right\}$, $\varphi_\beta: q \mapsto \left\{x'^\nu\right\}$. Each chart admits volume forms
+\[
+    \omega = dx^1 \wedge \cdots \wedge dx^n, \quad
+    \omega' = dx'^1 \wedge \cdots \wedge dx'^n.
+\]
+On the overlap $U_\alpha \cap U_\beta$, we have
+\[
+{(\varphi_\alpha \circ \varphi_\beta^{-1})}^* dx'^\nu = T_\mu^\nu dx^\mu
+\]
+with the explicit representation of $T$ given by partial derivatives as per exercise~\ref{ex:pullbackdx}, so
+\begin{align*}
+    {(\varphi_\alpha \circ \varphi_\beta^{-1})}^* \omega' &= {(\varphi_\alpha \circ \varphi_\beta^{-1})}^* (dx'^1 \wedge \cdots \wedge dx'^n) \\
+        &= {(\varphi_\alpha \circ \varphi_\beta^{-1})}^* dx'^1 \wedge \cdots \wedge {(\varphi_\alpha \circ \varphi_\beta^{-1})}^* dx'^n \\
+        &= T_\mu^1 dx^\mu \wedge \cdots \wedge T_\nu^n dx^\nu \\
+        &= \det(T) \, dx^1 \wedge \cdots \wedge dx^n \\
+        &= \det(T) \, \omega.
+\end{align*}
+But since the transition function is orientation-preserving, this transfers the standard orientation on $\mathbb{R}^n$ to an orientation on $M$.
 
 \end{sol}
 
