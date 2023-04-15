@@ -1294,7 +1294,7 @@ To show that this really forms a basis of coordinate 1-forms, consider the basis
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:transform1form}
 
 In the situation above, show that
 \[
@@ -2239,6 +2239,47 @@ with the explicit representation of $T$ given by partial derivatives as per exer
         &= \det(T) \, \omega.
 \end{align*}
 But since the transition function is orientation-preserving, this transfers the standard orientation on $\mathbb{R}^n$ to an orientation on $M$.
+
+\end{sol}
+
+\begin{ex}
+
+Let $M$ be an oriented $n$-dimensional semi-Riemannian manifold and let $\left\{e^\mu\right\}$ be an oriented orthonormal basis of cotangent vectors\footnote{We use upper indices since we're in the cotangent space.} at some point $p \in M$. Show that
+\[
+    e^1 \wedge \cdots \wedge e^n = \text{vol}_p,
+\]
+where $\text{vol}$ is the volume form associated to the metric on $M$ and $\text{vol}_p$ is its value at $p$.
+
+\end{ex}
+
+\begin{sol}
+
+The canonical volume form on $M$ with metric $g_{\mu\nu} = g(\partial_\mu, \partial_\nu)$ is given by
+\[
+    \text{vol} = \sqrt{|\det(g)|} \, dx^1 \wedge \cdots \wedge dx^n.
+\]
+We have that $e^\mu = T^\mu_\nu dx^\nu$ with $T$ as per exercise~\ref{ex:transform1form}. Taking the inner product
+\begin{align*}
+    \innerp{dx^\mu}{dx^\nu} &= \innerp{{(T^{-1})}^\mu_\alpha e^\alpha}{{(T^{-1})}^\nu_\beta e^\beta} \\
+        &= {(T^{-1})}^\mu_\alpha {(T^{-1})}^\nu_\beta \innerp{e^\alpha}{e^\beta} \\
+        &= {(T^{-1})}^\mu_\alpha {(T^{-1})}^\nu_\beta \delta^{\alpha\beta} \epsilon(\alpha) \\
+        &= \pm {(T^{-1})}^\mu_\alpha {(T^{-1})}^\nu_\alpha
+\end{align*}
+with $\epsilon$ as per exercise~\ref{ex:innerproductpforms}.
+But $\innerp{dx^\mu}{dx^\nu} = g^{\mu\nu}$, the inverse of $g_{\mu\nu}$, so
+\[
+g^{\mu\nu} = \pm {(T^{-1})}^\mu_\alpha {(T^{-1})}^\nu_\alpha
+\]
+and taking the determinant gives us $\det(T) = \sqrt{|\det(g)|}$. Then
+\begin{align*}
+    e^1 \wedge \cdots \wedge e^n &= \det(T) \, dx^1 \wedge \cdots \wedge dx^n \\
+        &= \sqrt{|\det(g)|} \, dx^1 \wedge \cdots \wedge dx^n \\
+        &= \text{vol}
+\end{align*}
+and, evaluated at $p$,
+\[
+e_p^1 \wedge \cdots \wedge e_p^n = \text{vol}_p.
+\]
 
 \end{sol}
 
