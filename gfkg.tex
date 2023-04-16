@@ -2242,7 +2242,7 @@ But since the transition function is orientation-preserving, this transfers the 
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:canonicalvolumeform}
 
 Let $M$ be an oriented $n$-dimensional semi-Riemannian manifold and let $\left\{e^\mu\right\}$ be an oriented orthonormal basis of cotangent vectors\footnote{We use upper indices since we're in the cotangent space.} at some point $p \in M$. Show that
 \[
@@ -2280,6 +2280,56 @@ and, evaluated at $p$,
 \[
 e_p^1 \wedge \cdots \wedge e_p^n = \text{vol}_p.
 \]
+
+\end{sol}
+
+\subsection{The Hodge Star Operator}
+
+\begin{ex}
+
+Show that if we define the Hodge star operator in a chart using this formula, it satisfies the property $\omega \wedge \star \mu = \innerp{\omega}{\mu} \, \text{vol}$. Use the result from exercise~\ref{ex:canonicalvolumeform}.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\left\{e^\mu\right\}$ be a positively oriented orthonormal basis on an $n$-dimensional manifold. Then we define the Hodge star operator in a chart as
+\[
+    \star (e^{i_1} \wedge \cdots \wedge e^{i_p}) = \pm e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}
+\]
+where the sign is determined by $\text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p)$.
+
+$p$-forms $\omega = \omega_I e^I$ and $\mu = \mu_J e^J$ in terms of basis 1-forms are
+\[
+    \omega = \omega_{i_1 \cdots i_p} e^{i_1} \wedge \cdots \wedge e^{i_p}, \quad
+    \mu = \mu_{j_1 \cdots j_p} e^{j_1} \wedge \cdots \wedge e^{j_p}.
+\]
+Taking the inner product,
+\begin{align*}
+    \innerp{\omega}{\mu} &= \omega_I \mu_J \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{j_1} \wedge \cdots \wedge e^{j_p}} \\
+        &= \omega_I \mu_J \, \det \big(g(e^{i_k}, e^{j_k})\big) \\
+        &= \omega_I \mu_J \delta^{IJ} \epsilon(i_1) \cdots \epsilon(i_p)
+\end{align*}
+where we denote $\delta^{IJ} = \delta^{i_1 j_1} \cdots \delta^{i_p j_p}$.
+
+The Hodge dual of $\mu$ is
+\[
+    \star \mu = \pm \mu_J e^{j_{p + 1}} \wedge \cdots \wedge e^{j_n}
+\]
+and so
+\[
+    \omega \wedge \star \mu = \pm \omega_I \mu_J e^{i_1} \wedge \cdots \wedge e^{i_p} \wedge e^{j_{p + 1}} \wedge \cdots \wedge e^{j_n}.
+\]
+Notice that this will vanish if any basis elements $e^{i_k}$ of $\omega$ are equal to any basis elements $e^{j_l}$ of $\star \mu$ by antisymmetry or, by Hodge duality, are not equal to any basis element $e^{j_l}$ of $\mu$.
+Then,
+\begin{align*}
+    \omega \wedge \star \mu &= \pm \omega_I \mu_J \delta^{IJ} e^{i_1} \wedge \cdots \wedge e^{i_p} \wedge e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n} \\
+        &= \pm \omega_I \mu_J \delta^{IJ} e^{i_1} \wedge \cdots \wedge e^{i_n} \\
+        &= \text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \omega_I \mu_J \delta^{IJ} e^{i_1} \wedge \cdots \wedge e^{i_n} \\
+        &= {\text{sign}(i_1, \ldots, i_n)}^2 \epsilon(i_1) \cdots \epsilon(i_p) \omega_I \mu_J \delta^{IJ} e^1 \wedge \cdots \wedge e^n \\
+        &= \omega_I \mu_J \delta^{IJ} \epsilon(i_1) \cdots \epsilon(i_p) e^1 \wedge \cdots \wedge e^n \\
+        &= \innerp{\omega}{\mu} \, \text{vol}.
+\end{align*}
 
 \end{sol}
 
