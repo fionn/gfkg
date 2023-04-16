@@ -1,6 +1,7 @@
 DashExcpt
 {
     epsilon--delta
+    Levi--Civita
 }
 
 TabSize = 4

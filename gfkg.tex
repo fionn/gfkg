@@ -2463,4 +2463,49 @@ so
 
 \end{sol}
 
+\begin{ex}
+
+Let $M$ be an oriented semi-Riemannian manifold of dimension $n$ and signature $(s, n - s)$. Let $e^\mu$ be an orthonormal basis of 1-forms on some chart. Define the \emph{Levi--Civita symbol} for $1 \leq i_j \leq n$ by
+\[
+    \epsilon_{i_1 \cdots i_n} = \begin{dcases*}
+            \text{sign}(i_1, \ldots, i_n) & \text{all $i_j$ distinct}, \\
+            0                             & otherwise.
+        \end{dcases*}
+\]
+Show that for any $p$-form
+\[
+    \omega = \frac{1}{p!} \omega_{i_1 \cdots i_p} e^{i_1} \wedge \cdots \wedge e^{i_p}
+\]
+we have
+\[
+    {(\star \omega)}_{j_1 \cdots j_{n - p}} = \frac{1}{p!} {\epsilon^{i_1 \cdots i_p}}_{j_1 \cdots j_{n - p}} \omega_{i_1 \cdots i_p}.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Taking the Hodge dual of $\omega$,
+\begin{align*}
+    \star \omega &= \frac{1}{p!} \text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \omega_{i_1 \cdots i_p} e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n} \\
+        &= \frac{1}{p!} \text{sign}(i_1, \ldots, i_p, i_{p + 1}, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \omega_{i_1 \cdots i_p} e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}.
+\end{align*}
+We're free to rename $i_{p + 1}, \ldots, i_n$ to $j_1, \ldots, j_{n - p}$ and, if we use the Levi--Civita symbol,
+\begin{align*}
+    \star \omega &= \frac{1}{p!} \epsilon(i_1) \cdots \epsilon(i_p) \epsilon_{i_1 \cdots i_p j_1 \cdots j_{n - p}} \omega_{i_1 \cdots i_p} e^{j_1} \wedge \cdots \wedge e^{j_{n - p}} \\
+        &= \frac{1}{p!} \epsilon(i_1) \cdots \epsilon(i_p) \delta^{i_1 k_1} \cdots \delta^{i_p k_p} \epsilon_{k_1 \cdots k_p j_1 \cdots j_{n - p}} \omega_{i_1 \cdots i_p} e^{j_1} \wedge \cdots \wedge e^{j_{n - p}} \\
+        &= \frac{1}{p!} g^{i_1 k_1} \cdots g^{i_p k_p} \epsilon_{k_1 \cdots k_p j_1 \cdots j_{n - p}} \omega_{i_1 \cdots i_p} e^{j_1} \wedge \cdots \wedge e^{j_{n - p}} \\
+        &= \frac{1}{p!} {\epsilon^{i_1 \cdots i_p}}_{j_1 \cdots j_{n - p}} \omega_{i_1 \cdots i_p} e^{j_1} \wedge \cdots \wedge e^{j_{n - p}}
+\end{align*}
+so if $\star \omega$ in terms of components is
+\[
+    \star \omega = {(\star \omega)}_{j_1 \cdots j_{n - p}} e^{j_1} \wedge \cdots \wedge e^{j_{n - p}},
+\]
+then
+\[
+    {(\star \omega)}_{j_1 \cdots j_{n - p}} = \frac{1}{p!} {\epsilon^{i_1 \cdots i_p}}_{j_1 \cdots j_{n - p}} \omega_{i_1 \cdots i_p}.
+\]
+
+\end{sol}
+
 \end{document}
