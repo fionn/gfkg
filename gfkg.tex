@@ -2437,4 +2437,30 @@ Since all $p$-forms can be written as a linear combination of all wedge products
 
 \end{sol}
 
+\begin{ex}
+
+Let $M$ be an oriented semi-Riemannian manifold of dimension $n$ and signature $(n-s, s)$. Show that on $p$-forms,
+\[
+    \star^2 = {(-1)}^{p (n - p) + s}.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Let $\omega = \omega_I e^{i_1} \wedge e^{i_p}$ be a $p$-form on $M$. Then
+\[
+    \star \omega = \text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \omega_I e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}
+\]
+so
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \star^2 \omega &= \text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \star (\omega_I e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}) \\
+        &= \text{sign}(i_1, \ldots, i_n) \text{sign}(i_{p + 1}, \ldots, i_n, i_1, \ldots, i_p) \epsilon(i_1) \cdots \epsilon(i_n) \omega \\
+        &= {(-1)}^{p (n - p)} {(-1)}^s \omega \\
+        &= {(-1)}^{p (n - p) + s} \omega.
+\end{align*}
+
+\end{sol}
+
 \end{document}
