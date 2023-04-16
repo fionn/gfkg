@@ -2366,4 +2366,33 @@ analogous to the curl of $\omega$.
 
 \end{sol}
 
+\begin{ex}
+
+Calculate $\star d \star \omega$ when $\omega$ is a 1-form on $\mathbb{R}^3$.
+
+\end{ex}
+
+\begin{sol}
+
+Denote $\omega = \omega_x dx + \omega_y dy + \omega_z dz$. The Hodge dual is
+\begin{align*}
+    \star \omega &= \star (\omega_x dx + \omega_y dy + \omega_z dz) \\
+        &= \omega_x dy \wedge dz + \omega_y dz \wedge dx + \omega_z dx \wedge dy.
+\end{align*}
+The gradient of the Hodge dual is then
+\begin{align*}
+    d \star \omega &= d(\omega_x dy \wedge dz + \omega_y dz \wedge dx + \omega_z dx \wedge dy) \\
+        &= d(\omega_x dy \wedge dz) + d(\omega_y dz \wedge dx) + d(\omega_z dx \wedge dy) \\
+        &= d\omega_x \wedge dy \wedge dz + d\omega_y \wedge dz \wedge dx + d\omega_z \wedge dx \wedge dy \\
+        &= \partial_x \omega_x dx \wedge dy \wedge dz + \partial_y \omega_y dy \wedge dz \wedge dx + \partial_z \omega_z dz \wedge dx \wedge dy \\
+        &= (\partial_x \omega_x + \partial_y \omega_y + \partial_z \omega_z) \, dx \wedge dy \wedge dz.
+\end{align*}
+Taking the Hodge dual of this gives
+\[
+    \star d \star \omega = \partial_x \omega_x + \partial_y \omega_y + \partial_z \omega_z,
+\]
+analogous to the divergence of $\omega$.
+
+\end{sol}
+
 \end{document}
