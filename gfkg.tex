@@ -2395,4 +2395,46 @@ analogous to the divergence of $\omega$.
 
 \end{sol}
 
+\begin{ex}
+
+Give $\mathbb{R}^4$ the Minkowski metric and the orientation in which $(dt, dx, dy, dz)$ is positively oriented. Calculate the Hodge star operator on all wedge products of $dx^\mu$s. Show that on $p$-forms,
+\[
+    \star^2 = {(-1)}^{p (4 - p) + 1}.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+The Hodge dual of the 0-form is $\star 1 = dt \wedge dx \wedge dy \wedge dz = \text{vol}$.
+
+For the 1-forms,
+\begin{align*}
+    \star dt &= - dx \wedge dy \wedge dz, &
+    \star dx &= - dy \wedge dz \wedge dt, \\
+    \star dy &= dz \wedge dt \wedge dx, &
+    \star dz &= - dt \wedge dx \wedge dy.
+\end{align*}
+The 2-forms,
+\begin{align*}
+    \star (dt \wedge dx) &= - dy \wedge dz, &
+    \star (dx \wedge dy) &= dt \wedge dz, \\
+    \star (dt \wedge dy) &= - dz \wedge dx, &
+    \star (dx \wedge dz) &= - dt \wedge dy, \\
+    \star (dt \wedge dz) &= - dx \wedge dy, &
+    \star (dy \wedge dz) &= dt \wedge dx.
+\end{align*}
+The 3-forms,
+\begin{align*}
+    \star(dt \wedge dx \wedge dy) &= - dz, &
+    \star(dx \wedge dy \wedge dz) &= - dt, \\
+    \star(dy \wedge dz \wedge dt) &= - dx, &
+    \star(dz \wedge dt \wedge dx) &= dy.
+\end{align*}
+Lastly, the Hodge dual of the volume form is $\star (dt \wedge dx \wedge dy \wedge dz) = -1$.
+
+Since all $p$-forms can be written as a linear combination of all wedge products, we can see that $\star^2 = {(-1)}^{p (4 - p) + 1}$ holds by inspection.
+
+\end{sol}
+
 \end{document}
