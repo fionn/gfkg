@@ -2333,4 +2333,37 @@ Then,
 
 \end{sol}
 
+\begin{ex}
+
+Calculate $\star d\omega$ when $\omega$ is a 1-form on $\mathbb{R}^3$.
+
+\end{ex}
+
+\begin{sol}
+
+Denote $\omega = \omega_x dx + \omega_y dy + \omega_z dz$. The gradient is
+\begin{align*}
+    d\omega &= d(\omega_x dx + \omega_y dy + \omega_z dz) \\
+        &= d(\omega_x dx) + d(\omega_y dy) + d(\omega_z dz) \\
+        &= d\omega_x \wedge dx + d\omega_y \wedge dy + d\omega_z \wedge dz \\
+        &= \partial_y \omega_x dy \wedge dx + \partial_z \omega_x dz \wedge dx \\
+        &\mathrel{\phantom{=}}{} + \partial_x \omega_y dx \wedge dy + \partial_z \omega_y dz \wedge dy \\
+        &\mathrel{\phantom{=}}{} + \partial_x \omega_z dx \wedge dz + \partial_y \omega_z dy \wedge dz \\
+        &= (\partial_y \omega_z - \partial_z \omega_y) dy \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) dz \wedge dx \\
+        &\mathrel{\phantom{=}}{} +(\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
+\end{align*}
+Then the Hodge dual of $d\omega$ is
+\begin{align*}
+    \star d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \star (dy \wedge dz) \\
+        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \star (dz \wedge dx) \\
+        &\mathrel{\phantom{=}}{} +(\partial_x \omega_y - \partial_y \omega_x) \star (dx \wedge dy) \\
+        &= \left(\partial_y \omega_z - \partial_z \omega_y\right) dx
+            + \left(\partial_z \omega_x - \partial_x \omega_z\right) dy
+            + \left(\partial_x \omega_y - \partial_y \omega_x\right) dz,
+\end{align*}
+analogous to the curl of $\omega$.
+
+\end{sol}
+
 \end{document}
