@@ -1949,7 +1949,7 @@ where we identify $g_{\mu\nu}v^\mu = v_\nu$.
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:raisingindex}
 
 Let $\omega = \omega_\mu f^\mu$ be a 1-form on a chart. Show that the corresponding vector field is equal to $\omega^\nu e_\nu$, where
 \[
@@ -2339,7 +2339,7 @@ Calculate $\star d\omega$ when $\omega$ is a 1-form on $\mathbb{R}^3$.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:curl1form}
 
 Denote $\omega = \omega_x dx + \omega_y dy + \omega_z dz$. The gradient is
 \begin{align*}
@@ -2372,7 +2372,7 @@ Calculate $\star d \star \omega$ when $\omega$ is a 1-form on $\mathbb{R}^3$.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:divergence1form}
 
 Denote $\omega = \omega_x dx + \omega_y dy + \omega_z dz$. The Hodge dual is
 \begin{align*}
@@ -2505,6 +2505,60 @@ then
 \[
     {(\star \omega)}_{j_1 \cdots j_{n - p}} = \frac{1}{p!} {\epsilon^{i_1 \cdots i_p}}_{j_1 \cdots j_{n - p}} \omega_{i_1 \cdots i_p}.
 \]
+
+\end{sol}
+
+\subsection{The Second Pair of Equations}
+
+\begin{ex}
+
+Check this result.
+
+\end{ex}
+
+\begin{sol}
+
+The claim is that on Minkowski space, the second pair of Maxwell equations,
+\[
+    \nabla \cdot \vec{E} = \rho, \qquad
+    \nabla \times \vec{B} - \frac{\partial \vec{E}}{\partial t} = \vec{\jmath},
+\]
+can be rewritten as
+\[
+    \star_S \, d_S \star_S E = \rho, \qquad
+    -\partial_t E + \star_S \, d_S \star_S B = j
+\]
+where $\star_S$ denotes the Hodge star operator on space, that is, $\mathbb{R}^3$ with its usual Euclidean metric.
+
+Since $E = E_x dx + E_y dy + E_z dz$ is a 1-form, we have from solution~\ref{sol:divergence1form} that
+\begin{align*}
+    \star_S \, d_S \star_S E &= \partial_x E_x + \partial_y E_y + \partial_z E_z \\
+                             &= \nabla \cdot \vec{E} \\
+                             &= \rho.
+\end{align*}
+
+Consider now the Hodge dual in space of the 2-form $B$,
+\begin{align*}
+    \star_S B &= \star_S (B_x dy \wedge dz + B_y dz \wedge dx + B_z dx \wedge dy) \\
+              &= B_x dx + B_y dy + B_z dz.
+\end{align*}
+From solution~\ref{sol:curl1form}, we get
+\begin{align*}
+    \star_S \, d_S \star_S B &= \star_S \, d_S (B_x dx + B_y dy + B_z dz) \\
+        &= \left(\partial_y B_z - \partial_z B_y\right) dx
+            + \left(\partial_z B_x - \partial_x B_z\right) dy
+            + \left(\partial_x B_y - \partial_y B_x\right) dz \\
+        &= {(\nabla \times \vec{B})}_i dx^i.
+\end{align*}
+Since we're in Euclidean space, we can turn vector fields into 1-forms easily. As in exercise~\ref{ex:raisingindex},
+\begin{gather*}
+    g(\star_S \, d_S \star_S B, \cdot)
+        = \delta^{ij} {(\nabla \times \vec{B})}_i \partial_j
+        = \nabla \times \vec{B}, \\
+    g(-\partial_t E, \cdot) = -\delta^{ij} \partial_t E_i \partial_j = -\partial_t \vec{E}
+\end{gather*}
+and $g(j, \cdot) = \vec{\jmath}$,
+so $-\partial_t E + \star_S \, d_S \star_S B = j$ is component-by-component equivalent to the last Maxwell equation.
 
 \end{sol}
 
