@@ -2682,4 +2682,38 @@ and
 
 \end{sol}
 
+\begin{ex}
+
+Show that this result is true.
+
+\end{ex}
+
+\begin{sol}
+
+In the Lorentzian case things are not quite as nice, since $\star^2 = -1$ implies its eigenvalues are $\pm i$. This means that we should really consider complex-valued differential forms on $M$. If we do that, we can write any $F \in \Omega^2(M)$ as
+\[
+    F = F_+ + F_-, \qquad
+    \star F_\pm = \pm i F_\pm.
+\]
+Try
+\[
+    F_\pm = \frac{1}{2} (F \mp \star i F).
+\]
+Then
+\[
+    F_+ + F_- = \frac{1}{2} (F - \star i F + F + \star i F) = F
+\]
+and
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \star F_\pm &= \frac{1}{2}(\star F \mp \star^2 i F) \\
+                &= \frac{1}{2}(\star F \pm i F) \\
+                &= \frac{1}{2}(\pm i F + \star F) \\
+                &= \frac{i}{2}(\pm F - \star i F) \\
+                &= \pm \frac{i}{2}(F \mp \star i F) \\
+                &= \pm i F_\pm.
+\end{align*}
+
+\end{sol}
+
 \end{document}
