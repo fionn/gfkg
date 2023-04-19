@@ -2716,4 +2716,45 @@ and
 
 \end{sol}
 
+\begin{ex}
+
+Show that these equations are equivalent, and both hold if at every time $t$ we have
+\begin{gather*}
+    E = E_1 dx^1 + E_2 dx^2 + E_3 dx^3, \\
+    B = -i (E_1 dx^2 \wedge dx^3 + \text{cyclic permutations}).
+\end{gather*}
+
+\end{ex}
+
+\begin{sol}
+
+The electromagnetic 2-form $F = B + E \wedge dt$ has Hodge dual
+\[
+    \star F = \star_S E - \star_S B \wedge dt,
+\]
+so $F$ will be self-dual if
+\[
+    \star_S E = iB, \qquad \star_S B = -iE.
+\]
+These two equations are equivalent, as taking the Hodge dual of the first yields
+\[
+    \star_S^2 E = \star_S iB,
+\]
+but $\star_S^2 E = E$, implying $\star_S iB = E$, which requires that $\star_S B = -iE$.
+
+For $E$ and $B$ as given,
+\begin{align*}
+    \star_S E &= \star_S (E_1 dx^1 + E_2 dx^2 + E_3 dx^3) \\
+        &= E_1 dx^2 \wedge dx^3 + E_2 dx^3 \wedge dx^1 + E_3 dx^1 \wedge dx^2 \\
+        &= iB
+\end{align*}
+and, although already implied,
+\begin{align*}
+    \star_S B &= -i \star_S (E_1 dx^2 \wedge dx^3 + \text{cyclic permutations}) \\
+              &= -i (E_1 dx^1 + E_2 dx^2 + E_3 dx^3) \\
+              &= -iE.
+\end{align*}
+
+\end{sol}
+
 \end{document}
