@@ -2650,4 +2650,36 @@ and equating coefficients gives us
 
 \end{sol}
 
+\begin{ex}
+
+Show this is true if we take
+\[
+    F_\pm = \frac{1}{2} (F \pm \star F).
+\]
+
+\end{ex}
+
+\begin{sol}
+
+On a 4-dimensional Riemannian manifold $M$, we say $F \in \Omega^2(M)$ is \emph{self-dual} if $\star F = F$ and \emph{anti-self-dual} if $\star F = - F$.
+Since $\star^2 = 1$ it is not surprising that the Hodge star operator has eigenvalues $\pm 1$. That is, we can write any $F \in \Omega^2(M)$ as a sum of self-dual and anti-self-dual parts
+\[
+    F = F_+ + F_-, \qquad
+    \star F_\pm = \pm F_\pm.
+\]
+Take $F_\pm$ as above. Then
+\[
+    F_+ + F_- = \frac{1}{2}(F + \star F + F - \star F) = F
+\]
+and
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \star F_\pm &= \frac{1}{2} (\star F \pm \star^2 F) \\
+                &= \frac{1}{2} (\pm F + \star F) \\
+                &= \pm \frac{1}{2} (F \pm \star F) \\
+                &= \pm F_\pm.
+\end{align*}
+
+\end{sol}
+
 \end{document}
