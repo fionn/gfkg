@@ -2757,4 +2757,52 @@ and, although already implied,
 
 \end{sol}
 
+\begin{ex}
+
+Check the above result.
+
+\end{ex}
+
+\begin{sol}
+
+We are assuming $F$ is self-dual and and that $E$ is a \emph{plane wave} of the form
+\[
+    E(x) = \mathbf{E} e^{i k_\mu x^\mu}
+\]
+where $\mathbf{E} = \mathbf{E}_j dx^j$ is a constant complex-valued 1-form on $\mathbb{R}^3$
+and $k \in {\text{Vect}(\mathbb{R}^4)}^*$ is the fixed \emph{energy-momentum} covector.
+By self-duality, we have
+\[
+    B(x) = \mathbf{B} e^{i k_\mu x^\mu}
+\]
+where $\mathbf{B} = -i \star_S \mathbf{E}$.
+Let us write $^3 k$ for $k_j dx^j$, the \emph{momentum} of the plane wave.
+Then\footnote{Note the $i$, missing in the text.}
+\[
+    d_S e^{i k_\mu x^\mu} = ie^{i k_\mu x^\mu} \, ^3 k.
+\]
+The second Maxwell equation, $\partial_t B + d_S E = 0$, turns into
+\[
+    \partial_t \mathbf{B} e^{i k_\mu x^\mu} + d_S \mathbf{E} e^{i k_\mu x^\mu} = 0.
+\]
+But
+\[
+    \partial_t \mathbf{B} e^{i k_\mu x^\mu} = -ik_0 \mathbf{B} e^{i k_\mu x^\mu}
+\]
+since we're on a Lorentzian manifold and
+\begin{align*}
+    d_S \mathbf{E} e^{i k_\mu x^\mu} &= {(-1)}^1 \mathbf{E} \wedge d_S e^{i k_\mu x^\mu} \\
+        &= -\mathbf{E} \wedge {}^3 k \, i e^{i k_\mu x^\mu} \\
+        &= i e^{i k_\mu x^\mu} \, ^3 k \wedge \mathbf{E}
+\end{align*}
+since both $\mathbf{E}$ and $^3 k$ are 1-forms.
+This gives us
+\begin{align*}
+    -ik_0 \mathbf{B} e^{i k_\mu x^\mu} + i e^{i k_\mu x^\mu} \, ^3 k \wedge \mathbf{E} &= 0 \\
+    -k_0 \mathbf{B} + {}^3 k \wedge \mathbf{E} &= 0 \\
+    ^3 k \wedge \mathbf{E} &= k_0 \mathbf{B}.
+\end{align*}
+
+\end{sol}
+
 \end{document}
