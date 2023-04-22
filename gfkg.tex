@@ -2716,7 +2716,7 @@ and
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:ebselfdual}
 
 Show that these equations are equivalent, and both hold if at every time $t$ we have
 \begin{gather*}
@@ -2757,7 +2757,7 @@ and, although already implied,
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:planewavemaxwelleq2}
 
 Check the above result.
 
@@ -2802,6 +2802,67 @@ This gives us
     -k_0 \mathbf{B} + {}^3 k \wedge \mathbf{E} &= 0 \\
     ^3 k \wedge \mathbf{E} &= k_0 \mathbf{B}.
 \end{align*}
+
+\end{sol}
+
+\begin{ex}
+
+Show [that] this equation implies $k_\mu k^\mu = 0$. Thus the energy-momentum of light is light-like!
+
+\end{ex}
+
+\begin{sol}
+
+% It feels like there should be a more elegant geometrical way to do this,
+% without breaking out the components.
+
+Using the result from exercise~\ref{ex:planewavemaxwelleq2} and the relationship between $E$ and $B$ when $F$ is self-dual from exercise~\ref{ex:ebselfdual}, we get
+\[
+    ^3 k \wedge \mathbf{E} = k_0 \mathbf{B} = -ik_0 \star_S \mathbf{E}
+\]
+and, rearranging,
+\[
+    ik_0 \star_S \mathbf{E} + {}^3 k \wedge \mathbf{E} = 0.
+\]
+In terms of components,
+\begin{align*}
+    ik_0 \star_S \mathbf{E} + {}^3 k \wedge \mathbf{E}
+        &= ik_0 (\mathbf{E}_x dy \wedge dz
+                 + \mathbf{E}_y dz \wedge dx
+                 + \mathbf{E}_z dx \wedge dy) \\
+        &\mathrel{\phantom{=}}{} + k_i \mathbf{E}_j dx^i \wedge dx^j \\
+        &= ik_0 (\mathbf{E}_x dy \wedge dz
+                 + \mathbf{E}_y dz \wedge dx
+                 + \mathbf{E}_z dx \wedge dy) \\
+        &\mathrel{\phantom{=}}{} + (k_x \mathbf{E}_y - k_y \mathbf{E}_x) dx \wedge dy \\
+        &\mathrel{\phantom{=}}{} + (k_y \mathbf{E}_z - k_z \mathbf{E}_y) dy \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (k_z \mathbf{E}_x - k_x \mathbf{E}_z) dz \wedge dx.
+\end{align*}
+Equating coefficients, we get the homogeneous system
+\begin{align*}
+    ik_0 \mathbf{E}_x + k_z \mathbf{E}_y - k_y \mathbf{E}_z &= 0, \\
+    -k_z \mathbf{E}_x + ik_0 \mathbf{E}_y + k_x \mathbf{E}_z &= 0, \\
+    k_y \mathbf{E}_x - k_x \mathbf{E}_y + ik_0 \mathbf{E}_z &= 0
+\end{align*}
+which is equivalent to $K_{ij} \mathbf{E}_j = 0$ for the skew-Hermitian matrix
+\[
+    K = \begin{pmatrix*}[r]
+            ik_0 & k_z & -k_y \\
+            -k_z & ik_0 & k_x \\
+            k_y & -k_x & ik_0
+        \end{pmatrix*}
+\]
+with determinant
+\begin{align*}
+    \det(K) &= ik_0 (ik_0 \cdot ik_0 + k_x^2) - k_z(-ik_0 k_z - k_x k_y) - k_y (k_x k_z - ik_0 k_y) \\
+            %&= -i k_0^3 + ik_0 k_x^2 + ik_0 k_z^2 + k_z k_x k_y - k_y k_x k_z + ik_0 k_y^2 \\
+            &= -i k_0^3 + ik_0 k_x^2 + ik_0 k_y^2 + ik_0 k_z^2.
+\end{align*}
+Since we require our electric field to be non-trivial, $\det(K) = 0$ which implies
+\[
+    -k_0^2 + k_x^2 + k_y^2 + k_z^2 = 0.
+\]
+Therefore $k_\mu k^\mu = 0$ and thus the energy-momentum of light is light-like.
 
 \end{sol}
 
