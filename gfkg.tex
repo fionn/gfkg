@@ -52,7 +52,7 @@
 
 \section{Maxwell's Equations}
 
-\begin{ex}
+\begin{ex}\label{ex:i1}
 
 Let $\vec{k}$ be a vector in $\mathbb{R}^3$ and let $\omega = |\vec{k}|$. Fix $\vec{E} \in \mathbb{C}^3$ with $\vec{k} \cdot \vec{E} = 0$ and $i \vec{k} \times \vec{E} = \omega \vec{E}$. Show that
 \[
@@ -2863,6 +2863,77 @@ Since we require our electric field to be non-trivial, $\det(K) = 0$ which impli
     -k_0^2 + k_x^2 + k_y^2 + k_z^2 = 0.
 \]
 Therefore $k_\mu k^\mu = 0$ and thus the energy-momentum of light is light-like.
+
+\end{sol}
+
+\begin{ex}
+
+Check the above result.
+
+\end{ex}
+
+\begin{sol}
+
+A simple self-dual solution to the vacuum Maxwell equations is
+\[
+    k = dt - dx, \qquad \mathbf{E} = dy - i \, dz.
+\]
+This holds since
+\begin{align*}
+    -i k_0 \star_S \mathbf{E} &= -i k_0 (\star_S dy - i \star_S dz) \\
+    &= -i k_0 (dz \wedge dx - i\, dx \wedge dy) \\
+    &= -i \, dz \wedge dx - dx \wedge dy,
+\end{align*}
+so
+\[
+    ^3 k \wedge \mathbf{E} = -dx \wedge dy + i \, dx \wedge dz = -ik_0 \star_S \mathbf{E}
+\]
+as required.
+
+From $\star_S E = iB$,
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \mathbf{B} &= -i \star_S \mathbf{E} \\
+               &= -i \, dz \wedge dx - dx \wedge dy.
+\end{align*}
+Since $k_\mu x^\mu = t - x$, this gives us
+\begin{align*}
+    E(x) &= (dy - i\, dz) e^{i (t - x)}, \\
+    B(x) &= (-i \, dz \wedge dx - dx \wedge dy) e^{i (t - x)}
+\end{align*}
+or, in old-fashioned language,
+\[
+    \vec{E} = (0, e^{i(t - x)}, -ie^{i(t - x)}), \qquad
+    \vec{B} = (0, -i e^{i(t - x)}, -e^{i(t - x)}).
+\]
+
+Write
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \vec{\mathcal{E}} &= \vec{E} + i \vec{B} \\
+                      &= (0, 2 e^{i(t - x)}, -2 i e^{i(t - x)})
+\end{align*}
+which, recall from exercise~\ref{ex:i1}, lets us express the vacuum equations as
+\[
+    \nabla \cdot \vec{\mathcal{E}} = 0, \qquad
+    \nabla \times \vec{\mathcal{E}} = i \frac{\partial \vec{\mathcal{E}}}{\partial t}.
+\]
+To show that our circularly-polarised plane waves are solutions, check
+\[
+    \nabla \cdot \vec{\mathcal{E}} = 2 \partial_y e^{i(t - x)}
+                                      -2 i \partial_z e^{i(t - x)}
+                                   = 0
+\]
+and
+\begin{align*}
+    \nabla \times \vec{\mathcal{E}} &= \left(\partial_y \mathcal{E}_z - \partial_z \mathcal{E}_y \right) \vec{\imath}
+            + \left(\partial_z \mathcal{E}_x - \partial_x \mathcal{E}_z \right) \vec{\jmath}
+            + \left(\partial_x \mathcal{E}_y - \partial_y \mathcal{E}_x\right ) \vec{k} \\
+        &= \left(0, -2 e^{i(t - x)}, 2 i e^{i(t - x)} \right) \\
+        &= - \vec{\mathcal{E}} \\
+        &= i \partial_t \vec{\mathcal{E}}
+\end{align*}
+as $\partial_t \vec{\mathcal{E}} = i \vec{\mathcal{E}}$.
 
 \end{sol}
 
