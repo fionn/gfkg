@@ -2937,4 +2937,108 @@ as $\partial_t \vec{\mathcal{E}} = i \vec{\mathcal{E}}$.
 
 \end{sol}
 
+\begin{ex}
+
+Prove that all self-dual and anti-self-dual plane wave solutions are left and right circularly polarized, respectively.
+
+\end{ex}
+
+\begin{sol}
+
+When $F$ is self-dual, Maxwell's vacuum equations for plane waves reduce to $B \wedge {}^3 k = 0$ and $^3 k \wedge E = -ik_0 \star_S E$. From the former, we also get by self-duality that $\innerp{E}{^3 k} = 0$.
+
+Consider plane waves moving, without loss of generality, in the $x$-direction, so
+\[
+    k = k_0 dt - k_1 dx, \qquad
+    \mathbf{E} = \mathbf{E}_2 dy + \mathbf{E}_3 dz.
+\]
+Then
+\begin{align*}
+    ^3 k \wedge \mathbf{E} &= -k_1 dx \wedge (\mathbf{E}_2 dy + \mathbf{E}_3 dz) \\
+        &= -k_1 \mathbf{E}_2 dx \wedge dy - k_1 \mathbf{E}_3 dx \wedge dz
+\end{align*}
+and
+\[
+    \star_S \mathbf{E} = \mathbf{E}_2 dz \wedge dx + \mathbf{E}_3 dx \wedge dy,
+\]
+so $^3 k \wedge \mathbf{E} = -ik_0 \star_S \mathbf{E}$ requires
+\[
+    \begin{pmatrix*}[r]
+        -k_1  & ik_0 \\
+        -ik_0 & -k_1
+    \end{pmatrix*}
+    \begin{pmatrix}
+        \mathbf{E}_2 \\ \mathbf{E}_3
+    \end{pmatrix}
+    = 0.
+\]
+For non-trivial solutions, $k_1^2 - k_2^2 = 0$ or $k_0 = \pm k_1$. Assuming without loss of generality that $k_0 = k_1$ (forward propagation), $\mathbf{E}_3 = -i \mathbf{E}_2$ and so, letting $\mathbf{E}_2 \equiv \mathbf{E}_0$ (since we have run out of ways of writing the letter ``E''),
+\[
+    \mathbf{E} = \mathbf{E}_0 (dy -i \, dz), \qquad
+    k = k_0 (dt - dx).
+\]
+Using the self-dual relationship $B = -i \star_S E$, in old-fashioned language we get
+\[
+    \vec{E} = \mathbf{E}_0 (0, e^{ik_0 (t - x)}, -ie^{ik_0 (t - x)}), \quad
+    \vec{B} = \mathbf{E}_0 (0, -ie^{ik_0 (t - x)}, -e^{ik_0 (t - x)})
+\]
+and taking the real solutions only,
+\begin{align*}
+    \vec{E} &= \mathbf{E}_0 (0, \cos(k_0 (t - x)), \sin(k_0 (t - x))), \\
+    \vec{B} &= \mathbf{E}_0 (0, \sin(k_0 (t - x)), -\cos(k_0 (t - x)))
+\end{align*}
+so all self-dual plane wave solutions to the vacuum equations are left circularly polarized.
+
+When $F$ is anti-self-dual,
+\[
+    \star_S E - \star_S B \wedge dt = -iB - iE \wedge dt
+\]
+giving
+\[
+    \star_S E = -i B, \qquad
+    \star_S B = iE,
+\]
+so
+\begin{align*}
+    \SwapAboveDisplaySkip
+    ^3k \wedge E &= k_0 B \\
+                 &= ik_0 \star_S E
+\end{align*}
+and, just as in the self-dual case, $B \wedge {}^3 k = 0$ implies that $\innerp{E}{^3k} = 0$.
+
+Consider again plane waves moving, without loss of generality, in the $x$-direction, so
+\[
+    k = k_0 dt - k_1 dx, \qquad
+    \mathbf{E} = \mathbf{E}_2 dy + \mathbf{E}_3 dz.
+\]
+Then $^3k \wedge \mathbf{E} = ik_0 \star_S \mathbf{E}$ requires
+\[
+    \begin{pmatrix*}[r]
+        -k_1  & -ik_0 \\
+        ik_0 & -k_1
+    \end{pmatrix*}
+    \begin{pmatrix}
+        \mathbf{E}_2 \\ \mathbf{E}_3
+    \end{pmatrix}
+    = 0.
+\]
+Take $k_0 = k_1$ (forward propagation) to get $\mathbf{E}_2 = -i \mathbf{E}_3$ and so, letting $\mathbf{E}_3 \equiv \mathbf{E}_0$ this time,
+\[
+    \mathbf{E} = \mathbf{E}_0 (-i \, dy + dz), \qquad
+    k = k_0 (dt - dx).
+\]
+Using the anti-self-dual relationship $B = i \star_S E$, in old-fashioned language we get
+\[
+    \vec{E} = \mathbf{E}_0 (0, -ie^{ik_0 (t - x)}, e^{ik_0 (t - x)}), \quad
+    \vec{B} = \mathbf{E}_0 (0, e^{ik_0 (t - x)}, ie^{ik_0 (t - x)})
+\]
+and taking the real solutions only,
+\begin{align*}
+    \vec{E} &= \mathbf{E}_0 (0, \sin(k_0 (t - x)), \cos(k_0 (t - x))), \\
+    \vec{B} &= \mathbf{E}_0 (0, \cos(k_0 (t - x)), -\sin(k_0 (t - x)))
+\end{align*}
+so all anti-self-dual plane wave solutions to the vacuum equations are right circularly polarized.
+
+\end{sol}
+
 \end{document}
