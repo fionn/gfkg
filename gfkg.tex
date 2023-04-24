@@ -1783,7 +1783,7 @@ known as the ``parity transformation''. Note that $P$ maps right-handed bases to
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:parity1form2form}
 
 Assume $\phi^*$ is the pullback by $P$. Consider the pullback of $dx^\mu$ acting on the coordinate vector field $\partial_\nu$,
 \begin{align*}
@@ -2568,7 +2568,7 @@ Check the calculations above.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:secondpair}
 
 Assume that $M = \mathbb{R} \times S$ is an oriented semi-Riemannian manifold where $S$ is space and let the current be given by $J = j - \rho \, dt$. Suppose $\dim(S) = 3$ and the metric is static and of the form $g = -dt^2 + ^3 g$ where $^3 g$ is a Riemannian metric on $S$. We want to show that
 \[
@@ -3038,6 +3038,42 @@ and taking the real solutions only,
     \vec{B} &= \mathbf{E}_0 (0, \cos(k_0 (t - x)), -\sin(k_0 (t - x)))
 \end{align*}
 so all anti-self-dual plane wave solutions to the vacuum equations are right circularly polarized.
+
+\end{sol}
+
+\begin{ex}
+
+Let $P: \mathbb{R}^4 \to \mathbb{R}^4$ be parity transformation, that is,
+\[
+    P(t, x, y, z) = (t, -x, -y, -z).
+\]
+Show that if $F$ is a self-dual solution of Maxwell's equations, the pullback $P^* F$ is an anti-self-dual solution, and vice versa.
+
+\end{ex}
+
+\begin{sol}
+
+From solution~\ref{sol:parity1form2form},
+\[
+    P^* E = -E, \qquad
+    P^* B = B.
+\]
+The pullback of $F$ is therefore
+\begin{align*}
+    P^* F &= P^* B + P^* (E \wedge dt) \\
+          &= B - E \wedge dt.
+\end{align*}
+Taking the Hodge dual and reusing some calculations from solution~\ref{sol:secondpair},
+\begin{align*}
+    \star(P^* F) &= \star B - \star(E \wedge dt) \\
+                 &= -\star_S E - \star_S B \wedge dt.
+\end{align*}
+If $F$ is self-dual, $\star_S E = iB$, $\star_S B = -i E$ and
+\begin{align*}
+    \star(P^* F) &= -iB + iE \wedge dt \\
+                 &= -i P^* F.
+\end{align*}
+Since $P^* P^* F = F$, we automatically get the corollary that if $F$ is anti-self-dual then $P^* F$ is self-dual.
 
 \end{sol}
 
