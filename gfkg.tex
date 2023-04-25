@@ -826,7 +826,7 @@ It follows from this that $\phi_s^{-1} = \phi_{-s}$, so the flow is an Abelian g
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:liebracketpolarcoordinates}
 
 Consider the normalised vector fields in the $r$ and $\theta$ directions on the plane in polar coordinates (not defined at the origin):
 \[
@@ -3081,6 +3081,80 @@ If $F$ is self-dual, $\star_S E = iB$, $\star_S B = -i E$ and
                  &= -i P^* F.
 \end{align*}
 Since $P^* P^* F = F$, we automatically get the corollary that if $F$ is anti-self-dual then $P^* F$ is self-dual.
+
+\end{sol}
+
+\section{DeRham Theory in Electromagnetism}
+
+\subsection{Closed and Exact 1-forms}
+
+\begin{ex}
+
+Show that this 1-form $E$ is closed. Show that $\int_{\gamma_0} E = -\pi$ and $\int_{\gamma_1} E = \pi$.
+
+\end{ex}
+
+\begin{sol}
+
+The 1-form in question is defined on $\mathbb{R}^2 - \{0\}$ as
+\[
+    E = \frac{x \, dy - y \, dx}{x^2 + y^2}.
+\]
+The paths $\gamma_0, \gamma_1 : [0, 1] \to S^1 \subset \mathbb{R}^2$ describe the upper and lower half circle of radius 1 centered at the origin with $\gamma_0(0) = \gamma_1(0) = (-1, 0)$ and $\gamma_0(1) = \gamma_1(1) = (1, 0)$.
+
+Denote $r^2 = x^2 + y^2$. The differential of $E$ is
+\begin{align*}
+    dE &= d \left(\frac{x}{r^2}\right) \wedge dy
+          - d \left(\frac{y}{r^2} \right)\wedge dx \\
+       &= \left(\frac{\partial}{\partial x} \frac{x}{r^2} dx
+                + \frac{\partial}{\partial y} \frac{x}{r^2} dy\right) \wedge dy
+          - \left(\frac{\partial}{\partial x} \frac{y}{r^2} dx
+                  + \frac{\partial}{\partial y} \frac{y}{r^2} dy\right) \wedge dx \\
+       &= \frac{\partial}{\partial x} \frac{x}{r^2} dx \wedge dy
+          - \frac{\partial}{\partial y} \frac{y}{r^2} dy \wedge dx \\
+       &= \frac{y^2 - x^2}{r^4} dx \wedge dy - \frac{x^2 - y^2}{r^4} dy \wedge dx \\
+       &= \frac{y^2 - x^2}{r^4} dx \wedge dy - \frac{y^2 - x^2}{r^4} dx \wedge dy \\
+       &= 0,
+\end{align*}
+so this 1-form is closed.
+
+Note that similar to exercise~\ref{ex:liebracketpolarcoordinates}, $dx = \cos(\theta) dr - r \sin(\theta) d\theta$ and $dy = \sin(\theta) dr + r \cos(\theta) d\theta$ so $E = d \theta$. It's tempting to then say $dE = 0$ by $d^2 = 0$, but $d\theta$ is not exact since $\theta$ is not a well-defined 0-form, so the result doesn't follow.
+
+We can parameterise our paths as
+\begin{align*}
+    \gamma_0: t &\mapsto (\cos(\pi(1 - t)), \sin(\pi(1 - t))), \\
+    \gamma_1: t &\mapsto (\cos(\pi(1 + t)), \sin(\pi(1 + t))),
+\end{align*}
+so
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \gamma_0'(t) &= (\pi \sin(\pi(1 - t)), -\pi \cos(\pi(1 - t))), \\
+    \gamma_1'(t) &= (-\pi \sin(\pi(1 + t)), \pi \cos(\pi(1 + t))).
+\end{align*}
+
+Integrating along $\gamma_0$,
+\begin{align*}
+    \int_{\gamma_0} E &= \int_0^1 E_{\gamma_0(t)}(\gamma_0'(t)) \, dt \\
+        &= \int_0^1 \frac{-\pi \cos(\pi(1 - t)) \cos(\pi(1 - t)) - \pi \sin(\pi(1 - t)) \sin(\pi(1 - t))}{{\cos(\pi(1 - t))}^2 + {\sin(\pi(1 - t))}^2} dt \\
+        &= -\pi \int_0^1 dt \\
+        &= -\pi,
+\end{align*}
+and along $\gamma_1$,
+\begin{align*}
+    \int_{\gamma_1} E &= \int_0^1 E_{\gamma_1(t)}(\gamma_1'(t)) \, dt \\
+        &= \int_0^1 \frac{\pi \cos(\pi(1 + t)) \cos(\pi(1 + t)) + \pi \sin(\pi(1 + t)) \sin(\pi(1 + t))}{{\cos(\pi(1 - t))}^2 + {\sin(\pi(1 - t))}^2} dt \\
+        &= \pi \int_0^1 dt \\
+        &= \pi.
+\end{align*}
+We could have skipped the second integral by making a symmetry argument that
+\[
+    \int_{\gamma_0} E = -\int_{\gamma_1} E.
+\]
+Or even better, by using $E = d\theta$ we drop parameterisation and skip both integrals as
+\[
+    \int_{\gamma_0} E = \int_\pi^0 d\theta = -\pi, \qquad
+    \int_{\gamma_1} E = \int_\pi^{2\pi} d\theta = \pi.
+\]
 
 \end{sol}
 
