@@ -3158,4 +3158,29 @@ Or even better, by using $E = d\theta$ we drop parameterisation and skip both in
 
 \end{sol}
 
+\begin{ex}
+
+Show that $\mathbb{R}^n$ is simply connected by exhibiting an explicit formula for a homotopy between any two paths between arbitrary points $p, q \in \mathbb{R}^n$.
+
+\end{ex}
+
+\begin{sol}
+
+We say that a connected manifold is \emph{simply connected} if any two paths between two points $p$, $q$ are homotopic.
+
+Let $\gamma_0, \gamma_1: [0, 1] \to \mathbb{R}^n$ with
+\[
+    \gamma_0(0) = \gamma_1(0) = p, \qquad
+    \gamma_0(1) = \gamma_1(1) = q
+\]
+and consider
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \gamma &: [0, 1] \times [0, 1] \to \mathbb{R}^n, \\
+           &: (s, t) \mapsto (1 - s)\gamma_0(t) + s \gamma_1(t).
+\end{align*}
+$\gamma$ is a homotopy between $\gamma_0$, $\gamma_1$ for arbitrary $p$, $q$ and therefore $\mathbb{R}^n$ is simply connected.
+
+\end{sol}
+
 \end{document}
