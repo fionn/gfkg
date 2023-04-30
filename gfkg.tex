@@ -3183,4 +3183,33 @@ $\gamma$ is a homotopy between $\gamma_0$, $\gamma_1$ for arbitrary $p$, $q$ and
 
 \end{sol}
 
+\begin{ex}
+
+Show that a 1-form $E$ is exact if and only if $\int_\gamma E = 0$ for all loops $\gamma$. (Hint: if $\omega$ is not exact, show that there are two smooth paths $\gamma$, $\gamma'$ from some point $x \in M$ to some point $y \in M$ such that $\int_\gamma \omega \neq \int_{\gamma'} \omega$. Use these paths to form a loop, perhaps only piecewise smooth.)
+
+\end{ex}
+
+\begin{sol}
+
+Let $E = -d\phi$ be an exact 1-form and $\gamma: [0, 1] \to M$ a loop based at $p \in M$. Then
+\begin{align*}
+    \oint_\gamma E &= - \oint_\gamma d\phi \\
+                   &= - \int_0^1 d\phi(\gamma'(t)) \, dt \\
+                   &= - \int_0^1 \gamma'(t)(\phi) \, dt \\
+                   &= - \int_0^1 \frac{d}{dt} \phi(\gamma(t)) \, dt \\
+                   &= - \phi(p) + \phi(p) \\
+                   &= 0.
+\end{align*}
+
+Conversely, let $E$ be not exact. On a simply connected manifold, every closed form is exact, so if $dE = 0$ then our manifold is not simply connected, implying the existence of non-homotopic smooth paths $\gamma_0$, $\gamma_1$ from $x$ to $y$ such that
+\[
+    \int_{\gamma_0} E \neq \int_{\gamma_1} E.
+\]
+We can therefore construct a piecewise-smooth loop $\tilde{\gamma}$ that traverses $\gamma_0$ forward and then $\gamma_1$ in reverse with
+\[
+    \oint_{\tilde{\gamma}} E = \int_{\gamma_0} E - \int_{\gamma_1} E \neq 0.
+\]
+
+\end{sol}
+
 \end{document}
