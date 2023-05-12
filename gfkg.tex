@@ -29,6 +29,9 @@
 \newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
+\newcommand*{\SetSymbol}[1][]{\nonscript\:#1\vert\allowbreak\nonscript\:\mathopen{}}
+\DeclarePairedDelimiterX{\setbuilder}[1]{\{}{\}}{\newcommand*{\given}{\SetSymbol[\delimsize]}#1}
+
 \DeclarePairedDelimiterX{\innerp}[2]{\langle}{\rangle}{#1, #2}
 
 \theoremstyle{definition}
@@ -178,7 +181,7 @@ Show that $S^n \subset \mathbb{R}^{n + 1}$ with its induced topology is a manifo
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:stereographicprojection}
 
 We need to show that:
 \begin{itemize}
@@ -3227,6 +3230,48 @@ We know from solution~\ref{sol:closedbutpathdependent} that $d \omega = 0$, so $
 \]
 so, by exercise~\ref{ex:exactifintegraloverloopiszero}, $\omega$ is not exact.
 The existence of a 1-form that is closed but not exact implies that $S^1 \times M$ is not simply connected.
+
+\end{sol}
+
+\subsection{Stokes' Theorem}
+
+\begin{ex}
+
+Let the \emph{$n$-disk} $D^n$ be defined as
+\[
+    D^n = \setbuilder*{(x_1, \ldots, x_n) \given x_1^2 + \cdots + x_n^2 \leq 1}.
+\]
+Show that $D^n$ is an $n$-manifold with boundary in an obvious sort of way.
+
+\end{ex}
+
+\begin{sol}
+
+We need to show that $D^n$ is equipped with charts of the form $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ or $\varphi_\alpha: U_\alpha \to \mathbb{H}^n$, where $U_\alpha$ are open sets covering $D^n$ and $\mathbb{H}^n = \setbuilder*{x \in \mathbb{R}^n \given x^n \geq 0}$ is the closed half-space, such that the transition functions $\varphi_\alpha \circ \varphi_\beta^{-1}$ are smooth where defined.
+
+Let $\pi_i: \mathbb{R}^{n} \to \mathbb{R}^{n - 1}$, defined as
+\[
+    \pi_i: x \mapsto (x^1, \ldots, x^{i - 1}, x^{i + 1}, \ldots, x^{n}),
+\]
+be the projection that drops the $i$\textsuperscript{th} coordinate, $i \neq n$.
+
+Recall the inverse stereographic projection from solution~\ref{sol:stereographicprojection} with $\alpha = 1$, which we denote as
+\[
+    \sigma_+^{-1}: x \mapsto \frac{1}{r^2 + 1} (2x^1, \ldots, 2x^n, r^2 - 1)
+\]
+where $r^2 = x_1^2 + \cdots + x_n^2$.
+
+Consider the composition $\varphi_+ = \pi_i \circ \sigma_+^{-1}$,
+\[
+    \varphi_+: x \mapsto \frac{1}{r^2 + 1} (2x^1, \ldots, 2x^{i - 1}, 2x^{i + 1}, \ldots, 2x^n, r^2 - 1),
+\]
+and notice that $\varphi_+: D^n \to \mathbb{H}^n$. Indeed, on the boundary of $D^n$,
+\[
+    \lim_{r^2 \to 1} \varphi_+(x) = (x^1, \ldots, x^{i - 1}, x^{i + 1}, \ldots, x^n, 0)
+\]
+which is in $\partial \mathbb{H}^n$.
+
+We can similarly construct $\varphi_-(x) = -\varphi_+(-x)$ corresponding to $\alpha = -1$. Then obviously the transition functions are smooth where they are defined.
 
 \end{sol}
 
