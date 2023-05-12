@@ -344,7 +344,7 @@ Since the transition functions exist independently, they are automatically smoot
 
 \end{sol}
 
-\section{Vector Fields}
+\section{Vector Fields}\label{ch:vectorfields}
 
 \begin{ex}
 
@@ -3272,6 +3272,22 @@ and notice that $\varphi_+: D^n \to \mathbb{H}^n$. Indeed, on the boundary of $D
 which is in $\partial \mathbb{H}^n$.
 
 We can similarly construct $\varphi_-(x) = -\varphi_+(-x)$ corresponding to $\alpha = -1$. Then obviously the transition functions are smooth where they are defined.
+
+\end{sol}
+
+\begin{ex}
+
+Check that the definition of tangent vectors in Chapter~\ref{ch:vectorfields} really does imply that the tangent space at a point on the boundary of an $n$-dimensional manifold with boundary is an $n$-dimensional vector space.
+
+\end{ex}
+
+\begin{sol}
+
+We say that a function on $\mathbb{H}^n$ is smooth if it extends to a smooth function on the manifold $\setbuilder*{\mathbb{R}^n \given x^n > -\epsilon}$ for some $\epsilon > 0$.
+
+We say that a function $f: M \to \mathbb{R}$ is smooth if for any chart $\varphi_\alpha$, $f \circ \varphi_\alpha^{-1}$ is smooth as a function on $\mathbb{R}^n$ or $\mathbb{H}^n$.
+
+Let $p \in \partial M$. Then a tangent vector at $p$, $v_p: C^\infty(M) \to \mathbb{R}$, exists since $f$ is smooth up to and including the boundary by our extension of the definition of smoothness. Therefore $T_p M$ is an $n$-dimensional vector space as usual.
 
 \end{sol}
 
