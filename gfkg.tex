@@ -3291,4 +3291,60 @@ Let $p \in \partial M$. Then a tangent vector at $p$, $v_p: C^\infty(M) \to \mat
 
 \end{sol}
 
+\begin{ex}
+
+For the mathematically inclined reader: prove that $\int_M \omega$ is independent of the choice of charts and partition of unity.
+
+\end{ex}
+
+\begin{sol}
+
+% See "An Introduction to Manifolds" 2e by Loring W. Tu, §23.4. p265
+
+Let $\dim(M) = n$, $\omega \in \Omega^n(M)$ and $\{\varphi_\alpha\}$ be an oriented atlas on $M$.
+
+For some charts $\varphi$ and $\psi$ on an open set $U$, ${(\varphi^{-1})}^* \omega$ and ${(\psi^{-1})}^* \omega$ are $n$-forms on $\varphi(U)$ and $\psi(U)$, respectively. We can therefore construct an orientation-preserving diffeomorphism $\varphi \circ \psi^{-1}: \psi(U) \to \varphi(U)$.
+
+Then
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \int_U \omega &= \int_{\varphi(U)} {(\varphi^{-1})}^* \omega \\
+                  &= \int_{\psi(U)} {(\varphi \circ \psi^{-1})}^* {(\varphi^{-1})}^* \omega \\
+                  &= \int_{\psi(U)} {(\psi^{-1})}^* \omega
+\end{align*}
+and therefore the integral of $\omega$ on $M$ is independent of the choice of charts.
+
+For oriented atlases $\{(\varphi_\alpha, U_\alpha)\}$ and $\{(\varphi'_\beta, V_\beta)\}$, we have partitions of unity $\{f_\alpha\}$ and $\{f'_\beta\}$, say. Then
+\[
+    \omega = \sum_\alpha f_\alpha \omega = \sum_\beta f'_\beta \omega
+\]
+and
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \int_M \omega &= \sum_\alpha \int_{U_\alpha} f_\alpha \omega \\
+                  &= \sum_\alpha \sum_\beta \int_{U_\alpha} f_\alpha f'_\beta \omega \\
+                  &= \sum_\alpha \sum_\beta \int_{V_\beta} f_\alpha f'_\beta \omega \\
+                  &= \sum_\beta \int_{V_\beta} f'_\beta \omega.
+\end{align*}
+In terms of local coordinates, under charts $\varphi_\alpha$ and $\varphi'_\beta$ we may write
+\[
+    f_\alpha \omega = g_\alpha dx^1 \wedge \cdots \wedge dx^n, \qquad
+    f'_\beta \omega = g'_\beta dx'^1 \wedge \cdots \wedge dx'^n.
+\]
+But
+\[
+    g_\alpha dx^1 \wedge \cdots \wedge dx^n = g_\alpha \det(T) dx'^1 \wedge \cdots \wedge dx'^n
+\]
+so $g'_\beta = g_\alpha \det(T)$ on overlapping charts, with the Jacobian $T$ as per exercise~\ref{ex:transform1form}.
+Then
+\begin{align*}
+    \int_M \omega &= \sum_\alpha \int_{U_\alpha} f_\alpha \omega \\
+        &= \sum_\alpha \int_{\varphi_\alpha(U_\alpha)} g_\alpha dx^1 \wedge \cdots \wedge dx^n \\
+        &= \sum_\beta \int_{\varphi'_\beta(V_\beta)} g'_\beta dx'^1 \wedge \cdots \wedge dx'^n \\
+        &= \sum_\beta \int_{V_\beta} f'_\beta \omega.
+\end{align*}
+Therefore the integral of $\omega$ on $M$ is independent of the partition of unity.
+
+\end{sol}
+
 \end{document}
