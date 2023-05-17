@@ -3363,4 +3363,35 @@ We've already seen from solution~\ref{sol:ndisk} that when $r^2 \to 1$, $\varphi
 
 \end{sol}
 
+\begin{ex}
+
+Let $M = [0, 1]$. Show that Stokes' theorem in this case is equivalent to the fundamental theorem of calculus:
+\[
+    \int_0^1 f'(x) \, dx = f(1) - f(0).
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Stokes' theorem states that for $M$ an oriented $n$-manifold with boundary and $\omega \in \Omega^{n - 1}(M)$, where either $M$ is compact or $\omega$ has compact support,
+\[
+    \int_M d\omega = \int_{\partial M} \omega.
+\]
+
+Let $\omega = f$ be a 0-form, so $d\omega = df = f' dx$. Then
+\[
+    \int_M d\omega = \int_{[0, 1]} df = \int_0^1 f' dx
+\]
+and so, by Stokes' theorem,
+\begin{align*}
+\int_0^1 f'(x) \, dx &= \int_{\partial [0, 1]} f(x) \\
+                     &= f(1) - f(0).
+\end{align*}
+The boundary $\partial [0, 1] = {\{0\}}^-\! \cup {\{1\}}^+$ where the sign denotes orientation.
+
+While the integral over $[0, 1]$ has the Lebesgue measure on $\mathbb{R}$, it induces on its boundary the signed counting measure. Hence on the boundary integral, the boundary has non-zero measure.
+
+\end{sol}
+
 \end{document}
