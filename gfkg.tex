@@ -3420,4 +3420,32 @@ which disagrees with Stokes' theorem unless $\displaystyle \lim_{x \to \infty} f
 
 \end{sol}
 
+\begin{ex}
+
+Show that any submanifold is a manifold in its own right in a natural way.
+
+\end{ex}
+
+\begin{sol}
+
+Given a subset $S$ of an $n$-manifold $M$, we say that $S$ is a $k$-dimensional \emph{submanifold} of $M$ if for each point $p \in S$ there is an open set $U_\alpha$ of $M$ containing $p$ and a chart $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ such that $S \cap U_\alpha = \varphi_\alpha^{-1} (\mathbb{R}^k)$.
+
+Consider the induced topology on $S$, so open sets are of the form $V_\alpha = S \cap U_\alpha$.
+The collection $\{V_\alpha\}$ covers $S$ since it is not possible to find a point $p \in S$ such that $p \notin U_\alpha$ for any $\alpha$, as $\{U_\alpha\}$ covers $M$.
+
+We can construct maps on $S$ to $\mathbb{R}^k$ by taking the restriction of $\varphi_\alpha$ to $M$ and projecting.
+This gives us charts
+\[
+    \psi_\alpha: V_\alpha \to \mathbb{R}^k, \qquad
+    \psi_\alpha = \pi \circ \varphi_\alpha,
+\]
+where $\pi: \mathbb{R}^n \to \mathbb{R}^k$ is a projection.
+The collection $\{\psi_\alpha\}$ forms an atlas for $S$.
+
+The transition functions $\psi_\alpha \circ \psi_\beta^{-1}: \mathbb{R}^k \to \mathbb{R}^k$ are smooth where they are defined as each $\psi_\alpha$ inherits the same smoothness properties as those of $\varphi_\alpha$.
+
+Therefore $S$ is a manifold under the induced topology.
+
+\end{sol}
+
 \end{document}
