@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
+\usepackage{interval}
 \usepackage[tracking=true, kerning=true]{microtype}
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
@@ -25,6 +26,8 @@
     showonlyrefs,
     showmanualtags
 }
+
+\intervalconfig{soft open fences}
 
 \newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
@@ -3391,6 +3394,29 @@ and so, by Stokes' theorem,
 The boundary $\partial [0, 1] = {\{0\}}^-\! \cup {\{1\}}^+$ where the sign denotes orientation.
 
 While the integral over $[0, 1]$ has the Lebesgue measure on $\mathbb{R}$, it induces on its boundary the signed counting measure. Hence on the boundary integral, the boundary has non-zero measure.
+
+\end{sol}
+
+\begin{ex}
+
+Let $M = \rinterval{0}{\infty}$ which is not compact.
+Show that without the assumption that $f$ vanishes outside a compact set, Stokes' theorem may not apply.
+(Hint\footnote{The original hint uses the wrong boundary.}: in this case Stokes' theorem says $\int_0^\infty f'(x) \, dx = -f(0)$.)
+
+\end{ex}
+
+\begin{sol}
+
+Let $f$ be a 0-form on $M$. The boundary of $M$ is $\partial M = {\{0\}}^-$ so, by Stokes' theorem,
+\[
+    \int_0^\infty f'(x) \, dx = \int_{{\{0\}}^-} f(x) = -f(0).
+\]
+But a standard Riemann integral of $f$ over $M$ gives
+\begin{align*}
+    \int_0^\infty f'(x) \, dx &= \lim_{b \to \infty} \int_0^b f'(x) \, dx \\
+                              &= \lim_{b \to \infty} f(b) - f(0),
+\end{align*}
+which disagrees with Stokes' theorem unless $\displaystyle \lim_{x \to \infty} f(x) = 0$.
 
 \end{sol}
 
