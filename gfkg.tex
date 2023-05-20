@@ -3448,4 +3448,22 @@ Therefore $S$ is a manifold under the induced topology.
 
 \end{sol}
 
+\begin{ex}
+
+Show that $S^{n - 1}$ is a compact submanifold of $\mathbb{R}^n$.
+
+\end{ex}
+
+\begin{sol}
+
+$S^{n - 1}$ is a submanifold of $\mathbb{R}^n$ under stereographic projection as in solutions~\ref{sol:stereographicprojection},~\ref{sol:ndisk}, which gives us an atlas and smooth transition functions.
+
+$S^{n - 1}$ is bounded since $\norm{p} = 1$ for all $p \in S^{n - 1}$.
+
+Let $f: \mathbb{R}^n \to \mathbb{R}$ be given by $f(x_1, \ldots, x_n) = x_1^2 + \cdots + x_n^2$. Since $f$ is continuous, its inverse will map closed sets to closed sets. $f^{-1}(\{1\}) = S^{n - 1}$, so $S^{n - 1}$ is closed.
+
+Since $S^{n - 1} \subset \mathbb{R}^n$ is closed and bounded, by the Heine--Borel theorem $S^{n - 1}$ is compact.
+
+\end{sol}
+
 \end{document}

@@ -2,6 +2,7 @@ DashExcpt
 {
     epsilon--delta
     Levi--Civita
+    Heine--Borel
 }
 
 TabSize = 4
