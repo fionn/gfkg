@@ -3511,4 +3511,27 @@ Therefore $D^n$ is a submanifold of $\mathbb{R}^n$.
 
 \end{sol}
 
+\begin{ex}
+
+Suppose that $S \subset \mathbb{R}^2$ is a 2-dimensional compact orientable submanifold with boundary.
+Work out what Stokes' theorem says when applied to a 1-form on $S$.
+This is sometimes called Green's theorem.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\omega = \omega_x dx + \omega_y dy$ be a 1-form on $S$. Taking the exterior derivative,
+\begin{align*}
+    d\omega &= \partial_x \omega_y dx \wedge dy + \partial_y \omega_x dy \wedge dx \\
+            &= (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
+\end{align*}
+Then by Stokes' theorem,
+\[
+    \int_{\partial S} (\omega_x dx + \omega_y dy) =
+        \int_S (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
+\]
+
+\end{sol}
+
 \end{document}
