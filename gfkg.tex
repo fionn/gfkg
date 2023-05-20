@@ -3480,4 +3480,19 @@ For each point $p \in U$, there is an open set $U_\alpha$ of $M$ containing $p$ 
 
 \end{sol}
 
+\begin{ex}
+
+Show that if $S$ is a $k$-dimensional submanifold with boundary of $M$, then $S$ is a manifold with boundary in a natural way.
+Moreover, show that $\partial S$ is a $(k - 1)$-dimensional submanifold of $M$.
+
+\end{ex}
+
+\begin{sol}
+
+Take solution~\ref{sol:submanifold} and replace $\mathbb{R}$ with $\mathbb{H}$ and the result that $S$ is a manifold with boundary follows immediately.
+
+We know that $\partial S$ is a manifold of dimension $k - 1$. To see that it is a submanifold of $S$, we note that for each point $p \in \partial S$ there is an open set $U_\alpha$ of $S$ containing $p$ and a chart $\varphi_\alpha: U_\alpha \to \mathbb{H}^k$ such that $\partial S \cap U_\alpha = \varphi_\alpha^{-1}(\mathbb{H}^{k - 1})$. Since $\partial S$ is a submanifold of $S$ and $S$ a submanifold with boundary of $M$, $\partial S$ is a submanifold of $M$.
+
+\end{sol}
+
 \end{document}
