@@ -256,7 +256,7 @@ These transition functions are inversions on the $n$-sphere and are smooth where
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:opensubsetismanifold}
 
 Show that if $M$ is a manifold and $U$ is an open subset of $M$, then $U$ with its induced topology is a manifold.
 
@@ -3426,7 +3426,7 @@ Show that any submanifold is a manifold in its own right in a natural way.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:submanifold}
 
 Given a subset $S$ of an $n$-manifold $M$, we say that $S$ is a $k$-dimensional \emph{submanifold} of $M$ if for each point $p \in S$ there is an open set $U_\alpha$ of $M$ containing $p$ and a chart $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ such that $S \cap U_\alpha = \varphi_\alpha^{-1} (\mathbb{R}^k)$.
 
@@ -3463,6 +3463,20 @@ $S^{n - 1}$ is bounded since $\norm{p} = 1$ for all $p \in S^{n - 1}$.
 Let $f: \mathbb{R}^n \to \mathbb{R}$ be given by $f(x_1, \ldots, x_n) = x_1^2 + \cdots + x_n^2$. Since $f$ is continuous, its inverse will map closed sets to closed sets. $f^{-1}(\{1\}) = S^{n - 1}$, so $S^{n - 1}$ is closed.
 
 Since $S^{n - 1} \subset \mathbb{R}^n$ is closed and bounded, by the Heine--Borel theorem $S^{n - 1}$ is compact.
+
+\end{sol}
+
+\begin{ex}
+
+Show that any open subset of a manifold is a submanifold.
+
+\end{ex}
+
+\begin{sol}
+
+Recall from exercise~\ref{ex:opensubsetismanifold} that if $M$ is a manifold and $U$ an open subset of $M$ then $U$ with its induced topology is a manifold.
+
+For each point $p \in U$, there is an open set $U_\alpha$ of $M$ containing $p$ and a chart $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ such that $U \cap U_\alpha = \varphi_\alpha^{-1}(\mathbb{R}^k)$, so $U$ is a submanifold of $M$ with charts $\pi \circ \varphi_\alpha$ restricted to $U$, where $\pi$ is a projection as in solution~\ref{sol:submanifold}.
 
 \end{sol}
 
