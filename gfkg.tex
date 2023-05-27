@@ -29,6 +29,8 @@
 
 \intervalconfig{soft open fences}
 
+\renewcommand*\contentsname{}
+
 \newcommand*{\email}[1]{\normalsize\texttt{\href{mailto:#1}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
@@ -60,6 +62,14 @@
 
 \maketitle
 \thispagestyle{empty}
+
+\pagenumbering{roman}
+
+\tableofcontents
+\thispagestyle{empty}
+
+\clearpage
+\pagenumbering{arabic}
 
 \part{Electromagnetism}
 
