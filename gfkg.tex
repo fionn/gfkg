@@ -1,4 +1,4 @@
-\documentclass[11pt, a4paper]{article}
+\documentclass[11pt, a4paper]{report}
 
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -10,6 +10,8 @@
 \usepackage{lmodern}
 \usepackage{inconsolata}
 \usepackage{parskip}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titling}
 
 \DeclareMicrotypeAlias{lmss}{cmr}
 
@@ -21,6 +23,21 @@
 \setlength\textheight{612pt}
 \setlength\textwidth{368pt}
 \setlength\hoffset{-4pt}
+\setlength\droptitle{-92pt}
+
+\let\endtitlepage\relax
+
+\counterwithout{footnote}{chapter}
+
+\titleclass{\part}{top}
+\titleformat{\part}[display]{\huge\bfseries}{\Large\partname\ \thepart}{0pt}{}{}
+\titlespacing*{\part}{0pt}{*0}{*3}
+
+\titleclass{\chapter}{straight}
+\titleformat{\chapter}{\LARGE\bfseries}{\thechapter}{0.8em}{}{}
+\titlespacing*{\chapter}{0pt}{*4}{*3}
+
+\newcommand{\chapterbreak}{\ifnum\value{chapter}>0 \clearpage\fi}
 
 \mathtoolsset{%
     showonlyrefs,
@@ -61,19 +78,20 @@
 \begin{document}
 
 \maketitle
-\thispagestyle{empty}
 
+\vspace{-8em}
+
+\thispagestyle{empty}
 \pagenumbering{roman}
 
 \tableofcontents
-\thispagestyle{empty}
 
 \clearpage
 \pagenumbering{arabic}
 
 \part{Electromagnetism}
 
-\section{Maxwell's Equations}
+\chapter{Maxwell's Equations}
 
 \begin{ex}\label{ex:i1}
 
@@ -150,7 +168,7 @@ and satisfying the second vacuum equation.
 
 \end{sol}
 
-\section{Manifolds}
+\chapter{Manifolds}
 
 \begin{ex}
 
@@ -357,7 +375,7 @@ Since the transition functions exist independently, they are automatically smoot
 
 \end{sol}
 
-\section{Vector Fields}\label{ch:vectorfields}
+\chapter{Vector Fields}\label{ch:vectorfields}
 
 \begin{ex}
 
@@ -462,7 +480,7 @@ If $v^\mu\partial_\mu = 0$, we get $v^\mu$ = 0 from above.
 
 \end{sol}
 
-\subsection{Tangent Vectors}
+\section{Tangent Vectors}
 
 \begin{ex}
 
@@ -555,7 +573,7 @@ so $\gamma'(t)$ is a tangent vector.
 
 \end{sol}
 
-\subsection{Covariant Versus Contravariant}
+\section{Covariant Versus Contravariant}
 
 \begin{ex}
 
@@ -792,7 +810,7 @@ where we get back the $x$- and $y$-components of $\phi_* \partial_x$, $\phi_* \p
 
 \end{sol}
 
-\subsection{Flows and the Lie Bracket}
+\section{Flows and the Lie Bracket}
 
 \begin{ex}
 
@@ -982,9 +1000,9 @@ Show that for all vector fields $u$, $v$, $w$ on a manifold, and all real number
 
 \end{sol}
 
-\section{Differential Forms}
+\chapter{Differential Forms}
 
-\subsection{1-forms}
+\section{1-forms}
 
 \begin{ex}
 
@@ -1138,7 +1156,7 @@ so $\omega(v) = 0$ implies $v^\mu \omega_\mu = 0$. But since $v$ is arbitrary, $
 
 \end{sol}
 
-\subsection{Cotangent Vectors}
+\section{Cotangent Vectors}
 
 \begin{ex}
 
@@ -1294,7 +1312,7 @@ and similarly for $\phi^* dy$.
 
 \end{sol}
 
-\subsection{Change of Coordinates}
+\section{Change of Coordinates}
 
 \begin{ex}\label{ex:coordinatetransformation1form}
 
@@ -1517,7 +1535,7 @@ so the components of a 1-form are covariant.
 
 \end{sol}
 
-\subsection{\emph{p}-forms}
+\section{\emph{p}-forms}
 
 \begin{ex}\label{ex:triplewedgeproduct}
 
@@ -1834,7 +1852,7 @@ and if $\omega \in \Omega^2(\mathbb{R}^3)$, then
 
 \end{sol}
 
-\subsection{The Exterior Derivative}
+\section{The Exterior Derivative}
 
 \begin{ex}
 
@@ -1857,9 +1875,9 @@ Since $\omega_\mu$ is a 0-form,
 
 \end{sol}
 
-\section{Rewriting Maxwell's Equations}
+\chapter{Rewriting Maxwell's Equations}
 
-\subsection{The First Pair of Equations}
+\section{The First Pair of Equations}
 
 \begin{ex}
 
@@ -1911,7 +1929,7 @@ Again, this is guaranteed to be unique by linearity.
 
 \end{sol}
 
-\subsection{The Metric}
+\section{The Metric}
 
 \begin{ex}
 
@@ -2195,7 +2213,7 @@ the Lagrangian density for vacuum electromagnetism on Minkowski spacetime.
 
 \end{sol}
 
-\subsection{The Volume Form}
+\section{The Volume Form}
 
 \begin{ex}
 
@@ -2306,7 +2324,7 @@ e_p^1 \wedge \cdots \wedge e_p^n = \text{vol}_p.
 
 \end{sol}
 
-\subsection{The Hodge Star Operator}
+\section{The Hodge Star Operator}
 
 \begin{ex}
 
@@ -2531,7 +2549,7 @@ then
 
 \end{sol}
 
-\subsection{The Second Pair of Equations}
+\section{The Second Pair of Equations}
 
 \begin{ex}
 
@@ -3100,9 +3118,9 @@ Since $P^* P^* F = F$, we automatically get the corollary that if $F$ is anti-se
 
 \end{sol}
 
-\section{DeRham Theory in Electromagnetism}
+\chapter{DeRham Theory in Electromagnetism}
 
-\subsection{Closed and Exact 1-forms}
+\section{Closed and Exact 1-forms}
 
 \begin{ex}
 
@@ -3246,7 +3264,7 @@ The existence of a 1-form that is closed but not exact implies that $S^1 \times 
 
 \end{sol}
 
-\subsection{Stokes' Theorem}
+\section{Stokes' Theorem}
 
 \begin{ex}\label{ex:ndisk}
 
