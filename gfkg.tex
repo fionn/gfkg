@@ -117,7 +117,7 @@ The vacuum equations are invariant under
     \vec{B} \mapsto \vec{E}, \qquad
     \vec{E} \mapsto - \vec{B}
 \]
-(electromagnetic duality) or, equivalently, for a complex-valued vector field $\vec{\mathcal{E}} = \vec{E} + i \vec{B}$,
+(electromagnetic duality, see \S\ref{sec:secondpairmaxwellequations}) or, equivalently, for a complex-valued vector field $\vec{\mathcal{E}} = \vec{E} + i \vec{B}$,
 \[
     \vec{\mathcal{E}} \mapsto i \vec{\mathcal{E}}.
 \]
@@ -127,17 +127,10 @@ This lets us express the vacuum equations in terms of $\vec{\mathcal{E}}$ as
     \nabla \times \vec{\mathcal{E}} = i \frac{\partial \vec{\mathcal{E}}}{\partial t}.
 \]
 
-We'll rely on
-\[
-    \partial_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} = i k_j e^{-i(\omega t - \vec{k} \cdot \vec{x})}
-\]
-to show that our $\vec{\mathcal{E}}$ satisfies the vacuum equations.
-
 For the divergence,
 \begin{align*}
-    \nabla \cdot \vec{\mathcal{E}} &= \nabla \cdot \left(\vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})}\right) \\
+    \nabla \cdot \vec{\mathcal{E}}
         &= \sum_{j = 1}^3 \partial_j \left( E_j  e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right) \\
-        &= \sum_{j = 1}^3 E_j \partial_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
         &= \sum_{j = 1}^3 E_j i k_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
         &= i \vec{k} \cdot \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
         &= 0.
@@ -2549,7 +2542,7 @@ then
 
 \end{sol}
 
-\section{The Second Pair of Equations}
+\section{The Second Pair of Equations}\label{sec:secondpairmaxwellequations}
 
 \begin{ex}
 
