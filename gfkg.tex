@@ -3534,4 +3534,46 @@ Then by Stokes' theorem,
 
 \end{sol}
 
+\begin{ex}
+
+Suppose that $S \subset \mathbb{R}^3$ is a 2-dimensional compact orientable submanifold with boundary.
+Show Stokes' theorem applied to $S$ boils down to the classic Stokes' theorem.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\omega = \omega_x dx + \omega_y dy + \omega_z dz$ be a 1-form on $\mathbb{R}^3$, so the exterior derivative, as in solution~\ref{sol:curl1form}, is
+\begin{align*}
+    d\omega &= (\partial_y \omega_z - \partial_z \omega_y) dy \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) dz \wedge dx \\
+        &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
+\end{align*}
+
+%Let $\{e^1, e^2\}$ be an oriented orthonormal basis on $\Omega^1(S)$. Then the ``area'' form on $S$, which is not necessarily exact, is given by
+%\begin{align*}
+%    dA_S &= e^1 \wedge e^2 \\
+%         &= n_1 dy \wedge dz + n_2 dz \wedge dx + n_3 dx \wedge dy \\
+%         &= \star n
+%\end{align*}
+%for some unit 1-form $n = n_i dx^i$. This uniquely determines the unit vector $n^i \partial_i$ normal to $S$.
+
+Let $F = F^i \partial_i$ be the vector field dual to $\omega$, so $F^i = g^{ij} \omega_j = \omega_i$ since we're in $\mathbb{R}^3$. Then in old-fashioned vector calculus,
+\[
+    \int_S d\omega = \int_S (\nabla \times \vec{F}) \cdot d\vec{A}
+\]
+where $d\vec{A} = (dy \wedge dz, dz \wedge dx, dx \wedge dy)$ is the oriented area element
+and
+\[
+    \int_{\partial S} \omega = \int_{\partial S} F_i \, dx^i
+                             = \int_{\partial S} \vec{F} \cdot d\vec{s}
+\]
+with line element $d\vec{s} = (dx, dy, dz)$.
+Therefore, by Stokes' theorem,
+\[
+    \int_S (\nabla \times \vec{F}) \cdot d\vec{A} = \int_{\partial S} \vec{F} \cdot d\vec{s}.
+\]
+
+\end{sol}
+
 \end{document}
