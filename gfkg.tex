@@ -3541,7 +3541,7 @@ Show Stokes' theorem applied to $S$ boils down to the classic Stokes' theorem.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:classicstokestheorem}
 
 Let $\omega = \omega_x dx + \omega_y dy + \omega_z dz$ be a 1-form on $\mathbb{R}^3$, so the exterior derivative, as in solution~\ref{sol:curl1form}, is
 \begin{align*}
@@ -3572,6 +3572,38 @@ with line element $d\vec{s} = (dx, dy, dz)$.
 Therefore, by Stokes' theorem,
 \[
     \int_S (\nabla \times \vec{F}) \cdot d\vec{A} = \int_{\partial S} \vec{F} \cdot d\vec{s}.
+\]
+
+\end{sol}
+
+\begin{ex}
+
+Suppose that $S \subset \mathbb{R}^3$ is a 3-dimensional compact orientable submanifold with boundary.
+Show Stokes' theorem applied to $S$ is equivalent to Gau\ss' theorem, also known as the divergence theorem.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\omega = \omega_x dx + \omega_y dy + \omega_z dz$ be a 1-form on $\mathbb{R}^3$. By solution~\ref{sol:divergence1form},
+\[
+    \star \omega = \omega_x dy \wedge dz + \omega_y dz \wedge dx + \omega_z dx \wedge dy
+\]
+and
+\[
+    d \star \omega = (\partial_x \omega_x + \partial_y \omega_y + \partial_z \omega_z) \, dx \wedge dy \wedge dz.
+\]
+Again, let $F$ be the vector dual to $\omega$. Then
+\[
+    \int_S d \star \omega = \int_S \nabla \cdot \vec{F} \, dV
+\]
+where $dV$ is the volume form and
+\[
+    \int_{\partial S} \star \omega = \int_{\partial S} \vec{F} \cdot d\vec{A}
+\]
+where $d\vec{A}$ is as in solution~\ref{sol:classicstokestheorem}. Therefore, by Stokes' theorem,
+\[
+    \int_S \nabla \cdot \vec{F} \, dV = \int_{\partial S} \vec{F} \cdot d\vec{A}.
 \]
 
 \end{sol}
