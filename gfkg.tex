@@ -24,7 +24,7 @@
 
 \frenchspacing
 
-\allowdisplaybreaks[2]
+\allowdisplaybreaks[3]
 
 \setlength{\topmargin}{0pt}
 \setlength{\textheight}{612pt}
@@ -53,8 +53,10 @@
 \counterwithout{footnote}{chapter}
 
 \theoremstyle{definition}
-\newtheorem{ex}{Exercise}[part]
-\newtheorem{sol}{Solution}[part]
+\newtheorem{exthm}{Exercise}[part]
+\newtheorem{solthm}{Solution}[part]
+\newenvironment{ex}{\begin{exthm}}{\end{exthm}\pagebreak[1]}
+\newenvironment{sol}{\begin{solthm}}{\end{solthm}\pagebreak[3]}
 
 \mathtoolsset{%
     showonlyrefs,
