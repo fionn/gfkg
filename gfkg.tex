@@ -3721,4 +3721,40 @@ by exercise~\ref{ex:dualidentity}, so ${(\psi \phi)}^* = \phi^* \psi^*$ when act
 
 \end{sol}
 
+\section{Gauge Freedom}
+
+\emph{Nothing to do.}
+
+\section{The Bohm--Aharonov Effect}
+
+\begin{ex}
+
+Do this. (Hint: show that $\star dz = r \, dr \wedge d\theta$.)
+
+\end{ex}
+
+\begin{sol}
+
+We have cylindrical coordinates $z, r, \theta$ on $\mathbb{R}^3$, with corresponding 1-forms $dz$ defined everywhere, $dr$ defined away from $r = 0$ and $d\theta$ the closed but not exact 1-form from solution~\ref{sol:closedbutpathdependent}.
+
+Recall that
+\begin{align*}
+    \SwapAboveDisplaySkip
+    dx &= \cos(\theta) \, dr - r \sin(\theta) \, d\theta, \\
+    dy &= \sin(\theta) \, dr + r \cos(\theta) \, d\theta.
+\end{align*}
+Taking the Hodge dual of $dz$,
+\begin{align*}
+    \star dz &= dx \wedge dy \\
+             &= (\cos(\theta) \, dr -r \sin(\theta) \, d\theta) \wedge (\sin(\theta) \, dr + r \cos(\theta) \, d\theta) \\
+             &= r \, {\cos(\theta)}^2 dr \wedge d\theta + r \, {\sin(\theta)}^2 dr \wedge d\theta \\
+             &= r \, dr \wedge d\theta.
+\end{align*}
+Suppose the current is cylindrically symmetric and flows in the $z$-direction, so that $j = f(r) \, dz$. Then away from the $z$-axis,
+\[
+    \star j = \star f(r) \, dz = f(r) r \, dr \wedge d\theta.
+\]
+
+\end{sol}
+
 \end{document}

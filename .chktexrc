@@ -3,6 +3,7 @@ DashExcpt
     epsilon--delta
     Levi--Civita
     Heine--Borel
+    Bohm--Aharonov
 }
 
 TabSize = 4
