@@ -3836,4 +3836,55 @@ We can also show this without leveraging cohomology, since we know that $\omega$
 
 \end{sol}
 
+\begin{ex}
+
+In the space $\mathbb{R} \times S^2$ with the metric $g$ given above, let $E$ be the 1-form
+\[
+    E = e(r) \, dr.
+\]
+Show that $dE = 0$ holds no matter what the function $e(r)$ is, and show that $d \star E = 0$ holds when
+\[
+    e(r) = \frac{q}{4 \pi {f(r)}^2}.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Our metric on $\mathbb{R} \times S^2$ is $g = dr^2 + {f(r)}^2 (d\phi^2 + {\sin(\phi)}^2 d\theta^2)$ where $f$ is positive for all $r$ and $f(r) \to r$ when $|r|$ is sufficiently large.\footnote{We approach $r$, not $r^2$, since the latter is not Euclidean.}
+
+We want our 1-form to satisfy the vacuum electrostatic equations
+\[
+    dE = 0, \qquad
+    d \star E = 0.
+\]
+$E$ is closed since
+\[
+    dE = e'(r) \, dr \wedge dr = 0.
+\]
+The volume form is
+\begin{align*}
+    \text{vol} &= \sqrt{|\det(g)|} \, dr \wedge d\theta \wedge d\phi \\
+               &= {f(r)}^2 \sin(\phi) \, dr \wedge d\theta \wedge d\phi.
+\end{align*}
+By definition of the Hodge star, $dr \wedge \star dr = \innerp{dr}{dr} \text{vol} = \text{vol}$.
+Denoting $\star dr = \alpha \, d\theta \wedge d\phi$ where $\alpha$ is a normalisation factor,
+\[
+    dr \wedge \star dr = \alpha \, dr \wedge d\theta \wedge d\phi = \text{vol},
+\]
+fixing $\alpha$ and giving us $\star dr = {f(r)}^2 \sin(\phi) \, d\theta \wedge d\phi$, so
+\begin{align*}
+    d \star E &= d (e(r) \star dr) \\
+              &= d (e(r) {f(r)}^2 \sin(\phi) \, d\theta \wedge d\phi) \\
+              &= \partial_r (e(r) {f(r)}^2) \cdot \sin(\phi) \, dr \wedge d\theta \wedge d\phi.
+\end{align*}
+Then for $d \star E = 0$, we require $e(r) {f(r)}^2$ to be constant in $r$.
+Let this constant be $\frac{q}{4 \pi}$, say, for some arbitrary $q$. Then
+\[
+    e(r) = \frac{q}{4 \pi {f(r)}^2}
+\]
+and $d \star E = 0$.
+
+\end{sol}
+
 \end{document}
