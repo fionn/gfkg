@@ -12,6 +12,7 @@
 \usepackage{parskip}
 \usepackage[nobottomtitles*]{titlesec}
 \usepackage{titling}
+\usepackage{faktor}
 
 \DeclareMicrotypeAlias{lmss}{cmr}
 
@@ -1193,7 +1194,7 @@ for all $p \in M$ and therefore, since $v$ is arbitrary, $\omega = \nu$.
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:dualidentity}
 
 Show that the dual of the identity map on a vector space $V$ is the identity map on $V^*$.
 Suppose that we have linear maps $f: V \to W$ and $g: W \to X$. Show that ${(gf)}^* = f^* g^*$.
@@ -3648,7 +3649,7 @@ Therefore, by \ref{eq:stokestheorem}, % chktex 2
 
 \section{De Rham Cohomology}
 
-\begin{ex}
+\begin{ex}\label{ex:pullbackclosedandexact}
 
 Show that the pullback of a closed form is closed
 and the pullback of an exact form is exact.
@@ -3670,6 +3671,53 @@ If instead $\omega$ is exact, so $\omega = d\mu$ for some $\mu \in \Omega^{p - 1
     \phi^* \omega = \phi^* (d \mu) = d (\phi^* \mu)
 \]
 which is exact.
+
+\end{sol}
+
+\begin{ex}
+
+Show that given any map $\phi: M \to M'$ there is a linear map from $H^p(M')$ to $H^p(M)$ given by
+\[
+    [\omega] \mapsto [\phi^* \omega]
+\]
+where $\omega$ is any closed $p$-form on $M'$. Call this linear map
+\[
+    \phi^*: H^p(M') \to H^p(M).
+\]
+Show that if $\psi: M' \to M''$ is another map, then
+\[
+    {(\psi \phi)}^* = \phi^* \psi^*.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Recall that for
+\begin{align*}
+    Z^p(M) &= \ker(d: \Omega^p(M) \to \Omega^{p + 1}(M)), \\
+    Z^p(M) \supseteq B^p(M) &= \text{im}(d: \Omega^{p - 1}(M) \to \Omega^p(M)),
+\end{align*}
+the spaces of closed and exact $p$-forms on $M$ respectively, we define the \emph{$p$\textsuperscript{th} de~Rham cohomology group of $M$} as
+\[
+    H^p(M) = \faktor{Z^p(M)}{B^p(M)}.
+\]
+Let $\omega$ and $\omega'$ be cohomologous. Then naturally the pullback will preserve the cohomology, by exercise~\ref{ex:pullbackclosedandexact}. Explicitly,
+\begin{align*}
+    \phi^*[\omega] &= [\phi^* \omega] \\
+                   &= [\phi^*(\omega' + d\mu)] \\
+                   &= [\phi^* \omega' + \phi^* (d\mu)] \\
+                   &= [\phi^* \omega' + d(\phi^*\mu)] \\
+                   &= [\phi^* \omega'] \\
+                   &= \phi^* [\omega'].
+\end{align*}
+Introducing another linear map $\psi: M' \to M''$,
+\[
+    {(\psi \circ \phi)}^*[\omega] = [{(\psi \circ \phi)}^* \omega]
+                                  = [\phi^* \psi^* \omega]
+                                  = \phi^* \psi^* [\omega]
+\]
+by exercise~\ref{ex:dualidentity}, so ${(\psi \phi)}^* = \phi^* \psi^*$ when acting on cohomology classes in $H^p(M'')$.
 
 \end{sol}
 
