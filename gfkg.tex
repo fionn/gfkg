@@ -3410,9 +3410,11 @@ Let $M = [0, 1]$. Show that Stokes' theorem in this case is equivalent to the fu
 \begin{sol}
 
 Stokes' theorem states that for $M$ an oriented $n$-manifold with boundary and $\omega \in \Omega^{n - 1}(M)$, where either $M$ is compact or $\omega$ has compact support,
+\begin{nowidthtags}
 \[
-    \int_M d\omega = \int_{\partial M} \omega.
+    \int_M d\omega = \int_{\partial M} \omega. \tag{Stokes' theorem}\label{eq:stokestheorem}
 \]
+\end{nowidthtags}
 
 Let $\omega = f$ be a 0-form, so $d\omega = df = f' dx$. Then
 \[
@@ -3439,7 +3441,8 @@ Show that without the assumption that $f$ vanishes outside a compact set, Stokes
 
 \begin{sol}
 
-Let $f$ be a 0-form on $M$. The boundary of $M$ is $\partial M = {\{0\}}^-$ so, by Stokes' theorem,
+Let $f$ be a 0-form on $M$.
+The boundary of $M$ is $\partial M = {\{0\}}^-$ so, by \ref{eq:stokestheorem}, % chktex 2
 \[
     \int_0^\infty f'(x) \, dx = \int_{{\{0\}}^-} f(x) = -f(0).
 \]
@@ -3558,7 +3561,7 @@ Let $\omega = \omega_x dx + \omega_y dy$ be a 1-form on $S$. Taking the exterior
     d\omega &= \partial_x \omega_y dx \wedge dy + \partial_y \omega_x dy \wedge dx \\
             &= (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
 \end{align*}
-Then by Stokes' theorem,
+Therefore, by \ref{eq:stokestheorem}, % chktex 2
 \[
     \int_{\partial S} (\omega_x dx + \omega_y dy) =
         \int_S (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
@@ -3601,7 +3604,7 @@ and
                              = \int_{\partial S} \vec{F} \cdot d\vec{s}
 \]
 with line element $d\vec{s} = (dx, dy, dz)$.
-Therefore, by Stokes' theorem,
+Therefore, by \ref{eq:stokestheorem}, % chktex 2
 \[
     \int_S (\nabla \times \vec{F}) \cdot d\vec{A} = \int_{\partial S} \vec{F} \cdot d\vec{s}.
 \]
@@ -3633,7 +3636,8 @@ where $dV$ is the volume form and
 \[
     \int_{\partial S} \star \omega = \int_{\partial S} \vec{F} \cdot d\vec{A}
 \]
-where $d\vec{A}$ is as in solution~\ref{sol:classicstokestheorem}. Therefore, by Stokes' theorem,
+where $d\vec{A}$ is as in solution~\ref{sol:classicstokestheorem}.
+Therefore, by \ref{eq:stokestheorem}, % chktex 2
 \[
     \int_S \nabla \cdot \vec{F} \, dV = \int_{\partial S} \vec{F} \cdot d\vec{A}.
 \]
