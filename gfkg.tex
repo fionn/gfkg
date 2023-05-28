@@ -3902,4 +3902,33 @@ Denote the radial path from $0$ to $r$ by $\gamma$. Then a scalar potential is (
 
 \end{sol}
 
+\begin{ex}
+
+Let $S^2$ denote any of the 2-spheres of the form $\{r\} \times S^2 \subset \mathbb{R} \times S^2$, equipped with the above volume form. Show that
+\[
+    \int_{S^2} \star E = q.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Our (positively oriented) volume form on $S^2$ is $r^2 \sin(\theta) \, d\theta \wedge d\phi$.
+Taking the Hodge dual, we get
+\begin{align*}
+    \star E &= \frac{q}{4 \pi {f(r)}^2} \star dr \\
+            &= \frac{q}{4 \pi} \sin(\phi) \, d\theta \wedge d\phi,
+\end{align*}
+so
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \int_{S^2} \star E &= \int_{S^2} \frac{q}{4 \pi} \sin(\phi) \, d\theta \wedge d\phi \\
+        &= \int_{S^2} \frac{q}{4 \pi r^2} \text{vol} \\
+        &= \frac{q}{4 \pi r^2} \int_{S^2} \text{vol} \\
+        &= q,
+\end{align*}
+charge without charge.
+
+\end{sol}
+
 \end{document}
