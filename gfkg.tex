@@ -3733,7 +3733,7 @@ Do this. (Hint: show that $\star dz = r \, dr \wedge d\theta$.)
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:cylindricaldualcurrent}
 
 We have cylindrical coordinates $z, r, \theta$ on $\mathbb{R}^3$, with corresponding 1-forms $dz$ defined everywhere, $dr$ defined away from $r = 0$ and $d\theta$ the closed but not exact 1-form from solution~\ref{sol:closedbutpathdependent}.
 
@@ -3754,6 +3754,41 @@ Suppose the current is cylindrically symmetric and flows in the $z$-direction, s
 \[
     \star j = \star f(r) \, dz = f(r) r \, dr \wedge d\theta.
 \]
+
+\end{sol}
+
+\begin{ex}
+
+Show that $\star d\theta = \frac{1}{r} \, dz \wedge dr$.
+
+\end{ex}
+
+\begin{sol}
+
+Taking the Hodge dual of $d\theta$,
+\begin{align*}
+    \star d\theta &= \star \left( \frac{x \, dy - y \, dx}{x^2 + y^2} \right) \\
+                  &= \frac{x \,dz \wedge dx - y \, dy \wedge dz}{r^2} \\
+                  &= \frac{1}{r} (\cos(\theta) \, dz \wedge dx - \sin(\theta) \, dy \wedge dz).
+\end{align*}
+But, from solution~\ref{sol:cylindricaldualcurrent},
+\begin{align*}
+    \cos(\theta) \, dz \wedge dx &= \cos(\theta) \, dz \wedge \left(\cos(\theta) \, dr -r \sin(\theta) \, d\theta \right) \\
+        &= {\cos(\theta)}^2 dz \wedge dr - r \cos(\theta) \sin(\theta) \, dz \wedge d\theta
+\end{align*}
+and
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \sin(\theta) \, dy \wedge dz &= \sin(\theta) \left(r \cos(\theta) \, d\theta + \sin(\theta) \, dr\right) \wedge dz \\
+        %&= r \cos(\theta) \sin(\theta) \, d\theta \wedge dz + {\sin(\theta)}^2 dr \wedge dz \\
+        &= - r \cos(\theta) \sin(\theta) \, dz \wedge d\theta - {\sin(\theta)}^2 dz \wedge dr,
+\end{align*}
+so
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \star d\theta &= \frac{1}{r} ({\cos(\theta)}^2 dz \wedge dr + {\sin(\theta)}^2 dz \wedge dr) \\
+                  &= \frac{1}{r} \, dz \wedge dr.
+\end{align*}
 
 \end{sol}
 
