@@ -3259,7 +3259,7 @@ For any manifold $M$, show [that] the manifold $S^1 \times M$ is not simply conn
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:s1productnotsimplyconnected}
 
 Working in a chart with local coordinates $(\theta, x^1, \ldots, x^n)$, consider the 1-form $\omega = d\theta$ and let $\gamma$ be the loop traversing $S^1$ positively.
 We know from solution~\ref{sol:closedbutpathdependent} that $d \omega = 0$, so $\omega$ is closed, and
@@ -3691,7 +3691,7 @@ Show that if $\psi: M' \to M''$ is another map, then
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:pullbackcohomology}
 
 Recall that for
 \begin{align*}
@@ -3807,6 +3807,32 @@ We have that $\star B = g(r) \, d\theta$, so
 \end{align*}
 since $d\theta$ is closed.
 From solution~\ref{sol:cylindricaldualcurrent}, $\star j = f(r) r \, dr \wedge d\theta$, so if $d \star B = \star j$, we require $g'(r) = rf(r)$.
+
+\end{sol}
+
+\section{Wormholes}
+
+\begin{ex}
+
+Work out the details. (Hint: define a map $p: S^1 \times S^{n - 1} \to S^1$ corresponding to projection onto the first factor, and let the 1-form $\omega$ on $S^1 \times S^{n - 1}$ be the pullback of $d\theta$ by $p$.)
+
+\end{ex}
+
+\begin{sol}
+
+Let $d\theta \in \Omega^1(S^1)$ be the classic closed and not exact 1-form we've seen already. Using the projection
+\begin{align*}
+    p &: S^1 \times S^{n - 1} \to S^1, \\
+      &: (\theta_1, (\theta_2, \ldots, \theta_n)) \mapsto \theta_1,
+\end{align*}
+we can define a 1-form on the torus as $\omega = p^* d\theta \in \Omega^1(S^1 \times S^{n - 1})$.
+
+By solution~\ref{sol:pullbackcohomology}, $\omega$ is closed and not exact since $p^*$ is a linear map from $H^1(S^1)$ to $H^1(S^1 \times S^{n - 1})$.
+
+We can also show this without leveraging cohomology, since we know that $\omega$ is closed by exercise~\ref{ex:pullbackclosedandexact}. Then the result that $\omega$ is not exact follows directly from solution~\ref{sol:s1productnotsimplyconnected} with $M = S^{n - 1}$, as
+\[
+    \oint_{S^1} \omega \neq 0.
+\]
 
 \end{sol}
 
