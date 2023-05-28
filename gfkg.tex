@@ -587,6 +587,7 @@ The pullback $\phi^*: C^\infty(N) \to C^\infty(M) $ of $f: N \to \mathbb{R}$ by 
     \phi^*f = f \circ \phi. \tag{pullback of a function}\label{eq:pullbackfunction}
 \]
 \end{nowidthtags}
+
 Consider a chart $\varphi: M \to \mathbb{R}^n$ mapping $p \in M$ to $\varphi(p) = \left\{x^\mu(p)\right\}$.
 Note that each $x^\mu$ is a function taking $p$ to the $\mu$\textsuperscript{th} coordinate of its image in $\mathbb{R}^n$.
 
@@ -801,9 +802,9 @@ giving us
 \end{align*}
 We can see that this is consistent by taking the result from solution~\ref{sol:pullbackrotation},
 \begin{align*}
-    (\phi_* \partial_x) x &= \partial_x(\phi^* x) = \cos(\theta), \\
+    (\phi_* \partial_x) x &= \partial_x(\phi^* x) = \cos(\theta), &
     (\phi_* \partial_x) y &= \partial_x(\phi^* y) = \sin(\theta), \\
-    (\phi_* \partial_y) x &= \partial_y(\phi^* x) = -\sin(\theta), \\
+    (\phi_* \partial_y) x &= \partial_y(\phi^* x) = -\sin(\theta), &
     (\phi_* \partial_y) y &= \partial_y(\phi^* y) = \cos(\theta),
 \end{align*}
 where we get back the $x$- and $y$-components of $\phi_* \partial_x$, $\phi_* \partial_y$, respectively.
@@ -875,12 +876,12 @@ Calculate $[v, w]$.
 
 Since $x = r \cos(\theta)$, $y = r \sin(\theta)$, we have for some $f \in C^\infty(\mathbb{R}^2)$,
 \begin{align*}
-    \SwapAboveDisplaySkip
-    \partial_r f &=\cos(\theta) \partial_x f + \sin(\theta) \partial_y f \\
+    \partial_r f &=\cos(\theta) \partial_x f + \sin(\theta) \partial_y f, \\
     \partial_\theta f &= -r \sin(\theta) \partial_x f + r \cos(\theta) \partial_y f
 \end{align*}
 so $v = \partial_r$, $w = \frac{\partial_\theta}{r}$.
 Then
+\allowdisplaybreaks[3]
 \begin{align*}
     [v, w]f &= v(w(f)) - w(v(f)) \\
         &= v\left(\frac{\partial_\theta f}{r}\right) - w(\partial_r f) \\
@@ -894,6 +895,7 @@ Then
         &= -\frac{w}{r} f
 \end{align*}
 so $[v, w] = -\frac{w}{r}$.
+\allowdisplaybreaks[2]
 
 We could also do this the hard way,
 \begin{align*}
@@ -1074,7 +1076,7 @@ Show that
 \begin{align*}
     & d(f + g) = df + dg, \\
     & d(\alpha f) = \alpha\, df, \\
-    & (f + g) dh = f\, dh + g\, dh, \\
+    & (f + g) \, dh = f\, dh + g\, dh, \\
     & d(fg) = f \, dg + g\, df
 \end{align*}
 for any $f, g, h \in C^\infty(M)$ and any $\alpha \in \mathbb{R}$.
@@ -1094,9 +1096,9 @@ Let $v \in \text{Vect}(M)$. First consider linearity.
     d(\alpha f)(v) = v(\alpha f) = \alpha v(f) = \alpha \, df(v),
 \]
 \begin{align*}
-    (f + g)dh(v) &= (f + g)v(h) \\
-                 &= fv(h) + gv(h) \\
-                 &= f\, dh(v) + g \, dh(v).
+    (f + g) \, dh(v) &= (f + g)v(h) \\
+                     &= fv(h) + gv(h) \\
+                     &= f\, dh(v) + g \, dh(v).
 \end{align*}
 The Leibniz law holds since
 \begin{align*}
@@ -1263,7 +1265,7 @@ Let $\phi^*\nu \in T_p^* M$ be some 1-form where ${(\phi^*\omega)}_p = {(\phi^*\
 
 \begin{ex}
 
-Let $\phi: \mathbb{R} \to \mathbb{R}$ be given by $\phi(t) = \sin(t)$. Let $dx$ be the usual 1-form on $\mathbb{R}$. Show that $\phi^*dx = \cos(t) dt$.
+Let $\phi: \mathbb{R} \to \mathbb{R}$ be given by $\phi(t) = \sin(t)$. Let $dx$ be the usual 1-form on $\mathbb{R}$. Show that $\phi^*dx = \cos(t) \, dt$.
 
 \end{ex}
 
@@ -1288,8 +1290,8 @@ Using the fact that the exterior derivative is \emph{natural}, i.e. $\phi^*(df) 
 
 Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ denote rotation counterclockwise by the angle $\theta$. Let $dx$, $dy$ be the usual basis of 1-forms on $\mathbb{R}^2$. Show that
 \begin{align*}
-    \phi^* dx &= \cos(\theta) dx - \sin(\theta) dy, \\
-    \phi^* dy &= \sin(\theta) dx + \cos(\theta) dy.
+    \phi^* dx &= \cos(\theta) \, dx - \sin(\theta) \, dy, \\
+    \phi^* dy &= \sin(\theta) \, dx + \cos(\theta) \, dy.
 \end{align*}
 
 \end{ex}
@@ -1308,7 +1310,7 @@ Let $v = f_i(x, y)\partial_i$ be some vector in $\text{Vect}(\mathbb{R}^2)$ and 
         &= \cos(\theta) f_1(x, y) \partial_x x
            - \sin(\theta) f_2(x, y) \partial_y y \\
         &= \cos(\theta) v(x) - \sin(\theta) v(y) \\
-        &= \cos(\theta) dx(v) - \sin(\theta) dy(v)
+        &= \cos(\theta) \, dx(v) - \sin(\theta) \, dy(v)
 \end{align*}
 and similarly for $\phi^* dy$.
 
@@ -1545,7 +1547,7 @@ so the components of a 1-form are covariant.
 
 Show that
 \[
-    u \wedge v \wedge w = \det \begin{pmatrix}
+    u \wedge v \wedge w = \det \! \begin{pmatrix}
             u_x & u_y & u_z \\
             v_x & v_y & v_z \\
             w_x & w_y & w_z
@@ -1578,7 +1580,7 @@ so the triple product
         =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
         &- u_y (v_x w_z - v_z w_x) \, dx \wedge dy \wedge dz \\
         &+ u_z (v_x w_y - v_y w_x) \, dx \wedge dy \wedge dz \\
-        =&\ \det \begin{pmatrix}
+        =&\ \det \! \begin{pmatrix}
                 u_x & u_y & u_z \\
                 v_x & v_y & v_z \\
                 w_x & w_y & w_z
@@ -1614,7 +1616,7 @@ Show that if $a, b, c, d$ are four vectors in a 3-dimensional space then $a \wed
 Using $dx, dy, dz$ as a basis, we have from exercise~\ref{ex:triplewedgeproduct} that
 \[
     b \wedge c \wedge d = \alpha \, dx \wedge dy \wedge dz, \quad
-    \alpha = \det \begin{pmatrix}
+    \alpha = \det \! \begin{pmatrix}
         b_x & b_y & b_z \\
         c_x & c_y & c_z \\
         d_x & d_y & d_z
@@ -1656,7 +1658,7 @@ If $\dim(V) = 2$,
 so
 \begin{align*}
     \SwapAboveDisplaySkip
-    u \wedge v &= u_x v_y dx \wedge dy + u_y v_x dy \wedge dx \\
+    u \wedge v &= u_x v_y \, dx \wedge dy + u_y v_x \, dy \wedge dx \\
                &= (u_x v_y - u_y v_x) \, dx \wedge dy.
 \end{align*}
 Therefore $\Lambda V$ consists of $\mathbb{F}$, $V$ and all linear combinations of the 2-forms $dx \wedge dy$ above.
@@ -1847,7 +1849,7 @@ If $\omega \in \Omega^1(\mathbb{R}^3)$, then
 \]
 and if $\omega \in \Omega^2(\mathbb{R}^3)$, then
 \begin{align*}
-    \phi^* \omega &= \phi^*\left(\tfrac{1}{2}\omega_{\mu\nu} dx^\mu \wedge dx^\nu\right) \\
+    \phi^* \omega &= \phi^*\left(\tfrac{1}{2}\omega_{\mu\nu} \, dx^\mu \wedge dx^\nu\right) \\
         &= \tfrac{1}{2}\omega_{\mu\nu} \, \phi^*(dx^\mu \wedge dx^\nu) \\
         &= \tfrac{1}{2}\omega_{\mu\nu} \, \phi^* dx^\mu \wedge \phi^* dx^\nu \\
         &= \tfrac{1}{2}\omega_{\mu\nu} (-dx^\mu) \wedge (-dx^\nu) \\
@@ -1913,8 +1915,8 @@ where $F_{ij} = B_{ij}$ and $F_{i0} = E_i$. Uniqueness is automatic since each c
 
 Show that for any form $\omega$ on $\mathbb{R} \times S$ there is a unique way to write $d\omega = dt \wedge \partial_t \omega + d_S \omega$ such that for any local coordinates $x^i$ on $S$, writing $t = x^0$, we have
 \begin{align*}
-    d_S\omega &= \partial_i \omega_I dx^i \wedge dx^I, \\
-    dt \wedge \partial_t \omega &= \partial_0 \omega_I dx^0 \wedge dx^I.
+    d_S\omega &= \partial_i \omega_I \, dx^i \wedge dx^I, \\
+    dt \wedge \partial_t \omega &= \partial_0 \omega_I \, dx^0 \wedge dx^I.
 \end{align*}
 
 \end{ex}
@@ -1923,10 +1925,10 @@ Show that for any form $\omega$ on $\mathbb{R} \times S$ there is a unique way t
 
 Similarly to solution~\ref{sol:bplusedt}, since $\omega \in \Omega(U_\alpha)$ we have that $\omega = \omega_I dx^I$, so
 \begin{align*}
-    d\omega &= \partial_\mu \omega_I dx^\mu \wedge dx^I \\
-        &= \partial_0 \omega_I dx^0 \wedge dx^I + \partial_i \omega_I dx^i \wedge dx^I \\
-        &= dx^0 \wedge \partial_0 \omega_I \wedge dx^I + \partial_i \omega_I dx^i \wedge dx^I \\
-        &= dx^0 \wedge \partial_0 \omega + \partial_i \omega_I dx^i \wedge dx^I \\
+    d\omega &= \partial_\mu \omega_I \, dx^\mu \wedge dx^I \\
+        &= \partial_0 \omega_I \, dx^0 \wedge dx^I + \partial_i \omega_I \, dx^i \wedge dx^I \\
+        &= dx^0 \wedge \partial_0 \omega_I \wedge dx^I + \partial_i \omega_I \, dx^i \wedge dx^I \\
+        &= dx^0 \wedge \partial_0 \omega + \partial_i \omega_I \, dx^i \wedge dx^I \\
         &= dt \wedge \partial_t \omega + d_S \omega.
 \end{align*}
 Again, this is guaranteed to be unique by linearity.
@@ -2092,7 +2094,7 @@ Let $\mu = \mu^1 \wedge \cdots \wedge \mu^p$ be a $p$-form. If $\innerp{\mu}{ \o
 \begin{align*}
     \innerp{\mu}{\omega} &= \innerp{\mu^1 \wedge \cdots \wedge \mu^p}
                                    {\omega^1 \wedge \cdots \wedge \omega^p} \\
-        &= \det\big(g(\mu^i, \omega^j)\big) \\
+        &= \det \! \big(g(\mu^i, \omega^j)\big) \\
         &= 0.
 \end{align*}
 But $g$ is non-degenerate, so the determinant of $g(\mu^i, \omega^j)$ must be non-zero unless $\mu = 0$.
@@ -2109,14 +2111,14 @@ From the definition of the inner product of $p$-forms,
 \[
     \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}
            {e^{j_1} \wedge \cdots \wedge e^{j_p}}
-        = \det\big(g(e^{i_k}, e^{j_k})\big),
+        = \det \! \big(g(e^{i_k}, e^{j_k})\big),
 \]
 but $g(e^{i_k}, e^{j_k}) = 0$ if $i_k \neq j_k$ and so too is its determinant.
 Taking the inner product of a basis $p$-form with itself,
 \begin{align*}
     \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}
            {e^{i_1} \wedge \cdots \wedge e^{i_p}}
-        &= \det\big(g(e^{i_k}, e^{i_k})\big) \\
+        &= \det \! \big(g(e^{i_k}, e^{i_k})\big) \\
         &= \prod_{k = 1}^p \epsilon(i_k) \\
         &= \epsilon(i_1) \cdots \epsilon(i_p)
 \end{align*}
@@ -2160,7 +2162,7 @@ From the definition of the inner product of 1-forms,
 \end{align*}
 From exercise~\ref{ex:innerproductpforms},
 \begin{align*}
-    \innerp{dx^a \wedge dx^b}{dx^c \wedge dx^d} &= \det(g(dx^i, dx^j)) \\
+    \innerp{dx^a \wedge dx^b}{dx^c \wedge dx^d} &= \det \! \big(g(dx^i, dx^j)\big) \\
         &= g(dx^a, dx^c) g(dx^b, dx^d) \\
         &= \delta^{ac} \delta^{bd},
 \end{align*}
@@ -2203,7 +2205,7 @@ The inner product of the 2-form $F$ with itself is
 since each component of $B$ is orthogonal to each component of $E \wedge dt$.
 Focusing on the electric term,
 \begin{align*}
-    \innerp{E \wedge dt}{E \wedge dt} &= \det \begin{pmatrix}
+    \innerp{E \wedge dt}{E \wedge dt} &= \det \! \begin{pmatrix}
                 \eta(E, E) & \eta(E, dt) \\
                 \eta(dt, E) & \eta(dt, dt)
             \end{pmatrix} \\
@@ -2352,7 +2354,7 @@ $p$-forms $\omega = \omega_I e^I$ and $\mu = \mu_J e^J$ in terms of basis 1-form
 Taking the inner product,
 \begin{align*}
     \innerp{\omega}{\mu} &= \omega_I \mu_J \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{j_1} \wedge \cdots \wedge e^{j_p}} \\
-        &= \omega_I \mu_J \, \det \big(g(e^{i_k}, e^{j_k})\big) \\
+        &= \omega_I \mu_J \, \det \! \big(g(e^{i_k}, e^{j_k})\big) \\
         &= \omega_I \mu_J \delta^{IJ} \epsilon(i_1) \cdots \epsilon(i_p)
 \end{align*}
 where we denote $\delta^{IJ} = \delta^{i_1 j_1} \cdots \delta^{i_p j_p}$.
@@ -2394,15 +2396,15 @@ Denote $\omega = \omega_x dx + \omega_y dy + \omega_z dz$. The gradient is
         &= \partial_y \omega_x dy \wedge dx + \partial_z \omega_x dz \wedge dx \\
         &\mathrel{\phantom{=}}{} + \partial_x \omega_y dx \wedge dy + \partial_z \omega_y dz \wedge dy \\
         &\mathrel{\phantom{=}}{} + \partial_x \omega_z dx \wedge dz + \partial_y \omega_z dy \wedge dz \\
-        &= (\partial_y \omega_z - \partial_z \omega_y) dy \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) dz \wedge dx \\
-        &\mathrel{\phantom{=}}{} +(\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
+        &= (\partial_y \omega_z - \partial_z \omega_y) \, dy \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \, dz \wedge dx \\
+        &\mathrel{\phantom{=}}{} +(\partial_x \omega_y - \partial_y \omega_x) \, dx \wedge dy.
 \end{align*}
 Then the Hodge dual of $d\omega$ is
 \begin{align*}
     \star d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \star (dy \wedge dz) \\
         &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \star (dz \wedge dx) \\
-        &\mathrel{\phantom{=}}{} +(\partial_x \omega_y - \partial_y \omega_x) \star (dx \wedge dy) \\
+        &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) \star (dx \wedge dy) \\
         &= \left(\partial_y \omega_z - \partial_z \omega_y\right) dx
             + \left(\partial_z \omega_x - \partial_x \omega_z\right) dy
             + \left(\partial_x \omega_y - \partial_y \omega_x\right) dz,
@@ -2879,9 +2881,9 @@ In terms of components,
         &= ik_0 (\mathbf{E}_x dy \wedge dz
                  + \mathbf{E}_y dz \wedge dx
                  + \mathbf{E}_z dx \wedge dy) \\
-        &\mathrel{\phantom{=}}{} + (k_x \mathbf{E}_y - k_y \mathbf{E}_x) dx \wedge dy \\
-        &\mathrel{\phantom{=}}{} + (k_y \mathbf{E}_z - k_z \mathbf{E}_y) dy \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (k_z \mathbf{E}_x - k_x \mathbf{E}_z) dz \wedge dx.
+        &\mathrel{\phantom{=}}{} + (k_x \mathbf{E}_y - k_y \mathbf{E}_x) \, dx \wedge dy \\
+        &\mathrel{\phantom{=}}{} + (k_y \mathbf{E}_z - k_z \mathbf{E}_y) \, dy \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (k_z \mathbf{E}_x - k_x \mathbf{E}_z) \, dz \wedge dx.
 \end{align*}
 Equating coefficients, we get the homogeneous system
 \begin{align*}
@@ -2948,15 +2950,15 @@ Since $k_\mu x^\mu = t - x$, this gives us
 \end{align*}
 or, in old-fashioned language,
 \[
-    \vec{E} = (0, e^{i(t - x)}, -ie^{i(t - x)}), \qquad
-    \vec{B} = (0, -i e^{i(t - x)}, -e^{i(t - x)}).
+    \vec{E} = \big(0, e^{i(t - x)}, -ie^{i(t - x)}\big), \qquad
+    \vec{B} = \big(0, -i e^{i(t - x)}, -e^{i(t - x)}\big).
 \]
 
 Write
 \begin{align*}
     \SwapAboveDisplaySkip
     \vec{\mathcal{E}} &= \vec{E} + i \vec{B} \\
-                      &= (0, 2 e^{i(t - x)}, -2 i e^{i(t - x)})
+                      &= \big(0, 2 e^{i(t - x)}, -2 i e^{i(t - x)}\big)
 \end{align*}
 which, recall from exercise~\ref{ex:i1}, lets us express the vacuum equations as
 \[
@@ -2971,10 +2973,10 @@ To show that our circularly-polarised plane waves are solutions, check
 \]
 and
 \begin{align*}
-    \nabla \times \vec{\mathcal{E}} &= \left(\partial_y \mathcal{E}_z - \partial_z \mathcal{E}_y \right) \vec{\imath}
-            + \left(\partial_z \mathcal{E}_x - \partial_x \mathcal{E}_z \right) \vec{\jmath}
-            + \left(\partial_x \mathcal{E}_y - \partial_y \mathcal{E}_x\right ) \vec{k} \\
-        &= \left(0, -2 e^{i(t - x)}, 2 i e^{i(t - x)} \right) \\
+    \nabla \times \vec{\mathcal{E}} &= (\partial_y \mathcal{E}_z - \partial_z \mathcal{E}_y) \vec{\imath}
+            + (\partial_z \mathcal{E}_x - \partial_x \mathcal{E}_z) \vec{\jmath}
+            + (\partial_x \mathcal{E}_y - \partial_y \mathcal{E}_x) \vec{k} \\
+        &= \big(0, -2 e^{i(t - x)}, 2 i e^{i(t - x)} \big) \\
         &= - \vec{\mathcal{E}} \\
         &= i \partial_t \vec{\mathcal{E}}
 \end{align*}
@@ -3024,8 +3026,8 @@ For non-trivial solutions, $k_1^2 - k_2^2 = 0$ or $k_0 = \pm k_1$. Assuming with
 \]
 Using the self-dual relationship $B = -i \star_S E$, in old-fashioned language we get
 \[
-    \vec{E} = \mathbf{E}_0 (0, e^{ik_0 (t - x)}, -ie^{ik_0 (t - x)}), \quad
-    \vec{B} = \mathbf{E}_0 (0, -ie^{ik_0 (t - x)}, -e^{ik_0 (t - x)})
+    \vec{E} = \mathbf{E}_0 \big(0, e^{ik_0 (t - x)}, -ie^{ik_0 (t - x)}\big), \quad
+    \vec{B} = \mathbf{E}_0 \big(0, -ie^{ik_0 (t - x)}, -e^{ik_0 (t - x)}\big)
 \]
 and taking the real solutions only,
 \begin{align*}
@@ -3074,8 +3076,8 @@ Take $k_0 = k_1$ (forward propagation) to get $\mathbf{E}_2 = -i \mathbf{E}_3$ a
 \]
 Using the anti-self-dual relationship $B = i \star_S E$, in old-fashioned language we get
 \[
-    \vec{E} = \mathbf{E}_0 (0, -ie^{ik_0 (t - x)}, e^{ik_0 (t - x)}), \quad
-    \vec{B} = \mathbf{E}_0 (0, e^{ik_0 (t - x)}, ie^{ik_0 (t - x)})
+    \vec{E} = \mathbf{E}_0 \big(0, -ie^{ik_0 (t - x)}, e^{ik_0 (t - x)}\big), \quad
+    \vec{B} = \mathbf{E}_0 \big(0, e^{ik_0 (t - x)}, ie^{ik_0 (t - x)}\big)
 \]
 and taking the real solutions only,
 \begin{align*}
@@ -3156,7 +3158,7 @@ Denote $r^2 = x^2 + y^2$. The differential of $E$ is
 \end{align*}
 so this 1-form is closed.
 
-Note that similar to exercise~\ref{ex:liebracketpolarcoordinates}, $dx = \cos(\theta) dr - r \sin(\theta) d\theta$ and $dy = \sin(\theta) dr + r \cos(\theta) d\theta$ so $E = d \theta$. It's tempting to then say $dE = 0$ by $d^2 = 0$, but $d\theta$ is not exact since $\theta$ is not a well-defined 0-form, so the result doesn't follow.
+Note that similar to exercise~\ref{ex:liebracketpolarcoordinates}, $dx = \cos(\theta) \, dr - r \sin(\theta) \, d\theta$ and $dy = \sin(\theta) \, dr + r \cos(\theta) \, d\theta$ so $E = d \theta$. It's tempting to then say $dE = 0$ by $d^2 = 0$, but $d\theta$ is not exact since $\theta$ is not a well-defined 0-form, so the result doesn't follow.
 
 We can parameterise our paths as
 \begin{align*}
@@ -3559,12 +3561,12 @@ This is sometimes called Green's theorem.
 Let $\omega = \omega_x dx + \omega_y dy$ be a 1-form on $S$. Taking the exterior derivative,
 \begin{align*}
     d\omega &= \partial_x \omega_y dx \wedge dy + \partial_y \omega_x dy \wedge dx \\
-            &= (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
+            &= (\partial_x \omega_y - \partial_y \omega_x) \, dx \wedge dy.
 \end{align*}
 Therefore, by \ref{eq:stokestheorem}, % chktex 2
 \[
     \int_{\partial S} (\omega_x dx + \omega_y dy) =
-        \int_S (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
+        \int_S (\partial_x \omega_y - \partial_y \omega_x) \, dx \wedge dy.
 \]
 
 \end{sol}
@@ -3580,9 +3582,9 @@ Show Stokes' theorem applied to $S$ boils down to the classic Stokes' theorem.
 
 Let $\omega = \omega_x dx + \omega_y dy + \omega_z dz$ be a 1-form on $\mathbb{R}^3$, so the exterior derivative, as in solution~\ref{sol:curl1form}, is
 \begin{align*}
-    d\omega &= (\partial_y \omega_z - \partial_z \omega_y) dy \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) dz \wedge dx \\
-        &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) dx \wedge dy.
+    d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \, dy \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \, dz \wedge dx \\
+        &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) \, dx \wedge dy.
 \end{align*}
 
 %Let $\{e^1, e^2\}$ be an oriented orthonormal basis on $\Omega^1(S)$. Then the ``area'' form on $S$, which is not necessarily exact, is given by
