@@ -44,6 +44,9 @@
     showmanualtags
 }
 
+\newtagform{nowidth}{ \llap\bgroup(}{)\egroup}  % chktex 9
+\newenvironment{nowidthtags}{\usetagform{nowidth}}{\ignorespacesafterend}
+
 \intervalconfig{soft open fences}
 
 \renewcommand*\contentsname{}
@@ -579,9 +582,11 @@ Show that $\phi^* x = e^x$.
 \begin{sol}\label{sol:pullbackexponential}
 
 The pullback $\phi^*: C^\infty(N) \to C^\infty(M) $ of $f: N \to \mathbb{R}$ by $\phi: M \to N$ is defined as
+\begin{nowidthtags}
 \[
     \phi^*f = f \circ \phi. \tag{pullback of a function}\label{eq:pullbackfunction}
 \]
+\end{nowidthtags}
 Consider a chart $\varphi: M \to \mathbb{R}^n$ mapping $p \in M$ to $\varphi(p) = \left\{x^\mu(p)\right\}$.
 Note that each $x^\mu$ is a function taking $p$ to the $\mu$\textsuperscript{th} coordinate of its image in $\mathbb{R}^n$.
 
@@ -679,9 +684,11 @@ Prove that $(\phi \circ \gamma)'(t) = \phi_*(\gamma'(t))$.
 \begin{sol}
 
 The pushforward $\phi_*: T_p M \to T_{\phi(p)} N$ of $v \in T_p M$ by $\phi: M \to N$ is given by
+\begin{nowidthtags}
 \[
     (\phi_* v) (f) = v (\phi^* f). \tag{pushforward of a vector}\label{eq:pushforwardvector}
 \]
+\end{nowidthtags}
 Then
 \begin{align*}
     \SwapAboveDisplaySkip
@@ -1235,9 +1242,11 @@ Show that the pullback of 1-forms defined by the formula above really exists and
 \begin{sol}\label{sol:pullback1form}
 
 Let $\phi: M \to N$, $p \mapsto \phi(p) = q$. Then for\footnote{$\omega$ is in $T_q^* N$, see \url{https://math.ucr.edu/home/baez/errata.html}.} $v \in T_p M$, $\omega \in T_q^* N$, the pullback $\phi^*: T_q^* N \to T_p^* M$ of $\omega$ by $\phi$ is defined as
+\begin{nowidthtags}
 \[
     (\phi^* \omega)(v) = \omega(\phi_* v) \tag{pullback of a 1-form}\label{eq:pullback1form}
 \]
+\end{nowidthtags}
 and globally we get ${(\phi^* \omega)}_p = \phi^*(\omega_q)$.
 
 To see this, take a test vector $v \in T_p M$ and, similar to solution~\ref{sol:pushforwardvectorfield},
@@ -1389,6 +1398,7 @@ Show that
 \begin{sol}
 
 Consider the action on the coordinate vector field $\partial_\lambda$,
+\begin{nowidthtags}
 \begin{align*}
     \phi^*(dx'^\nu)\partial_\lambda &= d(\phi^*x'^\nu) \partial_\lambda \\
         &= \partial_\lambda(\phi^*x'^\nu) \\
@@ -1397,6 +1407,7 @@ Consider the action on the coordinate vector field $\partial_\lambda$,
         &= \frac{\partial x'^\nu}{\partial x^\mu} \partial_\lambda x^\mu \\
         &= \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \partial_\lambda.
 \end{align*}
+\end{nowidthtags}
 We could instead use the result from exercise~\ref{ex:coordinatetransformation1form}, again acting on the coordinate vector field $\partial_\lambda$,
 \begin{align*}
    \phi^*(dx'^\nu)\partial_\lambda &= \phi^*\left(\frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \right) \partial_\lambda \\
