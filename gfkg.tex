@@ -1156,7 +1156,7 @@ so $\omega(v) = 0$ implies $v^\mu \omega_\mu = 0$. But since $v$ is arbitrary, $
 
 \end{sol}
 
-\section{Cotangent Vectors}
+\section{Cotangent Vectors}\label{sec:cotangentvectors}
 
 \begin{ex}
 
@@ -3122,7 +3122,7 @@ Since $P^* P^* F = F$, we automatically get the corollary that if $F$ is anti-se
 
 \end{sol}
 
-\chapter{DeRham Theory in Electromagnetism}
+\chapter{De Rham Theory in Electromagnetism}
 
 \section{Closed and Exact 1-forms}
 
@@ -3641,6 +3641,33 @@ Therefore, by \ref{eq:stokestheorem}, % chktex 2
 \[
     \int_S \nabla \cdot \vec{F} \, dV = \int_{\partial S} \vec{F} \cdot d\vec{A}.
 \]
+
+\end{sol}
+
+\section{De Rham Cohomology}
+
+\begin{ex}
+
+Show that the pullback of a closed form is closed
+and the pullback of an exact form is exact.
+
+\end{ex}
+
+\begin{sol}
+
+Recall from \S\ref{sec:cotangentvectors} that the exterior derivative is natural.
+
+Let $\omega \in \Omega^p(M)$ be a closed form and $\phi: N \to M$. Then
+\[
+    d (\phi^* \omega) = \phi^* (d \omega) = 0
+\]
+since $\omega$ is closed.
+
+If instead $\omega$ is exact, so $\omega = d\mu$ for some $\mu \in \Omega^{p - 1}(M)$, we get
+\[
+    \phi^* \omega = \phi^* (d \mu) = d (\phi^* \mu)
+\]
+which is exact.
 
 \end{sol}
 
