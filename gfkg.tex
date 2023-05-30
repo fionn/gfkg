@@ -3902,7 +3902,7 @@ Denote the radial path from $0$ to $r$ by $\gamma$. Then a scalar potential is (
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:chargewithoutcharge}
 
 Let $S^2$ denote any of the 2-spheres of the form $\{r\} \times S^2 \subset \mathbb{R} \times S^2$, equipped with the above volume form. Show that
 \[
@@ -3928,6 +3928,29 @@ so
         &= q,
 \end{align*}
 charge without charge.
+
+\end{sol}
+
+\begin{ex}
+
+With this clue, work out a careful answer to the riddle.
+
+\end{ex}
+
+\begin{sol}
+
+The riddle is: why does the integral of $\star E$ over \emph{any} 2-sphere of constant $r$ give $q$, when we expect to measure charge $q$ over  one mouth of the wormhole and $-q$ over the other?
+
+Label each mouth ``positive'' and ``negative'', where we orient ourselves such that if starting at $r \ll 0$ and travelling in the positive $r$ direction, we are entering the negative mouth of the wormhole and exiting the positive mouth, and \emph{vice versa}.
+
+In exercise~\ref{ex:chargewithoutcharge} we assumed our 2-sphere had positive radius.
+We need to consider inverted 2-spheres to measure the charge over the negative mouth.
+
+Using the negatively oriented volume form $-r^2 \sin(\theta) \, d\theta \wedge d\phi$ gives us
+\[
+    \int_{S^2} \star E = -q
+\]
+and resolves the riddle.
 
 \end{sol}
 
