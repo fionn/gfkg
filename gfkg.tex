@@ -3973,13 +3973,13 @@ The existence of closed but not exact $(n - 1)$-forms implies the de~Rham cohomo
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:closedbutnotexact2form}
 
 Show using Cartesian coordinates that $\omega$ is closed on $\mathbb{R}^3 - \{0\}$.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:closedbutnotexact2form}
 
 The 2-form $\omega$ is given by
 \[
@@ -4003,6 +4003,43 @@ so
 \[
     d\omega = \frac{3(x^2 + y^2 + z^2) - 3x^2 - 3y^2 - 3z^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz = 0.
 \]
+
+\end{sol}
+
+\begin{ex}
+
+Generalise these examples and find an $(n-1)$-form in $\mathbb{R}^n - \{0\}$ that is closed but not exact.
+Conclude that $H^{n - 1}(\mathbb{R}^{n} - \{0\})$ is nonzero.
+
+\end{ex}
+
+\begin{sol}
+
+We want to generalise the 1-form $d\theta$ of solution~\ref{sol:closedbutpathdependent} and 2-form $\omega$ of exercise~\ref{ex:closedbutnotexact2form} to a closed but not exact $(n-1)$-form.
+
+The form will obviously be
+\[
+    \omega = \frac{\sum_i x_i dx^1 \wedge \cdots \wedge dx^{i - 1} \wedge dx^{i + 1} \wedge \cdots \wedge dx^n}
+                  {{(x_1^2 + \cdots + x_n^2)}^\frac{n}{2}}.
+\]
+Taking the exterior derivative of the first term,
+\begin{align*}
+    d \, \frac{x_1 dx^2 \wedge \cdots \wedge dx^n}{{(x_1^2 + \cdots + x_n^2)}^\frac{n}{2}}
+        &= \partial_1 \frac{x_1}{{(x_1^2 + \cdots + x_n^2)}^\frac{n}{2}} \, dx^1 \wedge \cdots \wedge dx^n \\
+        ={}& \frac{{(x_1^2 + \cdots + x_n^2)}^\frac{n}{2} - n x_1^2 {(x_1^2 + \cdots + x_n^2)}^{\frac{n}{2} - 1}}
+                  {{(x_1^2 + \cdots + x_n^2)}^n} \, dx^1 \wedge \cdots \wedge dx^n \\
+        ={}& \frac{x_1^2 + \cdots + x_n^2 - n x_1^2}
+                  {{(x_1^2 + \cdots + x_n^2)}^{\frac{n}{2} + 1}} \, dx^1 \wedge \cdots \wedge dx^n.
+\end{align*}
+By symmetry, the $x_2, \ldots, x_n$ terms are similar and therefore, as in solution~\ref{sol:closedbutnotexact2form}, $d\omega = 0$.
+
+Let $S \subset \mathbb{R}^n - \{0\}$ be an $(n - 1)$-submanifold. Then
+\[
+    \int_S \omega \neq 0
+\]
+since it is not possible to deform $S$ due to the puncture at the origin, so by \ref{eq:stokestheorem} $\omega$ is not exact. % chktex 2
+
+By the existence of a closed but not exact $(n - 1)$-form, $H^{n - 1}(\mathbb{R}^n - \{0\})$ is non-empty.
 
 \end{sol}
 
