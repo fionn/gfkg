@@ -35,6 +35,10 @@ chktex: $(TARGET).tex
 .PHONY: $(LINT)
 $(LINT): chktex lacheck
 
+.PHONY: spellcheck
+spellcheck: .aspell.pws $(TARGET).tex
+	@aspell --lang=en --mode=tex --personal=./$< list < $(TARGET).tex | sort -u
+
 .PHONY: clean
 clean:
 	@$(TEXMK) -silent -c
