@@ -3836,7 +3836,7 @@ We can also show this without leveraging cohomology, since we know that $\omega$
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:vacuumelectrostaticwormhole}
 
 In the space $\mathbb{R} \times S^2$ with the metric $g$ given above, let $E$ be the 1-form
 \[
@@ -4040,6 +4040,36 @@ Let $S \subset \mathbb{R}^n - \{0\}$ be an $(n - 1)$-submanifold. Then
 since it is not possible to deform $S$ due to the puncture at the origin, so by \ref{eq:stokestheorem} $\omega$ is not exact. % chktex 2
 
 By the existence of a closed but not exact $(n - 1)$-form, $H^{n - 1}(\mathbb{R}^n - \{0\})$ is non-empty.
+
+\end{sol}
+
+\section{Monopoles}
+
+\begin{ex}
+
+Check this. (Hint: show that $B = \frac{m}{4 \pi} \sin(\phi) \, d\theta \wedge d\phi$.)
+
+\end{ex}
+
+\begin{sol}
+
+The vacuum magnetostatic equations are
+\[
+    dB = 0, \qquad
+    d \star B = 0.
+\]
+On $\mathbb{R} \times S^2$ with metric $g$ as in exercise~\ref{ex:vacuumelectrostaticwormhole}, we can find a closed but not exact magnetic 2-form by duality. Using $B = \star E$,
+\begin{align*}
+    B &= \star \frac{m \, dr}{4 \pi {f(r)}^2} \\
+      &= \frac{m}{4 \pi} \sin(\phi) \, d\phi \wedge d\theta
+\end{align*}
+and on integrating over any 2-sphere,
+\begin{align*}
+    \int_{S^2} B &= \int_{S^2} \frac{m}{4 \pi} \sin(\phi) \, d\phi \wedge d\theta \\
+        &= \frac{m}{4 \pi r^2} \int_{S^2} \text{vol} \\
+        &= m,
+\end{align*}
+the magnetic charge.
 
 \end{sol}
 
