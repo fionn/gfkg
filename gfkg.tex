@@ -3973,4 +3973,37 @@ The existence of closed but not exact $(n - 1)$-forms implies the de~Rham cohomo
 
 \end{sol}
 
+\begin{ex}
+
+Show using Cartesian coordinates that $\omega$ is closed on $\mathbb{R}^3 - \{0\}$.
+
+\end{ex}
+
+\begin{sol}
+
+The 2-form $\omega$ is given by
+\[
+    \omega = \frac{x \, dy \wedge dz + y \, dz \wedge dx + z \, dx \wedge dy}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}.
+\]
+Splitting into three terms, take the derivative of the first,
+\begin{align*}
+    d \frac{x \, dy \wedge dz}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
+        &= \partial_x \frac{x}{{(x^2 + y^2 + x^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz \\
+        &= \frac{{(x^2 + y^2 + z^2)}^\frac{3}{2} - 3x^2 \sqrt{x^2 + y^2 + z^2}}{{(x^2 + y^2 + z^2)}^3} \, dx \wedge dy \wedge dz \\
+        &= \frac{x^2 + y^2 + z^2 - 3x^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz.
+\end{align*}
+The $y$ and $z$ terms are similar, by symmetry,
+%\begin{align*}
+%    d \frac{y \, dz \wedge dx}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
+%        &= \frac{x^2 + y^2 + z^2 - 3y^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz, \\
+%    d \frac{z \, dx \wedge dy}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
+%        &= \frac{x^2 + y^2 + z^2 - 3z^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz,
+%\end{align*}
+so
+\[
+    d\omega = \frac{3(x^2 + y^2 + z^2) - 3x^2 - 3y^2 - 3z^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz = 0.
+\]
+
+\end{sol}
+
 \end{document}
