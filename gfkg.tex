@@ -4,19 +4,18 @@
 \usepackage{amsthm}
 \usepackage{mathtools}
 \usepackage{interval}
-\usepackage[tracking=true, kerning=true]{microtype}
-\usepackage{hyperref}
-\usepackage[T1]{fontenc}
-\usepackage[strict]{csquotes}
-\usepackage{lmodern}
-\usepackage{inconsolata}
-\usepackage{parskip}
-\usepackage[nobottomtitles*]{titlesec}
-\usepackage{titling}
 \usepackage{faktor}
 \usepackage{mleftright}
-
-\mleftright{}
+\usepackage[tracking=true, kerning=true]{microtype}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{inconsolata}
+\usepackage{hyperref}
+\usepackage[strict]{csquotes}
+\usepackage[titles]{tocloft}
+\usepackage[nobottomtitles*]{titlesec}
+\usepackage{titling}
+\usepackage{parskip}
 
 \DeclareMicrotypeAlias{lmss}{cmr}
 
@@ -24,15 +23,17 @@
 
 \allowdisplaybreaks[2]
 
-\setlength\topmargin{0pt}
-\setlength\textheight{612pt}
-\setlength\textwidth{368pt}
-\setlength\hoffset{-4pt}
-\setlength\droptitle{-92pt}
+\setlength{\topmargin}{0pt}
+\setlength{\textheight}{612pt}
+\setlength{\textwidth}{368pt}
+\setlength{\hoffset}{-4pt}
+
+\setlength{\droptitle}{-92pt}
+
+\setlength{\cftchapnumwidth}{2.2em}
+\cftsetindents{section}{2.2em}{2.9em}
 
 \let\endtitlepage\relax
-
-\counterwithout{footnote}{chapter}
 
 \titleclass{\part}{top}
 \titleformat{\part}[display]{\huge\bfseries}{\Large\partname\ \thepart}{0pt}{}{}
@@ -42,63 +43,74 @@
 \titleformat{\chapter}{\LARGE\bfseries}{\thechapter}{0.8em}{}{}
 \titlespacing*{\chapter}{0pt}{*4}{*3}
 
-\newcommand{\chapterbreak}{\ifnum\value{chapter}>0 \clearpage\fi}
+\newcommand*{\chapterbreak}{\ifnum\value{chapter}>0 \clearpage\fi}
+\renewcommand*\contentsname{}
+
+\counterwithin{chapter}{part}
+\counterwithout{footnote}{chapter}
+
+\theoremstyle{definition}
+\newtheorem{ex}{Exercise}[part]
+\newtheorem{sol}{Solution}[part]
 
 \mathtoolsset{%
     showonlyrefs,
     showmanualtags
 }
 
-\newtagform{nowidth}{ \llap\bgroup(}{)\egroup}  % chktex 9
-\newenvironment{nowidthtags}{\usetagform{nowidth}}{\ignorespacesafterend}
-
-\newenvironment{epigraph}
-    {\begin{quote}\small\itshape} % chktex 6
-    {\end{quote}\ignorespacesafterend\vspace{0.8em}}
+\mleftright{}
 
 \intervalconfig{soft open fences}
 
-\renewcommand*\contentsname{}
+\newtagform{nowidth}{ \llap\bgroup(}{)\egroup}  % chktex 9
+\newenvironment{nowidthtags}{\usetagform{nowidth}}{\ignorespacesafterend}
+
+\newcommand*{\delimitershortfallcmd}[1]{\delimitershortfall=#1}
+\newenvironment{dsfalign}
+    {\delimitershortfallcmd{0pt}\align}
+    {\endalign\ignorespacesafterend}
+
+\newenvironment{epigraph}
+    {\begin{quote}\small\itshape} % chktex 6
+    {\end{quote}\ignorespacesafterend\vspace{\parskip}}
 
 \newcommand*{\https}[1]{\normalsize\texttt{\href{https://#1/}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
-\newcommand*{\SetSymbol}[1][]{\nonscript\:#1\vert\allowbreak\nonscript\:\mathopen{}}
-\DeclarePairedDelimiterX{\setbuilder}[1]{\{}{\}}{\newcommand*{\given}{\SetSymbol[\delimsize]}#1}
-
 \DeclarePairedDelimiterX{\innerp}[2]{\langle}{\rangle}{#1, #2}
 
-\theoremstyle{definition}
-\newtheorem{ex}{Exercise}[part]
-\newtheorem{sol}{Solution}[part]
+\newcommand*{\SetSymbol}[1][]{\nonscript\:#1\vert\allowbreak\nonscript\:\mathopen{}}
+\DeclarePairedDelimiterX{\setbuilder}[1]{\{}{\}}
+    {\newcommand*{\given}{\SetSymbol[\delimsize]}#1}
 
 \title{Gauge Fields, Knots and Gravity Solutions}
-\author{Fionn Fitzmaurice}
+\author{Fionn Fitzmaurice \hspace{2em} \https{fionn.github.io/gfkg}}
 \date{}
 
 \makeatletter
 \hypersetup{pdftitle = \@title,
-            pdfauthor = \@author,
+            pdfauthor = Fionn\ Fitzmaurice,
             pdfcreator = TeX,
             hidelinks,
             pdfpagemode = UseNone
 }
 \makeatother
 
-\author{Fionn Fitzmaurice \hspace{20pt} \https{fionn.github.io/gfkg}}
-
 \begin{document}
+
+\thispagestyle{empty}
 
 \maketitle
 
-\vspace{-8em}
-
-\thispagestyle{empty}
-\pagenumbering{roman}
+\vspace{-20ex}
 
 \tableofcontents
 
+\pagenumbering{roman}
+\thispagestyle{empty}
+
 \clearpage
+
 \pagenumbering{arabic}
 
 \part{Electromagnetism}
