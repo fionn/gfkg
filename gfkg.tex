@@ -4220,4 +4220,50 @@ By similar calculations, these two boosts preserve the inner product and have de
 
 \end{sol}
 
+\begin{ex}
+
+Show that $\SO(3, 1)$ contains neither parity,
+\[
+    P: (t, x, y, z) \mapsto (t, -x, -y, -z),
+\]
+nor \emph{time-reversal},
+\[
+    T: (t, x, y, z) \mapsto (-t, x, y, z),
+\]
+but that these lie in $\O(3, 1)$. Show that the product $PT$ lies in $\SO(3, 1)$.
+
+\end{ex}
+
+\begin{sol}
+
+We can represent these transformations as
+\[
+    P = \begin{pmatrix*}[r]
+            1 & 0  & 0  & 0 \\
+            0 & -1 & 0  & 0 \\
+            0 & 0  & -1 & 0 \\
+            0 & 0  & 0  & -1
+        \end{pmatrix*}, \qquad
+    T = \begin{pmatrix*}[r]
+            -1 & 0  & 0  & 0 \\
+            0  & 1  & 0  & 0 \\
+            0  & 0  & 1  & 0 \\
+            0  & 0  & 0  & 1
+        \end{pmatrix*}.
+\]
+For vectors $v$, $w$,
+\begin{align*}
+    \eta(Pv, Pw) &= -v^0 w^0 + v^1 w^1 + v^2 w^2 + v^3 w^3 = \eta(v, w), \\
+    \eta(Tv, Tw) &= -v^0 w^0 + v^1 w^1 + v^2 w^2 + v^3 w^3 = \eta(v, w)
+\end{align*}
+so $P$ and $T$ are in $\O(3, 1)$, which implies $PT \in \O(3, 1)$.
+
+$\det(P) = \det(T) = -1$ so $P$ and $T$ are not in $\SO(3, 1)$. But
+\[
+    \det(PT) = \det(P) \det(T) = 1
+\]
+so the product $PT \in \SO(3, 1)$.
+
+\end{sol}
+
 \end{document}
