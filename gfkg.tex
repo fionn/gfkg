@@ -7,12 +7,16 @@
 \usepackage[tracking=true, kerning=true]{microtype}
 \usepackage{hyperref}
 \usepackage[T1]{fontenc}
+\usepackage[strict]{csquotes}
 \usepackage{lmodern}
 \usepackage{inconsolata}
 \usepackage{parskip}
 \usepackage[nobottomtitles*]{titlesec}
 \usepackage{titling}
 \usepackage{faktor}
+\usepackage{mleftright}
+
+\mleftright{}
 
 \DeclareMicrotypeAlias{lmss}{cmr}
 
@@ -50,7 +54,7 @@
 
 \newenvironment{epigraph}
     {\begin{quote}\small\itshape} % chktex 6
-    {\end{quote}\ignorespacesafterend\vspace{9pt}}
+    {\end{quote}\ignorespacesafterend\vspace{0.8em}}
 
 \intervalconfig{soft open fences}
 
@@ -142,7 +146,7 @@ This lets us express the vacuum equations in terms of $\vec{\mathcal{E}}$ as
 
 For the divergence,
 \begin{align*}
-    \nabla \cdot \vec{\mathcal{E}}
+    \nabla \cdot \vec{\mathcal{E}}(t, \vec{x})
         &= \sum_{j = 1}^3 \partial_j \left( E_j  e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right) \\
         &= \sum_{j = 1}^3 E_j i k_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
         &= i \vec{k} \cdot \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
@@ -151,20 +155,20 @@ For the divergence,
 
 For the curl (dropping the summation and using Einstein notation),
 \begin{align*}
-    {\left( \nabla \times \vec{\mathcal{E}} \right)}_i &= \epsilon_{ijk} \partial_j \mathcal{E}_k \\
+    {\bigl( \nabla \times \vec{\mathcal{E}}(t, \vec{x}) \bigr)}_i &= \epsilon_{ijk} \partial_j \mathcal{E}_k(t, \vec{x}) \\
         &= \epsilon_{ijk} \partial_j \left(E_k e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right) \\
         &= \epsilon_{ijk} E_k \partial_j e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
         &= \epsilon_{ijk}i k_j E_k e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
         &= {\left(i \vec{k} \times \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right)}_i \\
         &= \omega E_i e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
-        &= \omega \mathcal{E}_i,
+        &= \omega \mathcal{E}_i(t, \vec{x}),
 \end{align*}
 so $\nabla \times \vec{\mathcal{E}} = \omega \vec{\mathcal{E}}$.
 But
 \begin{align*}
-    \frac{\partial \vec{\mathcal{E}}}{\partial t} &= \frac{\partial}{\partial t} \left(\vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right) \\
+    \frac{\partial}{\partial t} \vec{\mathcal{E}}(t, \vec{x}) &= \frac{\partial}{\partial t} \left(\vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \right) \\
         &= -i \omega \vec{E} e^{-i(\omega t - \vec{k} \cdot \vec{x})} \\
-        &= -i \omega \vec{\mathcal{E}},
+        &= -i \omega \vec{\mathcal{E}}(t, \vec{x}),
 \end{align*}
 giving
 \[
@@ -192,21 +196,21 @@ A function $f: X \to Y$ from one topological space to another is defined to be c
 
 Suppose $f$ is continuous according to the epsilon--delta definition of continuity.
 Let $V \subseteq \mathbb{R}^m$ be an open set.
-For any $x \in f^{-1}(V)$, since $f(x) \in V$ there exists a ball of radius $\epsilon$, $B(f(x), \epsilon) \subseteq V$, centered at $f(x)$.
+For any $x \in f^{-1}(V)$, since $f(x) \in V$ there exists a ball of radius $\epsilon$, $B \bigl( f(x), \epsilon \bigr) \subseteq V$, centered at $f(x)$.
 Then by the epsilon--delta condition there exists a ball of radius $\delta$, $B(x, \delta) \subseteq \mathbb{R}^n$ such that
 \[
-    f(B(x, \delta)) \subset B(f(x), \epsilon).
+    f \bigl( B(x, \delta) \bigr) \subset B \bigl( f(x), \epsilon \bigr).
 \]
 Since $x$ was arbitrary, $f^{-1}(V)$ is open as all points sufficiently close to $x$ are also in $f^{-1}(V)$.
 
 Suppose $f$ is continuous according to the topological definition of continuity.
 Let $x \in \mathbb{R}^n$ and $\epsilon > 0$.
-Consider the open set $f^{-1}(B(f(x), \epsilon)) \subseteq \mathbb{R}^n$.
+Consider the open set $f^{-1} \bigl( B(f(x), \epsilon) \bigr) \subseteq \mathbb{R}^n$.
 There exists a $\delta > 0$ such that
 \[
-    B(x, \delta) \subset f^{-1}(B(f(x), \epsilon)).
+    B(x, \delta) \subset f^{-1} \bigl( B(f(x), \epsilon) \bigr).
 \]
-Therefore for any point $y \in B(x,\delta)$, $f(y) \in B(f(x), \epsilon)$ or, equivalently, $\norm{y - x} < \delta$ implies $\norm{f(y) - f(x)} < \epsilon$.
+Therefore for any point $y \in B(x,\delta)$, $f(y) \in B \bigl( f(x), \epsilon \bigr)$ or, equivalently, $\norm{y - x} < \delta$ implies $\norm{f(y) - f(x)} < \epsilon$.
 
 \end{sol}
 
@@ -216,7 +220,7 @@ Given a topological space $X$ and a subset $S \subseteq X$, define the \emph{ind
 
 Let $S^n$, the $n$-sphere, be the unit sphere in $\mathbb{R}^{n + 1}$:
 \[
-    S^n = \biggl\{\vec{x} \in \mathbb{R}^{n + 1} \Bigm| \sum_{i = 1}^{n + 1} {(x^i)}^2 = 1 \biggr\}.
+    S^n = \biggl\{\vec{x} \in \mathbb{R}^{n + 1} \Bigm| \sum_{i = 1}^{n + 1} {\bigl(x^i\bigr)}^2 = 1 \biggr\}.
 \]
 Show that $S^n \subset \mathbb{R}^{n + 1}$ with its induced topology is a manifold.
 
@@ -243,8 +247,8 @@ Let $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ be the stereographic projection 
 For some $\vec{p} \in S^n$, $\varphi_\alpha(\vec{p}) \in \mathbb{R}^n$ should be a point on the line that intersects $S^n$ at $\vec{s}_\alpha = (0, \ldots, 0, \alpha)$.
 Take a segment of this line parameterised by $t \in [0, 1]$ as
 \begin{align*}
-    (1 - t) \vec{s}_\alpha + t\vec{p} &= (t p_1, \ldots t p_n, \alpha(1 - t) + tp_{n + 1}) \\
-        &= (t p_1, \ldots t p_n, \alpha + t(p_{n + 1} - \alpha)).
+    (1 - t) \vec{s}_\alpha + t\vec{p} &= \bigl( t p_1, \ldots t p_n, \alpha(1 - t) + tp_{n + 1} \bigr) \\
+        &= \bigl( t p_1, \ldots t p_n, \alpha + t(p_{n + 1} - \alpha) \bigr).
 \end{align*}
 This intersects $\mathbb{R}^n$ when the last coordinate $\alpha + t(p_{n + 1} - \alpha) = 0$, so $t = \frac{1}{1 - \alpha p_{n + 1}}$ and the projection is therefore given by
 \[
@@ -254,7 +258,7 @@ Each projection is a chart and the collection of these charts is an atlas, since
 
 Denoting $\varphi_\alpha: \vec{p} \mapsto \vec{x}_\alpha = \left(x_\alpha^1, \ldots, x_\alpha^n\right)$, the $L\!^2$-norm
 \begin{align*}
-    r_\alpha^2 &= \sum_{i = 1}^n {(x_\alpha^i)}^2 \\
+    r_\alpha^2 &= \sum_{i = 1}^n {\bigl( x_\alpha^i \bigr)}^2 \\
                &= \frac{p_1^2 + \cdots + p_n^2}{{(1 - \alpha p_{n + 1})}^2} \\
                &= \frac{1 - p_{n + 1}^2}{{(1 - \alpha p_{n + 1})}^2} \\
                &= \frac{(1 + p_{n + 1})(1 - p_{n + 1})}{{(1 - \alpha p_{n + 1})}^2} \\
@@ -283,7 +287,7 @@ From this, and assuming $\alpha$, $\beta$ are distinct so $\alpha \beta = -1$, w
 \]
 The transition functions $\varphi_\alpha \circ \varphi_\beta^{-1}: \mathbb{R}^n \to \mathbb{R}^n$ (with distinct $\alpha$, $\beta$) are then given by
 \begin{align*}
-    \varphi_\alpha \circ \varphi_\beta^{-1} (\vec{x}) &= \varphi_\alpha \left(\left(\frac{2 x^1}{r^2 + 1}, \ldots, \frac{2 x^n}{r^2 + 1}, \beta \frac{r^2 - 1}{r^2 + 1} \right)\right) \\
+    \varphi_\alpha \circ \varphi_\beta^{-1} (\vec{x}) &= \varphi_\alpha \left(\frac{2 x^1}{r^2 + 1}, \ldots, \frac{2 x^n}{r^2 + 1}, \beta \frac{r^2 - 1}{r^2 + 1} \right) \\
         &= \left(\frac{2 x^1}{r^2 + 1} \cdot \frac{r^2 + 1}{2 r^2},
                  \ldots,
                  \frac{2 x^n}{r^2 + 1} \cdot \frac{r^2 + 1}{2 r^2}
@@ -408,19 +412,19 @@ For the sum,
 \begin{align*}
     (v + w)(\alpha f) &= v(\alpha f) + w(\alpha f) \\
                       &= \alpha v(f) + \alpha w(f) \\
-                      &= \alpha (v(f) + w(f)) \\
+                      &= \alpha \bigl(v(f) + w(f)\bigr) \\
                       &= \alpha (v + w)(f),
 \end{align*}
 \begin{align*}
     (v + w)(fg) &= v(fg) + w(fg) \\
                 &= v(f)g + fv(g) + w(f)g + fw(g) \\
-                &= (v(f) + w(f))g + f \cdot (v(g) + w(g)) \\
+                &= \bigl(v(f) + w(f)\bigr)g + f \cdot \bigl(v(g) + w(g)\bigr) \\
                 &= (v + w)(f)g + f \cdot (v + w)(g).
 \end{align*}
 
 For the product,
 \begin{align*}
-    gw(f + h) &= g \cdot (w(f) + w(h)) \\
+    gw(f + h) &= g \cdot \bigl(w(f) + w(h)\bigr) \\
               &= gw(f) + gw(h),
 \end{align*}
 \begin{align*}
@@ -428,7 +432,7 @@ For the product,
         &= \alpha g w(f),
 \end{align*}
 \begin{align*}
-    gw(fh) &= g \cdot (w(f)h + f w(h)) \\
+    gw(fh) &= g \cdot \bigl(w(f)h + f w(h)\bigr) \\
            &= g w(f) h + g f w(h) \\
            &= gw(f) h + fgw(h).
 \end{align*}
@@ -530,7 +534,7 @@ To check associativity,
 \begin{align*}
     (u + (v + w))(f) &= u(f) + (v + w)(f) \\
                      &= u(f) + v(f) + w(f) \\
-                     &= (u(f) + v(f)) + w(f) \\
+                     &= \bigl(u(f) + v(f)\bigr) + w(f) \\
                      &= (u + v)(f) + w(f),
 \end{align*}
 so $u + (v + w) = (u + v) + w$.
@@ -547,7 +551,7 @@ We can construct for every tangent vector $v$ an additive inverse $-v$ as $(-v)(
 
 We have compatibility of scalar and field multiplication since
 \[
-    \alpha(\beta v)(f) = \alpha (\beta v(f))
+    \alpha(\beta v)(f) = \alpha \bigl(\beta v(f)\bigr)
         = \alpha \beta v(f) = (\alpha \beta) v(f).
 \]
 
@@ -555,7 +559,7 @@ The existence of a scalar multiplicative identity follows from solution~\ref{sol
 
 For distributivity,
 \[
-    \alpha(u + v)(f) = \alpha (u(f) + v(f)) = \alpha u(f) + \alpha v(f)
+    \alpha(u + v)(f) = \alpha \bigl(u(f) + v(f)\bigr) = \alpha u(f) + \alpha v(f)
 \]
 and
 \[
@@ -574,7 +578,7 @@ Check that $\gamma'(t) \in T_{\gamma(t)}M$ using the definitions.
 
 We have that
 \[
-    \gamma'(t): f \mapsto \frac{d}{dt} f\left( \gamma(t) \right).
+    \gamma'(t): f \mapsto \frac{d}{dt} f\bigl( \gamma(t) \bigr).
 \]
 Notice that
 \begin{align*}
@@ -611,7 +615,7 @@ Note that each $x^\mu$ is a function taking $p$ to the $\mu$\textsuperscript{th}
 
 Since our manifold is $\mathbb{R}$, the ``usual coordinate function'' in this case is the identity (under trivial coordinate transformation $t \to x$, say), so
 \[
-    (\phi^* x)(t) = x(\phi(t)) = x(e^t) = e^x
+    (\phi^* x)(t) = x \bigl( \phi(t) \bigr) = x(e^t) = e^x
 \]
 (where we abuse notation and identify the coordinate transformation function and its target as $x$).
 
@@ -651,7 +655,7 @@ If $\phi$ is a positive rotation by a (fixed) angle $\theta$, we can express it 
 As before, consider the chart $\varphi(p) = \left\{x^\mu(p)\right\} = \left\{x(p), y(p)\right\}$.
 Then $\phi^* x(p) = x(\phi(p))$ is the $x$-coordinate, so for $p = (u, v)$,
 \begin{align*}
-    \phi^* x(p) &= x(\phi(p)) \\
+    \phi^* x(p) &= x \bigl( \phi(p) \bigr) \\
                 &= \cos(\theta) u - \sin(\theta) v \\
                 &= \cos(\theta) x(p) - \sin(\theta) y(p)
 \end{align*}
@@ -676,7 +680,7 @@ Recall the definition of smooth functions between manifolds.
 Our other two definitions of smoothness are:
 \begin{itemize}
     \item a function $f: M \to \mathbb{R}$ is smooth if for all $\alpha$, $f \circ \varphi_\alpha^{-1}: \mathbb{R}^n \to \mathbb{R}$ is smooth,
-    \item a curve $\gamma: \mathbb{R} \to M$ is smooth if $f(\gamma(t))$ depends smoothly on $t$ for any $f \in C^\infty(M)$.
+    \item a curve $\gamma: \mathbb{R} \to M$ is smooth if $f \bigl( \gamma(t) \bigr)$ depends smoothly on $t$ for any $f \in C^\infty(M)$.
 \end{itemize}
 
 If $N = \mathbb{R}$, our definition of smooth functions between manifolds is that $\phi: M \to \mathbb{R}$ is smooth if $f \in C^\infty(\mathbb{R})$ implies that $\phi^* f \in C^\infty(M)$.
@@ -696,7 +700,7 @@ Since $\gamma^* f = f \circ \gamma$, $\gamma^* f$ is smooth too.
 
 \begin{ex}
 
-Prove that $(\phi \circ \gamma)'(t) = \phi_*(\gamma'(t))$.
+Prove that $(\phi \circ \gamma)'(t) = \phi_* \bigl( \gamma'(t) \bigr)$.
 
 \end{ex}
 
@@ -711,9 +715,9 @@ The pushforward $\phi_*: T_p M \to T_{\phi(p)} N$ of $v \in T_p M$ by $\phi: M \
 Then
 \begin{align*}
     \SwapAboveDisplaySkip
-    (\phi \circ \gamma)'(t)(f) &= \frac{d}{dt} f\left((\phi \circ \gamma)(t)\right) \\
+    (\phi \circ \gamma)'(t)(f) &= \frac{d}{dt} f \bigl( (\phi \circ \gamma)(t) \bigr) \\
         &= \frac{d}{dt} (f \circ \phi \circ \gamma)(t) \\
-        &= \frac{d}{dt} (f \circ \phi) (\gamma(t)) \\
+        &= \frac{d}{dt} (f \circ \phi) \bigl( \gamma(t) \bigr) \\
         &= \gamma'(t)(f \circ \phi) \\
         &= \gamma'(t)(\phi^* f) \\
         &= (\phi_* (\gamma'(t)))(f).
@@ -735,10 +739,10 @@ is linear.
 
 Let $v, w \in T_p M$, $\alpha, \beta \in \mathbb{R}$, $f \in C^\infty(N)$. $\phi_*$ is linear since
 \begin{align*}
-    \left(\phi_*(\alpha v + \beta w)\right)(f) &= (\alpha v + \beta w) (\phi^* f) \\
+    \bigl( \phi_*(\alpha v + \beta w) \bigr)(f) &= (\alpha v + \beta w) (\phi^* f) \\
         &= \alpha v (\phi^* f) + \beta w (\phi^* f) \\
         &= \alpha (\phi_* v)(f) + \beta (\phi_* w)(f) \\
-        &= \left(\alpha (\phi_* v) + \beta (\phi_* w)\right)(f).
+        &= \bigl( \alpha (\phi_* v) + \beta (\phi_* w) \bigr)(f).
 \end{align*}
 
 \end{sol}
@@ -762,7 +766,7 @@ Looking at the action of $\phi_* v$ on a function $f \in C^\infty (N)$ and denot
     {(\phi_* v)}_q (f) &= (\phi_* v) (f) (q) \\
                        &= v(\phi^* f)(p) \\
                        &= v_p(\phi^* f) \\
-                       &= (\phi_* (v_p))(f).
+                       &= (\phi_* v_p)(f).
 \end{align*}
 But
 \begin{align*}
@@ -791,7 +795,7 @@ Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be [a] rotation counterclockwise by an
 
 \begin{sol}\label{sol:pushforwardrotation}
 
-Denote $\phi: (x, y) \mapsto (u(x, y), v(x, y))$ where $u, v$ are functions as per solution~\ref{sol:pullbackrotation} and let $f \in C^\infty(\mathbb{R}^2)$.
+Denote $\phi: (x, y) \mapsto \bigl( u(x, y), v(x, y) \bigr)$ where $u, v$ are functions as per solution~\ref{sol:pullbackrotation} and let $f \in C^\infty(\mathbb{R}^2)$.
 
 For a vector $\partial_i$, the pushforward acting on $f$ is
 \begin{align*}
@@ -852,7 +856,7 @@ giving us differential equations $\dot{x}(t) = {x(t)}^2$, $\dot{y}(t) = y(t)$ wi
     x(t) = \frac{1}{\alpha - t}, \qquad
     y(t) = \beta e^t.
 \]
-Fix the constants $\alpha$, $\beta$ with initial condition $\gamma(0) = p = (x(0), y(0))$. Then
+Fix the constants $\alpha$, $\beta$ with initial condition $\gamma(0) = p = \bigl( x(0), y(0) \bigr)$. Then
 \[
     x(t) = \frac{x(0)}{1 - x(0)t}, \qquad
     y(t) = y(0) e^t.
@@ -901,7 +905,7 @@ so $v = \partial_r$, $w = \frac{\partial_\theta}{r}$.
 Then
 \allowdisplaybreaks[3]
 \begin{align*}
-    [v, w]f &= v(w(f)) - w(v(f)) \\
+    [v, w]f &= v \bigl( w(f)) - w(v(f) \bigr) \\
         &= v\left(\frac{\partial_\theta f}{r}\right) - w(\partial_r f) \\
         &= \partial_r\left(\frac{\partial_\theta f}{r}\right)
             - \frac{\partial_\theta}{r}(\partial_r f) \\
@@ -917,7 +921,7 @@ so $[v, w] = -\frac{w}{r}$.
 
 We could also do this the hard way,
 \begin{align*}
-    [v, w]f &= v(w(f)) - w(v(f)) \\
+    [v, w]f &= v \bigl( w(f)) - w(v(f) \bigr) \\
         &= \frac{(x \partial_x + y \partial_y)(x \partial_y f - y \partial_x f) - (x \partial_y - y \partial_x)(x \partial_x f + y \partial_y f)}{x^2 + y^2} \\
         &= \frac{\splitdfrac{x \partial_x (x\partial_y f)
                              - x\partial_x(y \partial_x f)
@@ -953,16 +957,16 @@ where $\phi_t$, $\psi_s$ are flows generated by $v$ and $w$, respectively.
 
 We have that
 \[
-    (vf)(p) = \frac{d}{dt} f(\phi_t(p)) \Big|_{t=0}, \qquad
-    (wf)(p) = \frac{d}{ds} f(\psi_s(p)) \Big|_{s=0},
+    (vf)(p) = \frac{d}{dt} f \bigl( \phi_t(p) \bigr) \Big|_{t=0}, \qquad
+    (wf)(p) = \frac{d}{ds} f \bigl( \psi_s(p) \bigr) \Big|_{s=0},
 \]
 so
 \begin{align*}
     \SwapAboveDisplaySkip
-    (vw)(f)(p) &= \frac{d}{dt} wf(\phi_t(p)) \Big|_{t = 0} \\
+    (vw)(f)(p) &= \frac{d}{dt} wf \bigl( \phi_t(p) \bigr) \Big|_{t = 0} \\
         &= \frac{\partial^2}{\partial t \, \partial s} f(\psi_s(\phi_t(p))) \Big|_{s = t = 0}
 \intertext{and similarly}
-    (wv)(f)(p) &= \frac{d}{ds} vf(\psi_s(p)) \Big|_{s = 0} \\
+    (wv)(f)(p) &= \frac{d}{ds} vf \bigl( \psi_s(p) \bigr) \Big|_{s = 0} \\
         &= \frac{\partial^2}{\partial s \, \partial t} f(\phi_t(\psi_s(p))) \Big|_{t = s = 0}.
 \end{align*}
 The result follows immediately.
@@ -1227,13 +1231,13 @@ Suppose that we have linear maps $f: V \to W$ and $g: W \to X$. Show that ${(gf)
 
 The dual of a linear map $f: V \to W$ is defined by
 \[
-    (f^*\omega)(v) = \omega(f(v))
+    (f^*\omega)(v) = \omega \bigl( f(v) \bigr)
 \]
 where $f^*: W^* \to V^*$.
 
 Let $\text{id}: V \to V$ be the identity map on $V$. For some $v \in V$,
 \begin{align*}
-    (\text{id}^*\omega)(v) &= \omega(\text{id}(v)) \\
+    (\text{id}^*\omega)(v) &= \omega \bigl( \text{id}(v) \bigr) \\
                            &= \omega(v)
 \end{align*}
 giving $\text{id}^*\omega = \omega$, therefore $\text{id}^*: V^* \to V^*$ is the identity map in the dual space.
@@ -1251,8 +1255,8 @@ giving ${(gf)}^* = f^* g^*$.
 
 We can also pretend that we don't know this is a pullback and use only the definition of the dual space above, by saying
 \begin{align*}
-    ({(g \circ f)}^*\omega)(v) &= \omega((g \circ f)(v)) \\
-        &= (g^* \omega)(f(v)) \\
+    ({(g \circ f)}^*\omega)(v) &= \omega \bigl( (g \circ f)(v) \bigr) \\
+        &= (g^* \omega) \bigl( f(v) \bigr) \\
         &= (f^* g^* \omega)(v).
 \end{align*}
 
@@ -1266,7 +1270,7 @@ Show that the pullback of 1-forms defined by the formula above really exists and
 
 \begin{sol}\label{sol:pullback1form}
 
-Let $\phi: M \to N$, $p \mapsto \phi(p) = q$. Then for\footnote{$\omega$ is in $T_q^* N$, see \url{https://math.ucr.edu/home/baez/errata.html}.} $v \in T_p M$, $\omega \in T_q^* N$, the pullback $\phi^*: T_q^* N \to T_p^* M$ of $\omega$ by $\phi$ is defined as
+Let $\phi: M \to N$, $p \mapsto \phi(p) = q$. Then for $v \in T_p M$, $\omega \in T_q^* N$, the pullback $\phi^*: T_q^* N \to T_p^* M$ of $\omega$ by $\phi$ is defined as
 \begin{nowidthtags}
 \[
     (\phi^* \omega)(v) = \omega(\phi_* v) \tag{pullback of a 1-form}\label{eq:pullback1form}
@@ -1299,7 +1303,7 @@ Using the fact that the exterior derivative is \emph{natural}, i.e. $\phi^*(df) 
     {(\phi^* dx)}_t v &= d(\phi^* x) (v)(t) \\
         &= v(\phi^* x) (t) \\
         &= v(x \circ \phi)(t) \\
-        &= v(\sin(t)) \\
+        &= v \bigl( \sin(t) \bigr) \\
         &= f(t) \partial_t \sin(t) \\
         &= f(t) \cos(t) \\
         &= f(t) \cos(t) \partial_t t \\
@@ -1325,10 +1329,10 @@ Let $v = f_i(x, y)\partial_i$ be some vector in $\text{Vect}(\mathbb{R}^2)$ and 
 \begin{align*}
     {(\phi^* dx)}_p v &= d(\phi^* x)(v)(p) \\
         &= d(x \circ \phi)(v)(p) \\
-        &= v(\cos(\theta) x - \sin(\theta) y) \\
-        &= f_1(x, y) \partial_x (\cos(\theta) x - \sin(\theta) y) \\
-        &\mathrel{\phantom{=}}{} + f_2(x, y) \partial_y (\cos(\theta) x
-                                 - \sin(\theta) y) \\
+        &= v \bigl( \cos(\theta) x - \sin(\theta) y \bigr) \\
+        &= f_1(x, y) \partial_x \bigl( \cos(\theta) x - \sin(\theta) y \bigr) \\
+        &\mathrel{\phantom{=}}{} + f_2(x, y) \partial_y \bigl( \cos(\theta) x
+                                 - \sin(\theta) y \bigr) \\
         &= f_1(x, y) \cos(\theta) - f_2(x, y) \sin(\theta) \\
         &= \cos(\theta) f_1(x, y) \partial_x x
            - \sin(\theta) f_2(x, y) \partial_y y \\
@@ -1342,7 +1346,7 @@ and similarly for $\phi^* dy$.
 \section{Change of Coordinates}
 
 \begin{epigraph}
-    The introduction of numbers as coordinates [\ldots] is an act of violence\ldots
+    The introduction of numbers as coordinates \textup{\textelp{}} is an act of violence\ldots
 \end{epigraph}
 
 \begin{ex}\label{ex:coordinatetransformation1form}
@@ -1360,7 +1364,7 @@ The statement requires us to be ``working in the chart'', so for now we'll be ex
 To show that this really forms a basis of coordinate 1-forms, consider the basis vectors ``in the chart'', $\varphi_*^{-1}\partial_\mu$.
 \begin{align*}
     d(\varphi^* x^\mu)(\varphi_*^{-1}\partial_\nu) &= \varphi_*^{-1}\partial_\nu (\varphi^* x^\mu) \\
-        &= \partial_\nu ((\varphi^* x^\mu) \circ \varphi^{-1}) \\
+        &= \partial_\nu \bigl( (\varphi^* x^\mu) \circ \varphi^{-1} \bigr) \\
         &= \delta_\nu^\mu.
 \end{align*}
 
@@ -1574,7 +1578,7 @@ so the components of a 1-form are covariant.
 
 Show that
 \[
-    u \wedge v \wedge w = \det \! \begin{pmatrix}
+    u \wedge v \wedge w = \det \begin{pmatrix}
             u_x & u_y & u_z \\
             v_x & v_y & v_z \\
             w_x & w_y & w_z
@@ -1607,7 +1611,7 @@ so the triple product
         =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
         &- u_y (v_x w_z - v_z w_x) \, dx \wedge dy \wedge dz \\
         &+ u_z (v_x w_y - v_y w_x) \, dx \wedge dy \wedge dz \\
-        =&\ \det \! \begin{pmatrix}
+        =&\ \det \begin{pmatrix}
                 u_x & u_y & u_z \\
                 v_x & v_y & v_z \\
                 w_x & w_y & w_z
@@ -1643,7 +1647,7 @@ Show that if $a, b, c, d$ are four vectors in a 3-dimensional space then $a \wed
 Using $dx, dy, dz$ as a basis, we have from exercise~\ref{ex:triplewedgeproduct} that
 \[
     b \wedge c \wedge d = \alpha \, dx \wedge dy \wedge dz, \quad
-    \alpha = \det \! \begin{pmatrix}
+    \alpha = \det \begin{pmatrix}
         b_x & b_y & b_z \\
         c_x & c_y & c_z \\
         d_x & d_y & d_z
@@ -1821,7 +1825,7 @@ So on a collection of vectors $v_1, \ldots, v_p \in \text{Vect}(M)$ we would lik
 \end{align*}
 which holds since each $\omega_i$ acts on $\phi_* v_i$ independently. Then in terms of components,
 \begin{align*}
-    \phi^* \omega &= \phi^* (\tfrac{1}{p!}\omega_{i_1,\ldots,i_p}\, e^{i_1} \wedge \cdots \wedge e^{i_p}) \\
+    \phi^* \omega &= \phi^* \left( \tfrac{1}{p!} \omega_{i_1,\ldots,i_p}\, e^{i_1} \wedge \cdots \wedge e^{i_p} \right) \\
         &= \phi^* \tfrac{1}{p!} \omega_{i_1,\ldots,i_p} \phi^* (e^{i_1} \wedge \cdots \wedge e^{i_p}) \\
         &= \tfrac{1}{p!} \phi^* \omega_{i_1,\ldots,i_p} \phi^* e_{i^1} \wedge \cdots \wedge \phi^* e_{i^p}.
 \end{align*}
@@ -1929,9 +1933,9 @@ Since $\mathbb{R} \times S$ is a manifold, we have an atlas $\left\{\varphi_\alp
 Notice that $\left\{dx^i \wedge dt, dx^i \wedge dx^j\right\}$ spans $\Omega^2(U_\alpha)$.
 If $F \in \Omega^2(U_\alpha)$, we can express it as
 \begin{align*}
-    F &= \frac{1}{2}F_{\mu\nu}dx^\mu \wedge dx^\nu \\
-      &= \frac{1}{2} (F_{0i} dt \wedge dx^i + F_{i0} dx^i \wedge dt + F_{ij} dx^i \wedge dx^j) \\
-      &= \frac{1}{2} (2F_{i0} dx^i \wedge dt + F_{ij} dx^i \wedge dx^j) \\
+    F &= \frac{1}{2} F_{\mu\nu}dx^\mu \wedge dx^\nu \\
+      &= \frac{1}{2} \left( F_{0i} dt \wedge dx^i + F_{i0} dx^i \wedge dt + F_{ij} dx^i \wedge dx^j \right) \\
+      &= \frac{1}{2} \left( 2 F_{i0} dx^i \wedge dt + F_{ij} dx^i \wedge dx^j \right) \\
       &= \frac{1}{2} F_{ij} dx^i \wedge dx^j + F_{i0} dx^i \wedge dt
 \end{align*}
 where $F_{0i} = -F_{i0}$ by antisymmetry. Comparing coefficients, we get
@@ -2125,7 +2129,7 @@ Let $\mu = \mu^1 \wedge \cdots \wedge \mu^p$ be a $p$-form. If $\innerp{\mu}{ \o
 \begin{align*}
     \innerp{\mu}{\omega} &= \innerp{\mu^1 \wedge \cdots \wedge \mu^p}
                                    {\omega^1 \wedge \cdots \wedge \omega^p} \\
-        &= \det \! \big(g(\mu^i, \omega^j)\big) \\
+        &= \det \bigl( g(\mu^i, \omega^j) \bigr) \\
         &= 0.
 \end{align*}
 But $g$ is non-degenerate, so the determinant of $g(\mu^i, \omega^j)$ must be non-zero unless $\mu = 0$.
@@ -2142,14 +2146,14 @@ From the definition of the inner product of $p$-forms,
 \[
     \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}
            {e^{j_1} \wedge \cdots \wedge e^{j_p}}
-        = \det \! \big(g(e^{i_k}, e^{j_k})\big),
+        = \det \bigl( g(e^{i_k}, e^{j_k}) \bigr),
 \]
 but $g(e^{i_k}, e^{j_k}) = 0$ if $i_k \neq j_k$ and so too is its determinant.
 Taking the inner product of a basis $p$-form with itself,
 \begin{align*}
     \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}
            {e^{i_1} \wedge \cdots \wedge e^{i_p}}
-        &= \det \! \big(g(e^{i_k}, e^{i_k})\big) \\
+        &= \det \bigl( g(e^{i_k}, e^{i_k}) \bigr) \\
         &= \prod_{k = 1}^p \epsilon(i_k) \\
         &= \epsilon(i_1) \cdots \epsilon(i_p)
 \end{align*}
@@ -2173,11 +2177,11 @@ be a 2-form. Show that
 \]
 In physics, the quantity
 \[
-    \frac{1}{2}(\innerp{E}{E} + \innerp{B}{B})
+    \frac{1}{2} \bigl( \innerp{E}{E} + \innerp{B}{B} \bigr)
 \]
 is called the \emph{energy density} of the electromagnetic field. The quantity
 \[
-    \frac{1}{2}(\innerp{E}{E} - \innerp{B}{B}) \label{eq:lagrangianvacuumem}
+    \frac{1}{2} \bigl( \innerp{E}{E} - \innerp{B}{B} \bigr) \label{eq:lagrangianvacuumem}
 \]
 is called the \emph{Lagrangian} for the vacuum Maxwell's equations, which we discuss more in Chapter 4 of Part II in greater generality.
 
@@ -2193,7 +2197,7 @@ From the definition of the inner product of 1-forms,
 \end{align*}
 From exercise~\ref{ex:innerproductpforms},
 \begin{align*}
-    \innerp{dx^a \wedge dx^b}{dx^c \wedge dx^d} &= \det \! \big(g(dx^i, dx^j)\big) \\
+    \innerp{dx^a \wedge dx^b}{dx^c \wedge dx^d} &= \det \bigl(g(dx^i, dx^j)\bigr) \\
         &= g(dx^a, dx^c) g(dx^b, dx^d) \\
         &= \delta^{ac} \delta^{bd},
 \end{align*}
@@ -2236,7 +2240,7 @@ The inner product of the 2-form $F$ with itself is
 since each component of $B$ is orthogonal to each component of $E \wedge dt$.
 Focusing on the electric term,
 \begin{align*}
-    \innerp{E \wedge dt}{E \wedge dt} &= \det \! \begin{pmatrix}
+    \innerp{E \wedge dt}{E \wedge dt} &= \det \begin{pmatrix}
                 \eta(E, E) & \eta(E, dt) \\
                 \eta(dt, E) & \eta(dt, dt)
             \end{pmatrix} \\
@@ -2244,7 +2248,7 @@ Focusing on the electric term,
 \end{align*}
 so
 \[
-    -\frac{1}{2} \innerp{F}{F} = \frac{1}{2}(\innerp{E}{E} - \innerp{B}{B}),
+    -\frac{1}{2} \innerp{F}{F} = \frac{1}{2} \bigl( \innerp{E}{E} - \innerp{B}{B} \bigr),
 \]
 the Lagrangian density for vacuum electromagnetism on Minkowski spacetime.
 
@@ -2385,7 +2389,7 @@ $p$-forms $\omega = \omega_I e^I$ and $\mu = \mu_J e^J$ in terms of basis 1-form
 Taking the inner product,
 \begin{align*}
     \innerp{\omega}{\mu} &= \omega_I \mu_J \innerp{e^{i_1} \wedge \cdots \wedge e^{i_p}}{e^{j_1} \wedge \cdots \wedge e^{j_p}} \\
-        &= \omega_I \mu_J \, \det \! \big(g(e^{i_k}, e^{j_k})\big) \\
+        &= \omega_I \mu_J \, \det \bigl(g(e^{i_k}, e^{j_k})\bigr) \\
         &= \omega_I \mu_J \delta^{IJ} \epsilon(i_1) \cdots \epsilon(i_p)
 \end{align*}
 where we denote $\delta^{IJ} = \delta^{i_1 j_1} \cdots \delta^{i_p j_p}$.
@@ -2436,9 +2440,9 @@ Then the Hodge dual of $d\omega$ is
     \star d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \star (dy \wedge dz) \\
         &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \star (dz \wedge dx) \\
         &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) \star (dx \wedge dy) \\
-        &= \left(\partial_y \omega_z - \partial_z \omega_y\right) dx
-            + \left(\partial_z \omega_x - \partial_x \omega_z\right) dy
-            + \left(\partial_x \omega_y - \partial_y \omega_x\right) dz,
+        &= \left(\partial_y \omega_z - \partial_z \omega_y\right) \, dx
+            + \left(\partial_z \omega_x - \partial_x \omega_z\right) \, dy
+            + \left(\partial_x \omega_y - \partial_y \omega_x\right) \, dz,
 \end{align*}
 analogous to the curl of $\omega$.
 
@@ -2981,15 +2985,15 @@ Since $k_\mu x^\mu = t - x$, this gives us
 \end{align*}
 or, in old-fashioned language,
 \[
-    \vec{E} = \big(0, e^{i(t - x)}, -ie^{i(t - x)}\big), \qquad
-    \vec{B} = \big(0, -i e^{i(t - x)}, -e^{i(t - x)}\big).
+    \vec{E} = \bigl( 0, e^{i(t - x)}, -ie^{i(t - x)} \bigr), \qquad
+    \vec{B} = \bigl( 0, -i e^{i(t - x)}, -e^{i(t - x)} \bigr).
 \]
 
 Write
 \begin{align*}
     \SwapAboveDisplaySkip
     \vec{\mathcal{E}} &= \vec{E} + i \vec{B} \\
-                      &= \big(0, 2 e^{i(t - x)}, -2 i e^{i(t - x)}\big)
+                      &= \bigl( 0, 2 e^{i(t - x)}, -2 i e^{i(t - x)} \bigr)
 \end{align*}
 which, recall from exercise~\ref{ex:i1}, lets us express the vacuum equations as
 \[
@@ -3007,7 +3011,7 @@ and
     \nabla \times \vec{\mathcal{E}} &= (\partial_y \mathcal{E}_z - \partial_z \mathcal{E}_y) \vec{\imath}
             + (\partial_z \mathcal{E}_x - \partial_x \mathcal{E}_z) \vec{\jmath}
             + (\partial_x \mathcal{E}_y - \partial_y \mathcal{E}_x) \vec{k} \\
-        &= \big(0, -2 e^{i(t - x)}, 2 i e^{i(t - x)} \big) \\
+        &= \bigl( 0, -2 e^{i(t - x)}, 2 i e^{i(t - x)} \bigr) \\
         &= - \vec{\mathcal{E}} \\
         &= i \partial_t \vec{\mathcal{E}}
 \end{align*}
@@ -3057,8 +3061,8 @@ For non-trivial solutions, $k_1^2 - k_2^2 = 0$ or $k_0 = \pm k_1$. Assuming with
 \]
 Using the self-dual relationship $B = -i \star_S E$, in old-fashioned language we get
 \[
-    \vec{E} = \mathbf{E}_0 \big(0, e^{ik_0 (t - x)}, -ie^{ik_0 (t - x)}\big), \quad
-    \vec{B} = \mathbf{E}_0 \big(0, -ie^{ik_0 (t - x)}, -e^{ik_0 (t - x)}\big)
+    \vec{E} = \mathbf{E}_0 \bigl( 0, e^{ik_0 (t - x)}, -ie^{ik_0 (t - x)} \bigr), \quad
+    \vec{B} = \mathbf{E}_0 \bigl( 0, -ie^{ik_0 (t - x)}, -e^{ik_0 (t - x)} \bigr)
 \]
 and taking the real solutions only,
 \begin{align*}
@@ -3107,8 +3111,8 @@ Take $k_0 = k_1$ (forward propagation) to get $\mathbf{E}_2 = -i \mathbf{E}_3$ a
 \]
 Using the anti-self-dual relationship $B = i \star_S E$, in old-fashioned language we get
 \[
-    \vec{E} = \mathbf{E}_0 \big(0, -ie^{ik_0 (t - x)}, e^{ik_0 (t - x)}\big), \quad
-    \vec{B} = \mathbf{E}_0 \big(0, e^{ik_0 (t - x)}, ie^{ik_0 (t - x)}\big)
+    \vec{E} = \mathbf{E}_0 \bigl( 0, -ie^{ik_0 (t - x)}, e^{ik_0 (t - x)} \bigr), \quad
+    \vec{B} = \mathbf{E}_0 \bigl( 0, e^{ik_0 (t - x)}, ie^{ik_0 (t - x)} \bigr)
 \]
 and taking the real solutions only,
 \begin{align*}
@@ -3210,14 +3214,18 @@ so
 Integrating along $\gamma_0$,
 \begin{align*}
     \int_{\gamma_0} E &= \int_0^1 E_{\gamma_0(t)}(\gamma_0'(t)) \, dt \\
-        &= \int_0^1 \frac{-\pi \cos(\pi(1 - t)) \cos(\pi(1 - t)) - \pi \sin(\pi(1 - t)) \sin(\pi(1 - t))}{{\cos(\pi(1 - t))}^2 + {\sin(\pi(1 - t))}^2} dt \\
+        &= \int_0^1 \frac{-\pi \cos \bigl( \pi(1 - t) \bigr) \cos \bigl( \pi(1 - t) \bigr)
+                          - \pi \sin \bigl( \pi(1 - t) \bigr) \sin \bigl( \pi(1 - t) \bigr)}
+                         {{\cos \bigl( \pi(1 - t) \bigr)}^2 + {\sin \bigl( \pi(1 - t) \bigr)}^2} dt \\
         &= -\pi \int_0^1 dt \\
         &= -\pi,
 \end{align*}
 and along $\gamma_1$,
 \begin{align*}
     \int_{\gamma_1} E &= \int_0^1 E_{\gamma_1(t)}(\gamma_1'(t)) \, dt \\
-        &= \int_0^1 \frac{\pi \cos(\pi(1 + t)) \cos(\pi(1 + t)) + \pi \sin(\pi(1 + t)) \sin(\pi(1 + t))}{{\cos(\pi(1 - t))}^2 + {\sin(\pi(1 - t))}^2} dt \\
+        &= \int_0^1 \frac{\pi \cos \bigl( \pi(1 + t) \bigr) \cos \bigl( \pi(1 + t) \bigr)
+                          + \pi \sin \bigl( \pi(1 + t) \bigr) \sin \bigl( \pi(1 + t) \bigr)}
+                         {{\cos \bigl( \pi(1 - t) \bigr)}^2 + {\sin \bigl( \pi(1 - t) \bigr)}^2} dt \\
         &= \pi \int_0^1 dt \\
         &= \pi.
 \end{align*}
@@ -3269,9 +3277,9 @@ Show that a 1-form $E$ is exact if and only if $\int_\gamma E = 0$ for all loops
 Let $E = -d\phi$ be an exact 1-form and $\gamma: [0, 1] \to M$ a loop based at $p \in M$. Then
 \begin{align*}
     \oint_\gamma E &= - \oint_\gamma d\phi \\
-                   &= - \int_0^1 d\phi(\gamma'(t)) \, dt \\
+                   &= - \int_0^1 d\phi \bigl( \gamma'(t) \bigr) \, dt \\
                    &= - \int_0^1 \gamma'(t)(\phi) \, dt \\
-                   &= - \int_0^1 \frac{d}{dt} \phi(\gamma(t)) \, dt \\
+                   &= - \int_0^1 \frac{d}{dt} \phi \bigl( \gamma(t) \bigr) \, dt \\
                    &= - \phi(p) + \phi(p) \\
                    &= 0.
 \end{align*}
@@ -3430,7 +3438,7 @@ Show that $\partial D^n = S^{n - 1}$, where the $n$-disk $D^n$ is defined as in 
 The boundary of $M$ is the set of points $p \in M$ such that some chart $\varphi_\alpha: U_\alpha \to \mathbb{H}^n$ maps $p$ to a point in $\partial\mathbb{H}^n$.
 We've already seen from solution~\ref{sol:ndisk} that when $r^2 \to 1$, $\varphi_\alpha(p) \in \partial\mathbb{H}^n$. This corresponds to
 \[
-    \partial D^n = \setbuilder{(x_1, \ldots, \ldots, x_n) \given x_1^2 + \cdots + x_n^2 = 1} = S^{n - 1}.
+    \partial D^n = \setbuilder*{(x_1, \ldots, \ldots, x_n) \given x_1^2 + \cdots + x_n^2 = 1} = S^{n - 1}.
 \]
 
 \end{sol}
@@ -3532,7 +3540,7 @@ $S^{n - 1}$ is a submanifold of $\mathbb{R}^n$ under stereographic projection as
 
 $S^{n - 1}$ is bounded since $\norm{p} = 1$ for all $p \in S^{n - 1}$.
 
-Let $f: \mathbb{R}^n \to \mathbb{R}$ be given by $f(x_1, \ldots, x_n) = x_1^2 + \cdots + x_n^2$. Since $f$ is continuous, its inverse will map closed sets to closed sets. $f^{-1}(\{1\}) = S^{n - 1}$, so $S^{n - 1}$ is closed.
+Let $f: \mathbb{R}^n \to \mathbb{R}$ be given by $f(x_1, \ldots, x_n) = x_1^2 + \cdots + x_n^2$. Since $f$ is continuous, its inverse will map closed sets to closed sets. $f^{-1}\bigl(\{1\}\bigr) = S^{n - 1}$, so $S^{n - 1}$ is closed.
 
 Since $S^{n - 1} \subset \mathbb{R}^n$ is closed and bounded, by the Heine--Borel theorem $S^{n - 1}$ is compact.
 
@@ -3733,8 +3741,8 @@ Show that if $\psi: M' \to M''$ is another map, then
 
 Recall that for
 \begin{align*}
-    Z^p(M) &= \ker(d: \Omega^p(M) \to \Omega^{p + 1}(M)), \\
-    Z^p(M) \supseteq B^p(M) &= \text{im}(d: \Omega^{p - 1}(M) \to \Omega^p(M)),
+    Z^p(M) &= \ker \bigl( d: \Omega^p(M) \to \Omega^{p + 1}(M) \bigr), \\
+    Z^p(M) \supseteq B^p(M) &= \text{im} \bigl( d: \Omega^{p - 1}(M) \to \Omega^p(M) \bigr),
 \end{align*}
 the spaces of closed and exact $p$-forms on $M$ respectively, we define the \emph{$p$\textsuperscript{th} de~Rham cohomology group of $M$} as
 \[
@@ -3743,15 +3751,15 @@ the spaces of closed and exact $p$-forms on $M$ respectively, we define the \emp
 Let $\omega$ and $\omega'$ be cohomologous. Then naturally the pullback will preserve the cohomology, by exercise~\ref{ex:pullbackclosedandexact}. Explicitly,
 \begin{align*}
     \phi^*[\omega] &= [\phi^* \omega] \\
-                   &= [\phi^*(\omega' + d\mu)] \\
-                   &= [\phi^* \omega' + \phi^* (d\mu)] \\
-                   &= [\phi^* \omega' + d(\phi^*\mu)] \\
+                   &= \bigl[ \phi^*(\omega' + d\mu) \bigr] \\
+                   &= \bigl[ \phi^* \omega' + \phi^* (d\mu) \bigr] \\
+                   &= \bigl[ \phi^* \omega' + d(\phi^*\mu) \bigr] \\
                    &= [\phi^* \omega'] \\
                    &= \phi^* [\omega'].
 \end{align*}
 Introducing another linear map $\psi: M' \to M''$,
 \[
-    {(\psi \circ \phi)}^*[\omega] = [{(\psi \circ \phi)}^* \omega]
+    {(\psi \circ \phi)}^*[\omega] = \bigl[ {(\psi \circ \phi)}^* \omega \bigr]
                                   = [\phi^* \psi^* \omega]
                                   = \phi^* \psi^* [\omega]
 \]
@@ -3784,7 +3792,8 @@ Recall that
 Taking the Hodge dual of $dz$,
 \begin{align*}
     \star dz &= dx \wedge dy \\
-             &= (\cos(\theta) \, dr -r \sin(\theta) \, d\theta) \wedge (\sin(\theta) \, dr + r \cos(\theta) \, d\theta) \\
+             &= \bigl( \cos(\theta) \, dr -r \sin(\theta) \, d\theta \bigr)
+                       \wedge (\sin(\theta) \, dr + r \cos(\theta) \, d\theta \bigr) \\
              &= r \, {\cos(\theta)}^2 dr \wedge d\theta + r \, {\sin(\theta)}^2 dr \wedge d\theta \\
              &= r \, dr \wedge d\theta.
 \end{align*}
@@ -3807,24 +3816,24 @@ Taking the Hodge dual of $d\theta$,
 \begin{align*}
     \star d\theta &= \star \left( \frac{x \, dy - y \, dx}{x^2 + y^2} \right) \\
                   &= \frac{x \,dz \wedge dx - y \, dy \wedge dz}{r^2} \\
-                  &= \frac{1}{r} (\cos(\theta) \, dz \wedge dx - \sin(\theta) \, dy \wedge dz).
+                  &= \frac{1}{r} \bigl( \cos(\theta) \, dz \wedge dx - \sin(\theta) \, dy \wedge dz \bigr).
 \end{align*}
 But, from solution~\ref{sol:cylindricaldualcurrent},
 \begin{align*}
-    \cos(\theta) \, dz \wedge dx &= \cos(\theta) \, dz \wedge \left(\cos(\theta) \, dr -r \sin(\theta) \, d\theta \right) \\
+    \cos(\theta) \, dz \wedge dx &= \cos(\theta) \, dz \wedge \bigl( \cos(\theta) \, dr -r \sin(\theta) \, d\theta \bigr) \\
         &= {\cos(\theta)}^2 dz \wedge dr - r \cos(\theta) \sin(\theta) \, dz \wedge d\theta
 \end{align*}
 and
 \begin{align*}
     \SwapAboveDisplaySkip
-    \sin(\theta) \, dy \wedge dz &= \sin(\theta) \left(r \cos(\theta) \, d\theta + \sin(\theta) \, dr\right) \wedge dz \\
+    \sin(\theta) \, dy \wedge dz &= \sin(\theta) \bigl( r \cos(\theta) \, d\theta + \sin(\theta) \, dr \bigr) \wedge dz \\
         %&= r \cos(\theta) \sin(\theta) \, d\theta \wedge dz + {\sin(\theta)}^2 dr \wedge dz \\
         &= - r \cos(\theta) \sin(\theta) \, dz \wedge d\theta - {\sin(\theta)}^2 dz \wedge dr,
 \end{align*}
 so
 \begin{align*}
     \SwapAboveDisplaySkip
-    \star d\theta &= \frac{1}{r} ({\cos(\theta)}^2 dz \wedge dr + {\sin(\theta)}^2 dz \wedge dr) \\
+    \star d\theta &= \frac{1}{r} \bigl( {\cos(\theta)}^2 dz \wedge dr + {\sin(\theta)}^2 dz \wedge dr \bigr) \\
                   &= \frac{1}{r} \, dz \wedge dr.
 \end{align*}
 
@@ -3861,7 +3870,7 @@ Work out the details. (Hint: define a map $p: S^1 \times S^{n - 1} \to S^1$ corr
 Let $d\theta \in \Omega^1(S^1)$ be the classic closed and not exact 1-form we've seen already. Using the projection
 \begin{align*}
     p &: S^1 \times S^{n - 1} \to S^1, \\
-      &: (\theta_1, (\theta_2, \ldots, \theta_n)) \mapsto \theta_1,
+      &: \bigl( \theta_1, (\theta_2, \ldots, \theta_n) \bigr) \mapsto \theta_1,
 \end{align*}
 we can define a 1-form on the torus as $\omega = p^* d\theta \in \Omega^1(S^1 \times S^{n - 1})$.
 
@@ -3889,7 +3898,7 @@ Show that $dE = 0$ holds no matter what the function $e(r)$ is, and show that $d
 
 \begin{sol}
 
-Our metric on $\mathbb{R} \times S^2$ is $g = dr^2 + {f(r)}^2 (d\phi^2 + {\sin(\phi)}^2 d\theta^2)$ where $f$ is positive for all $r$ and $f(r) \to r$ when $|r|$ is sufficiently large.\footnote{We approach $r$, not $r^2$, since the latter is not Euclidean.}
+Our metric on $\mathbb{R} \times S^2$ is $g = dr^2 + {f(r)}^2 \bigl( d\phi^2 + {\sin(\phi)}^2 d\theta^2 \bigr)$ where $f$ is positive for all $r$ and $f(r) \to r$ when $|r|$ is sufficiently large.\footnote{We approach $r$, not $r^2$, since the latter is not Euclidean.}
 
 We want our 1-form to satisfy the vacuum electrostatic equations
 \[
@@ -3912,9 +3921,9 @@ Denoting $\star dr = \alpha \, d\theta \wedge d\phi$ where $\alpha$ is a normali
 \]
 fixing $\alpha$ and giving us $\star dr = {f(r)}^2 \sin(\phi) \, d\theta \wedge d\phi$, so
 \begin{align*}
-    d \star E &= d (e(r) \star dr) \\
-              &= d (e(r) {f(r)}^2 \sin(\phi) \, d\theta \wedge d\phi) \\
-              &= \partial_r (e(r) {f(r)}^2) \cdot \sin(\phi) \, dr \wedge d\theta \wedge d\phi.
+    d \star E &= d \bigl( e(r) \star dr \bigr) \\
+              &= d \bigl( e(r) {f(r)}^2 \sin(\phi) \, d\theta \wedge d\phi \bigr) \\
+              &= \partial_r \bigl( e(r) {f(r)}^2 \bigr) \cdot \sin(\phi) \, dr \wedge d\theta \wedge d\phi.
 \end{align*}
 Then for $d \star E = 0$, we require $e(r) {f(r)}^2$ to be constant in $r$.
 Let this constant be $\frac{q}{4 \pi}$, say, for some arbitrary $q$. Then
@@ -4047,7 +4056,7 @@ so
 \begin{ex}
 
 Generalise these examples and find an $(n-1)$-form in $\mathbb{R}^n - \{0\}$ that is closed but not exact.
-Conclude that $H^{n - 1}(\mathbb{R}^{n} - \{0\})$ is nonzero.
+Conclude that $H^{n - 1} \bigl( \mathbb{R}^{n} - \{0\} \bigr)$ is nonzero.
 
 \end{ex}
 
@@ -4077,7 +4086,7 @@ Let $S \subset \mathbb{R}^n - \{0\}$ be an $(n - 1)$-submanifold. Then
 \]
 since it is not possible to deform $S$ due to the puncture at the origin, so by \ref{eq:stokestheorem} $\omega$ is not exact. % chktex 2
 
-By the existence of a closed but not exact $(n - 1)$-form, $H^{n - 1}(\mathbb{R}^n - \{0\})$ is non-empty.
+By the existence of a closed but not exact $(n - 1)$-form, $H^{n - 1} \bigl( \mathbb{R}^n - \{0\} \bigr)$ is non-empty.
 
 \end{sol}
 
