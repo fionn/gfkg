@@ -83,6 +83,9 @@
 \DeclarePairedDelimiterX{\setbuilder}[1]{\{}{\}}
     {\newcommand*{\given}{\SetSymbol[\delimsize]}#1}
 
+\renewcommand*{\O}{\ensuremath\text{O}}
+\newcommand*{\SO}{\ensuremath\text{SO}}
+
 \title{Gauge Fields, Knots and Gravity Solutions}
 \author{Fionn Fitzmaurice \hspace{2em} \https{fionn.github.io/gfkg}}
 \date{}
@@ -2067,7 +2070,7 @@ Applying the inverse $g^{\mu\nu}$ to the components $\omega_\mu = g_{\mu\nu}\ome
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:minkowskimetric}
 
 Let $\eta$ be the Minkowski metric on $\mathbb{R}^4$ as defined above.
 Show that its components in the standard basis are
@@ -4129,6 +4132,91 @@ and on integrating over any 2-sphere,
         &= m,
 \end{align*}
 the magnetic charge.
+
+\end{sol}
+
+\part{Gauge Fields}
+
+\chapter{Symmetry}
+
+\begin{epigraph}
+    Symmetry dictates interactions.
+\end{epigraph}
+
+\section{Lie Groups}
+
+\begin{ex}
+
+Show that $\SO(3, 1)$ contains the Lorentz transformation mixing up the $t$ and $x$ coordinates:
+\[
+    \begin{pmatrix}
+        \phantom{-}\cosh(\phi) & -\sinh(\phi)           & 0 & 0 \\
+        -\sinh(\phi)           & \phantom{-}\cosh(\phi) & 0 & 0 \\
+        0                      & 0                      & 1 & 0 \\
+        0                      & 0                      & 0 & 1
+    \end{pmatrix}
+\]
+as well as the Lorentz transformations mixing up $t$ and $y$, or $t$ and $z$ coordinates.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\Lambda$ be the Lorentz transformation with rapidity $\phi$ mixing up $t$ and $x$ given above.
+Then for some vector $v = v^\mu \partial_\mu$ on $\mathbb{R}^4$, the components of $\Lambda v$ transform as
+\[
+    {\Lambda^\mu}_\nu v^\nu = \begin{pmatrix}
+        \phantom{-} \cosh(\phi) v^0 - \sinh(\phi) v^1 \\
+        -\sinh(\phi) v^0 + \cosh(\phi) v^1 \\
+        v^2 \\
+        v^3
+    \end{pmatrix}.
+\]
+On Minkowski space with metric $\eta$ as in exercise~\ref{ex:minkowskimetric}, the inner product of two vectors $v$, $w$ transformed under $\Lambda$ is
+\begin{align*}
+    \eta(\Lambda v, \Lambda w)
+        &\mathrel{=}{} - \bigl(\cosh(\phi) v^0 - \sinh(\phi) v^1 \bigr)
+            \bigl( \cosh(\phi) w^0 - \sinh(\phi) w^1 \bigr) \\
+        &\mathrel{\phantom{=}}{} + \bigl(-\sinh(\phi) v^0 + \cosh(\phi) v^1 \bigr)
+                                   \bigl(-\sinh(\phi) w^0 + \cosh(\phi) w^1 \bigr) \\
+        &\mathrel{\phantom{=}}{} + v^2 w^2 + v^3 w^3 \\
+        &\mathrel{=}{} - {\cosh(\phi)}^2 v^0 w^0 + \cosh(\phi) \sinh(\phi) v^0 w^1 \\
+        &\mathrel{\phantom{=}}{} + \sinh(\phi) \cosh(\phi) v^1 w^0 - {\sinh(\phi)}^2 v^1 w^1 \\
+        &\mathrel{\phantom{=}}{} + {\sinh(\phi)}^2 v^0 w^0 - \sinh(\phi) \cosh(\phi) v^0 w^1 \\
+        &\mathrel{\phantom{=}}{} - \cosh(\phi) \sinh(\phi) v^1 w^0 + {\cosh(\phi)}^2 v^1 w^1 \\
+        &\mathrel{\phantom{=}}{} + v^2 w^2 + v^3 w^3 \\
+        &\mathrel{=}{} - \bigl( {\cosh(\phi)}^2 - {\sinh(\phi)}^2 \bigr) v^0 w^0
+                       + \bigl( -{\sinh(\phi)}^2 + {\cosh(\phi)}^2) v^1 w^1 \\
+        &\mathrel{\phantom{=}}{} + \bigl( \cosh(\phi) \sinh(\phi) - \sinh(\phi) \cosh(\phi) \bigr) v^0 w^1 \\
+        &\mathrel{\phantom{=}}{} + \bigl( \sinh(\phi) \cosh(\phi) - \cosh(\phi) \sinh(\phi) \bigr) v^1 w^0 \\
+        &\mathrel{\phantom{=}}{} + v^2 w^2 + v^3 w^3 \\
+        &= - v^0 w^0 + v^1 w^1 + v^2 w^2 + v^3 w^3 \\
+        &= \eta(v, w)
+\end{align*}
+so $\Lambda$ preserves the inner product and is therefore in $\O(3, 1)$.
+Taking the determinant gives
+\[
+    \det(\Lambda) = {\cosh(\phi)}^2 - {\sinh(\phi)}^2 = 1
+\]
+so $\Lambda \in \SO(3, 1)$.
+
+The Lorentz transformations with rapidity $\phi$ mixing up the $t$ and $y$ and $t$ and $z$ coordinates are
+\[
+    \begin{pmatrix}
+        \phantom{-}\cosh(\phi) & 0 & -\sinh(\phi)           & 0 \\
+        0                      & 1 & 0                      & 0 \\
+        -\sinh(\phi)           & 0 & \phantom{-}\cosh(\phi) & 0 \\
+        0                      & 0 & 0                      & 1
+    \end{pmatrix}, \qquad
+    \begin{pmatrix}
+        \phantom{-}\cosh(\phi) & 0 & 0 & -\sinh(\phi) \\
+        0                      & 1 & 0 & 0 \\
+        0                      & 0 & 1 & 0 \\
+        -\sinh(\phi)           & 0 & 0 & \phantom{-}\cosh(\phi)
+    \end{pmatrix},
+\]
+respectively.
+By similar calculations, these two boosts preserve the inner product and have determinant $1$, so are also in $\SO(3, 1)$.
 
 \end{sol}
 
