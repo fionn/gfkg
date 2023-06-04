@@ -83,8 +83,12 @@
 \DeclarePairedDelimiterX{\setbuilder}[1]{\{}{\}}
     {\newcommand*{\given}{\SetSymbol[\delimsize]}#1}
 
+\newcommand*{\GL}{\ensuremath\text{GL}}
+\newcommand*{\SL}{\ensuremath\text{SL}}
 \renewcommand*{\O}{\ensuremath\text{O}}
 \newcommand*{\SO}{\ensuremath\text{SO}}
+\newcommand*{\U}{\ensuremath\text{U}}
+\newcommand*{\SU}{\ensuremath\text{SU}}
 
 \title{Gauge Fields, Knots and Gravity Solutions}
 \author{Fionn Fitzmaurice \hspace{2em} \https{fionn.github.io/gfkg}}
@@ -4263,6 +4267,47 @@ $\det(P) = \det(T) = -1$ so $P$ and $T$ are not in $\SO(3, 1)$. But
     \det(PT) = \det(P) \det(T) = 1
 \]
 so the product $PT \in \SO(3, 1)$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that $\SL(n, \mathbb{R})$, $\SL(n, \mathbb{C})$, $\O(p, q)$, $\SO(p, q)$, $\U(n)$ and $\SU(n)$ are really matrix groups,
+that is, that they are closed under matrix multiplication, inverses, and contain the identity matrix.
+
+\end{ex}
+
+\begin{sol}
+
+Let $u$, $v$ be vectors on $\mathbb{C}^n$ with some metric $g$ and $A$, $B$ be matrices in some group $G$.
+
+\begin{itemize}
+
+    \item For $G$ one of $\O(p, q)$, $\U(n)$,
+    \begin{dsfalign}
+        \innerp*{(AB) v}{(AB) w} &= \innerp*{A (Bv)}{A (Bw)} \\
+                                 &= \innerp*{Bv}{Bw} \\
+                                 &= \innerp*{v}{w}
+    \end{dsfalign}
+    so $AB \in G$, implying $G$ is closed under multiplication.
+    The same holds for $\SO(p, q)$ and $\SU(n)$ but we additionally require $\det(AB) = 1$, which is true as $\det(AB) = \det(A) \det(B)$.
+
+    This secondary requirement also applies to $\SL(n, \mathbb{R})$ and $\SL(n, \mathbb{C})$, so both of these groups are closed as well.
+
+    \item For $G$ one of the orthogonal or unitary groups, $A \in G$ is a rotation about some axis by some angle $\theta$, say.
+    Then a matrix $A^{-1}$ rotating by $-\theta$ will satisfy $AA^{-1} = A^{-1}A = \text{id}$.
+    For $A$ unitary, $A^{-1} = A^\dagger$, the conjugate transpose, and for $A$ orthogonal this reduces to the transpose.
+
+    For $G$ any of $\SL(n, \mathbb{R})$, $\SL(n, \mathbb{C})$, $\SO(p, q)$, $\SU(n)$, $A$ is invertible since $\det(A) = 1$.
+    The inverse $A^{-1} \in G$ since $\det(A^{-1}) = {\det(A)}^{-1} = 1$.
+
+    \item The standard $n \times n$ identity matrix satisfies
+    \[
+        \innerp*{\text{id} \, u}{\text{id} \, v} = \innerp*{u}{v}, \qquad \det(\text{id}) = 1
+    \]
+    so the identity is in $\SL(n, \mathbb{R})$, $\SL(n, \mathbb{C})$, $\O(p, q)$, $\SO(p, q)$, $\U(n)$ and $\SU(n)$.
+
+\end{itemize}
 
 \end{sol}
 
