@@ -4362,4 +4362,26 @@ $G_0$ is therefore a subgroup of $G$. Smooth product and inverse operations impl
 
 \end{sol}
 
+\begin{ex}
+
+Show that every element of $\O(3)$ is either a rotation about some axis or a rotation about some axis followed by a reflection through some plane.
+Show that the former class of elements are all in the identity component of $\O(3)$, while the latter are not.
+Conclude that the identity component of $\O(3)$ is $\SO(3)$.
+
+\end{ex}
+
+\begin{sol}
+
+Let $Q \in \O(3)$. Since $QQ^T = \text{id}$, $\det(QQ^T) = 1$, so $\det{Q} = \pm 1$.
+
+Let $R \in \O(3)$ be a rotation. This is smoothly parameterised by the angle $\theta$ and when $\theta = 0$, $R = \text{id}$.
+Therefore $\det(R) = 1$ and $R$ is in the identity component.
+Therefore $R \in SO(3) \subset \O(3)$.
+
+Let $P \in \O(3)$ be a reflection, which is not orientation-preserving, so $\det(P) = -1$.
+The composition $RP \in \O(3)$ which also has $\det(RP) = -1$.
+Since reflections are not continuous transformations and since the identity cannot be of the form $RP$, this is a disconnected component of $\O(3)$.
+
+\end{sol}
+
 \end{document}
