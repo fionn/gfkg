@@ -4338,4 +4338,28 @@ Closed subgroups of Lie groups are Lie groups, so the classical groups $\SL(n, \
 
 \end{sol}
 
+\begin{ex}
+
+Given a Lie group $G$, define its \emph{identity component} $G_0$ to be the connected component containing the identity element.
+Show that the identity component of any Lie group is a subgroup, and a Lie group in its own right.
+
+\end{ex}
+
+\begin{sol}
+
+Let $g, h \in G_0$.
+
+Since $G$ is a Lie group, the product map
+\begin{align*}
+    \mu &: G_0 \times G_0 \to G, \\
+        &: (g, h) \mapsto gh
+\end{align*}
+is continuous so, since $G_0 \times G_0$ is connected, the image $\mu(G_0 \times G_0)$ is connected. $\mu(\text{id}, \text{id}) = \text{id}$, so $gh \in G_0$ and therefore $G_0$ is closed.
+
+Similarly, consider the inversion map $g \mapsto g^{-1}$ which is also by definition continuous, so its image is connected. Since $\text{id} = \text{id}^{-1}$, this connected component is the identity component.
+
+$G_0$ is therefore a subgroup of $G$. Smooth product and inverse operations imply it is a Lie group.
+
+\end{sol}
+
 \end{document}
