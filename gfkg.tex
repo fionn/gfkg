@@ -4311,4 +4311,31 @@ Let $u$, $v$ be vectors on $\mathbb{C}^n$ with some metric $g$ and $A$, $B$ be m
 
 \end{sol}
 
+\begin{ex}
+
+Show that the groups $\GL(n, \mathbb{R})$, $\GL(n, \mathbb{C})$, $\SL(n, \mathbb{R})$, $\SL(n, \mathbb{C})$, $\O(p, q)$, $\SO(p, q)$, $\U(n)$ and $\SU(n)$ are Lie groups.
+(Hint: the hardest part is to show that they are submanifolds of the space of matrices.)
+
+\end{ex}
+
+\begin{sol}
+
+Let $A$, $B$ be matrices in $\GL(n, \mathbb{C})$. The product map acts elementwise as ${(ab)}_{ij} = a_{ik} b_{kj}$,
+which is smooth since the product is a polynomial of elements of $A$ and $B$.
+Inversion by Cramer's rule,
+\[
+    A \mapsto A^{-1} = \frac{\text{adj}(A)}{\det(A)},
+\]
+is also smooth since entries of $\text{adj}(A)$ are polynomials of entries of $A$.
+
+Let $M(n, \mathbb{C})$ be the space of $n \times n$ matrices over $\mathbb{C}$.
+This is trivially a smooth $2n^2$-manifold since it is homeomorphic to $\mathbb{R}^{2n^2}$.
+The map $\det : M(n, \mathbb{C}) \to \mathbb{C}$ is smooth, so $\GL(n, \mathbb{C}) = \det^{-1}(\mathbb{C} \setminus \{0\})$ is an open subset of $M(n, \mathbb{C})$ and therefore a submanifold (via solution~\ref{sol:submanifold}), so $\GL(n, \mathbb{C})$ is a Lie group.
+
+$\GL(n, \mathbb{R})$ is a Lie group, analogously.
+
+Closed subgroups of Lie groups are Lie groups, so the classical groups $\SL(n, \mathbb{C})$, $\SL(n, \mathbb{R})$, $\O(p, q)$, $\SO(p, q)$, $\U(n)$ and $\SU(n)$ are Lie groups.
+
+\end{sol}
+
 \end{document}
