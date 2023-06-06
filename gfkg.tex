@@ -6,6 +6,7 @@
 \usepackage{interval}
 \usepackage{faktor}
 \usepackage{mleftright}
+\usepackage{tikz-cd}
 \usepackage[tracking=true, kerning=true]{microtype}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -56,6 +57,10 @@
 \mathtoolsset{%
     showonlyrefs,
     showmanualtags
+}
+
+\tikzcdset{
+    arrow style=Latin Modern
 }
 
 \mleftright{}
@@ -4164,7 +4169,7 @@ as well as the Lorentz transformations mixing up $t$ and $y$, or $t$ and $z$ coo
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:so31lorentztransformations}
 
 Let $\Lambda$ be the Lorentz transformation with rapidity $\phi$ mixing up $t$ and $x$ given above.
 Then for some vector $v = v^\mu \partial_\mu$ on $\mathbb{R}^4$, the components of $\Lambda v$ transform as
@@ -4381,6 +4386,72 @@ Therefore $R \in SO(3) \subset \O(3)$.
 Let $P \in \O(3)$ be a reflection, which is not orientation-preserving, so $\det(P) = -1$.
 The composition $RP \in \O(3)$ which also has $\det(RP) = -1$.
 Since reflections are not continuous transformations and since the identity cannot be of the form $RP$, this is a disconnected component of $\O(3)$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that there is no path from the identity to the element $PT$ in $\SO(3, 1)$.
+Show that $\SO(3, 1)$ has two connected components.
+The identity component is written $\SO_0(3, 1)$;
+we warn the reader that sometimes this group is called the Lorentz group.
+We prefer to call it the \emph{connected Lorentz group}.
+
+\end{ex}
+
+\begin{sol}
+
+From solution~\ref{sol:so31lorentztransformations},
+\[
+    \eta_{\mu\nu} {\Lambda^\mu}_\rho {\Lambda^\nu}_\sigma v^\rho w^\sigma
+        = \eta_{\mu\nu} v^\mu w^\nu
+        = \eta_{\rho \sigma} v^\rho w^\sigma,
+\]
+so the general Lorentz group $\O(3, 1)$ is characterised by
+\[
+    \eta_{\mu\nu} {\Lambda^\mu}_\rho {\Lambda^\nu}_\sigma = \eta_{\rho\sigma}.
+\]
+Looking only at the time component,
+\[
+    \eta_{\mu\nu} {\Lambda^\mu}_0 {\Lambda^\nu}_0
+        = -{\Lambda^0}_0 {\Lambda^0}_0 + {\Lambda^i}_0 {\Lambda^i}_0
+\]
+and, equating with $\eta_{00} = -1$,
+\[
+    {({\Lambda^0}_0)}^2 = 1 + {({\Lambda^i}_0)}^2 \geq 1,
+\]
+implying either ${\Lambda^0}_0 \geq 1$ or ${\Lambda^0}_0 \leq 1$.
+Therefore there is no smooth path between transformations with ${\Lambda^0}_0$ of different sign, so they must lie in disjoint connected components.
+
+Transformations with ${\Lambda^0}_0 \geq 1$ preserve the direction of time.
+Since $\delta_0^0 = 1$ (the identity preserves the direction of time), the group of proper orthochronous Lorentz transformations is the identity component, $\SO_0(3, 1)$.
+
+The Klein four-group $V_4 = \{\text{id}, P, T, PT\}$ is a discrete subgroup of $\O(3, 1)$. The transformation $PT \in \SO(3, 1)$ has ${(PT)}^0_0 = -1$, so $PT$ is not path-connected to the identity component.
+We therefore have four disjoint connected components of the Lorentz group,
+\begin{align*}
+    \SO_0(3, 1) &= \setbuilder*{\Lambda \in \O(3, 1) \given \det(\Lambda) = 1, {\Lambda^0}_0 \geq 1}, \\
+    \SO(3, 1) \setminus \SO_0(3, 1)
+        &= \setbuilder*{\Lambda \in \O(3, 1)  \given {\det(\Lambda) = 1, \Lambda^0}_0 \leq 1}, \\
+    \O_0(3, 1) \setminus \SO_0(3, 1)
+        &= \setbuilder*{\Lambda \in \O(3, 1)  \given {\det(\Lambda) = -1, \Lambda^0}_0 \geq 1}, \\
+    \O(3, 1) \setminus \bigl( \O_0(3, 1) \cup \SO(3, 1) \bigr)
+        &= \setbuilder*{\Lambda \in \O(3, 1)  \given {\det(\Lambda) = -1, \Lambda^0}_0 \leq 1},
+\end{align*}
+the proper orthochronous, proper non-orthochronous, improper orthochronous and improper non-orthochronous transformations, respectively.
+These are related by elements of $V_4$.
+\[
+    \begin{tikzcd}[row sep=7ex, column sep={8.8em, between origins},
+                   every arrow/.append style=leftrightarrow]
+        & \SO_0(3, 1) \dlar[bend right=30, swap]{T}
+                      \drar[bend left=30]{P} & \\
+        \O(3, 1) \setminus \bigl( \O_0(3, 1) \cup \SO(3, 1) \bigr)
+                \drar[bend right=30, swap]{P}
+                \ar{rr}
+            & & \O_0(3, 1) \setminus \SO_0(3, 1)
+                \dlar[bend left=30]{T} \\
+        & \SO(3, 1) \setminus \SO_0(3, 1) \ar[crossing over, bend right=8, labels=description]{uu}{PT} &
+    \end{tikzcd}
+\]
 
 \end{sol}
 
