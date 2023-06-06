@@ -352,7 +352,7 @@ Given topological spaces $X$ and $Y$, we give $X \times Y$ the \emph{product top
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:producttopology}
 
 For every point $(u, v) \in M \times N$, there exists a set $U \times V$ where $U$ is open in $M$ and $V$ is open in $N$ such that $u \in U$, $v \in V$.
 Therefore $U \times V$ is an open set under the product topology and $M \times N$ is a topological space.
@@ -4548,6 +4548,47 @@ Since every element of $\SO(2)$ (represented as matrices) is of the form $\rho(e
 Since $\rho$ takes every element of $U(1)$ to a distinct element of $\SU(2)$, $\rho$ is injective.
 
 Thus $\rho$ is a homomorphic bijection and therefore $\U(1) \cong \SO(2)$.
+
+\end{sol}
+
+\begin{ex}
+
+Given groups $G$ and $H$, let $G \times H$ denote the set of ordered pairs $(g, h)$ with $g \in G$, $h \in H$.
+Show that $G \times H$ becomes a group with product
+\[
+    (g, h) (g', h') = (gg', hh'),
+\]
+identity element
+\[
+    1 = (1, 1)
+\]
+and inverse
+\[
+    {(g, h)}^{-1} = (g^{-1}, h^{-1}).
+\]
+The group $G \times H$ is called the \emph{direct product} or \emph{direct sum} of $G$ and $H$, depending on who you talk to.
+(When called the direct sum, it is written $G \oplus H$.)
+Show that if $G$ and $H$ are Lie groups, so is $G \times H$.
+Show that $G \times H$ is abelian if and only if $G$ and $H$ are abelian.
+
+\end{ex}
+
+\begin{sol}
+
+$G \times H$ is obviously a group.
+
+Let $G$, $H$ be Lie groups.
+Then $G \times H$ is a Lie group since it is a manifold with the product topology as per solution~\ref{sol:producttopology}.
+
+Let $G$, $H$ be abelian. Then $G \times H$ is abelian since
+\[
+    (g, h) (g', h') = (gg', hh') = (g'g, h'h) = (g', h')(g, h).
+\]
+Suppose $G$ is not abelian. Then
+\[
+    (g, 1) (g', h') = (gg', h') \neq (g'g, h') = (g' h')(g, 1)
+\]
+and equivalently if $H$ is not abelian, so $G \times H$ is abelian if and only if $G$ and $H$ are abelian.
 
 \end{sol}
 
