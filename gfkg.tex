@@ -4592,4 +4592,32 @@ and equivalently if $H$ is not abelian, so $G \times H$ is abelian if and only i
 
 \end{sol}
 
+\begin{ex}
+
+Show that [the] direct sum of representations is really a representation.
+
+\end{ex}
+
+\begin{sol}
+
+A representation of $G$ on $V$ is a homomorphism $\rho: G \to \GL(V)$.
+
+Let $G$ be a group and let $\rho$ be a representation of $G$ on $V$ and $\rho'$ be a representation of $G$ on $V'$.
+Let $\rho \oplus \rho'$, the \emph{direct sum} of the representations $\rho$ and $\rho'$, be the representation of $G$ on the direct sum $V \oplus V'$ given by
+\[
+    (\rho \oplus \rho')(g)(v, v') = \bigl( \rho(g) v, \rho'(g) v' \bigr)
+\]
+for all $v \in V$, $v' \in V'$.
+
+Let $g, h \in G$. Then
+\begin{align*}
+    (\rho \oplus \rho')(gh) &= \bigl( \rho(gh), \rho'(gh) \bigr) \\
+        &= \bigl( \rho(g) \rho(h), \rho'(g) \rho'(h) \bigr) \\
+        &= \bigl( \rho(g), \rho'(g) \bigr) \bigl( \rho(h), \rho'(h) \bigr) \\
+        &= (\rho \oplus \rho')(g) \cdot (\rho \oplus \rho')(h)
+\end{align*}
+so $\rho \oplus \rho': G \to \GL(V \oplus V')$ is a homomorphism and therefore $\rho \oplus \rho'$ is really a representation of $G$ on $V \oplus V'$.
+
+\end{sol}
+
 \end{document}
