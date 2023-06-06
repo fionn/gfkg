@@ -4458,4 +4458,36 @@ These are related by elements of $V_4$.
 
 \end{sol}
 
+\begin{ex}
+
+Show that if $\rho: G \to H$ is a homomorphism of groups, then
+\[
+    \rho(1) = 1
+\]
+and
+\[
+    \rho(g^{-1}) = {\rho(g)}^{-1}.
+\]
+(Hint: first prove that a group only has one element with the properties of the identity element, and for each group element $g$ there is only one element with the properties of $g^{-1}$.)
+
+\end{ex}
+
+\begin{sol}
+
+Let $e, f$ be identity elements of $G$. Then $e = ef = f$, so the identity is unique.
+
+Let $fg = gf = hg = gh = 1$. Then $fgf = f = fgh = h$ so the inverse is unique.
+
+Given two groups $G$ and $H$, we say a function $\rho: G \to H$ is a \emph{homomorphism} if $\rho(gh) = \rho(g) \rho(h)$.
+\[
+    \rho(g) = \rho(\text{id}_G g) = \rho(\text{id}_G) \rho(g)
+\]
+so $\rho(\text{id}_G) = \text{id}_H$.
+\[
+    \text{id}_H = \rho(\text{id}_G) = \rho(g^{-1} g) = \rho(g^{-1}) \rho(g)
+\]
+so $\rho(g^{-1}) = {\rho(g)}^{-1}$.
+
+\end{sol}
+
 \end{document}
