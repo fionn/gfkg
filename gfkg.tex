@@ -4490,4 +4490,65 @@ so $\rho(g^{-1}) = {\rho(g)}^{-1}$.
 
 \end{sol}
 
+\begin{ex}
+
+A $1 \times 1$ matrix is just a number, so show that
+\[
+    \U(1) = \setbuilder{e^{i\theta} \given \theta \in \mathbb{R}}.
+\]
+In physics, an element of $\U(1)$ is called a \emph{phase}.
+Show that $\U(1)$ is isomorphic to $\SO(2)$, with an isomorphism being given by\footnote{The direction is conventional, but we use positive rotations here to make the isomorphism more direct.}
+\[
+    \rho(e^{i\theta}) =
+        \begin{pmatrix*}[r]
+            \cos(\theta) & -\sin(\theta) \\
+            \sin(\theta) & \cos(\theta)
+        \end{pmatrix*}.
+\]
+(Hint: rotations of the 2-dimensional real vector space $\mathbb{R}^2$ are the same as rotations of the complex plane $\mathbb{C}$.)
+
+\end{ex}
+
+\begin{sol}
+
+$\rho: \U(1) \to \SO(2)$ is a homomorphism by
+\begin{align*}
+    \rho(e^{i\theta_1}) \rho(e^{i\theta_2})
+        &=
+        \begin{pmatrix*}[r]
+            \cos(\theta_1) & -\sin(\theta_1) \\
+            \sin(\theta_1) & \cos(\theta_1)
+        \end{pmatrix*}
+        \begin{pmatrix*}[r]
+            \cos(\theta_2) & -\sin(\theta_2) \\
+            \sin(\theta_2) & \cos(\theta_2)
+        \end{pmatrix*} \\
+        &=
+        \begin{pmatrix*}[r]
+            \cos(\theta_1 + \theta_2) & -\sin(\theta_1 + \theta_2) \\
+            \sin(\theta_1 + \theta_2) & \cos(\theta_1 + \theta_2)
+        \end{pmatrix*} \\
+        &= \rho(e^{i(\theta_1 + \theta_2)}) \\
+        &= \rho(e^{i\theta_1}e^{i\theta_2}).
+\end{align*}
+For some $z \in \mathbb{C}$ with $z = x + iy$, we have
+\[
+    e^{i\theta} z = x \cos(\theta) - y \sin(\theta) + i \bigl( x \sin(\theta) + y \cos(\theta) \bigr)
+\]
+and for some vector $v \in \text{Vect}(\mathbb{R}^2)$ with components $(x, y)$,
+\[
+    \rho(e^{i\theta}) \begin{pmatrix} x \\ y \end{pmatrix}
+        = \begin{pmatrix*}[r]
+            x \cos(\theta) - y \sin(\theta) \\
+            x \sin(\theta) + y \cos(\theta)
+        \end{pmatrix*}.
+\]
+We can equate the real and imaginary components of $e^{i\theta} z$ with the $x$ and $y$ components of $\rho(e^{i\theta}) v$.
+Since every element of $\SO(2)$ (represented as matrices) is of the form $\rho(e^{i\theta})$, $\rho$ is surjective.
+Since $\rho$ takes every element of $U(1)$ to a distinct element of $\SU(2)$, $\rho$ is injective.
+
+Thus $\rho$ is a homomorphic bijection and therefore $\U(1) \cong \SO(2)$.
+
+\end{sol}
+
 \end{document}
