@@ -4620,4 +4620,37 @@ so $\rho \oplus \rho': G \to \GL(V \oplus V')$ is a homomorphism and therefore $
 
 \end{sol}
 
+\begin{ex}
+
+Prove that the above is true.
+
+\end{ex}
+
+\begin{sol}
+
+Let $V$, $V'$ be vector spaces with bases $\{e_i\}$, $\{e'_j\}$, respectively.
+The \emph{tensor product} $V \otimes V'$ is the vector space whose basis is given by $\{e_i \otimes e'_j\}$.
+Given $v = v^i e_i \in V$ and $v\ = v'^j e'_j \in V'$, we define the tensor product
+\[
+    v \otimes v' = v^i v'^j e_i \otimes e'_j.
+\]
+The \emph{universal property}: given any bilinear function $f: V \times V' \to W$ for some other vector space $W$, there is a unique linear function $F: V \otimes V' \to W$ such that $f(v, v') = F(v \otimes v')$.
+\[
+    \begin{tikzcd}[column sep=small]
+        V \times V' \rar{} \drar[swap]{f} & V \otimes V' \dar{F} \\
+                                          & W
+    \end{tikzcd}
+\]
+$f$ is bilinear, so
+\[
+    f(v, v') = f(v^i e_i, v'^j e'_j) = v^i v'^j f(e_i, e'_j).
+\]
+Setting $f(v, v') = F(v \otimes v')$,
+\[
+    F(v \otimes v') = v^i v'^j f(e_i, e'_j) = v^i v'^j F( e_i \otimes e'_j)
+\]
+so $F$ is linear and unique, satisfying our universal property.
+
+\end{sol}
+
 \end{document}
