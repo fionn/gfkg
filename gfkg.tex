@@ -4839,4 +4839,49 @@ so the matrix is traceless if and only if $c_0 = 0$.
 
 \end{sol}
 
+\begin{ex}
+
+For $i = 1, 2, 3$, show that
+\[
+    \sigma_i^2 = 1
+\]
+and show that if $(i, j, k)$ is a cyclic permutation of $(1, 2, 3)$ then
+\[
+    \sigma_i \sigma_j = -\sigma_j \sigma_i = \sqrt{-1} \sigma_k.
+\]
+\end{ex}
+
+\begin{sol}
+
+The result $\sigma_i^2 = 1$ follows from direct computation.
+
+Taking cyclic products $\sigma_i \sigma_j$, we get
+\[
+    \sigma_1 \sigma_2
+    =
+    \begin{pmatrix}
+        0 & 1 \\
+        1 & 0
+    \end{pmatrix}
+    \begin{pmatrix*}[r]
+        0 & -i \\
+        i &  0
+    \end{pmatrix*}
+    =
+    \begin{pmatrix*}[r]
+        i &  0 \\
+        0 & -i
+    \end{pmatrix*}
+    = i\sigma_3
+\]
+and, similarly, $\sigma_2 \sigma_3 = i\sigma_1$ and $\sigma_3 \sigma_1 = i \sigma_2$, so
+\[
+    \sigma_i \sigma_j = i\sigma_k, \qquad
+    \sigma_j \underbrace{\sigma_k \sigma_k}_{\sigma_0} \sigma_i
+        = i \sigma_i \cdot i \sigma_j \\
+        = -\sigma_i \sigma_j.
+\]
+
+\end{sol}
+
 \end{document}
