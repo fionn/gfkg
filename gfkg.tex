@@ -4592,7 +4592,7 @@ and equivalently if $H$ is not abelian, so $G \times H$ is abelian if and only i
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:directsumrepresentation}
 
 Show that [the] direct sum of representations is really a representation.
 
@@ -4650,6 +4650,33 @@ Setting $f(v, v') = F(v \otimes v')$,
     F(v \otimes v') = v^i v'^j f(e_i, e'_j) = v^i v'^j F( e_i \otimes e'_j)
 \]
 so $F$ is linear and unique, satisfying our universal property.
+
+\end{sol}
+
+\begin{ex}
+
+Show that this is well-defined and indeed a representation.
+
+\end{ex}
+
+\begin{sol}
+
+Suppose that $\rho$ is a representation of $G$ on $V$ and $\rho'$ is a representation of $G$ on $V'$.
+Then the \emph{tensor product} $\rho \otimes \rho'$ of the representations $\rho$ and $\rho'$ is the representation of $G$ on $V \otimes V'$ given by
+\[
+    (\rho \otimes \rho')(g)(v \otimes v') = \rho(g) v \otimes \rho'(g) v'.
+\]
+This is well-defined since it follows that
+\[
+    \rho(g)v \otimes \rho'(g)v' = v^i v'^j \rho(g)e_i \otimes \rho'(g)e'_j.
+\]
+Let $g, h \in G$. Then, similarly to exercise~\ref{ex:directsumrepresentation},
+\begin{align*}
+    (\rho \otimes \rho')(gh) &= \rho(gh) \otimes \rho'(gh) \\
+        &= \bigl( \rho(g) \rho(h) \bigr) \otimes \bigl( \rho'(g) \rho'(h) \bigr) \\
+        &= (\rho \otimes \rho')(g) \cdot (\rho \otimes \rho')(h)
+\end{align*}
+so $\rho \otimes \rho': G \to \GL(V \otimes V')$ is a homomorphism and therefore a representation of $G$ on $V \otimes V'$.
 
 \end{sol}
 
