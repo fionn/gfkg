@@ -4763,4 +4763,80 @@ so $\rho_n \otimes \rho_m$ is equivalent to $\rho_{n + m}$.
 
 \end{sol}
 
+\begin{ex}
+
+Show that any $2 \times 2$ matrix may be uniquely expressed as a linear combination of Pauli matrices $\sigma_0, \ldots, \sigma_3$ with complex coefficients, and that the matrix is hermitian if and only if these coefficients are real.
+Show that the matrix is \emph{traceless} if and only if the coefficient of $\sigma_0$ vanishes.
+
+\end{ex}
+
+\begin{sol}
+
+The Pauli matrices are
+\[
+    \sigma_0 = \begin{pmatrix}
+            1 & 0 \\
+            0 & 1
+        \end{pmatrix}, \qquad
+    \sigma_1 = \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{pmatrix}, \qquad
+    \sigma_2 = \begin{pmatrix*}[r]
+            0 & -i \\
+            i &  0
+        \end{pmatrix*}, \qquad
+    \sigma_3 = \begin{pmatrix*}[r]
+            1 &  0 \\
+            0 & -1
+        \end{pmatrix*}.
+\]
+A linear combination of Pauli matrices with complex coefficients $c_\mu$ looks like
+\[
+    \sum c_\mu \sigma_\mu =
+        \begin{pmatrix*}[l]
+            c_0 + c_3  & c_1 - ic_2 \\
+            c_1 + ic_2 & c_0 - c_3
+        \end{pmatrix*}
+    = \begin{pmatrix}
+        z_{11} & z_{12} \\
+        z_{21} & z_{22}
+    \end{pmatrix},
+\]
+which relates
+\[
+    c_0 = \frac{z_{11} + z_{22}}{2}, \quad
+    c_1 = \frac{z_{12} + z_{21}}{2}, \quad
+    c_2 = \frac{z_{21} - z_{12}}{2i}, \quad
+    c_3 = \frac{z_{11} - z_{22}}{2}.
+\]
+If each $z_{ij} = 0$, each $c_\mu = 0$, so the Pauli matrices are linearly independent.
+From above it is clear that they span $M(2, \mathbb{C})$ but, more directly, $\dim \bigl( M(2, \mathbb{C}) \bigr) = 4$ so linear independence implies they form a basis.
+
+A matrix is hermitian if it is its own conjugate transpose, so here we would have
+\[
+        \begin{pmatrix*}[l]
+            c_0 + c_3  & c_1 - ic_2 \\
+            c_1 + ic_2 & c_0 - c_3
+        \end{pmatrix*}
+        =
+        \begin{pmatrix*}[l]
+            c_0^* + c_3^*  & c_1^* - ic_2^* \\
+            c_1^* + ic_2^* & c_0^* - c_3^*
+        \end{pmatrix*}
+\]
+which implies $c_\mu \in \mathbb{R}$.
+
+Taking the trace,
+\[
+    \text{tr} \begin{pmatrix*}[l]
+                c_0 + c_3  & c_1 - ic_2 \\
+                c_1 + ic_2 & c_0 - c_3
+              \end{pmatrix*}
+        = 2 c_0
+\]
+so the matrix is traceless if and only if $c_0 = 0$.
+
+\end{sol}
+
 \end{document}
