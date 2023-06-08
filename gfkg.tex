@@ -4702,4 +4702,28 @@ By symmetry, $\rho'$ with invariant subspace $\{0\} \oplus V'$ is also a subrepr
 
 \end{sol}
 
+\begin{ex}
+
+Check that this is indeed a representation.
+
+\end{ex}
+
+\begin{sol}
+
+For any $n \in \mathbb{Z}$, $\U(1)$ has a representation $\rho_n$ on $\mathbb{C}$ given by
+\[
+    \rho_n(e^{i\theta}) v = e^{in\theta} v.
+\]
+To see that this is a representation, we need to show that $\rho_n: \mathbb{C} \to \GL(\mathbb{C})$ is a homomorphism for all $n$.
+For $\theta_1, \theta_2 \in \mathbb{R}$,
+\begin{align*}
+    \rho_n(e^{i\theta_1} \cdot e^{i\theta_2}) &= \rho_n(e^{i(\theta_1 + \theta_2)}) \\
+        &= e^{in(\theta_1 + \theta_2)} \\
+        &= e^{in\theta_1} \cdot e^{in\theta_2} \\
+        &= \rho_n(e^{i\theta_1}) \rho_n(e^{i\theta_2})
+\end{align*}
+so $\rho_n$ is a group homomorphism. Since $\rho_n(g)$ is an invertible linear transformation on $\mathbb{C}$ for all $g \in \U(1)$, $\rho_n$ is a representation of $\U(1)$ on $\mathbb{C}$.
+
+\end{sol}
+
 \end{document}
