@@ -4680,4 +4680,26 @@ so $\rho \otimes \rho': G \to \GL(V \otimes V')$ is a homomorphism and therefore
 
 \end{sol}
 
+\begin{ex}
+
+Given two representations $\rho$ and $\rho'$ of $G$, show that $\rho$ and $\rho'$ are both subrepresentations of $\rho \oplus \rho'$.
+
+\end{ex}
+
+\begin{sol}
+
+Suppose $\rho$ is a representation of $G$ on $V$ and suppose that $V'$ is an \emph{invariant} subspace of $V$, i.e.\ if $v \in V'$ then $\rho(g)v \in V'$ for all $g \in G$.
+A \emph{subrepresentation} of $\rho$ is a representation $\rho'$ of $G$ on $V'$ satisfying $\rho'(g)v = \rho(g)v$ for all $v \in V'$.
+
+Consider the invariant subspace $V \oplus \{0\} \subseteq V \oplus V'$.
+\begin{align*}
+    \rho(g) (v, 0) &= \left( \rho(g)v, 0 \right) \\
+                   &= \left( \rho(g)v, \rho'(g) 0 \right) \\
+                   &= (\rho \oplus \rho')(g) (v, 0)
+\end{align*}
+so $\rho$ is a subrepresentation of $\rho \oplus \rho'$.
+By symmetry, $\rho'$ with invariant subspace $\{0\} \oplus V'$ is also a subrepresentation.
+
+\end{sol}
+
 \end{document}
