@@ -4743,4 +4743,24 @@ This is not of the form $\rho_n$ for $\alpha \not\in \mathbb{Z}$, but is equival
 
 \end{sol}
 
+\begin{ex}
+
+Show that the tensor product of the representations $\rho_n$ and $\rho_m$ is equivalent to the representation $\rho_{n + m}$.
+
+\end{ex}
+
+\begin{sol}
+
+By bilinearity,
+\begin{align*}
+    (\rho_n \otimes \rho_m) (e^{i\theta}) (v \otimes v') &= \rho_n(e^{i\theta}) v \otimes \rho_m(e^{i\theta}) v' \\
+        &= e^{in\theta} v \otimes e^{im\theta} v' \\
+        &= e^{in\theta} e^{im\theta} (v \otimes v') \\
+        &= e^{i(n + m)\theta} (v \otimes v') \\
+        &= \rho_{n + m}(e^{i\theta}) (v \otimes v'),
+\end{align*}
+so $\rho_n \otimes \rho_m$ is equivalent to $\rho_{n + m}$.
+
+\end{sol}
+
 \end{document}
