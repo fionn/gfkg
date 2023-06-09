@@ -4884,4 +4884,72 @@ and, similarly, $\sigma_2 \sigma_3 = i\sigma_1$ and $\sigma_3 \sigma_1 = i \sigm
 
 \end{sol}
 
+\begin{ex}
+
+Show that the determinant of the $2 \times 2$ matrix $a + bI + cJ + dK$ is $a^2  + b^2 + c^2 + d^2$.
+Show that if $a, b, c, d$ are real and $a^2 + b^2 + c^2 + d^2 = 1$, this matrix is unitary.
+Conclude that $\SU(2)$ is the unit sphere in $\mathbb{H}$.
+
+\end{ex}
+
+\begin{sol}
+
+We have quaternions
+\[
+    I = -i\sigma_1, \qquad
+    J = -i\sigma_2, \qquad
+    K = -i\sigma_3.
+\]
+The matrix $U = a + bI + cJ + dK$ is
+\begin{align*}
+    U &= a \sigma_0 - ib\sigma_1 -ic \sigma_2 -id \sigma_3 \\
+    &= \begin{pmatrix}
+        a & 0 \\
+        0 & a
+    \end{pmatrix}
+    -
+    \begin{pmatrix}
+        0 & ib \\
+        ib & 0
+    \end{pmatrix}
+    -
+    \begin{pmatrix}
+        \,\, 0 & c \\
+        -c &  0
+    \end{pmatrix}
+    -
+    \begin{pmatrix}
+        id & \,\, 0 \\
+        0 & -id
+    \end{pmatrix} \\
+    &=
+    \begin{pmatrix*}[r]
+        a - id  & -ib - c \\
+        -ib + c & a + id
+    \end{pmatrix*},
+\end{align*}
+so
+\[
+    \det(U) = a^2 + b^2 + c^2 + d^2.
+\]
+Imposing $\det(U) = 1$, we get the inverse and conjugate transpose
+\[
+    U^{-1} =
+        \begin{pmatrix}
+            a + id & ib + c \\
+            ib - c & a - id
+        \end{pmatrix}, \qquad
+    U^\dagger =
+        \begin{pmatrix}
+            a^* + id^* & ib^* + c^* \\
+            ib^* -c^* & a^* - id^*
+        \end{pmatrix}
+\]
+so if $a, b, c, d \in \mathbb{R}$, $U^{-1} = U^\dagger$ is unitary.
+Since we required that $\det(U) = 1$, $U \in \SU(2)$.
+
+$\det(U) = 1$ describes $S^3$, so $\SU(2)$ is the unit 3-sphere in $\mathbb{H}$ since each point as a quaternion lies on $S^3$.
+
+\end{sol}
+
 \end{document}
