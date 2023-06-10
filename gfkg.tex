@@ -4952,4 +4952,31 @@ $\det(U) = 1$ describes $S^3$, so $\SU(2)$ is the unit 3-sphere in $\mathbb{H}$ 
 
 \end{sol}
 
+\begin{ex}
+
+Show that the spin-0 representation of $\SU(2)$ is equivalent to the \emph{trivial} representation in which every element of the group acts on $\mathbb{C}$ as the identity.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\mathcal{H}_j$ be the space of homogeneous polynomials of degree $2j$ on $\mathbb{C}^2$.
+For a vector $(x, y) \in \mathbb{C}^2$, $\mathcal{H}_j$ has the monomial basis $\{x^p y^q\}$ with $p + q = 2j$.
+
+For any $g \in \SU(2)$, let $U_j(g)$ be the linear transformation of $\mathcal{H}_j$ given by
+\[
+    \bigl(U_j(g) f\bigr) v = f(g^{-1} v)
+\]
+for all $f \in \mathcal{H}_j$, $v \in \mathbb{C}^2$.
+
+$\dim(\mathcal{H}_j) = 2j + 1$, so the spin-0 representation is 1-dimensional.
+The basis for $\mathcal{H}_0$ is $\{1\}$, so any $f \in \mathcal{H}_0$ is of the form $f(x, y) = f_0$ where $f_0$ is constant.
+\begin{align*}
+    \bigl( U_0(g) f \bigr) v &= f(g^{-1} v) \\
+                             &= f_0
+\end{align*}
+so $U_0(g) f = f$, implying $U_0(g)$ is the identity for all $g \in \SU(2)$.
+
+\end{sol}
+
 \end{document}
