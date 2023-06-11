@@ -4979,4 +4979,31 @@ so $U_0(g) f = f$, implying $U_0(g)$ is the identity for all $g \in \SU(2)$.
 
 \end{sol}
 
+\begin{ex}
+
+Show that the spin-$\frac{1}{2}$ representation of $\SU(2)$ is equivalent [to] the fundamental representation, in which every element $g \in \SU(2)$ acts on $\mathbb{C}^2$ by matrix multiplication.
+
+\end{ex}
+
+\begin{sol}
+
+The basis for $\mathcal{H}_\frac{1}{2}$ is $\{x, y\}$, so
+\[
+    f(x, y) = f_1 x + f_2 y =
+    \begin{pmatrix}
+        f_1 & f_2
+    \end{pmatrix}
+    \begin{pmatrix}
+        x \\ y
+    \end{pmatrix}
+\]
+Denote $f = \begin{psmallmatrix} f_1 \\ f_2 \end{psmallmatrix}$, so $f(x, y) \equiv \innerp{f}{v}$.
+Then, since $g^{-1} = g^\dagger$,
+\begin{align*}
+    \bigl( U_\frac{1}{2}(g) f \bigr) v &= \innerp{f}{g^\dagger v} \\
+                                       &= \innerp{gf}{v}.
+\end{align*}
+
+\end{sol}
+
 \end{document}
