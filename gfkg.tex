@@ -5006,4 +5006,40 @@ Then, since $g^{-1} = g^\dagger$,
 
 \end{sol}
 
+\begin{ex}
+
+Show that for any representation $\rho$ of a group $G$ on a vector space $V$ there is a \emph{dual} or \emph{contragredient} representation $\rho^*$ of $G$ on $V^*$, given by
+\[
+    \bigl( \rho^*(g) f \bigr) (v) = f \bigl( \rho(g^{-1}) v \bigr)
+\]
+for all $v \in V$, $f \in V^*$.
+Show that all the representations $U_j$ of $\SU(2)$ are equivalent to their duals.
+
+\end{ex}
+
+\begin{sol}
+
+$\rho^*$ is a homomorphism since
+\[
+    \bigl( \rho^*(\text{id}) f \bigr) v = f \bigl(\rho(\text{id}) v \bigr) = f(v),
+\]
+i.e.\ $\rho^*$ preserves the identity, and
+\begin{align*}
+    \bigl( \rho^*(gh) f \bigr) (v) &= f \bigl( \rho(h^{-1} g^{-1}) v \bigr) \\
+        &= f \bigl( \rho(h^{-1}) \rho(g^{-1}) v \bigr) \\
+        &= \bigl( \rho^*(h) f \bigr) \rho(g^{-1}) v \\
+        &= \bigl( \rho^*(g) \rho^*(h) f \bigr) v
+\end{align*}
+so $\rho^*(gh) = \rho^*(g) \rho^*(h)$ and $\rho^*$ is a representation of $G$ on $\GL(V^*)$.
+
+For $U_j$ a representation of $\SU(2)$,
+\begin{align*}
+    \bigl( U_j^*(g) f \bigr) (v) &= f \bigl( U_j(g^{-1}) v \bigr) \\
+                                 &= f \bigl( (U_j(g^{-1}) \text{id}) v \bigr) \\
+                                 &= f \bigl( g v \bigr)
+\end{align*}
+so representations of $\SU(2)$ are equivalent to their duals (isomorphic via the adjoint).
+
+\end{sol}
+
 \end{document}
