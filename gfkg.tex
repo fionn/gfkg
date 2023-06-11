@@ -5042,4 +5042,94 @@ so representations of $\SU(2)$ are equivalent to their duals (isomorphic via the
 
 \end{sol}
 
+\begin{ex}
+
+Show that if $S$ is a $2 \times 2$ matrix commuting with all $2 \times 2$ traceless hermitian matrices, $S$ is a scalar multiple of the identity matrix.
+(One approach is to suppose $S$ commutes with the Pauli matrices $\sigma_1, \sigma_2, \sigma_3$ and derive equations its matrix entries must satisfy.)
+% Erratum: the Pauli matrices are listed as \sigma_1, \sigma_2, \sigma_2 in the book.
+
+\end{ex}
+
+\begin{sol}
+
+Let
+\[
+    S = \begin{pmatrix}
+            s_{11} & s_{12} \\
+            s_{21} & s_{22}
+        \end{pmatrix}
+\]
+commute with the Pauli matrices.
+\begin{gather*}
+    S \sigma_1 =
+        \begin{pmatrix}
+            s_{11} & s_{12} \\
+            s_{21} & s_{22}
+        \end{pmatrix}
+        \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            s_{12} & s_{11} \\
+            s_{22} & s_{21}
+        \end{pmatrix}, \\
+    \sigma_1 S =
+        \begin{pmatrix}
+            0 & 1 \\
+            1 & 0
+        \end{pmatrix}
+        \begin{pmatrix}
+            s_{11} & s_{12} \\
+            s_{21} & s_{22}
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            s_{21} & s_{22} \\
+            s_{11} & s_{12}
+        \end{pmatrix},
+\end{gather*}
+so $s_{11} = s_{22}$ and $s_{12} = s_{21}$.
+\begin{gather*}
+    S \sigma_3 =
+        \begin{pmatrix}
+            s_{11} & s_{12} \\
+            s_{12} & s_{11}
+        \end{pmatrix}
+        \begin{pmatrix*}[r]
+            1 &  0 \\
+            0 & -1
+        \end{pmatrix*}
+        =
+        \begin{pmatrix}
+            s_{11} & -s_{12} \\
+            s_{12} & -s_{11}
+        \end{pmatrix}, \\
+    \sigma_3 S =
+        \begin{pmatrix*}[r]
+            1 &  0 \\
+            0 & -1
+        \end{pmatrix*}
+        \begin{pmatrix}
+            s_{11} & s_{12} \\
+            s_{12} & s_{11}
+        \end{pmatrix}
+        =
+        \begin{pmatrix*}[r]
+            s_{11}  & s_{12} \\
+            -s_{12} & -s_{11}
+        \end{pmatrix*},
+\end{gather*}
+so $s_{12} = -s_{12} = 0$. This gives us
+\[
+    S = \begin{pmatrix}
+            s_{11} & 0 \\
+            0      & s_{11}
+        \end{pmatrix}
+        = s_{11} \cdot \text{id}.
+\]
+
+\end{sol}
+
 \end{document}
