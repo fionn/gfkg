@@ -5132,4 +5132,48 @@ so $s_{12} = -s_{12} = 0$. This gives us
 
 \end{sol}
 
+\begin{ex}
+
+Using the fact that $\GL(3, \mathbb{R})$ is a subgroup of $\GL(3, \mathbb{C})$, we can think of $\rho$ as a homomorphism from $\SU(2)$ to $\GL(3, \mathbb{C})$, or in other words, a representation of $\SU(2)$ on $\mathbb{C}^3$.
+Show that this is equivalent to the spin-1 representation of $\SU(2)$.
+
+\end{ex}
+
+\begin{sol}
+
+With $T = T^i\sigma_i$, we can identify the space of $2 \times 2$ hermitian matrices with $\mathbb{R}^3 \subset \mathbb{C}^3$.
+The homomorphism $\rho: \SU(2) \to \GL(3, \mathbb{C})$ is given by
+\[
+    \rho(g) T = g T g^{-1}
+\]
+and is a representation of $\SU(2)$ on $\mathbb{C}^3$.
+
+In the spin-1 representation, we have polynomials of the form
+\begin{align*}
+    f(x, y) &= f_{11} x^2 + (f_{12} + f_{21}) xy + f_{22} y^2 \\
+            &= \begin{pmatrix}
+                    x & y
+               \end{pmatrix}
+               \begin{pmatrix}
+                    f_{11} & f_{12} \\
+                    f_{21} & f_{22}
+               \end{pmatrix}
+               \begin{pmatrix}
+                    x \\ y
+               \end{pmatrix} \\
+            &= v^* T v.
+\end{align*}
+Then
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \bigl(U_1(g) f \bigr) v &= f(g^{-1} v) \\
+                            &= {(g^{-1} v)}^* T (g^{-1} v) \\
+                            &= v^* g T g^{-1} v \\
+                            &= (gfg^{-1}) (v)
+\end{align*}
+where $gfg^{-1}: v \mapsto v^* gTg^{-1} v$,
+so $U_1(g) f = gfg^{-1}$ and therefore the spin-1 representation $U_1$ of $\SU(2)$ is equivalent to the representation $\rho$ above.
+
+\end{sol}
+
 \end{document}
