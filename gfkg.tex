@@ -5176,4 +5176,35 @@ so $U_1(g) f = gfg^{-1}$ and therefore the spin-1 representation $U_1$ of $\SU(2
 
 \end{sol}
 
+\begin{ex}
+
+Show that the cocycle automatically satisfies the \emph{cocycle condition}
+\[
+    e^{i\theta(g, h)} e^{i\theta(gh, k)} = e^{i\theta(g, hk)} e^{i\theta(h, k)}.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+For projective unitary representations,
+\[
+    \rho(g) \rho(h) = e^{i\theta(g, h)} \rho(gh).
+\]
+For $g, h, k$,
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \rho(g) \rho(h) \rho(k) &= e^{i\theta(g, h)} \rho(gh) \rho(k) \\
+                            &= e^{i\theta(g, h)} e^{i\theta(gh, k)} \rho(ghk)
+\end{align*}
+and
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \rho(g) \rho(h) \rho(k) &= \rho(g) e^{i\theta(h, k)} \rho(hk) \\
+                            &= e^{i\theta(g, hk)} e^{i\theta(h, k)} \rho(ghk)
+\end{align*}
+so equating gives $e^{i\theta(g, h)} e^{i\theta(gh, k)} = e^{i\theta(g, hk)} e^{i\theta(h, k)}$.
+
+\end{sol}
+
 \end{document}
