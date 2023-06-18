@@ -5378,4 +5378,31 @@ Proceed analogously to get the spin-$j$ projective representations of $\SO(3, 1)
 
 \end{sol}
 
+\section{Lie Algebras}
+
+\begin{ex}
+
+For analysts: show that this sum converges.
+
+\end{ex}
+
+\begin{sol}
+
+The exponential of a square matrix $T$ is
+\begin{align*}
+    \exp(T) &= 1 + T + \frac{T^2}{2!} + \frac{T^3}{3!} + \cdots \\
+            &= \sum_{n = 0}^\infty \frac{T^n}{n!}.
+\end{align*}
+Since the space of square matrices is a vector space, we can take any submultiplicative matrix norm. As
+\[
+    \frac{\norm{T^n}}{n!} \leq \frac{\norm{T}^n}{n!},
+\]
+we get
+\[
+    \sum_{n = 0}^\infty \frac{\norm{T^n}}{n!} \leq \sum_{n = 0}^\infty \frac{\norm{T}^n}{n!} = e^{\norm{T}}
+\]
+so the series $\sum \frac{\norm{T^n}}{n!}$ converges and therefore, by normal convergence, $\exp(T)$ does too.
+
+\end{sol}
+
 \end{document}
