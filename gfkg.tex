@@ -5207,4 +5207,45 @@ so equating gives $e^{i\theta(g, h)} e^{i\theta(gh, k)} = e^{i\theta(g, hk)} e^{
 
 \end{sol}
 
+\begin{ex}
+
+Show this.
+(Hint: show that if the cocycle were inessential we would have $U_j(-1) = 1$, which is not true for $j$ a half-integer.)
+
+\end{ex}
+
+\begin{sol}
+
+In general, we have $\rho(gh) = e^{i\theta(g, h)} \rho(g) \rho(h)$.
+
+We have the double cover $\rho: \SU(2) \to \SO(3)$.
+Let $U_j$ be the spin-$j$ representation of $\SU(2)$.
+For each $h \in \SO(3)$, pick $g \in SU(2)$ such that $\rho(g) = h$ and define the projective unitary representation of $\SO(3)$ as $V_j(h) = U_j(g)$.
+Since both $g$ and $-g$ cover $h$, the choice is arbitrary up to the sign.
+
+But
+\[
+    U_j(g) = \begin{dcases*}
+                \phantom{-} U_j(-g) & \text{(bosonic)}, \\
+                -U_j(-g)            & \text{(fermionic)}
+             \end{dcases*}
+\]
+so, unlike the bosonic case, $V_j$ is not indepenedent of the choice of $g$.
+Then
+\[
+    V_j(hh') = U_j(\pm gg') = \pm U_j(g) U_j(g') = \pm V_j(h) V_j(h')
+\]
+so $V_j$ is a projective representation with cocycle $\pm1$.
+
+If the cocycle is inessential, there exists $h, h'$ such that $\theta(h, h') = 0$.
+This implies $V_j(hh') = V_j(h) V_j(h')$ necessarily, but picking $-g$,
+\begin{align*}
+    V_j(hh') &= U_j(-gg') \\
+             &= U_j(-1) U_j(g) U_j(g') \\
+             &= U_j(-1) V_j(h) V_j(h')
+\end{align*}
+so we require $U_j(-1) = 1$, which is not true for fermions and therefore the cocycle is essential.
+
+\end{sol}
+
 \end{document}
