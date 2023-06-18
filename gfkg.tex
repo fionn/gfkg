@@ -5042,7 +5042,7 @@ so representations of $\SU(2)$ are equivalent to their duals (isomorphic via the
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:commutativescalarmultipleidentity}
 
 Show that if $S$ is a $2 \times 2$ matrix commuting with all $2 \times 2$ traceless hermitian matrices, $S$ is a scalar multiple of the identity matrix.
 (One approach is to suppose $S$ commutes with the Pauli matrices $\sigma_1, \sigma_2, \sigma_3$ and derive equations its matrix entries must satisfy.)
@@ -5338,6 +5338,28 @@ Since $\SL(2, \mathbb{C})$ is connected and $\rho$ is continuous, $\rho$ must ma
 \[
     \rho: \SL(2, \mathbb{C}) \to \SO_0(3, 1).
 \]
+
+\end{sol}
+
+\begin{ex}
+
+Show that $\rho$ is two-to-one. In fact, $\rho$ is also onto, so $\SL(2, \mathbb{C})$ is a double cover of the connected Lorentz group $\SO_0(3, 1)$.
+
+\end{ex}
+
+\begin{sol}
+
+Note that $\rho$ is at least two-to-one, since
+\[
+    \rho(-g)T = (-g) T {(-g)}^{-1} = gTg^{-1} = \rho(g) T
+\]
+implies $\rho(-g) = \rho(g)$. Suppose $\rho(g) = \rho(h)$; then
+\[
+    \rho(gh^{-1}) = \rho(g) {\rho(h)}^{-1} = 1
+\]
+which requires that $gh^{-1}$ commutes with all matrices $T \in M$, which, per exercise~\ref{ex:commutativescalarmultipleidentity}, implies that $gh^{-1}$ is a scalar multiple of the identity.
+The only scalar multiples of the identity in $\SO_0(3, 1)$ are $\pm \text{id}$, so $h = \pm g$ and $\rho$ is two-to-one.
+Since $\rho$ is also surjective, it is a double cover of $\SO_0(3, 1)$.
 
 \end{sol}
 
