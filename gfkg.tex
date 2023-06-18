@@ -4763,7 +4763,7 @@ so $\rho_n \otimes \rho_m$ is equivalent to $\rho_{n + m}$.
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:paulimatrices}
 
 Show that any $2 \times 2$ matrix may be uniquely expressed as a linear combination of Pauli matrices $\sigma_0, \ldots, \sigma_3$ with complex coefficients, and that the matrix is hermitian if and only if these coefficients are real.
 Show that the matrix is \emph{traceless} if and only if the coefficient of $\sigma_0$ vanishes.
@@ -5248,7 +5248,7 @@ so we require $U_j(-1) = 1$, which is not true for fermions and therefore the co
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:minkowskispacepaulimatrices}
 
 Suppose that $x \in \mathbb{R}^4$. Show that $x^\mu x_\mu$ as computed using the Minkowski metric
 \[
@@ -5290,6 +5290,38 @@ so
                             &= - {(x^0)}^2 + {(x^1)}^2 + {(x^2)}^2 + {(x^3)}^2 \\
                             &= x^\mu x_\mu.
 \end{align*}
+
+\end{sol}
+
+\begin{ex}
+
+Let $M$ denote the space of $2 \times 2$ hermitian complex matrices, a 4-dimensional real vector space with basis given by the Pauli matrices $\sigma_\mu$.
+Let $\rho$ be the representation of $\SL(2, \mathbb{C})$ on $M$ by
+\[
+    \rho(g) T = g T g^{-1}.
+\]
+Using the identification [of] $M$ with Minkowski space given by
+\begin{align*}
+    \mathbb{R}^4 &\to M \\
+    x            &\mapsto x^\mu \sigma_\mu,
+\end{align*}
+show using \hyperref[ex:minkowskispacepaulimatrices]{the previous exercise} that $\rho$ preserves the Minkowski metric and hence defines a homomorphism
+\[
+    \rho: \SL(2, \mathbb{C}) \to \O(3, 1).
+\]
+
+\end{ex}
+
+\begin{sol}
+
+From exercise~\ref{ex:paulimatrices}, any $T \in M$ can be written as $T = T^\mu \sigma_\mu$ with $T^\mu$ real.
+From exercise~\ref{ex:minkowskispacepaulimatrices}, we therefore have $\det(T) = -T^\mu T_\mu$.
+
+As
+\[
+    \det\bigl( \rho(g) T \bigr) = \det(g T g^{-1}) = \det(T) = -T^\mu T_\mu,
+\]
+$\rho$ preserves the Minkowski metric on $M$ and therefore $\rho: \SL(2, \mathbb{C}) \to \O(3, 1)$ is a homomorphism.
 
 \end{sol}
 
