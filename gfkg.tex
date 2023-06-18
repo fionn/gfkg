@@ -5293,7 +5293,7 @@ so
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:slrepresentation}
 
 Let $M$ denote the space of $2 \times 2$ hermitian complex matrices, a 4-dimensional real vector space with basis given by the Pauli matrices $\sigma_\mu$.
 Let $\rho$ be the representation of $\SL(2, \mathbb{C})$ on $M$ by
@@ -5360,6 +5360,21 @@ implies $\rho(-g) = \rho(g)$. Suppose $\rho(g) = \rho(h)$; then
 which requires that $gh^{-1}$ commutes with all matrices $T \in M$, which, per exercise~\ref{ex:commutativescalarmultipleidentity}, implies that $gh^{-1}$ is a scalar multiple of the identity.
 The only scalar multiples of the identity in $\SO_0(3, 1)$ are $\pm \text{id}$, so $h = \pm g$ and $\rho$ is two-to-one.
 Since $\rho$ is also surjective, it is a double cover of $\SO_0(3, 1)$.
+
+\end{sol}
+
+\begin{ex}
+
+Investigate the finite-dimensional representations of $\SL(2, \mathbb{C})$ and $\SO(3, 1)$, copying the techniques used above for $\SU(2)$ and $\SO(3)$.
+
+\end{ex}
+
+\begin{sol}
+
+Since $\O(3, 1) \subset \GL(4, \mathbb{R})$, the homomorphism $\rho$ from exercise~\ref{ex:slrepresentation} is a representation of $\SL(2, \mathbb{C})$ on $\mathbb{R}^4$.
+
+Similar to the $\SU(2) \to \SO(3)$ case where we construct a representation of $\SO(3)$ using its double cover, for each $h \in \SO(3, 1)$, pick $g \in \SL(2, \mathbb{C})$ with $\rho(g) = h$ and define the projective representation as $Q_j(h) = P_j(g)$ where $P_j$ is the spin-$j$ representation of $\SL(2, \mathbb{C})$.
+Proceed analogously to get the spin-$j$ projective representations of $\SO(3, 1)$.
 
 \end{sol}
 
