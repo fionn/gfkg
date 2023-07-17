@@ -4,6 +4,7 @@ DashExcpt
     Levi--Civita
     Heine--Borel
     Bohm--Aharonov
+    Cayley--Hamilton
 }
 
 TabSize = 4
