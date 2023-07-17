@@ -5500,4 +5500,30 @@ which reproduces the matrix form of Rodrigues' rotation formula for a rotation a
 
 \end{sol}
 
+\begin{ex}
+
+Check this!
+
+\end{ex}
+
+\begin{sol}
+
+The claim is that if we consider the difference
+\[
+    \exp(s J_x) \exp(t J_y) - \exp(t J_y) \exp(s J_x)
+\]
+and expand it as a power series in $s$ and $t$, keeping only the lowest-order terms, we obtain $st(J_x J_y - J_y J_x) + \text{higher order terms}$.
+\begin{align*}
+    &\exp(s J_x) \exp(t J_y) - \exp(t J_y) \exp(s J_x) \\
+    &\qquad\begin{aligned}
+        &= (\text{id} + sJ_x + \cdots) (\text{id} + tJ_y + \cdots)
+           - (\text{id} + tJ_y + \cdots) (\text{id} + sJ_x + \cdots) \\
+        &= (\text{id} + sJ_x + tJ_y + st J_x J_y + \cdots)
+           - (\text{id} + sJ_x + tJ_y + st J_y J_x + \cdots) \\
+        &= st(J_x J_y - J_y J_x) + \cdots.
+    \end{aligned}
+\end{align*}
+
+\end{sol}
+
 \end{document}
