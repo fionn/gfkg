@@ -5526,4 +5526,92 @@ and expand it as a power series in $s$ and $t$, keeping only the lowest-order te
 
 \end{sol}
 
+\begin{ex}
+
+Show that
+\[
+    J_x^2 = J_y^2 = J_z^2 = -1
+\]
+and
+\[
+    [J_x, J_y] = J_z, \quad
+    [J_y, J_z] = J_x, \quad
+    [J_z, J_x] = J_y.
+\]
+Note the resemblance to vector cross products and quaternions, but also the differences.
+
+\end{ex}
+
+\begin{sol}
+
+By direct calculation,
+\[
+    J_x^2 = \begin{pmatrix*}[r]
+            0 &           0 & 0 \\
+            0 & \ralminus 1 & 0 \\
+            0 &           0 & \ralminus 1
+        \end{pmatrix*}, \quad
+    J_y^2 = \begin{pmatrix*}[r]
+            -1 & 0 & 0 \\
+             0 & 0 & 0 \\
+             0 & 0 & \ralminus 1
+        \end{pmatrix*}, \quad
+    J_z^2 = \begin{pmatrix*}[r]
+            -1 &           0 & 0 \\
+             0 & \ralminus 1 & 0 \\
+             0 &           0 & 0
+        \end{pmatrix*}
+\]
+so the first statement is false.
+
+The commutators are
+\begin{align*}
+    [J_x, J_y] &=
+        \begin{pmatrix}
+            0 & 0 & 0 \\
+            1 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix}
+        - \begin{pmatrix}
+            0 & 1 & 0 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix}
+        = J_z, \\
+    [J_y, J_z] &=
+        \begin{pmatrix}
+            0 & 0 & 0 \\
+            0 & 0 & 0 \\
+            0 & 1 & 0
+        \end{pmatrix}
+        - \begin{pmatrix}
+            0 & 0 & 0 \\
+            0 & 0 & 1 \\
+            0 & 0 & 0
+        \end{pmatrix}
+        = J_x, \\
+    [J_z, J_x] &=
+        \begin{pmatrix}
+            0 & 0 & 1 \\
+            0 & 0 & 0 \\
+            0 & 0 & 0
+        \end{pmatrix}
+        - \begin{pmatrix}
+            0 & 0 & 0 \\
+            0 & 0 & 0 \\
+            1 & 0 & 0
+        \end{pmatrix}
+        = J_y.
+\end{align*}
+For $\mathbb{R}^3$ with basis vectors $\{\vec{\imath}, \vec{\jmath}, \vec{k}\}$, the cross product satisfies
+\[
+    \vec{\imath} \times \vec{\jmath} = \vec{k}, \qquad
+    \vec{\jmath} \times \vec{k} = \vec{\imath}, \qquad
+    \vec{k} \times \vec{\imath} = \vec{\jmath},
+\]
+so $\mathbb{R}^3$ with the cross product as Lie bracket forms the Lie algebra $\mathfrak{so}(3)$.
+More generally, since the Hodge star maps $\Lambda^2 V \to V$ for $V$ an orientable 3-dimensional inner product space, we get that $\Lambda^2 V$ is isomorphic to $\mathfrak{so}(3)$.
+
+\end{sol}
+
 \end{document}
