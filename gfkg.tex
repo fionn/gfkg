@@ -5614,4 +5614,54 @@ More generally, since the Hodge star maps $\Lambda^2 V \to V$ for $V$ an orienta
 
 \end{sol}
 
+\begin{ex}
+
+Suppose $T$ is any $n \times n$ complex matrix. Show that
+\[
+    \exp\bigl( (s + t) T \bigr) = \exp(sT) \exp(tT)
+\]
+by a power series calculation. (Hint: use the binomial theorem.)
+Show that for a fixed $T$, $\exp(tT)$ is a smooth function from $t \in \mathbb{R}$ to the $n \times n$ matrices.
+Show that $\exp(tT)$ is the identity when $t = 0$ and that
+\[
+    \frac{d}{dt} \exp(tT) \Big|_{t = 0} = T.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+Expressing the exponential of $(s + t)T$ as a power series,
+\begin{align*}
+    \exp\bigl( (s + t) T \bigr) &= \sum_{n = 0}^\infty \frac{{(s + t)}^n T^n}{n!} \\
+        &= \sum_{n = 0}^\infty \sum_{k = 0}^n \binom{n}{k} \frac{s^{n - k} t^k T^n}{n!} \\
+        &= \sum_{n = 0}^\infty \sum_{k = 0}^n \frac{s^{n - k} t^k T^n}{k! (n - k)!} \\
+        &= \sum_{n = 0}^\infty \sum_{k = 0}^n \frac{s^{n - k} T^{n - k}}{(n - k)!} \frac{t^k T^k}{k!} \\
+        &= \sum_{n = 0}^\infty \frac{s^n T^n}{n!} \cdot \sum_{n = 0}^\infty \frac{t^n T^n}{n!} \\
+        &= \exp(st) \exp(tT)
+\end{align*}
+by the Cauchy product formula.
+
+For a fixed $T$, the function
+\begin{align*}
+    f_T: t \mapsto \exp(tT) &= \sum_{n = 0}^\infty \frac{{t^n}T^n}{n!} \\
+        &= \text{id} + tT + \frac{{(tT)}^2}{2} + \frac{{(tT)}^3}{3!} + \cdots
+\end{align*}
+is smooth since it is polynomial in $t$.
+
+From the above expansion, we get that $\displaystyle \lim_{t \to 0} \exp(tT) = \text{id}$.
+Differentiating,
+\begin{align*}
+    \frac{d}{dt} \exp(tT) &= \frac{d}{dt} \sum_{n = 0}^\infty \frac{{t^n}T^n}{n!} \\
+        &= \sum_{n = 1}^\infty \frac{t^{n - 1} T^n}{(n - 1)!} \\
+        &= T \sum_{n = 1}^\infty \frac{t^{n - 1} T^{n - 1}}{(n - 1)!} \\
+        &= T \exp(tT)
+\end{align*}
+so at $t = 0$,
+\[
+    \frac{d}{dt} \exp(tT) \Big|_{t = 0} = T.
+\]
+
+\end{sol}
+
 \end{document}
