@@ -5863,4 +5863,41 @@ where in this form we notice that each entry $M_{\alpha\beta}$ can be expressed 
 
 \end{sol}
 
+\begin{ex}
+
+Show that the Lie algebra $\mathfrak{u}(n)$ of $\U(n)$ consists of all \emph{skew-adjoint} complex $n \times n$ matrices, that is, matrices $T$ with
+\[
+    T_{ij} = -\overline{T}_{ji}.
+\]
+In particular, show that $\mathfrak{u}(1)$ consists of the purely imaginary complex numbers:
+\[
+    \mathfrak{u}(1) = \setbuilder{ix \given x \in \mathbb{R}}.
+\]
+Show that the Lie algebra $\mathfrak{su}(n)$ of $\SU(n)$ consists of all traceless skew-adjoint complex $n \times n$ matrices.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\gamma(t)$ be a path in $\U(n)$ with $\gamma(0) = \id$.
+Then for any $v, w \in \mathbb{C}^n$,
+\[
+    \innerp{\gamma(t) v}{\gamma(t) w}
+        = {\bar{\gamma}(t)}_{ij}\bar{v}^j {\gamma(t)}_{ik} w^k = \bar{v}^i w^i.
+\]
+Let $\gamma'(0) = T$.
+Differentiating and setting $t = 0$,
+\[
+    \bar{v}^i T_{ij} w^j + {\overline{T}}_{ij}\bar{v}^j w^i = 0
+\]
+so $T_{ij} = -\overline{T}_{ji}$.
+
+For $z \in \mathfrak{u}(1)$, our condition reduces to $z = -\bar{z}$, so $\mathfrak{u}(1) = \setbuilder{ix \given x \in \mathbb{R}}$.
+
+For $\mathfrak{su}(n)$, let $\gamma(t)$ be a path in $\SU(n)$ with $\gamma(0) = \id$ and let $\gamma'(0) = T$.
+We require $\det\bigl(\gamma(t)\bigr) = 1$ which, by exercise~\ref{ex:detexptrace}, is equivalent to $\tr(T) = 0$.
+Therefore $\mathfrak{su}(n)$ consists of all traceless skew-adjoint complex $n \times n$ matrices.
+
+\end{sol}
+
 \end{document}
