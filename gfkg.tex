@@ -4844,7 +4844,7 @@ so the matrix is traceless if and only if $c_0 = 0$.
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:sigmaisigmajisisigmak}
 
 For $i = 1, 2, 3$, show that
 \[
@@ -4889,7 +4889,7 @@ and, similarly, $\sigma_2 \sigma_3 = i\sigma_1$ and $\sigma_3 \sigma_1 = i \sigm
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:su2isunit3sphere}
 
 Show that the determinant of the $2 \times 2$ matrix $a + bI + cJ + dK$ is $a^2  + b^2 + c^2 + d^2$.
 Show that if $a, b, c, d$ are real and $a^2 + b^2 + c^2 + d^2 = 1$, this matrix is unitary.
@@ -5529,7 +5529,7 @@ and expand it as a power series in $s$ and $t$, keeping only the lowest-order te
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:so3basis}
 
 Show that
 \[
@@ -5863,7 +5863,7 @@ where in this form we notice that each entry $M_{\alpha\beta}$ can be expressed 
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:suntracelessskewadjoint}
 
 Show that the Lie algebra $\mathfrak{u}(n)$ of $\U(n)$ consists of all \emph{skew-adjoint} complex $n \times n$ matrices, that is, matrices $T$ with
 \[
@@ -5970,6 +5970,43 @@ In the case of matrix Lie groups, where the Lie algebra $\mathfrak{g}$ consists 
 \end{enumerate}
 
 See solution~\ref{sol:liebracketvectorfields}, which is identical.
+
+\end{sol}
+
+\begin{ex}
+
+Show that the Lie algebras $\mathfrak{su}(2)$ and $\mathfrak{so}(3)$ are isomorphic as follows.
+First show that $\mathfrak{su}(2)$ has as a basis the quaternions $I$, $J$, $K$ or, in other words, the matrices $-i \sigma_1$, $-i \sigma_2$, $-i \sigma_3$.
+Then show that the linear map $f: \mathfrak{su}(2) \to \mathfrak{so}(3)$ given by
+\[
+    - \frac{i}{2} \sigma_j \mapsto J_j
+\]
+is a Lie algebra homomorphism.
+
+\end{ex}
+
+\begin{sol}
+
+From exercise~\ref{ex:su2isunit3sphere}, $\SU(2)$ is isomorphic to $S^3$ and therefore its tangent space is 3-dimensional.
+From exercise~\ref{ex:suntracelessskewadjoint}, $\mathfrak{su}(2)$ consists of all traceless skew-adjoint complex $2 \times 2$ matrices.
+From exercise~\ref{ex:paulimatrices}, the Pauli matrices are linearly independent and $\tr(c_i \sigma_i) = 0$ for any $c_i \in \mathbb{C}$.
+
+Since the quaternions $I$, $J$, $K$ in matrix form are three linearly independent traceless skew-adjoint complex $2 \times 2$ matrices, they form a basis of $\mathfrak{su}(2)$.
+
+A Lie algebra isomorphism is a bijective linear map $f : \mathfrak{g} \to \mathfrak{h}$ preserving the Lie bracket, i.e.\ mapping $[v, w] \mapsto [f(v), f(w)]$.
+Recall from exercise~\ref{ex:sigmaisigmajisisigmak} that $[\sigma_i, \sigma_j] = 2i \epsilon_{ijk} \sigma_k$ and from exercise~\ref{ex:so3basis} that $[J_i, J_j] = \epsilon_{ijk} J_k$
+and consider the obviously bijective map $f: - \frac{i}{2} \sigma_j \mapsto J_j$
+from $\mathfrak{su}(2)$ to $\mathfrak{so}(3)$.
+\begin{align*}
+    f \bigl(\bigl[-\tfrac{i}{2} \sigma_i, -\tfrac{i}{2} \sigma_j \bigr] \bigr)
+        &= f \bigl( -\tfrac{1}{4} [\sigma_i, \sigma_j] \bigr) \\
+        &= f \bigl( -\tfrac{i}{2} \epsilon_{ijk} \sigma_k \bigr) \\
+        &= \epsilon_{ijk}J_k \\
+        &= [J_i, J_j] \\
+        &= \bigl[ f \bigl(-\tfrac{i}{2} \sigma_i \bigr),
+                  f \bigl(-\tfrac{i}{2} \sigma_j\bigr) \bigr],
+\end{align*}
+so $\mathfrak{su}(2)$ and $\mathfrak{so}(3)$ are isomorphic.
 
 \end{sol}
 
