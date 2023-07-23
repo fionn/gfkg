@@ -5928,4 +5928,29 @@ so
 
 \end{sol}
 
+\begin{ex}
+
+If $G$ is a matrix Lie group and $\gamma$, $\eta$ are paths in $G$ with $\gamma(0) = \eta(0) = 1$, show that
+\[
+    \frac{d}{dt} \gamma(t) \eta(t) \Big|_{t = 0}
+        = \frac{d}{dt} \gamma(t) \Big|_{t = 0}
+          +\frac{d}{dt} \eta(t) \Big|_{t = 0}.
+\]
+Conclude that the differential of $\cdot : G \times G \to G$ and $(1, 1) \in G \times G$ is the addition map from $\mathfrak{g} \oplus \mathfrak{g}$ to $\mathfrak{g}$.
+
+\end{ex}
+
+\begin{sol}
+
+By differentiating,
+\begin{align*}
+    \frac{d}{dt} \gamma(t) \eta(t) \Big|_{t = 0}
+        &= \gamma'(0) \eta(0) + \gamma(0) \eta'(0) \\
+        &= \gamma'(0) + \eta'(0)
+\end{align*}
+as required.
+This implies that the derivative transforms the group operation on $G \times G$ into addition on $\mathfrak{g} \oplus \mathfrak{g}$.
+
+\end{sol}
+
 \end{document}
