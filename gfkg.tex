@@ -5900,4 +5900,32 @@ Therefore $\mathfrak{su}(n)$ consists of all traceless skew-adjoint complex $n \
 
 \end{sol}
 
+\begin{ex}
+
+Show this for $G$ a matrix Lie group by differentiating
+\[
+    \gamma(t) {\gamma(t)}^{-1} = \id
+\]
+with respect to $t$, using the product rule.
+
+\end{ex}
+
+\begin{sol}
+
+Differentiating,
+\begin{align*}
+    \frac{d}{dt} \left(\gamma(t) {\gamma(t)}^{-1} \right) \Big|_{t = 0} \!
+        &= \gamma(0) \frac{d}{dt} {\gamma(t)}^{-1} \Big|_{t = 0}
+            + \frac{d}{dt} \gamma(t) \Big|_{t = 0} \cdot {\gamma(0)}^{-1} \\
+        &= \frac{d}{dt} {\gamma(t)}^{-1} \Big|_{t = 0}
+            + \frac{d}{dt} \gamma(t) \Big|_{t = 0}
+\end{align*}
+so
+\[
+    \frac{d}{dt} \gamma(t) \Big|_{t = 0} \!
+        = -\frac{d}{dt} {\gamma(t)}^{-1} \Big|_{t = 0}.
+\]
+
+\end{sol}
+
 \end{document}
