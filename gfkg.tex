@@ -5730,4 +5730,137 @@ The same argument holds when restricting the field to $\mathbb{R}$, so $\mathfra
 
 \end{sol}
 
+\begin{ex}
+
+Let $g$ be a metric of signature $(p, q)$ on $\mathbb{R}^n$, where $p + q = n$.
+Show that the Lie algebra $\mathfrak{so}(p, q)$ of $\SO(p, q)$ consists of all real $n \times n$ matrices $T$ with
+\[
+    g(Tv, w) = -g(v, Tw)
+\]
+for all $v, w \in \mathbb{R}^n$.
+Show that the dimension of $\mathfrak{so}(p, q)$, hence that of $\SO(p, q)$, is $\frac{n(n - 1)}{2}$.
+Determine an explicit basis of the Lorentz Lie algebra, $\mathfrak{so}(3, 1)$.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\gamma(t)$ be a path in $\SO(p, q)$ with $\gamma(0) = \id$. Then for any $v, w \in \mathbb{R}^n$,
+\[
+    g\bigl(\gamma(t)v, \gamma(t) w\bigr) = g(v, w)
+\]
+for all $t$. Letting $\gamma'(0) = T$ and differentiating at $t = 0$,
+\begin{align*}
+    \frac{d}{dt} g\bigl(\gamma(t)v, \gamma(t) w\bigr) \Big|_{t = 0} \! &=
+        \frac{d}{dt} \bigl(
+                g_{\mu\nu} {{\gamma(t)}^\mu}_\rho v^\rho {{\gamma(t)}^\nu}_\sigma w^\sigma
+            \bigr) \Big|_{t = 0} \\
+        &= g_{\mu\nu} \bigl(
+                {{\gamma(t)}^\mu}_\rho v^\rho {{\gamma'(t)}^\nu}_\sigma w^\sigma
+                + {{\gamma'(t)}^\mu}_\rho v^\rho {{\gamma(t)}^\nu}_\sigma w^\sigma
+            \bigr) \Big|_{t = 0} \\
+        &= g_{\mu\nu} \bigl(
+                \delta^\mu_\rho v^\rho {T^\nu}_\sigma w^\sigma
+                + {T^\mu}_\rho v^\rho \delta^\nu_\sigma w^\sigma
+           \bigr) \\
+        &= g_{\mu\nu} \bigl(
+                v^\mu {T^\nu}_\sigma w^\sigma + {T^\mu}_\rho v^\rho w^\nu
+           \bigr) \\
+        &= g(v, Tw) + g(Tv, w)
+\end{align*}
+so $g(v, Tw) + g(Tv, w) = 0$
+and therefore $\mathfrak{so}(p, q)$ is the set of real $n \times n$ matrices $T$ satisfying $g(Tv, w) = -g(v, Tw)$.
+Thus, elements of $\mathfrak{so}(p, q)$ are traceless and either symmetric or skew-symmetric, satisfying $T_{\mu\nu} = \pm T_{\nu\mu}$ where the sign is negative if $\mu, \nu < q$ (0-indexed), otherwise positive.
+
+The dimension of this space is $\frac{n(n - 1)}{2}$ and,
+since the dimension of the tangent space is equal to the dimension of the manifold,
+$\dim\bigl(\SO(p, q)\bigr) = \frac{n(n - 1)}{2}$ as well.
+
+As a result, we expect $\mathfrak{so}(3, 1)$ to be a 6-dimensional vector space.
+A natural basis will be three spatial rotations and three Lorentz boosts.
+The spatial rotations can be constructed from the familiar basis of $\mathfrak{so}(3)$ as
+\[
+    J_x =
+        \begin{pmatrix*}[r]
+            0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & 0 \\
+            0 & 0 & 0 & \ralminus 1 \\
+            0 & 0 & 1 & 0 \\
+        \end{pmatrix*}, \quad
+    J_y =
+        \begin{pmatrix*}[r]
+            0 & 0           & 0 & 0 \\
+            0 & 0           & 0 & 1 \\
+            0 & 0           & 0 & 0 \\
+            0 & \ralminus 1 & 0 & 0 \\
+        \end{pmatrix*}, \quad
+    J_z =
+        \begin{pmatrix*}[r]
+            0 & 0 & 0           & 0 \\
+            0 & 0 & \ralminus 1 & 0 \\
+            0 & 1 & 0           & 0 \\
+            0 & 0 & 0           & 0 \\
+        \end{pmatrix*}.
+\]
+For the Lorentz boosts as in solution~\ref{sol:so31lorentztransformations}, let $\gamma_i(\zeta)$ be a path in $\SO(3, 1)$ about $jk$ parameterised by rapidity.
+Denoting $\gamma_i'(0) = K_i$,
+\begin{align*}
+    \gamma_x(\zeta) &=
+        \begin{pmatrix}
+            \phantom{-}\cosh(\zeta) & \ralminus\sinh(\zeta)           & 0 & 0 \\
+            -\sinh(\zeta)           & \phantom{\ralminus}\cosh(\zeta) & 0 & 0 \\
+            0                       & 0                               & 1 & 0 \\
+            0                       & 0                               & 0 & 1
+        \end{pmatrix}, \quad
+        K_x = \begin{pmatrix*}[r]
+            0  & \ralminus 1 & 0 & 0 \\
+            -1 & 0           & 0 & 0 \\
+            0  & 0           & 0 & 0 \\
+            0  & 0           & 0 & 0
+        \end{pmatrix*}, \displaybreak[0] \\
+    \gamma_y(\zeta) &=
+        \begin{pmatrix}
+            \phantom{-}\cosh(\zeta) & 0 & \ralminus\sinh(\zeta)           & 0 \\
+            0                       & 1 & 0                               & 0 \\
+            -\sinh(\zeta)           & 0 & \phantom{\ralminus}\cosh(\zeta) & 0 \\
+            0                       & 0 & 0                               & 1
+        \end{pmatrix}, \quad
+        K_y = \begin{pmatrix*}[r]
+            0  & 0 & \ralminus 1 & 0 \\
+            0  & 0 & 0           & 0 \\
+            -1 & 0 & 0           & 0 \\
+            0  & 0 & 0           & 0
+        \end{pmatrix*}, \displaybreak[0] \\
+    \gamma_z(\zeta) &=
+        \begin{pmatrix}
+            \phantom{-}\cosh(\zeta) & 0 & 0 & \ralminus\sinh(\zeta) \\
+            0                       & 1 & 0 & 0 \\
+            0                       & 0 & 1 & 0 \\
+            -\sinh(\zeta)           & 0 & 0 & \phantom{\ralminus}\cosh(\zeta)
+        \end{pmatrix}, \quad
+        K_z = \begin{pmatrix*}[r]
+            0  & 0 & 0 & \ralminus 1 \\
+            0  & 0 & 0 & 0 \\
+            0  & 0 & 0 & 0 \\
+            -1 & 0 & 0 & 0
+        \end{pmatrix*}.
+\end{align*}
+We can combine these into the skew-symmetric matrix of Lorentz generators
+\[
+    \newcommand*{\m}{\ralminus}
+    M = \begin{pmatrix*}[r]
+            0\phantom{_x} & K_x           & K_y           & K_z \\
+            -K_x          & 0\phantom{_x} & J_z \,        & \m J_y \, \\
+            -K_y          & \m J_z \,     & 0\phantom{_x} & J_x \, \\
+            -K_z          & J_y \,        & \m J_x \,     & 0\phantom{_x}
+        \end{pmatrix*}
+\]
+where in this form we notice that each entry $M_{\alpha\beta}$ can be expressed in terms of the Minkowski metric $\eta$ as
+\[
+    {(M_{\alpha\beta})}_{\mu\nu}
+        = \eta_{\alpha\mu} \eta_{\beta\nu} - \eta_{\beta\mu} \eta_{\alpha\nu}.
+\]
+
+\end{sol}
+
 \end{document}
