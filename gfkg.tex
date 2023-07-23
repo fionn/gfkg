@@ -100,6 +100,9 @@
 \newcommand*{\U}{\ensuremath\text{U}}
 \newcommand*{\SU}{\ensuremath\text{SU}}
 
+\DeclareMathOperator{\tr}{tr}
+\newcommand*{\id}{\ensuremath\mathop{}\mathopen{}\mathrm{id}}
+
 \title{Gauge Fields, Knots and Gravity Solutions}
 \author{Fionn Fitzmaurice \hspace{2em} \https{fionn.github.io/gfkg}}
 \date{}
@@ -5673,14 +5676,57 @@ Show that the Lie algebra $\mathfrak{gl}(n, \mathbb{R})$ of $\GL(n, \mathbb{R})$
 
 \begin{sol}
 
-Let $\gamma(t)$ be a path in $\GL(n, \mathbb{C})$ with $\gamma(0) = \text{id}$.
+Let $\gamma(t)$ be a path in $\GL(n, \mathbb{C})$ with $\gamma(0) = \id$.
 We require only that $\det\bigl(\gamma(t)\bigr) \neq 0$.
 
 Let $\gamma(t) = \exp(tT)$ so, from exercise~\ref{ex:exptTidentities}, $\gamma'(0) = T$.
-By the next exercise, our requirement is equivalent to $e^{\text{tr}(tT)} \neq 0$.
+By \hyperref[ex:detexptrace]{the next exercise}, our requirement is equivalent to $e^{t \tr(T)} \neq 0$.
 This holds for any $n \times n$ complex matrix $T$, so $\mathfrak{gl}(n, \mathbb{C}) = M(n, \mathbb{C})$.
 
 The same argument holds when restricting the field to $\mathbb{R}$, so $\mathfrak{gl}(n, \mathbb{R}) = M(n, \mathbb{R})$.
+
+\end{sol}
+
+\begin{ex}\label{ex:detexptrace}
+
+Show that for any matrix $T$,
+\[
+    \det\bigl(\exp(T)\bigr) = e^{\tr(T)}.
+\]
+(Hint: first show it for diagonalizable matrices, then use the fact that these are dense in the space of all matrices.)
+Use this to show that the Lie algebra $\mathfrak{sl}(n, \mathbb{C})$ of $\SL(n, \mathbb{C})$ consists of all $n \times n$ traceless complex matrices,
+while the Lie algebra $\mathfrak{sl}(n, \mathbb{R})$ of $\SL(n, \mathbb{R})$ consists of all $n \times n$ traceless real matrices.
+
+\end{ex}
+
+\begin{sol}
+
+Let $T$ be diagonalizable and write $T = SDS^{-1}$ with $D = \mathrm{diag}(\lambda_1, \ldots, \lambda_n)$.
+\begin{align*}
+    \exp(T) &= \exp(SDS^{-1}) \\
+            %&= \sum_{n = 0}^\infty \frac{{(SDS^{-1})}^n}{n!} \\
+            &= \sum_{n = 0}^\infty \frac{S D^n S^{-1}}{n!} \\
+            &= S \exp(D) S^{-1}
+\end{align*}
+so
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \det\bigl(\exp(T)\bigr) &= \det\bigl(S \exp(D) S^{-1} \bigr) \\
+        %&= \det(S) \det\bigl(\exp(D)\bigr) \det(S^{-1}) \\
+        &= \det\bigl(\exp(D)\bigr) \\
+        &= \prod_{i = 1}^n e^{\lambda_i} \\[-1\jot]
+        &= \exp \biggl(\sum_{i = 1}^n \lambda_i \! \biggr) \\
+        &= e^{\tr(D)} \\
+        %&= e^{\tr(SS^{-1}D)} \\
+        %&= e^{\tr(SDS^{-1})} \\
+        &= e^{\tr(T)}.
+\end{align*}
+Since diagonalizable matrices are dense in the space of matrices, this holds for all $n \times n$ matrices.
+
+Let $\gamma(t)$ be a path in $\SL(n, \mathbb{C})$ with $\gamma(0) = \id$. We require only that $\det\bigl(\gamma(t)\bigr) = 1$.
+Let $\gamma(t) = \exp(tT)$ so, from exercise~\ref{ex:exptTidentities}, $\gamma'(0) = T$. Then our condition becomes $e^{t \tr(T)} = 1$ so $\tr(T) = 0$ and $\mathfrak{sl}(n, \mathbb{C})$ is all $n \times n$ traceless complex matrices.
+
+The same argument holds when restricting the field to $\mathbb{R}$, so $\mathfrak{sl}(n, \mathbb{R})$ is all $n \times n$ traceless real matrices.
 
 \end{sol}
 
