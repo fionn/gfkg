@@ -5614,7 +5614,7 @@ More generally, since the Hodge star maps $\Lambda^2 V \to V$ for $V$ an orienta
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:exptTidentities}
 
 Suppose $T$ is any $n \times n$ complex matrix. Show that
 \[
@@ -5661,6 +5661,26 @@ so at $t = 0$,
 \[
     \frac{d}{dt} \exp(tT) \Big|_{t = 0} = T.
 \]
+
+\end{sol}
+
+\begin{ex}
+
+Show that the Lie algebra $\mathfrak{gl}(n, \mathbb{C})$ of $\GL(n, \mathbb{C})$ consists of all $n \times n$ complex matrices.
+Show that the Lie algebra $\mathfrak{gl}(n, \mathbb{R})$ of $\GL(n, \mathbb{R})$ consists of all $n \times n$ real matrices.
+
+\end{ex}
+
+\begin{sol}
+
+Let $\gamma(t)$ be a path in $\GL(n, \mathbb{C})$ with $\gamma(0) = \text{id}$.
+We require only that $\det\bigl(\gamma(t)\bigr) \neq 0$.
+
+Let $\gamma(t) = \exp(tT)$ so, from exercise~\ref{ex:exptTidentities}, $\gamma'(0) = T$.
+By the next exercise, our requirement is equivalent to $e^{\text{tr}(tT)} \neq 0$.
+This holds for any $n \times n$ complex matrix $T$, so $\mathfrak{gl}(n, \mathbb{C}) = M(n, \mathbb{C})$.
+
+The same argument holds when restricting the field to $\mathbb{R}$, so $\mathfrak{gl}(n, \mathbb{R}) = M(n, \mathbb{R})$.
 
 \end{sol}
 
