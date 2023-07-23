@@ -1016,7 +1016,7 @@ Show that for all vector fields $u$, $v$, $w$ on a manifold, and all real number
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:liebracketvectorfields}
 \mbox{}
 
 \begin{enumerate}
@@ -5950,6 +5950,26 @@ By differentiating,
 \end{align*}
 as required.
 This implies that the derivative transforms the group operation on $G \times G$ into addition on $\mathfrak{g} \oplus \mathfrak{g}$.
+
+\end{sol}
+
+\begin{ex}
+
+Check these. Note that in~\ref{sol:liebracketmatrix:linearity}, the term `scalars' means real numbers if $\mathfrak{g}$ is a real vector space, but complex numbers if $\mathfrak{g}$ is a complex vector space.
+
+\end{ex}
+
+\begin{sol}
+
+In the case of matrix Lie groups, where the Lie algebra $\mathfrak{g}$ consists of matrices and the Lie bracket is the commutator, it is easy to check the following identities:
+\begin{enumerate}
+    \item $[v, w] = -[w, v]$ for all $v, w \in \mathfrak{g}$,
+    \item $[u, \alpha v + \beta w] = \alpha [u, v] + \beta [u, v]$
+          for all $u, v, w \in \mathfrak{g}$ and scalars $\alpha$, $\beta$,\label{sol:liebracketmatrix:linearity}
+    \item the \emph{Jacobi identity}: $\big[u, [v, w]\big] + \big[v, [w, u]\big] + \big[w, [u, v]\big] = 0$.
+\end{enumerate}
+
+See solution~\ref{sol:liebracketvectorfields}, which is identical.
 
 \end{sol}
 
