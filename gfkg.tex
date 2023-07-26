@@ -101,6 +101,7 @@
 \newcommand*{\SU}{\ensuremath\text{SU}}
 
 \DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Vect}{Vect}
 \newcommand*{\id}{\ensuremath\mathop{}\mathopen{}\mathrm{id}}
 
 \title{Gauge Fields, Knots and Gravity Solutions}
@@ -6007,6 +6008,44 @@ from $\mathfrak{su}(2)$ to $\mathfrak{so}(3)$.
                   f \bigl(-\tfrac{i}{2} \sigma_j\bigr) \bigr],
 \end{align*}
 so $\mathfrak{su}(2)$ and $\mathfrak{so}(3)$ are isomorphic.
+
+\end{sol}
+
+\begin{ex}
+
+Let $M$ be any manifold and $v, w \in \Vect(M)$. Let $\phi$ be a diffeomorphism of $M$. Show that
+\[
+    \phi_* [v, w] = [\phi_* v, \phi_* w].
+\]
+Conclude that if $v$, $w$ are two left-invariant vector fields on a Lie group, so is $[v, w]$.
+
+\end{ex}
+
+\begin{sol}
+
+Recall from solution~\ref{sol:pushforwardvectorfield} the~\ref{eq:pushforwardvector} at a point,
+\[
+    \phi_* (v_p) (f) = (\phi_* v)(f) \bigl(\phi(p)\bigr).
+\]
+
+Applying $\phi_* [v, w]$ to some $f \in C^\infty(M)$ at $p \in M$,
+\begin{align*}
+    \phi_* {[v, w]}_p f &= {[v, w]}_p (\phi^* f) \\
+        &= v \bigl(w (\phi^* f) \bigr) \bigl(\phi(p)\bigr)
+           - w \bigl(v (\phi^* f) \bigr) \bigl(\phi(p)\bigr) \\
+        &= v \bigl( (\phi_* w) (f) (\phi(p)) \bigr)
+           - w \bigl( (\phi_* v) (f) (\phi(p)) \bigr) \\
+        &= v \bigl( w(\phi^* f) (\phi(p)) \bigr)
+           - w \bigl( v(\phi^* f) (\phi(p)) \bigr) \\
+        &= v \bigl( w(\phi^* f) \circ \phi \bigr) (p)
+           - w \bigl( v(\phi^* f) \circ \phi \bigr) (p) \\
+        &= \phi_* v \bigl( w(\phi^* f) \bigr) (p)
+           - \phi_* w \bigl( v(\phi^* f) \bigr) (p) \\
+        &= \phi_* v \bigl( (\phi_* w) (f) \bigr) (p)
+           - \phi_* w \bigl( (\phi_* v) (f) \bigr) (p) \\
+        &= {[\phi_* v, \phi_* w]}_p f.
+\end{align*}
+If $v$, $w$ are left-invariant then $\phi_* [v, w] = [\phi_* v, \phi_* w] = [v, w]$, so $[v, w]$ is also left-invariant.
 
 \end{sol}
 
