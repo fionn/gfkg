@@ -4161,7 +4161,7 @@ the magnetic charge.
     Symmetry dictates interactions.
 \end{epigraph}
 
-\section{Lie Groups}
+\section{Lie Groups}\label{sec:liegroups}
 
 \begin{ex}
 
@@ -6164,6 +6164,110 @@ By exercise~\ref{ex:pushforwardliebracket}, for $v, w \in \mathfrak{g}$,
         &= [d\rho (v), d\rho(w)]
 \end{align*}
 so $d\rho$ is a Lie algebra homomorphism.
+
+\end{sol}
+
+\begin{ex}
+
+Do these calculations.
+
+\end{ex}
+
+\begin{sol}
+
+Consider the two-to-one homomorphism $\rho: \SU(2) \to \SO(3)$ from \S\ref{sec:liegroups}, which determines the homomorphism $d\rho: \mathfrak{su}(2) \to \mathfrak{so}(3)$.
+
+Our conventional basis for $\mathfrak{su}(2)$ is $\{-\frac{i}{2} \sigma_j\}$, so the path in $\SU(2)$ corresponding to $j = 3$ is
+\begin{align*}
+    g_t &= \exp\bigl(-\tfrac{i}{2} t \sigma_3\bigr) \\
+        &= \begin{pmatrix}
+                e^{-\frac{it}{2}} & 0 \,\,\, \\
+                0                 & e^{\frac{it}{2}}
+            \end{pmatrix}.
+\end{align*}
+$\rho(g_t)$ is determined by its action on each
+\[
+    \rho(g_t) \sigma_j = g_t \sigma_j g_t^{-1}.
+\]
+For $\sigma_1$,
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \rho(g_t) \sigma_1 &= g_t \sigma_1 g_t^{-1} \\
+        &= \begin{pmatrix}
+                e^{-\frac{it}{2}} & 0 \,\,\, \\
+                0                 & e^{\frac{it}{2}}
+            \end{pmatrix}
+            \begin{pmatrix}
+                0 & 1 \\
+                1 & 0
+            \end{pmatrix}
+            \begin{pmatrix}
+                e^{\frac{it}{2}} & \!\!0 \\
+                0                & e^{- \frac{it}{2}}
+            \end{pmatrix} \\
+        &= \begin{pmatrix}
+                0      & e^{-it} \\
+                e^{it} & 0
+            \end{pmatrix} \\
+        &= \cos(t) \sigma_1 + \sin(t) \sigma_2,
+\end{align*}
+for $\sigma_2$,
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \rho(g_t) \sigma_2 &= g_t \sigma_2 g_t^{-1} \\
+        &= \begin{pmatrix}
+                e^{-\frac{it}{2}} & 0 \,\,\, \\
+                0                 & e^{\frac{it}{2}}
+            \end{pmatrix}
+            \begin{pmatrix*}[r]
+                0 & \ralminus i \\
+                i &  0
+            \end{pmatrix*}
+            \begin{pmatrix}
+                e^{\frac{it}{2}} & \!\!0 \\
+                0                & e^{- \frac{it}{2}}
+            \end{pmatrix} \\
+        &= \begin{pmatrix}
+                0                 & \ralminus ie^{-\frac{it}{2}} \\
+                ie^{\frac{it}{2}} & 0
+            \end{pmatrix}
+            \begin{pmatrix}
+                e^{\frac{it}{2}} & \!\!0 \\
+                0                & e^{-\frac{it}{2}}
+            \end{pmatrix} \\
+        &= \begin{pmatrix}
+                0       & \ralminus ie^{-it} \\
+                ie^{it} & 0
+            \end{pmatrix} \\
+        &= -\sin(t) \sigma_1 + \cos(t) \sigma_2
+\end{align*}
+and for $\sigma_3$,
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \rho(g_t) \sigma_3 &= g_t \sigma_3 g_t^{-1} \\
+        &= \begin{pmatrix}
+                e^{-\frac{it}{2}} & 0 \,\,\, \\
+                0                 & e^{\frac{it}{2}}
+            \end{pmatrix}
+            \begin{pmatrix*}[r]
+                1 &  0 \\
+                0 & \ralminus 1
+            \end{pmatrix*}
+            \begin{pmatrix}
+                e^{\frac{it}{2}} & \!\!0 \\
+                0                & e^{- \frac{it}{2}}
+            \end{pmatrix} \\
+        &= \begin{pmatrix}
+                e^{-\frac{it}{2}} & 0 \,\,\, \\
+                0                 & \ralminus e^{\frac{it}{2}}
+            \end{pmatrix}
+            \begin{pmatrix}
+                e^{\frac{it}{2}} & \!\!0 \\
+                0                & e^{- \frac{it}{2}}
+            \end{pmatrix} \\
+        &= \sigma_3.
+\end{align*}
+Note that if we instead used $\{\frac{i}{2} \sigma_j\}$ as our basis for $\mathfrak{su}(2)$, our result would have the sign flipped on each sine function, corresponding to a positive rotation about the $z$-axis by $t$.
 
 \end{sol}
 
