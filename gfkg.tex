@@ -6271,4 +6271,172 @@ Note that if we instead used $\{\frac{i}{2} \sigma_j\}$ as our basis for $\mathf
 
 \end{sol}
 
+\begin{ex}
+
+Show that $\rho \bigl( \exp(-\frac{i}{2} \sigma_1) \bigr)$ is a rotation of angle $t$ about the $x$-axis and $\rho \bigl( \exp(-\frac{i}{2} \sigma_2) \bigr)$ is a rotation of angle $t$ about the $y$-axis.
+
+\end{ex}
+
+\begin{sol}
+
+The path in $\SU(2)$ corresponding to $j = 1$ is
+\begin{align*}
+    g_t &= \exp\bigl(-\tfrac{i}{2} t \sigma_1\bigr) \\
+        &= \sum_{n = 0}^\infty \frac{{\bigl(-\frac{i}{2} t \sigma_1\bigr)}^n}{n!} \\
+        &= \sigma_0 \cdot \left(
+                \id + \frac{{\bigl(-\tfrac{i}{2} t\bigr)}^{2\!\!}}{2!}
+                    + \frac{{\bigl(-\tfrac{i}{2} t\bigr)}^{4\!\!}}{4!}
+                    + \cdots
+            \right) \\*
+        &\mathrel{\phantom{=}}{} + \sigma_1 \cdot \left(
+                \frac{- \tfrac{i}{2} t}{1}
+                + \frac{{\bigl(-\tfrac{i}{2} t\bigr)}^{3\!\!}}{3!}
+                + \frac{{\bigl(-\tfrac{i}{2} t\bigr)}^{5\!\!}}{5!}
+                + \cdots
+            \right) \displaybreak[0] \\
+        &= \sigma_0 \cdot \left(
+                \id - \frac{{\bigl(\tfrac{t}{2}\bigr)}^{2\!\!}}{2!}
+                    + \frac{{\bigl(\tfrac{t}{2}\bigr)}^{4\!\!}}{4!}
+                    + \cdots
+            \right) \\*
+        &\mathrel{\phantom{=}}{} + i \sigma_1 \cdot \left(
+                - \tfrac{t}{2}
+                + \frac{{\bigl(\tfrac{t}{2}\bigr)}^{3\!\!}}{3!}
+                - \frac{{\bigl(-\tfrac{t}{2}\bigr)}^{5\!\!}}{5!}
+                + \cdots
+            \right) \displaybreak[0] \\
+        &= \cos(\tfrac{t}{2}) \sigma_0 - i \sin(\tfrac{t}{2}) \sigma_1 \displaybreak[0] \\
+        &= \begin{pmatrix}
+                \cos(\tfrac{t}{2})    & \ralminus i \sin(\tfrac{t}{2}) \\
+                -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+            \end{pmatrix}.
+\end{align*}
+$\rho(g_t)$ is determined by its action on each $\rho(g_t) \sigma_j = g_t \sigma_j g_t^{-1}$.
+
+For $\sigma_1$,
+\begin{align*}
+    \rho(g_t) \sigma_1 &= g_t \sigma_1 g_t^{-1} \\
+        &= \begin{pmatrix}
+                \cos(\tfrac{t}{2})    & \ralminus i \sin(\tfrac{t}{2}) \\
+                -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix}
+           \begin{pmatrix}
+                0 & 1 \\
+                1 & 0
+            \end{pmatrix}
+            \begin{pmatrix}
+                \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
+                i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix} \\
+        &= \begin{pmatrix}
+                -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2}) \\
+                \cos(\tfrac{t}{2})   & \ralminus i \sin(\tfrac{t}{2})
+           \end{pmatrix}
+           \begin{pmatrix}
+                \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
+                i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix} \\
+        &= \sigma_1,
+\end{align*}
+for $\sigma_2$,
+\begin{align*}
+    \rho(g_t) \sigma_2 &= g_t \sigma_2 g_t^{-1} \\
+        &= \begin{pmatrix}
+                \cos(\tfrac{t}{2})    & \ralminus i \sin(\tfrac{t}{2}) \\
+                -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix}
+            \begin{pmatrix*}[r]
+                0 & \ralminus i \\
+                i &  0
+            \end{pmatrix*}
+            \begin{pmatrix}
+                \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
+                i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix} \\
+        &= \begin{pmatrix}
+                \sin(\tfrac{t}{2})   & \ralminus i \cos(\tfrac{t}{2}) \\
+                i \cos(\tfrac{t}{2}) &  \ralminus \sin(\tfrac{t}{2})
+            \end{pmatrix}
+            \begin{pmatrix}
+                \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
+                i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix} \\
+        &= \begin{pmatrix}
+                2 \cos(\tfrac{t}{2}) \sin(\tfrac{t}{2})
+                    & i \bigl( {\sin(\tfrac{t}{2})}^2 - {\cos(\tfrac{t}{2})}^2 \bigr) \\
+                i \bigl( {\cos(\tfrac{t}{2})}^2 - {\sin(\tfrac{t}{2})}^2 \bigr)
+                    & -2 \cos(\tfrac{t}{2}) \sin(\tfrac{t}{2})
+            \end{pmatrix} \\
+        &= \begin{pmatrix}
+                \sin(t)   & \ralminus i \cos(t) \\
+                i \cos(t) & \ralminus \sin(t)
+            \end{pmatrix} \\
+        &= \cos(t) \sigma_2 + \sin(t) \sigma_3
+\end{align*}
+and for $\sigma_3$,
+\begin{align*}
+    \rho(g_t) \sigma_3 &= g_t \sigma_3 g_t^{-1} \\
+        &= \begin{pmatrix}
+                \cos(\tfrac{t}{2})    & \ralminus i \sin(\tfrac{t}{2}) \\
+                -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix}
+            \begin{pmatrix*}[r]
+                1 &  0 \\
+                0 & \ralminus 1
+            \end{pmatrix*}
+            \begin{pmatrix}
+                \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
+                i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix} \\
+        &= \begin{pmatrix}
+                \cos(\tfrac{t}{2})     & i \sin(\tfrac{t}{2}) \\
+                - i \sin(\tfrac{t}{2}) & \ralminus \cos(\tfrac{t}{2})
+            \end{pmatrix}
+            \begin{pmatrix}
+                \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
+                i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
+           \end{pmatrix} \\
+        &= \begin{pmatrix}
+                {\cos(\tfrac{t}{2})}^2 - {\sin(\tfrac{t}{2})}^2
+                    & 2 i \cos(\tfrac{t}{2}) \sin(\tfrac{t}{2}) \\
+                -2 i \cos(\tfrac{t}{2}) \sin(\tfrac{t}{2})
+                    & {\sin(\tfrac{t}{2})}^2 - {\cos(\tfrac{t}{2})}^2
+            \end{pmatrix} \\
+        &= \begin{pmatrix}
+                \cos(t)     & i \sin(t) \\
+                - i \sin(t) & \ralminus \cos(t)
+            \end{pmatrix} \\
+        &= - \sin(t) \sigma_2 + \cos(t) \sigma_3.
+\end{align*}
+Flipping the sign of $t$ to be consistent with our convention of rotating in a positive direction, in the space spanned by $\{\sigma_j\}$ we get
+\[
+    \rho(g_t) = \begin{pmatrix}
+            1 & 0       & 0 \\
+            0 & \cos(t) & \ralminus \sin(t) \\
+            0 & \sin(t) & \phantom{\ralminus} \cos(t) \\
+        \end{pmatrix}
+\]
+which describes a (positive) rotation about the $x$-axis by $t$.
+
+The path in $\SU(2)$ corresponding to $j = 2$ is
+\begin{align*}
+    g_t &= \exp\bigl(-\tfrac{i}{2} t \sigma_2\bigr) \\
+        &= \cos(\tfrac{t}{2}) \sigma_0 - i\sin(\tfrac{t}{2}) \sigma_2 \\
+        &= \begin{pmatrix*}[r]
+                \cos(\tfrac{t}{2})    & \ralminus \sin(\tfrac{t}{2}) \\
+                \sin(\tfrac{t}{2})    & \cos(\tfrac{t}{2})
+            \end{pmatrix*}.
+\end{align*}
+By similar calculations and after flipping $t$, we get
+\[
+    \rho(g_t) = \begin{pmatrix}
+            \phantom{-} \cos(t) & 0 & \sin(t) \\
+            0 \!\!\!            & 1 & 0 \,\, \\
+            - \sin(t)           & 0 & \cos(t) \\
+        \end{pmatrix}
+\]
+which describes a (positive) rotation about the $y$-axis by $t$.
+
+\end{sol}
+
 \end{document}
