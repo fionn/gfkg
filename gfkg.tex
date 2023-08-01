@@ -6011,7 +6011,7 @@ so $\mathfrak{su}(2)$ and $\mathfrak{so}(3)$ are isomorphic.
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:pushforwardliebracket}
 
 Let $M$ be any manifold and $v, w \in \Vect(M)$. Let $\phi$ be a diffeomorphism of $M$. Show that
 \[
@@ -6142,6 +6142,28 @@ Pushing forward $w_1$ by $L_g$,
         &= {[u, v]}_g
 \end{align*}
 and since ${(L_g)}_* w_1 = w_g$, we get $w = [u, v]$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that this is a Lie algebra homomorphism.
+
+\end{ex}
+
+\begin{sol}
+
+The claim is that every homomorphism $\rho: G \to H$ between Lie groups determines a corresponding homomorphism $d\rho: \mathfrak{g} \to \mathfrak{h}$ between their Lie algebras given by
+\[
+    d\rho = {(\rho)}_* : T_1 G \to T_1 H.
+\]
+By exercise~\ref{ex:pushforwardliebracket}, for $v, w \in \mathfrak{g}$,
+\begin{align*}
+    d\rho \bigl([v, w]\bigr) &= \rho_*\bigl([v, w]\bigr) \\
+        &= [\rho_* v, \rho_* w] \\
+        &= [d\rho (v), d\rho(w)]
+\end{align*}
+so $d\rho$ is a Lie algebra homomorphism.
 
 \end{sol}
 
