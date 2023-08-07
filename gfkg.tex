@@ -4985,7 +4985,7 @@ so $U_0(g) f = f$, implying $U_0(g)$ is the identity for all $g \in \SU(2)$.
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:spinhalffundamentalrepresentation}
 
 Show that the spin-$\frac{1}{2}$ representation of $\SU(2)$ is equivalent [to] the fundamental representation, in which every element $g \in \SU(2)$ acts on $\mathbb{C}^2$ by matrix multiplication.
 
@@ -6436,6 +6436,158 @@ By similar calculations and after flipping $t$, we get
         \end{pmatrix}
 \]
 which describes a (positive) rotation about the $y$-axis by $t$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that in the spin-$\tfrac{1}{2}$ representation of $\SU(2)$, the expected value of the angular momentum about the $z$-axis in the so-called \emph{spin-up state},
+\[
+    {\uparrow} = \begin{pmatrix}
+            \,1\, \\ 0
+        \end{pmatrix},
+\]
+is $\tfrac{1}{2}$, while in the \emph{spin-down state},
+\[
+    {\downarrow} = \begin{pmatrix}
+            \,0\, \\ 1
+        \end{pmatrix},
+\]
+it is $-\tfrac{1}{2}$.
+Similarly, compute the expected value of the angular momentum about the $x$- and $y$-axes\footnote{We consider the $x$- and $y$-axes since we are already asked to compute the expected value about the $z$-axis.} in these states.
+
+\end{ex}
+
+\begin{sol}
+
+The expected value of the $z$-component of the system's angular momentum about that axis is given by
+\[
+    \innerp{\psi}{dU\bigl(\tfrac{\sigma_z}{2}\bigr) \psi}
+\]
+where $dU$ is a representation of $\mathfrak{su}(2)$.
+Recall from exercise~\ref{ex:spinhalffundamentalrepresentation} that the spin-$\frac{1}{2}$ representation of $\SU(2)$ is equivalent to the fundamental representation.
+
+For the spin-up state,
+\begin{align*}
+    \innerp{\uparrow}{dU\bigl(\tfrac{\sigma_z}{2}\bigr) {\uparrow}}
+        &= \innerp*{\begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                \tfrac{1}{2} &  \phantom{\ralminus}0 \\
+                0 & \ralminus \tfrac{1}{2}
+            \end{pmatrix}
+            \begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}} \\
+    &= \innerp*{\begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                \,\tfrac{1}{2}\, \\ 0
+            \end{pmatrix}} \\
+    &= \frac{1}{2}
+\end{align*}
+and for the spin-down state,
+\begin{align*}
+    \innerp{\downarrow}{dU\bigl(\tfrac{\sigma_z}{2}\bigr) {\downarrow}}
+        &= \innerp*{\begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                \tfrac{1}{2} &  \phantom{\ralminus}0 \\
+                0 & \ralminus \tfrac{1}{2}
+            \end{pmatrix}
+            \begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}} \\
+    &= \innerp*{\begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                \,\, 0 \\ -\tfrac{1}{2}
+            \end{pmatrix}} \\
+    &= -\frac{1}{2}.
+\end{align*}
+
+For the $x$-axis,
+\begin{align*}
+    \innerp{\uparrow}{dU\bigl(\tfrac{\sigma_x}{2}\bigr) {\uparrow}}
+        &= \innerp*{\begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                0 & \tfrac{1}{2} \\
+                \tfrac{1}{2} & 0
+            \end{pmatrix}
+            \begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}} \\
+        &= \innerp*{\begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                \,0\, \\ \tfrac{1}{2}
+            \end{pmatrix}} \\
+        &= 0, \\
+\innerp{\downarrow}{dU\bigl(\tfrac{\sigma_x}{2}\bigr) {\downarrow}}
+        &= \innerp*{\begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                0 & \tfrac{1}{2} \\
+                \tfrac{1}{2} & 0
+            \end{pmatrix}
+            \begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}} \\
+        &= \innerp*{\begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                \,\tfrac{1}{2}\, \\ 0
+            \end{pmatrix}} \\
+        &= 0
+\end{align*}
+and for the $y$-axis,
+\begin{align*}
+    \innerp{\uparrow}{dU\bigl(\tfrac{\sigma_y}{2}\bigr) {\uparrow}}
+        &= \innerp*{\begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}}
+            {\begin{pmatrix*}[r]
+                0 & \ralminus\frac{i}{2} \\
+                \frac{i}{2} &  0
+            \end{pmatrix*}
+            \begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}} \\
+        &= \innerp*{\begin{pmatrix}
+                \,1\, \\ 0
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                \,0\, \\ \tfrac{i}{2}
+            \end{pmatrix}} \\
+        &= 0, \\
+    \innerp{\downarrow}{dU\bigl(\tfrac{\sigma_y}{2}\bigr) {\downarrow}}
+        &= \innerp*{\begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}}
+            {\begin{pmatrix*}[r]
+                0 & \ralminus\frac{i}{2} \\
+                \frac{i}{2} & 0
+            \end{pmatrix*}
+            \begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}} \\
+        &= \innerp*{\begin{pmatrix}
+                \,0\, \\ 1
+            \end{pmatrix}}
+            {\begin{pmatrix}
+                -\tfrac{i}{2} \\ \,\, 0
+            \end{pmatrix}} \\
+        &= 0.
+\end{align*}
 
 \end{sol}
 
