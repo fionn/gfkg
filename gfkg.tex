@@ -5731,7 +5731,7 @@ The same argument holds when restricting the field to $\mathbb{R}$, so $\mathfra
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:lorentzliealgebra}
 
 Let $g$ be a metric of signature $(p, q)$ on $\mathbb{R}^n$, where $p + q = n$.
 Show that the Lie algebra $\mathfrak{so}(p, q)$ of $\SO(p, q)$ consists of all real $n \times n$ matrices $T$ with
@@ -5744,7 +5744,7 @@ Determine an explicit basis of the Lorentz Lie algebra, $\mathfrak{so}(3, 1)$.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:lorentzliealgebra}
 
 Let $\gamma(t)$ be a path in $\SO(p, q)$ with $\gamma(0) = \id$. Then for any $v, w \in \mathbb{R}^n$,
 \[
@@ -6588,6 +6588,129 @@ and for the $y$-axis,
             \end{pmatrix}} \\
         &= 0.
 \end{align*}
+
+\end{sol}
+
+\begin{ex}
+
+Show that $\mathfrak{sl}(n, \mathbb{R})$, $\mathfrak{sl}(n, \mathbb{C})$, $\mathfrak{so}(p, q)$ and $\mathfrak{su}(n)$ are semisimple, except for certain low-dimensional cases, which you should determine.
+
+\end{ex}
+
+\begin{sol}
+
+We say that $\mathfrak{g}$ is a \emph{semisimple} Lie algebra if every element of $\mathfrak{g}$ is a linear combination of the Lie bracket of other elements.
+
+%Define an ideal of $\mathfrak{g}$ as a Lie subalgebra $\mathfrak{i} \subseteq \mathfrak{g}$ satisfying $[\mathfrak{g}, \mathfrak{i}] \subseteq \mathfrak{i}$. Therefore we can equivalently say that $\mathfrak{g}$ is semisimple if it has only nontrivial ideals.
+
+Consider first $\mathfrak{sl}(n, \mathbb{C})$, which we know from exercise~\ref{ex:detexptrace} has a representation as all $n \times n$ traceless complex matrices.
+
+\begin{itemize}
+
+    \item Let $z \in \mathfrak{sl}(1, \mathbb{C})$.
+    Then $\tr(z) = 0$, so $z = 0$ and $\mathfrak{sl}(1, \mathbb{C}) = \{0\}$ is semisimple.
+
+    \item When $n = 2$, we can use the basis
+    \[
+        e = \begin{pmatrix}
+                0 & 1 \\
+                0 & 0
+            \end{pmatrix}, \qquad
+        f = \begin{pmatrix}
+                0 & 0 \\
+                1 & 0
+            \end{pmatrix}, \qquad
+        h = \begin{pmatrix*}[r]
+                1 & 0 \\
+                0 & \ralminus 1
+            \end{pmatrix*}
+    \]
+    of $\mathfrak{sl}(2, \mathbb{C})$ satisfying
+    \[
+        [h, e] = 2e, \quad
+        [h, f] = -2f, \quad
+        [e, f] = h,
+    \]
+    implying every element of $\mathfrak{sl}(2, \mathbb{C})$ is a linear combination of the Lie bracket of other elements and therefore $\mathfrak{sl}(2, \mathbb{C})$ is semisimple.
+
+    \item Let $E_{ij}$ be the matrix with $1$ at the $i, j$ position and zero elsewhere.
+    Notice that $E_{ik} E_{lj} = \delta_{kl} E_{ij}$, so
+    \[
+        [E_{ik}, E_{lj}] = \delta_{kl} E_{ij} - \delta_{ij} E_{lk},
+    \]
+    implying every element of $\mathfrak{sl}(n, \mathbb{C})$ is a linear combination of the Lie bracket of other elements and therefore $\mathfrak{sl}(n, \mathbb{C})$ is semisimple.
+
+\end{itemize}
+
+The same argument holds when restricting the field to $\mathbb{R}$, so $\mathfrak{sl}(n, \mathbb{R})$ is also semisimple.
+
+From exercise~\ref{ex:lorentzliealgebra}, a representation of $\mathfrak{so}(p, q)$ consists of all real traceless $n \times n$ matrices $T$ satisfying $T_{\mu\nu} = \pm T_{\nu\mu}$, where the sign is negative if $\mu, \nu < q$ (0-indexed), otherwise positive.
+
+Recall the matrix of Lorentz generators $M$ from solution~\ref{sol:lorentzliealgebra} and generalise it to use a metric $g$ on $\mathbb{R}^n$ of signature $(p, q)$, so
+\[
+    {(M_{\alpha\beta})}_{\mu\nu}
+        = g_{\alpha\mu} g_{\beta\nu} - g_{\beta\mu} g_{\alpha\nu}
+\]
+or, contracting, ${{(M_{\alpha\beta})}^\mu\!}_\nu = \delta^\mu_\alpha g_{\beta\nu} - \delta^\mu_\beta g_{\alpha\nu}$.
+Notice that
+\begin{align*}
+    {{(M_{\alpha\beta})}^\mu\!}_\rho {{(M_{\gamma\delta})}^\rho\!}_\nu
+        &= (\delta^\mu_\alpha g_{\beta\rho} - \delta^\mu_\beta g_{\alpha\rho})
+           (\delta^\rho_\gamma g_{\delta\nu} - \delta^\rho_\delta g_{\gamma\nu}) \\
+        &= \delta^\mu_\alpha g_{\beta\rho} \delta^\rho_\gamma g_{\delta\nu}
+           - \delta^\mu_\alpha g_{\beta\rho} \delta^\rho_\delta g_{\gamma\nu} \\
+        &\mathrel{\phantom{=}}{}
+           - \delta^\mu_\beta g_{\alpha\rho} \delta^\rho_\gamma g_{\delta\nu}
+           + \delta^\mu_\beta g_{\alpha\rho} \delta^\rho_\delta g_{\gamma\nu} \\
+        &= g_{\beta\gamma} \delta^\mu_\alpha g_{\delta\nu}
+           - g_{\beta\delta} \delta^\mu_\alpha g_{\gamma\nu} \\
+        &\mathrel{\phantom{=}}{}
+           - g_{\alpha\gamma} \delta^\mu_\beta g_{\delta\nu}
+           + g_{\alpha\delta} \delta^\mu_\beta g_{\gamma\nu},
+\end{align*}
+so
+\begin{align*}
+    {{[M_{\alpha\beta}, M_{\gamma\delta}]}^\mu\!}_\nu
+        &= {{(M_{\alpha\beta})}^\mu\!}_\rho {{(M_{\gamma\delta})}^\rho\!}_\nu
+           - {{(M_{\gamma\delta})}^\mu\!}_\rho {{(M_{\alpha\beta})}^\rho\!}_\nu \\
+        &= g_{\beta\gamma} \delta^\mu_\alpha g_{\delta\nu}
+           - g_{\beta\delta} \delta^\mu_\alpha g_{\gamma\nu}
+           - g_{\alpha\gamma} \delta^\mu_\beta g_{\delta\nu}
+           + g_{\alpha\delta} \delta^\mu_\beta g_{\gamma\nu} \\
+        &\mathrel{\phantom{=}}{}
+           - g_{\delta\alpha} \delta^\mu_\gamma g_{\beta\nu}
+           + g_{\delta\beta} \delta^\mu_\gamma g_{\alpha\nu}
+           + g_{\gamma\alpha} \delta^\mu_\delta g_{\beta\nu}
+           - g_{\gamma\beta} \delta^\mu_\delta g_{\alpha\nu} \\
+        &= g_{\beta\gamma} (\delta^\mu_\alpha g_{\delta\nu}
+                            - \delta^\mu_\delta g_{\alpha\nu})
+           - g_{\beta\delta} (\delta^\mu_\alpha g_{\gamma\nu}
+                              - \delta^\mu_\gamma g_{\alpha\nu}) \\
+        &\mathrel{\phantom{=}}{}
+           - g_{\alpha\gamma} (\delta^\mu_\beta g_{\delta\nu}
+                               - \delta^\mu_\delta g_{\beta\nu})
+           + g_{\alpha\delta} (\delta^\mu_\beta g_{\gamma\nu}
+                               - \delta^\mu_\gamma g_{\beta\nu}) \\
+        &= g_{\beta\gamma} {{(M_{\alpha\delta})}^\mu\!}_\nu
+           - g_{\beta\delta} {{(M_{\alpha\gamma})}^\mu\!}_\nu
+           - g_{\alpha\gamma} {{(M_{\beta\delta})}^\mu\!}_\nu
+           + g_{\alpha\delta} {{(M_{\beta\gamma})}^\mu\!}_\nu,
+\end{align*}
+giving
+\[
+    [M_{\alpha\beta}, M_{\gamma\delta}] = g_{\beta\gamma} M_{\alpha\delta}
+                                          - g_{\beta\delta} M_{\alpha\gamma}
+                                          - g_{\alpha\gamma} M_{\beta\delta}
+                                          + g_{\alpha\delta} M_{\beta\gamma}.
+\]
+This implies that every element of $\mathfrak{so}(p, q)$, $n > 2$, is a linear combination of the Lie bracket of other elements and therefore $\mathfrak{so}(p, q)$, $n > 2$ is semisimple.
+
+From exercise~\ref{ex:suntracelessskewadjoint}, a representation of $\mathfrak{su}(n)$ consists of all traceless skew-adjoint complex $n \times n$ matrices.
+As with $\mathfrak{sl}(1, \mathbb{C})$, $\mathfrak{su}(1)$ is zero-dimensional and trivially semisimple.
+For $n \geq 2$, consider generators $T_a$ similar to the $E_{ij}$s of $\mathfrak{sl}(2, \mathbb{C})$ which are skew-adjoint and traceless.
+There are $n^2 - 1$ such linearly independent entities and therefore they form a basis of $\mathfrak{su}(n)$.
+As before, we can construct $[T_a, T_b] = f_{abc} T_c$ for $f_{abc}$ structure constants.
+Trusting that these constants are non-zero, every element of $\mathfrak{su}(n)$ is a linear combination of the Lie bracket of other elements and therefore $\mathfrak{su}(n)$ is semisimple.
 
 \end{sol}
 
