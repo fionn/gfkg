@@ -108,6 +108,8 @@
 \newcommand*{\U}{\ensuremath\text{U}}
 \newcommand*{\SU}{\ensuremath\text{SU}}
 
+\renewcommand*{\d}{\ensuremath\mathop{}\mathopen{}d}
+
 \NewCommandCopy{\binstar}{\star}
 \renewcommand*{\star}{\ensuremath\mathop{}\mathopen\binstar\mathord{}}
 
@@ -1146,9 +1148,9 @@ Therefore $\Omega^1(M)$ is a module over $C^\infty(M)$.
 Show that
 \begin{align*}
     & d(f + g) = df + dg, \\
-    & d(\alpha f) = \alpha\, df, \\
-    & (f + g) \, dh = f\, dh + g\, dh, \\
-    & d(fg) = f \, dg + g\, df
+    & d(\alpha f) = \alpha \d f, \\
+    & (f + g) \d h = f \d h + g \d h, \\
+    & d(fg) = f \d g + g \d f
 \end{align*}
 for any $f, g, h \in C^\infty(M)$ and any $\alpha \in \mathbb{R}$.
 
@@ -1164,18 +1166,18 @@ Let $v \in \Vect(M)$. First consider linearity.
               &= (df + dg)(v),
 \end{align*}
 \[
-    d(\alpha f)(v) = v(\alpha f) = \alpha v(f) = \alpha \, df(v),
+    d(\alpha f)(v) = v(\alpha f) = \alpha v(f) = \alpha \d f(v),
 \]
 \begin{align*}
-    (f + g) \, dh(v) &= (f + g)v(h) \\
+    (f + g) \d h(v) &= (f + g)v(h) \\
                      &= fv(h) + gv(h) \\
-                     &= f\, dh(v) + g \, dh(v).
+                     &= f\d h(v) + g \d h(v).
 \end{align*}
 The Leibniz law holds since
 \begin{align*}
     d(fg)(v) &= v(fg) \\
              &= f v(g) + g v(f) \\
-             &= f \, dg(v) + g \, df(v).
+             &= f \d g(v) + g \d f(v).
 \end{align*}
 
 \end{sol}
@@ -1184,7 +1186,7 @@ The Leibniz law holds since
 
 Suppose $f(x^1, \ldots, x^n)$ is a function on $\mathbb{R}^n$. Show that
 \[
-    df = \partial_\mu f \, dx^\mu.
+    df = \partial_\mu f \d x^\mu.
 \]
 
 \end{ex}
@@ -1197,12 +1199,12 @@ Recall from solution~\ref{sol:basis} that $\left\{\partial_\mu\right\}$ forms a 
 \]
 On the other hand,
 \begin{align*}
-    \partial_\mu f \, dx^\mu (v) &= \partial_\mu f v(x^\mu) \\
+    \partial_\mu f \d x^\mu (v) &= \partial_\mu f v(x^\mu) \\
         &= v^\nu \partial_\mu f \partial_\nu x^\mu \\
         &= v^\nu \partial_\mu f \delta_\nu^\mu \\
         &= v^\mu \partial_\mu f,
 \end{align*}
-giving $df(v) = \partial_\mu f\, dx^\mu(v)$ and therefore $df = \partial_\mu f\, dx^\mu$.
+giving $df(v) = \partial_\mu f \d x^\mu(v)$ and therefore $df = \partial_\mu f\d x^\mu$.
 
 \end{sol}
 
@@ -1336,7 +1338,7 @@ Let $\phi^*\nu \in T_p^* M$ be some 1-form where ${(\phi^*\omega)}_p = {(\phi^*\
 
 \begin{ex}
 
-Let $\phi: \mathbb{R} \to \mathbb{R}$ be given by $\phi(t) = \sin(t)$. Let $dx$ be the usual 1-form on $\mathbb{R}$. Show that $\phi^*dx = \cos(t) \, dt$.
+Let $\phi: \mathbb{R} \to \mathbb{R}$ be given by $\phi(t) = \sin(t)$. Let $dx$ be the usual 1-form on $\mathbb{R}$. Show that $\phi^*dx = \cos(t) \d t$.
 
 \end{ex}
 
@@ -1352,7 +1354,7 @@ Using the fact that the exterior derivative is \emph{natural}, i.e. $\phi^*(df) 
         &= f(t) \cos(t) \\
         &= f(t) \cos(t) \partial_t t \\
         &= \cos(t) v(t) \\
-        &= \cos(t) \, dt(v).
+        &= \cos(t) \d t(v).
 \end{align*}
 
 \end{sol}
@@ -1361,8 +1363,8 @@ Using the fact that the exterior derivative is \emph{natural}, i.e. $\phi^*(df) 
 
 Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ denote rotation counterclockwise by the angle $\theta$. Let $dx$, $dy$ be the usual basis of 1-forms on $\mathbb{R}^2$. Show that
 \begin{align*}
-    \phi^* dx &= \cos(\theta) \, dx - \sin(\theta) \, dy, \\
-    \phi^* dy &= \sin(\theta) \, dx + \cos(\theta) \, dy.
+    \phi^* dx &= \cos(\theta) \d x - \sin(\theta) \d y, \\
+    \phi^* dy &= \sin(\theta) \d x + \cos(\theta) \d y.
 \end{align*}
 
 \end{ex}
@@ -1381,7 +1383,7 @@ Let $v = f_i(x, y)\partial_i$ be some vector in $\Vect(\mathbb{R}^2)$ and $p = (
         &= \cos(\theta) f_1(x, y) \partial_x x
            - \sin(\theta) f_2(x, y) \partial_y y \\
         &= \cos(\theta) v(x) - \sin(\theta) v(y) \\
-        &= \cos(\theta) \, dx(v) - \sin(\theta) \, dy(v)
+        &= \cos(\theta) \d x(v) - \sin(\theta) \d y(v)
 \end{align*}
 and similarly for $\phi^* dy$.
 
@@ -1643,18 +1645,18 @@ Let $u, v, w$ be vectors,
 Then
 \begin{align*}
     \SwapAboveDisplaySkip
-    v \wedge w =&\ (v_x w_y - v_y w_x) \, dx \wedge dy \\
-                &+ (v_y w_z - v_z w_y) \, dy \wedge dz \\
-                &+ (v_z w_x - v_x w_z) \, dz \wedge dx,
+    v \wedge w =&\ (v_x w_y - v_y w_x) \d x \wedge dy \\
+                &+ (v_y w_z - v_z w_y) \d y \wedge dz \\
+                &+ (v_z w_x - v_x w_z) \d z \wedge dx,
 \end{align*}
 so the triple product
 \begin{align*}
-    u \wedge v \wedge w =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
-        &+ u_y (v_z w_x - v_x w_z) \, dy \wedge dz \wedge dx \\
-        &+ u_z (v_x w_y - v_y w_x) \, dz \wedge dx \wedge dy \\
-        =&\ u_x (v_y w_z - v_z w_y) \, dx \wedge dy \wedge dz \\
-        &- u_y (v_x w_z - v_z w_x) \, dx \wedge dy \wedge dz \\
-        &+ u_z (v_x w_y - v_y w_x) \, dx \wedge dy \wedge dz \\
+    u \wedge v \wedge w =&\ u_x (v_y w_z - v_z w_y) \d x \wedge dy \wedge dz \\
+        &+ u_y (v_z w_x - v_x w_z) \d y \wedge dz \wedge dx \\
+        &+ u_z (v_x w_y - v_y w_x) \d z \wedge dx \wedge dy \\
+        =&\ u_x (v_y w_z - v_z w_y) \d x \wedge dy \wedge dz \\
+        &- u_y (v_x w_z - v_z w_x) \d x \wedge dy \wedge dz \\
+        &+ u_z (v_x w_y - v_y w_x) \d x \wedge dy \wedge dz \\
         =&\ \det \begin{pmatrix}
                 u_x & u_y & u_z \\
                 v_x & v_y & v_z \\
@@ -1690,7 +1692,7 @@ Show that if $a, b, c, d$ are four vectors in a 3-dimensional space then $a \wed
 
 Using $dx, dy, dz$ as a basis, we have from exercise~\ref{ex:triplewedgeproduct} that
 \[
-    b \wedge c \wedge d = \alpha \, dx \wedge dy \wedge dz, \quad
+    b \wedge c \wedge d = \alpha \d x \wedge dy \wedge dz, \quad
     \alpha = \det \begin{pmatrix}
         b_x & b_y & b_z \\
         c_x & c_y & c_z \\
@@ -1699,11 +1701,11 @@ Using $dx, dy, dz$ as a basis, we have from exercise~\ref{ex:triplewedgeproduct}
 \]
 Then
 \begin{align*}
-    a \wedge b \wedge c \wedge d =&\ a \wedge \alpha \, dx \wedge dy \wedge dz \\
-        =&\ (a_x dx + a_y dy + a_z dz) \wedge \alpha \, dx \wedge dy \wedge dz \\
-        =&\ \alpha a_x \, dx \wedge dx \wedge dy \wedge dz \\
-        &+ \alpha a_y \, dy \wedge dx \wedge dy \wedge dz \\
-        &+ \alpha a_z \, dz \wedge dx \wedge dy \wedge dz \\
+    a \wedge b \wedge c \wedge d =&\ a \wedge \alpha \d x \wedge dy \wedge dz \\
+        =&\ (a_x dx + a_y dy + a_z dz) \wedge \alpha \d x \wedge dy \wedge dz \\
+        =&\ \alpha a_x \d x \wedge dx \wedge dy \wedge dz \\
+        &+ \alpha a_y \d y \wedge dx \wedge dy \wedge dz \\
+        &+ \alpha a_z \d z \wedge dx \wedge dy \wedge dz \\
         =&\ 0
 \end{align*}
 since $w \wedge w = 0$ by antisymmetry and each term contains one repeated basis element.
@@ -1733,8 +1735,8 @@ If $\dim(V) = 2$,
 so
 \begin{align*}
     \SwapAboveDisplaySkip
-    u \wedge v &= u_x v_y \, dx \wedge dy + u_y v_x \, dy \wedge dx \\
-               &= (u_x v_y - u_y v_x) \, dx \wedge dy.
+    u \wedge v &= u_x v_y \d x \wedge dy + u_y v_x \d y \wedge dx \\
+               &= (u_x v_y - u_y v_x) \d x \wedge dy.
 \end{align*}
 Therefore $\Lambda V$ consists of $\mathbb{F}$, $V$ and all linear combinations of the 2-forms $dx \wedge dy$ above.
 
@@ -1924,7 +1926,7 @@ If $\omega \in \Omega^1(\mathbb{R}^3)$, then
 \]
 and if $\omega \in \Omega^2(\mathbb{R}^3)$, then
 \begin{align*}
-    \phi^* \omega &= \phi^*\left(\tfrac{1}{2}\omega_{\mu\nu} \, dx^\mu \wedge dx^\nu\right) \\
+    \phi^* \omega &= \phi^*\left(\tfrac{1}{2}\omega_{\mu\nu} \d x^\mu \wedge dx^\nu\right) \\
         &= \tfrac{1}{2}\omega_{\mu\nu} \, \phi^*(dx^\mu \wedge dx^\nu) \\
         &= \tfrac{1}{2}\omega_{\mu\nu} \, \phi^* dx^\mu \wedge \phi^* dx^\nu \\
         &= \tfrac{1}{2}\omega_{\mu\nu} (-dx^\mu) \wedge (-dx^\nu) \\
@@ -1939,7 +1941,7 @@ and if $\omega \in \Omega^2(\mathbb{R}^3)$, then
 
 Show that on $\mathbb{R}^n$ the exterior derivative of any 1-form is given by
 \[
-    d(\omega_\mu dx^\mu) = \partial_\nu \omega_\mu \, dx^\nu \wedge dx^\mu.
+    d(\omega_\mu dx^\mu) = \partial_\nu \omega_\mu \d x^\nu \wedge dx^\mu.
 \]
 
 \end{ex}
@@ -1951,7 +1953,7 @@ Since $\omega_\mu$ is a 0-form,
     d(\omega_\mu dx^\mu) &= d(\omega_\mu \wedge dx^\mu) \\
         &= d\omega_\mu \wedge dx^\mu + \omega_\mu \wedge d(dx^\mu) \\
         &= d\omega_\mu \wedge dx^\mu \\
-        &= \partial_\nu \omega_\mu \, dx^\nu \wedge dx^\mu.
+        &= \partial_\nu \omega_\mu \d x^\nu \wedge dx^\mu.
 \end{align*}
 
 \end{sol}
@@ -1994,8 +1996,8 @@ where $F_{ij} = B_{ij}$ and $F_{i0} = E_i$. Uniqueness is automatic since each c
 
 Show that for any form $\omega$ on $\mathbb{R} \times S$ there is a unique way to write $d\omega = dt \wedge \partial_t \omega + d_S \omega$ such that for any local coordinates $x^i$ on $S$, writing $t = x^0$, we have
 \begin{align*}
-    d_S\omega &= \partial_i \omega_I \, dx^i \wedge dx^I, \\
-    dt \wedge \partial_t \omega &= \partial_0 \omega_I \, dx^0 \wedge dx^I.
+    d_S\omega &= \partial_i \omega_I \d x^i \wedge dx^I, \\
+    dt \wedge \partial_t \omega &= \partial_0 \omega_I \d x^0 \wedge dx^I.
 \end{align*}
 
 \end{ex}
@@ -2004,10 +2006,10 @@ Show that for any form $\omega$ on $\mathbb{R} \times S$ there is a unique way t
 
 Similarly to solution~\ref{sol:bplusedt}, since $\omega \in \Omega(U_\alpha)$ we have that $\omega = \omega_I dx^I$, so
 \begin{align*}
-    d\omega &= \partial_\mu \omega_I \, dx^\mu \wedge dx^I \\
-        &= \partial_0 \omega_I \, dx^0 \wedge dx^I + \partial_i \omega_I \, dx^i \wedge dx^I \\
-        &= dx^0 \wedge \partial_0 \omega_I \wedge dx^I + \partial_i \omega_I \, dx^i \wedge dx^I \\
-        &= dx^0 \wedge \partial_0 \omega + \partial_i \omega_I \, dx^i \wedge dx^I \\
+    d\omega &= \partial_\mu \omega_I \d x^\mu \wedge dx^I \\
+        &= \partial_0 \omega_I \d x^0 \wedge dx^I + \partial_i \omega_I \d x^i \wedge dx^I \\
+        &= dx^0 \wedge \partial_0 \omega_I \wedge dx^I + \partial_i \omega_I \d x^i \wedge dx^I \\
+        &= dx^0 \wedge \partial_0 \omega + \partial_i \omega_I \d x^i \wedge dx^I \\
         &= dt \wedge \partial_t \omega + d_S \omega.
 \end{align*}
 Again, this is guaranteed to be unique by linearity.
@@ -2362,7 +2364,7 @@ with the explicit representation of $T$ given by partial derivatives as per exer
     {(\varphi_\alpha \circ \varphi_\beta^{-1})}^* \omega' &= {(\varphi_\alpha \circ \varphi_\beta^{-1})}^* (dx'^1 \wedge \cdots \wedge dx'^n) \\
         &= {(\varphi_\alpha \circ \varphi_\beta^{-1})}^* dx'^1 \wedge \cdots \wedge {(\varphi_\alpha \circ \varphi_\beta^{-1})}^* dx'^n \\
         &= T_\mu^1 dx^\mu \wedge \cdots \wedge T_\nu^n dx^\nu \\
-        &= \det(T) \, dx^1 \wedge \cdots \wedge dx^n \\
+        &= \det(T) \d x^1 \wedge \cdots \wedge dx^n \\
         &= \det(T) \, \omega.
 \end{align*}
 But since the transition function is orientation-preserving, this transfers the standard orientation on $\mathbb{R}^n$ to an orientation on $M$.
@@ -2383,7 +2385,7 @@ where $\text{vol}$ is the volume form associated to the metric on $M$ and $\text
 
 The canonical volume form on $M$ with metric $g_{\mu\nu} = g(\partial_\mu, \partial_\nu)$ is given by
 \[
-    \text{vol} = \sqrt{|\det(g)|} \, dx^1 \wedge \cdots \wedge dx^n.
+    \text{vol} = \sqrt{|\det(g)|} \d x^1 \wedge \cdots \wedge dx^n.
 \]
 We have that $e^\mu = T^\mu_\nu dx^\nu$ with $T$ as per exercise~\ref{ex:transform1form}. Taking the inner product
 \begin{align*}
@@ -2399,8 +2401,8 @@ g^{\mu\nu} = \pm {(T^{-1})}^\mu_\alpha {(T^{-1})}^\nu_\alpha
 \]
 and taking the determinant gives us $\det(T) = \sqrt{|\det(g)|}$. Then
 \begin{align*}
-    e^1 \wedge \cdots \wedge e^n &= \det(T) \, dx^1 \wedge \cdots \wedge dx^n \\
-        &= \sqrt{|\det(g)|} \, dx^1 \wedge \cdots \wedge dx^n \\
+    e^1 \wedge \cdots \wedge e^n &= \det(T) \d x^1 \wedge \cdots \wedge dx^n \\
+        &= \sqrt{|\det(g)|} \d x^1 \wedge \cdots \wedge dx^n \\
         &= \text{vol}
 \end{align*}
 and, evaluated at $p$,
@@ -2476,18 +2478,18 @@ Denote $\omega = \omega_x dx + \omega_y dy + \omega_z dz$. The gradient is
         &= \partial_y \omega_x dy \wedge dx + \partial_z \omega_x dz \wedge dx \\
         &\mathrel{\phantom{=}}{} + \partial_x \omega_y dx \wedge dy + \partial_z \omega_y dz \wedge dy \\
         &\mathrel{\phantom{=}}{} + \partial_x \omega_z dx \wedge dz + \partial_y \omega_z dy \wedge dz \\
-        &= (\partial_y \omega_z - \partial_z \omega_y) \, dy \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \, dz \wedge dx \\
-        &\mathrel{\phantom{=}}{} +(\partial_x \omega_y - \partial_y \omega_x) \, dx \wedge dy.
+        &= (\partial_y \omega_z - \partial_z \omega_y) \d y \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \d z \wedge dx \\
+        &\mathrel{\phantom{=}}{} +(\partial_x \omega_y - \partial_y \omega_x) \d x \wedge dy.
 \end{align*}
 Then the Hodge dual of $d\omega$ is
 \begin{align*}
     \star d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \star (dy \wedge dz) \\
         &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \star (dz \wedge dx) \\
         &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) \star (dx \wedge dy) \\
-        &= \left(\partial_y \omega_z - \partial_z \omega_y\right) \, dx
-            + \left(\partial_z \omega_x - \partial_x \omega_z\right) \, dy
-            + \left(\partial_x \omega_y - \partial_y \omega_x\right) \, dz,
+        &= \left(\partial_y \omega_z - \partial_z \omega_y\right) \d x
+            + \left(\partial_z \omega_x - \partial_x \omega_z\right) \d y
+            + \left(\partial_x \omega_y - \partial_y \omega_x\right) \d z,
 \end{align*}
 analogous to the curl of $\omega$.
 
@@ -2512,7 +2514,7 @@ The gradient of the Hodge dual is then
         &= d(\omega_x dy \wedge dz) + d(\omega_y dz \wedge dx) + d(\omega_z dx \wedge dy) \\
         &= d\omega_x \wedge dy \wedge dz + d\omega_y \wedge dz \wedge dx + d\omega_z \wedge dx \wedge dy \\
         &= \partial_x \omega_x dx \wedge dy \wedge dz + \partial_y \omega_y dy \wedge dz \wedge dx + \partial_z \omega_z dz \wedge dx \wedge dy \\
-        &= (\partial_x \omega_x + \partial_y \omega_y + \partial_z \omega_z) \, dx \wedge dy \wedge dz.
+        &= (\partial_x \omega_x + \partial_y \omega_y + \partial_z \omega_z) \d x \wedge dy \wedge dz.
 \end{align*}
 Taking the Hodge dual of this gives
 \[
@@ -2652,14 +2654,14 @@ The claim is that on Minkowski space, the second pair of Maxwell equations,
 \]
 can be rewritten as
 \[
-    \star_S \, d_S \star_S E = \rho, \qquad
-    -\partial_t E + \star_S \, d_S \star_S B = j
+    \star_S \d_S \star_S E = \rho, \qquad
+    -\partial_t E + \star_S \d_S \star_S B = j
 \]
 where $\star_S$ denotes the Hodge star operator on space, that is, $\mathbb{R}^3$ with its usual Euclidean metric.
 
 Since $E = E_x dx + E_y dy + E_z dz$ is a 1-form, we have from solution~\ref{sol:divergence1form} that
 \begin{align*}
-    \star_S \, d_S \star_S E &= \partial_x E_x + \partial_y E_y + \partial_z E_z \\
+    \star_S \d_S \star_S E &= \partial_x E_x + \partial_y E_y + \partial_z E_z \\
                              &= \nabla \cdot \vec{E} \\
                              &= \rho.
 \end{align*}
@@ -2671,7 +2673,7 @@ Consider now the Hodge dual in space of the 2-form $B$,
 \end{align*}
 From solution~\ref{sol:curl1form}, we get
 \begin{align*}
-    \star_S \, d_S \star_S B &= \star_S \, d_S (B_x dx + B_y dy + B_z dz) \\
+    \star_S \d_S \star_S B &= \star_S \d_S (B_x dx + B_y dy + B_z dz) \\
         &= \left(\partial_y B_z - \partial_z B_y\right) dx
             + \left(\partial_z B_x - \partial_x B_z\right) dy
             + \left(\partial_x B_y - \partial_y B_x\right) dz \\
@@ -2679,13 +2681,13 @@ From solution~\ref{sol:curl1form}, we get
 \end{align*}
 Since we're in Euclidean space, we can turn vector fields into 1-forms easily. As in exercise~\ref{ex:raisingindex},
 \begin{gather*}
-    g(\star_S \, d_S \star_S B, \cdot)
+    g(\star_S \d_S \star_S B, \cdot)
         = \delta^{ij} {(\nabla \times \vec{B})}_i \partial_j
         = \nabla \times \vec{B}, \\
     g(-\partial_t E, \cdot) = -\delta^{ij} \partial_t E_i \partial_j = -\partial_t \vec{E}
 \end{gather*}
 and $g(j, \cdot) = \vec{\jmath}$,
-so $-\partial_t E + \star_S \, d_S \star_S B = j$ is component-by-component equivalent to the last Maxwell equation.
+so $-\partial_t E + \star_S \d_S \star_S B = j$ is component-by-component equivalent to the last Maxwell equation.
 
 \end{sol}
 
@@ -2697,7 +2699,7 @@ Check the calculations above.
 
 \begin{sol}\label{sol:secondpair}
 
-Assume that $M = \mathbb{R} \times S$ is an oriented semi-Riemannian manifold where $S$ is space and let the current be given by $J = j - \rho \, dt$. Suppose $\dim(S) = 3$ and the metric is static and of the form $g = -dt^2 + ^3 g$ where $^3 g$ is a Riemannian metric on $S$. We want to show that
+Assume that $M = \mathbb{R} \times S$ is an oriented semi-Riemannian manifold where $S$ is space and let the current be given by $J = j - \rho \d t$. Suppose $\dim(S) = 3$ and the metric is static and of the form $g = -dt^2 + ^3 g$ where $^3 g$ is a Riemannian metric on $S$. We want to show that
 \[
     \star d \star F = J
 \]
@@ -2767,12 +2769,12 @@ Combining,
 \]
 But $\star d \star F = J$, so
 \[
-    - \partial_t E - \star_S d_S \star_S E \wedge dt + \star_S d_S \star_S B = j - \rho \, dt
+    - \partial_t E - \star_S \d_S \star_S E \wedge dt + \star_S \d_S \star_S B = j - \rho \d t
 \]
 and equating coefficients gives us
 \[
-    \star_S d_S \star_S E = \rho, \qquad
-    - \partial_t E + \star_S d_S \star_S B = j.
+    \star_S \d_S \star_S E = \rho, \qquad
+    - \partial_t E + \star_S \d_S \star_S B = j.
 \]
 
 \end{sol}
@@ -2961,9 +2963,9 @@ In terms of components,
         &= ik_0 (\mathbf{E}_x dy \wedge dz
                  + \mathbf{E}_y dz \wedge dx
                  + \mathbf{E}_z dx \wedge dy) \\
-        &\mathrel{\phantom{=}}{} + (k_x \mathbf{E}_y - k_y \mathbf{E}_x) \, dx \wedge dy \\
-        &\mathrel{\phantom{=}}{} + (k_y \mathbf{E}_z - k_z \mathbf{E}_y) \, dy \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (k_z \mathbf{E}_x - k_x \mathbf{E}_z) \, dz \wedge dx.
+        &\mathrel{\phantom{=}}{} + (k_x \mathbf{E}_y - k_y \mathbf{E}_x) \d x \wedge dy \\
+        &\mathrel{\phantom{=}}{} + (k_y \mathbf{E}_z - k_z \mathbf{E}_y) \d y \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (k_z \mathbf{E}_x - k_x \mathbf{E}_z) \d z \wedge dx.
 \end{align*}
 Equating coefficients, we get the homogeneous system
 \begin{align*}
@@ -3003,17 +3005,17 @@ Check the above result.
 
 A simple self-dual solution to the vacuum Maxwell equations is
 \[
-    k = dt - dx, \qquad \mathbf{E} = dy - i \, dz.
+    k = dt - dx, \qquad \mathbf{E} = dy - i \d z.
 \]
 This holds since
 \begin{align*}
     -i k_0 \star_S \mathbf{E} &= -i k_0 (\star_S dy - i \star_S dz) \\
-    &= -i k_0 (dz \wedge dx - i\, dx \wedge dy) \\
-    &= -i \, dz \wedge dx - dx \wedge dy,
+    &= -i k_0 (dz \wedge dx - i \d x \wedge dy) \\
+    &= -i \d z \wedge dx - dx \wedge dy,
 \end{align*}
 so
 \[
-    ^3 k \wedge \mathbf{E} = -dx \wedge dy + i \, dx \wedge dz = -ik_0 \star_S \mathbf{E}
+    ^3 k \wedge \mathbf{E} = -dx \wedge dy + i \d x \wedge dz = -ik_0 \star_S \mathbf{E}
 \]
 as required.
 
@@ -3021,12 +3023,12 @@ From $\star_S E = iB$,
 \begin{align*}
     \SwapAboveDisplaySkip
     \mathbf{B} &= -i \star_S \mathbf{E} \\
-               &= -i \, dz \wedge dx - dx \wedge dy.
+               &= -i \d z \wedge dx - dx \wedge dy.
 \end{align*}
 Since $k_\mu x^\mu = t - x$, this gives us
 \begin{align*}
-    E(x) &= (dy - i\, dz) e^{i (t - x)}, \\
-    B(x) &= (-i \, dz \wedge dx - dx \wedge dy) e^{i (t - x)}
+    E(x) &= (dy - i \d z) e^{i (t - x)}, \\
+    B(x) &= (-i \d z \wedge dx - dx \wedge dy) e^{i (t - x)}
 \end{align*}
 or, in old-fashioned language,
 \[
@@ -3101,7 +3103,7 @@ so $^3 k \wedge \mathbf{E} = -ik_0 \star_S \mathbf{E}$ requires
 \]
 For non-trivial solutions, $k_1^2 - k_2^2 = 0$ or $k_0 = \pm k_1$. Assuming without loss of generality that $k_0 = k_1$ (forward propagation), $\mathbf{E}_3 = -i \mathbf{E}_2$ and so, letting $\mathbf{E}_2 \equiv \mathbf{E}_0$ (since we have run out of ways of writing the letter ``E''),
 \[
-    \mathbf{E} = \mathbf{E}_0 (dy -i \, dz), \qquad
+    \mathbf{E} = \mathbf{E}_0 (dy -i \d z), \qquad
     k = k_0 (dt - dx).
 \]
 Using the self-dual relationship $B = -i \star_S E$, in old-fashioned language we get
@@ -3151,7 +3153,7 @@ Then $^3k \wedge \mathbf{E} = ik_0 \star_S \mathbf{E}$ requires
 \]
 Take $k_0 = k_1$ (forward propagation) to get $\mathbf{E}_2 = -i \mathbf{E}_3$ and so, letting $\mathbf{E}_3 \equiv \mathbf{E}_0$ this time,
 \[
-    \mathbf{E} = \mathbf{E}_0 (-i \, dy + dz), \qquad
+    \mathbf{E} = \mathbf{E}_0 (-i \d y + dz), \qquad
     k = k_0 (dt - dx).
 \]
 Using the anti-self-dual relationship $B = i \star_S E$, in old-fashioned language we get
@@ -3222,7 +3224,7 @@ Show that this 1-form $E$ is closed. Show that $\int_{\gamma_0} E = -\pi$ and $\
 
 The 1-form in question is defined on $\mathbb{R}^2 - \{0\}$ as
 \[
-    E = \frac{x \, dy - y \, dx}{x^2 + y^2}.
+    E = \frac{x \d y - y \d x}{x^2 + y^2}.
 \]
 The paths $\gamma_0, \gamma_1 : [0, 1] \to S^1 \subset \mathbb{R}^2$ describe the upper and lower half circle of radius 1 centered at the origin with $\gamma_0(0) = \gamma_1(0) = (-1, 0)$ and $\gamma_0(1) = \gamma_1(1) = (1, 0)$.
 
@@ -3242,7 +3244,7 @@ Denote $r^2 = x^2 + y^2$. The differential of $E$ is
 \end{align*}
 so this 1-form is closed.
 
-Note that similar to exercise~\ref{ex:liebracketpolarcoordinates}, $dx = \cos(\theta) \, dr - r \sin(\theta) \, d\theta$ and $dy = \sin(\theta) \, dr + r \cos(\theta) \, d\theta$ so $E = d \theta$. It's tempting to then say $dE = 0$ by $d^2 = 0$, but $d\theta$ is not exact since $\theta$ is not a well-defined 0-form, so the result doesn't follow.
+Note that similar to exercise~\ref{ex:liebracketpolarcoordinates}, $dx = \cos(\theta) \d r - r \sin(\theta) \d \theta$ and $dy = \sin(\theta) \d r + r \cos(\theta) \d \theta$ so $E = d \theta$. It's tempting to then say $dE = 0$ by $d^2 = 0$, but $d\theta$ is not exact since $\theta$ is not a well-defined 0-form, so the result doesn't follow.
 
 We can parameterise our paths as
 \begin{align*}
@@ -3258,7 +3260,7 @@ so
 
 Integrating along $\gamma_0$,
 \begin{align*}
-    \int_{\gamma_0} E &= \int_0^1 E_{\gamma_0(t)}(\gamma_0'(t)) \, dt \\
+    \int_{\gamma_0} E &= \int_0^1 E_{\gamma_0(t)}(\gamma_0'(t)) \d t \\
         &= \int_0^1 \frac{-\pi \cos \bigl( \pi(1 - t) \bigr) \cos \bigl( \pi(1 - t) \bigr)
                           - \pi \sin \bigl( \pi(1 - t) \bigr) \sin \bigl( \pi(1 - t) \bigr)}
                          {{\cos \bigl( \pi(1 - t) \bigr)}^2 + {\sin \bigl( \pi(1 - t) \bigr)}^2} dt \\
@@ -3267,7 +3269,7 @@ Integrating along $\gamma_0$,
 \end{align*}
 and along $\gamma_1$,
 \begin{align*}
-    \int_{\gamma_1} E &= \int_0^1 E_{\gamma_1(t)}(\gamma_1'(t)) \, dt \\
+    \int_{\gamma_1} E &= \int_0^1 E_{\gamma_1(t)}(\gamma_1'(t)) \d t \\
         &= \int_0^1 \frac{\pi \cos \bigl( \pi(1 + t) \bigr) \cos \bigl( \pi(1 + t) \bigr)
                           + \pi \sin \bigl( \pi(1 + t) \bigr) \sin \bigl( \pi(1 + t) \bigr)}
                          {{\cos \bigl( \pi(1 - t) \bigr)}^2 + {\sin \bigl( \pi(1 - t) \bigr)}^2} dt \\
@@ -3322,9 +3324,9 @@ Show that a 1-form $E$ is exact if and only if $\int_\gamma E = 0$ for all loops
 Let $E = -d\phi$ be an exact 1-form and $\gamma: [0, 1] \to M$ a loop based at $p \in M$. Then
 \begin{align*}
     \oint_\gamma E &= - \oint_\gamma d\phi \\
-                   &= - \int_0^1 d\phi \bigl( \gamma'(t) \bigr) \, dt \\
-                   &= - \int_0^1 \gamma'(t)(\phi) \, dt \\
-                   &= - \int_0^1 \frac{d}{dt} \phi \bigl( \gamma(t) \bigr) \, dt \\
+                   &= - \int_0^1 d\phi \, \bigl( \gamma'(t) \bigr) \d t \\
+                   &= - \int_0^1 \gamma'(t)(\phi) \d t \\
+                   &= - \int_0^1 \frac{d}{dt} \phi \bigl( \gamma(t) \bigr) \d t \\
                    &= - \phi(p) + \phi(p) \\
                    &= 0.
 \end{align*}
@@ -3492,7 +3494,7 @@ We've already seen from solution~\ref{sol:ndisk} that when $r^2 \to 1$, $\varphi
 
 Let $M = [0, 1]$. Show that Stokes' theorem in this case is equivalent to the fundamental theorem of calculus:
 \[
-    \int_0^1 f'(x) \, dx = f(1) - f(0).
+    \int_0^1 f'(x) \d x = f(1) - f(0).
 \]
 
 \end{ex}
@@ -3512,8 +3514,8 @@ Let $\omega = f$ be a 0-form, so $d\omega = df = f' dx$. Then
 \]
 and so, by Stokes' theorem,
 \begin{align*}
-\int_0^1 f'(x) \, dx &= \int_{\partial [0, 1]} f(x) \\
-                     &= f(1) - f(0).
+\int_0^1 f'(x) \d x &= \int_{\partial [0, 1]} f(x) \\
+                    &= f(1) - f(0).
 \end{align*}
 The boundary $\partial [0, 1] = {\{0\}}^-\! \cup {\{1\}}^+$ where the sign denotes orientation.
 
@@ -3525,7 +3527,7 @@ While the integral over $[0, 1]$ has the Lebesgue measure on $\mathbb{R}$, it in
 
 Let $M = \rinterval{0}{\infty}$ which is not compact.
 Show that without the assumption that $f$ vanishes outside a compact set, Stokes' theorem may not apply.
-(Hint\footnote{The original hint uses the wrong boundary.}: in this case Stokes' theorem says $\int_0^\infty f'(x) \, dx = -f(0)$.)
+(Hint\footnote{The original hint uses the wrong boundary.}: in this case Stokes' theorem says $\int_0^\infty f'(x) \d x = -f(0)$.)
 
 \end{ex}
 
@@ -3534,12 +3536,12 @@ Show that without the assumption that $f$ vanishes outside a compact set, Stokes
 Let $f$ be a 0-form on $M$.
 The boundary of $M$ is $\partial M = {\{0\}}^-$ so, by \ref{eq:stokestheorem}, % chktex 2
 \[
-    \int_0^\infty f'(x) \, dx = \int_{{\{0\}}^-} f(x) = -f(0).
+    \int_0^\infty f'(x) \d x = \int_{{\{0\}}^-} f(x) = -f(0).
 \]
 But a standard Riemann integral of $f$ over $M$ gives
 \begin{align*}
-    \int_0^\infty f'(x) \, dx &= \lim_{b \to \infty} \int_0^b f'(x) \, dx \\
-                              &= \lim_{b \to \infty} f(b) - f(0),
+    \int_0^\infty f'(x) \d x &= \lim_{b \to \infty} \int_0^b f'(x) \d x \\
+                             &= \lim_{b \to \infty} f(b) - f(0),
 \end{align*}
 which disagrees with Stokes' theorem unless $\displaystyle \lim_{x \to \infty} f(x) = 0$.
 
@@ -3649,12 +3651,12 @@ This is sometimes called Green's theorem.
 Let $\omega = \omega_x dx + \omega_y dy$ be a 1-form on $S$. Taking the exterior derivative,
 \begin{align*}
     d\omega &= \partial_x \omega_y dx \wedge dy + \partial_y \omega_x dy \wedge dx \\
-            &= (\partial_x \omega_y - \partial_y \omega_x) \, dx \wedge dy.
+            &= (\partial_x \omega_y - \partial_y \omega_x) \d x \wedge dy.
 \end{align*}
 Therefore, by \ref{eq:stokestheorem}, % chktex 2
 \[
     \int_{\partial S} (\omega_x dx + \omega_y dy) =
-        \int_S (\partial_x \omega_y - \partial_y \omega_x) \, dx \wedge dy.
+        \int_S (\partial_x \omega_y - \partial_y \omega_x) \d x \wedge dy.
 \]
 
 \end{sol}
@@ -3670,9 +3672,9 @@ Show Stokes' theorem applied to $S$ boils down to the classic Stokes' theorem.
 
 Let $\omega = \omega_x dx + \omega_y dy + \omega_z dz$ be a 1-form on $\mathbb{R}^3$, so the exterior derivative, as in solution~\ref{sol:curl1form}, is
 \begin{align*}
-    d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \, dy \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \, dz \wedge dx \\
-        &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) \, dx \wedge dy.
+    d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \d y \wedge dz \\
+        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \d z \wedge dx \\
+        &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) \d x \wedge dy.
 \end{align*}
 
 %Let $\{e^1, e^2\}$ be an oriented orthonormal basis on $\Omega^1(S)$. Then the ``area'' form on $S$, which is not necessarily exact, is given by
@@ -3690,7 +3692,7 @@ Let $F = F^i \partial_i$ be the vector field dual to $\omega$, so $F^i = g^{ij} 
 where $d\vec{A} = (dy \wedge dz, dz \wedge dx, dx \wedge dy)$ is the oriented area element
 and
 \[
-    \int_{\partial S} \omega = \int_{\partial S} F_i \, dx^i
+    \int_{\partial S} \omega = \int_{\partial S} F_i \d x^i
                              = \int_{\partial S} \vec{F} \cdot d\vec{s}
 \]
 with line element $d\vec{s} = (dx, dy, dz)$.
@@ -3716,11 +3718,11 @@ Let $\omega = \omega_x dx + \omega_y dy + \omega_z dz$ be a 1-form on $\mathbb{R
 \]
 and
 \[
-    d \star \omega = (\partial_x \omega_x + \partial_y \omega_y + \partial_z \omega_z) \, dx \wedge dy \wedge dz.
+    d \star \omega = (\partial_x \omega_x + \partial_y \omega_y + \partial_z \omega_z) \d x \wedge dy \wedge dz.
 \]
 Again, let $F$ be the vector dual to $\omega$. Then
 \[
-    \int_S d \star \omega = \int_S \nabla \cdot \vec{F} \, dV
+    \int_S d \star \omega = \int_S \nabla \cdot \vec{F} \d V
 \]
 where $dV$ is the volume form and
 \[
@@ -3729,7 +3731,7 @@ where $dV$ is the volume form and
 where $d\vec{A}$ is as in solution~\ref{sol:classicstokestheorem}.
 Therefore, by \ref{eq:stokestheorem}, % chktex 2
 \[
-    \int_S \nabla \cdot \vec{F} \, dV = \int_{\partial S} \vec{F} \cdot d\vec{A}.
+    \int_S \nabla \cdot \vec{F} \d V = \int_{\partial S} \vec{F} \cdot d\vec{A}.
 \]
 
 \end{sol}
@@ -3820,7 +3822,7 @@ by exercise~\ref{ex:dualidentity}, so ${(\psi \phi)}^* = \phi^* \psi^*$ when act
 
 \begin{ex}
 
-Do this. (Hint: show that $\star dz = r \, dr \wedge d\theta$.)
+Do this. (Hint: show that $\star dz = r \d r \wedge d\theta$.)
 
 \end{ex}
 
@@ -3831,27 +3833,27 @@ We have cylindrical coordinates $z, r, \theta$ on $\mathbb{R}^3$, with correspon
 Recall that
 \begin{align*}
     \SwapAboveDisplaySkip
-    dx &= \cos(\theta) \, dr - r \sin(\theta) \, d\theta, \\
-    dy &= \sin(\theta) \, dr + r \cos(\theta) \, d\theta.
+    dx &= \cos(\theta) \d r - r \sin(\theta) \d \theta, \\
+    dy &= \sin(\theta) \d r + r \cos(\theta) \d \theta.
 \end{align*}
 Taking the Hodge dual of $dz$,
 \begin{align*}
     \star dz &= dx \wedge dy \\
-             &= \bigl( \cos(\theta) \, dr -r \sin(\theta) \, d\theta \bigr)
-                       \wedge (\sin(\theta) \, dr + r \cos(\theta) \, d\theta \bigr) \\
+             &= \bigl( \cos(\theta) \d r -r \sin(\theta) \d \theta \bigr)
+                       \wedge (\sin(\theta) \d r + r \cos(\theta) \d \theta \bigr) \\
              &= r \, {\cos(\theta)}^2 dr \wedge d\theta + r \, {\sin(\theta)}^2 dr \wedge d\theta \\
-             &= r \, dr \wedge d\theta.
+             &= r \d r \wedge d\theta.
 \end{align*}
-Suppose the current is cylindrically symmetric and flows in the $z$-direction, so that $j = f(r) \, dz$. Then away from the $z$-axis,
+Suppose the current is cylindrically symmetric and flows in the $z$-direction, so that $j = f(r) \d z$. Then away from the $z$-axis,
 \[
-    \star j = \star f(r) \, dz = f(r) r \, dr \wedge d\theta.
+    \star j = \star f(r) \d z = f(r) r \d r \wedge d\theta.
 \]
 
 \end{sol}
 
 \begin{ex}
 
-Show that $\star d\theta = \frac{1}{r} \, dz \wedge dr$.
+Show that $\star d\theta = \frac{1}{r} \d z \wedge dr$.
 
 \end{ex}
 
@@ -3859,27 +3861,27 @@ Show that $\star d\theta = \frac{1}{r} \, dz \wedge dr$.
 
 Taking the Hodge dual of $d\theta$,
 \begin{align*}
-    \star d\theta &= \star \left( \frac{x \, dy - y \, dx}{x^2 + y^2} \right) \\
-                  &= \frac{x \,dz \wedge dx - y \, dy \wedge dz}{r^2} \\
-                  &= \frac{1}{r} \bigl( \cos(\theta) \, dz \wedge dx - \sin(\theta) \, dy \wedge dz \bigr).
+    \star d\theta &= \star \left( \frac{x \d y - y \d x}{x^2 + y^2} \right) \\
+                  &= \frac{x \d z \wedge dx - y \d y \wedge dz}{r^2} \\
+                  &= \frac{1}{r} \bigl( \cos(\theta) \d z \wedge dx - \sin(\theta) \d y \wedge dz \bigr).
 \end{align*}
 But, from solution~\ref{sol:cylindricaldualcurrent},
 \begin{align*}
-    \cos(\theta) \, dz \wedge dx &= \cos(\theta) \, dz \wedge \bigl( \cos(\theta) \, dr -r \sin(\theta) \, d\theta \bigr) \\
-        &= {\cos(\theta)}^2 dz \wedge dr - r \cos(\theta) \sin(\theta) \, dz \wedge d\theta
+    \cos(\theta) \d z \wedge dx &= \cos(\theta) \d z \wedge \bigl( \cos(\theta) \d r -r \sin(\theta) \d \theta \bigr) \\
+        &= {\cos(\theta)}^2 dz \wedge dr - r \cos(\theta) \sin(\theta) \d z \wedge d\theta
 \end{align*}
 and
 \begin{align*}
     \SwapAboveDisplaySkip
-    \sin(\theta) \, dy \wedge dz &= \sin(\theta) \bigl( r \cos(\theta) \, d\theta + \sin(\theta) \, dr \bigr) \wedge dz \\
-        %&= r \cos(\theta) \sin(\theta) \, d\theta \wedge dz + {\sin(\theta)}^2 dr \wedge dz \\
-        &= - r \cos(\theta) \sin(\theta) \, dz \wedge d\theta - {\sin(\theta)}^2 dz \wedge dr,
+    \sin(\theta) \d y \wedge dz &= \sin(\theta) \bigl( r \cos(\theta) \d \theta + \sin(\theta) \d r \bigr) \wedge dz \\
+        %&= r \cos(\theta) \sin(\theta) \d \theta \wedge dz + {\sin(\theta)}^2 dr \wedge dz \\
+        &= - r \cos(\theta) \sin(\theta) \d z \wedge d\theta - {\sin(\theta)}^2 dz \wedge dr,
 \end{align*}
 so
 \begin{align*}
     \SwapAboveDisplaySkip
     \star d\theta &= \frac{1}{r} \bigl( {\cos(\theta)}^2 dz \wedge dr + {\sin(\theta)}^2 dz \wedge dr \bigr) \\
-                  &= \frac{1}{r} \, dz \wedge dr.
+                  &= \frac{1}{r} \d z \wedge dr.
 \end{align*}
 
 \end{sol}
@@ -3892,13 +3894,13 @@ Check that $d \star B = \star j$ holds if and only if $g'(r) = r f(r)$.
 
 \begin{sol}
 
-We have that $\star B = g(r) \, d\theta$, so
+We have that $\star B = g(r) \d \theta$, so
 \begin{align*}
-    d \star B &= dg(r) \, d\theta \\
-              &= g'(r) \, dr \wedge d\theta
+    d \star B &= dg(r) \d \theta \\
+              &= g'(r) \d r \wedge d\theta
 \end{align*}
 since $d\theta$ is closed.
-From solution~\ref{sol:cylindricaldualcurrent}, $\star j = f(r) r \, dr \wedge d\theta$, so if $d \star B = \star j$, we require $g'(r) = rf(r)$.
+From solution~\ref{sol:cylindricaldualcurrent}, $\star j = f(r) r \d r \wedge d\theta$, so if $d \star B = \star j$, we require $g'(r) = rf(r)$.
 
 \end{sol}
 
@@ -3932,7 +3934,7 @@ We can also show this without leveraging cohomology, since we know that $\omega$
 
 In the space $\mathbb{R} \times S^2$ with the metric $g$ given above, let $E$ be the 1-form
 \[
-    E = e(r) \, dr.
+    E = e(r) \d r.
 \]
 Show that $dE = 0$ holds no matter what the function $e(r)$ is, and show that $d \star E = 0$ holds when
 \[
@@ -3952,23 +3954,23 @@ We want our 1-form to satisfy the vacuum electrostatic equations
 \]
 $E$ is closed since
 \[
-    dE = e'(r) \, dr \wedge dr = 0.
+    dE = e'(r) \d r \wedge dr = 0.
 \]
 The volume form is
 \begin{align*}
-    \text{vol} &= \sqrt{|\det(g)|} \, dr \wedge d\theta \wedge d\phi \\
-               &= {f(r)}^2 \sin(\phi) \, dr \wedge d\theta \wedge d\phi.
+    \text{vol} &= \sqrt{|\det(g)|} \d r \wedge d\theta \wedge d\phi \\
+               &= {f(r)}^2 \sin(\phi) \d r \wedge d\theta \wedge d\phi.
 \end{align*}
 By definition of the Hodge star, $dr \wedge \star dr = \innerp{dr}{dr} \text{vol} = \text{vol}$.
-Denoting $\star dr = \alpha \, d\theta \wedge d\phi$ where $\alpha$ is a normalisation factor,
+Denoting $\star dr = \alpha \d \theta \wedge d\phi$ where $\alpha$ is a normalisation factor,
 \[
-    dr \wedge \star dr = \alpha \, dr \wedge d\theta \wedge d\phi = \text{vol},
+    dr \wedge \star dr = \alpha \d r \wedge d\theta \wedge d\phi = \text{vol},
 \]
-fixing $\alpha$ and giving us $\star dr = {f(r)}^2 \sin(\phi) \, d\theta \wedge d\phi$, so
+fixing $\alpha$ and giving us $\star dr = {f(r)}^2 \sin(\phi) \d \theta \wedge d\phi$, so
 \begin{align*}
     d \star E &= d \bigl( e(r) \star dr \bigr) \\
-              &= d \bigl( e(r) {f(r)}^2 \sin(\phi) \, d\theta \wedge d\phi \bigr) \\
-              &= \partial_r \bigl( e(r) {f(r)}^2 \bigr) \cdot \sin(\phi) \, dr \wedge d\theta \wedge d\phi.
+              &= d \bigl( e(r) {f(r)}^2 \sin(\phi) \d \theta \wedge d\phi \bigr) \\
+              &= \partial_r \bigl( e(r) {f(r)}^2 \bigr) \cdot \sin(\phi) \d r \wedge d\theta \wedge d\phi.
 \end{align*}
 Then for $d \star E = 0$, we require $e(r) {f(r)}^2$ to be constant in $r$.
 Let this constant be $\frac{q}{4 \pi}$, say, for some arbitrary $q$. Then
@@ -4005,16 +4007,16 @@ Let $S^2$ denote any of the 2-spheres of the form $\{r\} \times S^2 \subset \mat
 
 \begin{sol}
 
-Our (positively oriented) volume form on $S^2$ is $r^2 \sin(\theta) \, d\theta \wedge d\phi$.
+Our (positively oriented) volume form on $S^2$ is $r^2 \sin(\theta) \d \theta \wedge d\phi$.
 Taking the Hodge dual, we get
 \begin{align*}
     \star E &= \frac{q}{4 \pi {f(r)}^2} \star dr \\
-            &= \frac{q}{4 \pi} \sin(\phi) \, d\theta \wedge d\phi,
+            &= \frac{q}{4 \pi} \sin(\phi) \d \theta \wedge d\phi,
 \end{align*}
 so
 \begin{align*}
     \SwapAboveDisplaySkip
-    \int_{S^2} \star E &= \int_{S^2} \frac{q}{4 \pi} \sin(\phi) \, d\theta \wedge d\phi \\
+    \int_{S^2} \star E &= \int_{S^2} \frac{q}{4 \pi} \sin(\phi) \d \theta \wedge d\phi \\
         &= \int_{S^2} \frac{q}{4 \pi r^2} \text{vol} \\
         &= \frac{q}{4 \pi r^2} \int_{S^2} \text{vol} \\
         &= q,
@@ -4038,7 +4040,7 @@ Label each mouth ``positive'' and ``negative'', where we orient ourselves such t
 In exercise~\ref{ex:chargewithoutcharge} we assumed our 2-sphere had positive radius.
 We need to consider inverted 2-spheres to measure the charge over the negative mouth.
 
-Using the negatively oriented volume form $-r^2 \sin(\theta) \, d\theta \wedge d\phi$ gives us
+Using the negatively oriented volume form $-r^2 \sin(\theta) \d \theta \wedge d\phi$ gives us
 \[
     \int_{S^2} \star E = -q
 \]
@@ -4075,25 +4077,25 @@ Show using Cartesian coordinates that $\omega$ is closed on $\mathbb{R}^3 - \{0\
 
 The 2-form $\omega$ is given by
 \[
-    \omega = \frac{x \, dy \wedge dz + y \, dz \wedge dx + z \, dx \wedge dy}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}.
+    \omega = \frac{x \d y \wedge dz + y \d z \wedge dx + z \d x \wedge dy}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}.
 \]
 Splitting into three terms, take the derivative of the first,
 \begin{align*}
-    d \frac{x \, dy \wedge dz}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
-        &= \partial_x \frac{x}{{(x^2 + y^2 + x^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz \\
-        &= \frac{{(x^2 + y^2 + z^2)}^\frac{3}{2} - 3x^2 \sqrt{x^2 + y^2 + z^2}}{{(x^2 + y^2 + z^2)}^3} \, dx \wedge dy \wedge dz \\
-        &= \frac{x^2 + y^2 + z^2 - 3x^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz.
+    d \frac{x \d y \wedge dz}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
+        &= \partial_x \frac{x}{{(x^2 + y^2 + x^2)}^\frac{3}{2}} \d x \wedge dy \wedge dz \\
+        &= \frac{{(x^2 + y^2 + z^2)}^\frac{3}{2} - 3x^2 \sqrt{x^2 + y^2 + z^2}}{{(x^2 + y^2 + z^2)}^3} \d x \wedge dy \wedge dz \\
+        &= \frac{x^2 + y^2 + z^2 - 3x^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \d x \wedge dy \wedge dz.
 \end{align*}
 The $y$ and $z$ terms are similar, by symmetry,
 %\begin{align*}
-%    d \frac{y \, dz \wedge dx}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
-%        &= \frac{x^2 + y^2 + z^2 - 3y^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz, \\
-%    d \frac{z \, dx \wedge dy}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
-%        &= \frac{x^2 + y^2 + z^2 - 3z^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz,
+%    d \frac{y \d z \wedge dx}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
+%        &= \frac{x^2 + y^2 + z^2 - 3y^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \d x \wedge dy \wedge dz, \\
+%    d \frac{z \d x \wedge dy}{{(x^2 + y^2 + x^2)}^\frac{3}{2}}
+%        &= \frac{x^2 + y^2 + z^2 - 3z^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \d x \wedge dy \wedge dz,
 %\end{align*}
 so
 \[
-    d\omega = \frac{3(x^2 + y^2 + z^2) - 3x^2 - 3y^2 - 3z^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \, dx \wedge dy \wedge dz = 0.
+    d\omega = \frac{3(x^2 + y^2 + z^2) - 3x^2 - 3y^2 - 3z^2}{{(x^2 + y^2 + z^2)}^\frac{3}{2}} \d x \wedge dy \wedge dz = 0.
 \]
 
 \end{sol}
@@ -4117,11 +4119,11 @@ The form will obviously be
 Taking the exterior derivative of the first term,
 \begin{align*}
     d \, \frac{x_1 dx^2 \wedge \cdots \wedge dx^n}{{(x_1^2 + \cdots + x_n^2)}^\frac{n}{2}}
-        &= \partial_1 \frac{x_1}{{(x_1^2 + \cdots + x_n^2)}^\frac{n}{2}} \, dx^1 \wedge \cdots \wedge dx^n \\
+        &= \partial_1 \frac{x_1}{{(x_1^2 + \cdots + x_n^2)}^\frac{n}{2}} \d x^1 \wedge \cdots \wedge dx^n \\
         ={}& \frac{{(x_1^2 + \cdots + x_n^2)}^\frac{n}{2} - n x_1^2 {(x_1^2 + \cdots + x_n^2)}^{\frac{n}{2} - 1}}
-                  {{(x_1^2 + \cdots + x_n^2)}^n} \, dx^1 \wedge \cdots \wedge dx^n \\
+                  {{(x_1^2 + \cdots + x_n^2)}^n} \d x^1 \wedge \cdots \wedge dx^n \\
         ={}& \frac{x_1^2 + \cdots + x_n^2 - n x_1^2}
-                  {{(x_1^2 + \cdots + x_n^2)}^{\frac{n}{2} + 1}} \, dx^1 \wedge \cdots \wedge dx^n.
+                  {{(x_1^2 + \cdots + x_n^2)}^{\frac{n}{2} + 1}} \d x^1 \wedge \cdots \wedge dx^n.
 \end{align*}
 By symmetry, the $x_2, \ldots, x_n$ terms are similar and therefore, as in solution~\ref{sol:closedbutnotexact2form}, $d\omega = 0$.
 
@@ -4139,7 +4141,7 @@ By the existence of a closed but not exact $(n - 1)$-form, $H^{n - 1} \bigl( \ma
 
 \begin{ex}
 
-Check this. (Hint: show that $B = \frac{m}{4 \pi} \sin(\phi) \, d\theta \wedge d\phi$.)
+Check this. (Hint: show that $B = \frac{m}{4 \pi} \sin(\phi) \d \theta \wedge d\phi$.)
 
 \end{ex}
 
@@ -4152,12 +4154,12 @@ The vacuum magnetostatic equations are
 \]
 On $\mathbb{R} \times S^2$ with metric $g$ as in exercise~\ref{ex:vacuumelectrostaticwormhole}, we can find a closed but not exact magnetic 2-form by duality. Using $B = \star E$,
 \begin{align*}
-    B &= \star \frac{m \, dr}{4 \pi {f(r)}^2} \\
-      &= \frac{m}{4 \pi} \sin(\phi) \, d\phi \wedge d\theta
+    B &= \star \frac{m \d r}{4 \pi {f(r)}^2} \\
+      &= \frac{m}{4 \pi} \sin(\phi) \d \phi \wedge d\theta
 \end{align*}
 and on integrating over any 2-sphere,
 \begin{align*}
-    \int_{S^2} B &= \int_{S^2} \frac{m}{4 \pi} \sin(\phi) \, d\phi \wedge d\theta \\
+    \int_{S^2} B &= \int_{S^2} \frac{m}{4 \pi} \sin(\phi) \d \phi \wedge d\theta \\
         &= \frac{m}{4 \pi r^2} \int_{S^2} \text{vol} \\
         &= m,
 \end{align*}
