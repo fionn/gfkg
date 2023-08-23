@@ -9,6 +9,10 @@ MKFLAGS = -logfilewarninglist -Werror -quiet -norc
 export SOURCE_DATE_EPOCH = $(shell git show -s --format=%at)
 export FORCE_SOURCE_DATE = 1
 
+export max_print_line=1000
+export error_line=254
+export half_error_line=238
+
 .PHONY: all
 all: $(TARGET).pdf
 
