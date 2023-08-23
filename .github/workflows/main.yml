@@ -20,11 +20,15 @@ jobs:
       - name: Lint
         run: make chktex
 
+      - name: Compile to PostScript
+        run: make gfkg.ps && make clean
+
       - name: Compile to PDF
         run: make
 
-      - name: Compile to PostScript
-        run: make gfkg.ps
+      - name: Print log
+        run: cat gfkg.log
+        if: always()
 
       - name: Hash
         run: sha256sum gfkg.pdf gfkg.ps | tee gfkg.sha256
