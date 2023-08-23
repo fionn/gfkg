@@ -79,6 +79,10 @@
     {\begin{quote}\small\itshape} % chktex 6
     {\end{quote}\ignorespacesafterend\vspace{\parskip}}
 
+\newcommand*{\settightmatrix}{\ensuremath\setlength{\arraycolsep}{0.7ex}}
+\newenvironment{tightmatrix}
+    {\settightmatrix}{}
+
 \newcommand*{\https}[1]{\normalsize\texttt{\href{https://#1/}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
@@ -91,7 +95,7 @@
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
 
-\newcommand*{\ralminus}{\ensuremath\:\, \mathllap{-}}
+\newcommand*{\m}{\ensuremath\:\, \mathllap{-}}
 
 \newcommand*{\GL}{\ensuremath\text{GL}}
 \newcommand*{\SL}{\ensuremath\text{SL}}
@@ -4186,8 +4190,8 @@ Then for some vector $v = v^\mu \partial_\mu$ on $\mathbb{R}^4$, the components 
     {\Lambda^\mu}_\nu v^\nu = \begin{pmatrix}
         \phantom{-} \cosh(\phi) v^0 - \sinh(\phi) v^1 \\
         -\sinh(\phi) v^0 + \cosh(\phi) v^1 \\
-        v^2 \\
-        v^3
+        \;\;\;\; v^2 \\
+        \;\;\;\; v^3
     \end{pmatrix}.
 \]
 On Minkowski space with metric $\eta$ as in exercise~\ref{ex:minkowskimetric}, the inner product of two vectors $v$, $w$ transformed under $\Lambda$ is
@@ -4256,12 +4260,12 @@ but that these lie in $\O(3, 1)$. Show that the product $PT$ lies in $\SO(3, 1)$
 
 We can represent these transformations as
 \[
-    P = \begin{pmatrix*}[r]
+    P = \begin{tightmatrix}\begin{pmatrix*}[r]
             1 & 0  & 0  & 0 \\
             0 & -1 & 0  & 0 \\
             0 & 0  & -1 & 0 \\
             0 & 0  & 0  & -1
-        \end{pmatrix*}, \qquad
+        \end{pmatrix*}\end{tightmatrix}, \qquad
     T = \begin{pmatrix*}[r]
             -1 & 0  & 0  & 0 \\
             0  & 1  & 0  & 0 \\
@@ -4505,6 +4509,7 @@ A $1 \times 1$ matrix is just a number, so show that
 In physics, an element of $\U(1)$ is called a \emph{phase}.
 Show that $\U(1)$ is isomorphic to $\SO(2)$, with an isomorphism being given by\footnote{The direction is conventional, but we use positive rotations here to make the isomorphism more direct.}
 \[
+    \settightmatrix
     \rho(e^{i\theta}) =
         \begin{pmatrix*}[r]
             \cos(\theta) & -\sin(\theta) \\
@@ -4521,19 +4526,19 @@ $\rho: \U(1) \to \SO(2)$ is a homomorphism by
 \begin{align*}
     \rho(e^{i\theta_1}) \rho(e^{i\theta_2})
         &=
-        \begin{pmatrix*}[r]
+        \begin{tightmatrix}\begin{pmatrix*}[r]
             \cos(\theta_1) & -\sin(\theta_1) \\
             \sin(\theta_1) & \cos(\theta_1)
-        \end{pmatrix*}
-        \begin{pmatrix*}[r]
+        \end{pmatrix*}\end{tightmatrix}
+        \begin{tightmatrix}\begin{pmatrix*}[r]
             \cos(\theta_2) & -\sin(\theta_2) \\
             \sin(\theta_2) & \cos(\theta_2)
-        \end{pmatrix*} \\
+        \end{pmatrix*}\end{tightmatrix} \\
         &=
-        \begin{pmatrix*}[r]
+        \begin{tightmatrix}\begin{pmatrix*}[r]
             \cos(\theta_1 + \theta_2) & -\sin(\theta_1 + \theta_2) \\
             \sin(\theta_1 + \theta_2) & \cos(\theta_1 + \theta_2)
-        \end{pmatrix*} \\
+        \end{pmatrix*}\end{tightmatrix} \\
         &= \rho(e^{i(\theta_1 + \theta_2)}) \\
         &= \rho(e^{i\theta_1}e^{i\theta_2}).
 \end{align*}
@@ -4788,6 +4793,7 @@ The Pauli matrices are
             0 & 1 \\
             1 & 0
         \end{pmatrix}, \qquad
+    \tightmatrix
     \sigma_2 = \begin{pmatrix*}[r]
             0 & -i \\
             i &  0
@@ -4869,6 +4875,7 @@ Taking cyclic products $\sigma_i \sigma_j$, we get
         0 & 1 \\
         1 & 0
     \end{pmatrix}
+    \tightmatrix
     \begin{pmatrix*}[r]
         0 & -i \\
         i &  0
@@ -4924,10 +4931,10 @@ The matrix $U = a + bI + cJ + dK$ is
         -c &  0
     \end{pmatrix}
     -
-    \begin{pmatrix}
+    \begin{tightmatrix}\begin{pmatrix}
         id & \,\, 0 \\
         0 & -id
-    \end{pmatrix} \\
+    \end{pmatrix}\end{tightmatrix} \\
     &=
     \begin{pmatrix*}[r]
         a - id  & -ib - c \\
@@ -5000,7 +5007,7 @@ The basis for $\mathcal{H}_\frac{1}{2}$ is $\{x, y\}$, so
         f_1 & f_2
     \end{pmatrix}
     \begin{pmatrix}
-        x \\ y
+        x \\ \, y \,
     \end{pmatrix}
 \]
 Denote $f = \begin{psmallmatrix} f_1 \\ f_2 \end{psmallmatrix}$, so $f(x, y) \equiv \innerp{f}{v}$.
@@ -5103,29 +5110,29 @@ so $s_{11} = s_{22}$ and $s_{12} = s_{21}$.
             s_{11} & s_{12} \\
             s_{12} & s_{11}
         \end{pmatrix}
-        \begin{pmatrix*}[r]
+        \begin{tightmatrix}\begin{pmatrix*}[r]
             1 &  0 \\
             0 & -1
-        \end{pmatrix*}
+        \end{pmatrix*}\end{tightmatrix}
         =
-        \begin{pmatrix}
+        \begin{tightmatrix}\begin{pmatrix*}[r]
             s_{11} & -s_{12} \\
             s_{12} & -s_{11}
-        \end{pmatrix}, \\
+        \end{pmatrix*}\end{tightmatrix}, \\
     \sigma_3 S =
-        \begin{pmatrix*}[r]
+        \begin{tightmatrix}\begin{pmatrix*}[r]
             1 &  0 \\
             0 & -1
-        \end{pmatrix*}
+        \end{pmatrix*}\end{tightmatrix}
         \begin{pmatrix}
             s_{11} & s_{12} \\
             s_{12} & s_{11}
         \end{pmatrix}
         =
-        \begin{pmatrix*}[r]
+        \begin{tightmatrix}\begin{pmatrix*}[r]
             s_{11}  & s_{12} \\
             -s_{12} & -s_{11}
-        \end{pmatrix*},
+        \end{pmatrix*}\end{tightmatrix},
 \end{gather*}
 so $s_{12} = -s_{12} = 0$. This gives us
 \[
@@ -5165,7 +5172,7 @@ In the spin-1 representation, we have polynomials of the form
                     f_{21} & f_{22}
                \end{pmatrix}
                \begin{pmatrix}
-                    x \\ y
+                    x \\ \, y \,
                \end{pmatrix} \\
             &= v^* T v.
 \end{align*}
@@ -5276,14 +5283,14 @@ By direct calculation,
                             0   & x^1 \\
                             x^1 & 0
                           \end{pmatrix*}
-                        + \begin{pmatrix}
+                        + \begin{tightmatrix}\begin{pmatrix}
                             0     & -i x^2 \\
                             i x^2 &  \phantom{-} 0
-                          \end{pmatrix}
-                        + \begin{pmatrix*}[l]
+                          \end{pmatrix}\end{tightmatrix}
+                        + \begin{tightmatrix}\begin{pmatrix*}[l]
                             x^3    & \phantom{-} 0 \\
                             \, 0   & -x^3
-                          \end{pmatrix*} \\
+                          \end{pmatrix*}\end{tightmatrix} \\
         &= \begin{pmatrix*}[l]
             x^0 + x^3 & x^1 - ix^2 \\
             x^1 + ix^2 & x^0 - x^3
@@ -5427,7 +5434,7 @@ The matrices
     J_x =
         \begin{pmatrix*}[r]
             0 & 0 & 0 \\
-            0 & 0 & \ralminus 1 \\
+            0 & 0 & \m 1 \\
             0 & 1 & 0 \\
         \end{pmatrix*}, \quad
     J_y =
@@ -5438,7 +5445,7 @@ The matrices
         \end{pmatrix*}, \quad
     J_z =
         \begin{pmatrix*}[r]
-            0 & \ralminus 1 & 0 \\
+            0 & \m 1 & 0 \\
             1 & 0 & 0 \\
             0 & 0 & 0 \\
         \end{pmatrix*}
@@ -5449,11 +5456,11 @@ Denote
 \begin{align*}
     \SwapAboveDisplaySkip
     N &= n^x \! J_x + n^y \! J_y + n^z \! J_z \\
-      &= \begin{pmatrix*}[r]
-            0 \phantom{^z} & \ralminus n^z  & n^y \\
-            n^z            & 0 \phantom{^x} & \ralminus n^x \\
+      &= \begin{tightmatrix}\begin{pmatrix*}[r]
+            0 \phantom{^z} & -n^z  & n^y \\
+            n^z            & 0 \phantom{^x} & -n^x \\
             -n^y           & n^x            & 0 \phantom{^x}
-         \end{pmatrix*}.
+         \end{pmatrix*}\end{tightmatrix}.
 \end{align*}
 The characteristic polynomial is
 \begin{align*}
@@ -5465,11 +5472,11 @@ The characteristic polynomial is
 and by the Cayley--Hamilton theorem, $p_N(N) = 0$ implies $N^3 = -N$, so $N^4 = -N^2$ and so on.
 Therefore we only need to calculate
 \begin{align*}
-    N^2 &= \begin{pmatrix}
+    N^2 &= \begin{tightmatrix}\begin{pmatrix}
         -{(n^y)}^2 - {(n^z)}^2 & n^x n^y & n^x n^z \\
         n^x n^y & -{(n^z)}^2 - {(n^x)}^2 & n^y n^z \\
         n^x n^z & n^y n^z                & -{(n^x)}^2 - {(n^y)}^2
-    \end{pmatrix} \\
+    \end{pmatrix}\end{tightmatrix} \\
        &= \begin{pmatrix}
         {(n^x)}^2 & n^x n^y   & n^x n^z \\
         n^x n^y   & {(n^y)}^2 & n^y n^z \\
@@ -5551,19 +5558,19 @@ Note the resemblance to vector cross products and quaternions, but also the diff
 By direct calculation,
 \[
     J_x^2 = \begin{pmatrix*}[r]
-            0 &           0 & 0 \\
-            0 & \ralminus 1 & 0 \\
-            0 &           0 & \ralminus 1
+            0 &    0 & 0 \\
+            0 & \m 1 & 0 \\
+            0 &    0 & \m 1
         \end{pmatrix*}, \quad
     J_y^2 = \begin{pmatrix*}[r]
             -1 & 0 & 0 \\
              0 & 0 & 0 \\
-             0 & 0 & \ralminus 1
+             0 & 0 & \m 1
         \end{pmatrix*}, \quad
     J_z^2 = \begin{pmatrix*}[r]
-            -1 &           0 & 0 \\
-             0 & \ralminus 1 & 0 \\
-             0 &           0 & 0
+            -1 &    0 & 0 \\
+             0 & \m 1 & 0 \\
+             0 &    0 & 0
         \end{pmatrix*}
 \]
 so the first statement is false.
@@ -5785,22 +5792,22 @@ The spatial rotations can be constructed from the familiar basis of $\mathfrak{s
         \begin{pmatrix*}[r]
             0 & 0 & 0 & 0 \\
             0 & 0 & 0 & 0 \\
-            0 & 0 & 0 & \ralminus 1 \\
+            0 & 0 & 0 & \m 1 \\
             0 & 0 & 1 & 0 \\
         \end{pmatrix*}, \quad
     J_y =
         \begin{pmatrix*}[r]
-            0 & 0           & 0 & 0 \\
-            0 & 0           & 0 & 1 \\
-            0 & 0           & 0 & 0 \\
-            0 & \ralminus 1 & 0 & 0 \\
+            0 &    0 & 0 & 0 \\
+            0 &    0 & 0 & 1 \\
+            0 &    0 & 0 & 0 \\
+            0 & \m 1 & 0 & 0 \\
         \end{pmatrix*}, \quad
     J_z =
         \begin{pmatrix*}[r]
-            0 & 0 & 0           & 0 \\
-            0 & 0 & \ralminus 1 & 0 \\
-            0 & 1 & 0           & 0 \\
-            0 & 0 & 0           & 0 \\
+            0 & 0 & 0    & 0 \\
+            0 & 0 & \m 1 & 0 \\
+            0 & 1 & 0    & 0 \\
+            0 & 0 & 0    & 0 \\
         \end{pmatrix*}.
 \]
 For the Lorentz boosts as in solution~\ref{sol:so31lorentztransformations}, let $\gamma_i(\zeta)$ be a path in $\SO(3, 1)$ about $jk$ parameterised by rapidity.
@@ -5808,39 +5815,39 @@ Denoting $\gamma_i'(0) = K_i$,
 \begin{align*}
     \gamma_x(\zeta) &=
         \begin{pmatrix}
-            \phantom{-}\cosh(\zeta) & \ralminus\sinh(\zeta)           & 0 & 0 \\
-            -\sinh(\zeta)           & \phantom{\ralminus}\cosh(\zeta) & 0 & 0 \\
-            0                       & 0                               & 1 & 0 \\
-            0                       & 0                               & 0 & 1
+            \phantom{-}\cosh(\zeta) & \m\sinh(\zeta)           & 0 & 0 \\
+            -\sinh(\zeta)           & \phantom{\m}\cosh(\zeta) & 0 & 0 \\
+            0                       & 0                        & 1 & 0 \\
+            0                       & 0                        & 0 & 1
         \end{pmatrix}, \quad
         K_x = \begin{pmatrix*}[r]
-            0  & \ralminus 1 & 0 & 0 \\
-            -1 & 0           & 0 & 0 \\
-            0  & 0           & 0 & 0 \\
-            0  & 0           & 0 & 0
+            0  & \m 1 & 0 & 0 \\
+            -1 &    0 & 0 & 0 \\
+            0  &    0 & 0 & 0 \\
+            0  &    0 & 0 & 0
         \end{pmatrix*}, \displaybreak[0] \\
     \gamma_y(\zeta) &=
         \begin{pmatrix}
-            \phantom{-}\cosh(\zeta) & 0 & \ralminus\sinh(\zeta)           & 0 \\
-            0                       & 1 & 0                               & 0 \\
-            -\sinh(\zeta)           & 0 & \phantom{\ralminus}\cosh(\zeta) & 0 \\
-            0                       & 0 & 0                               & 1
+            \phantom{-}\cosh(\zeta) & 0 & \m\sinh(\zeta)           & 0 \\
+            0                       & 1 & 0                        & 0 \\
+            -\sinh(\zeta)           & 0 & \phantom{\m}\cosh(\zeta) & 0 \\
+            0                       & 0 & 0                        & 1
         \end{pmatrix}, \quad
         K_y = \begin{pmatrix*}[r]
-            0  & 0 & \ralminus 1 & 0 \\
-            0  & 0 & 0           & 0 \\
-            -1 & 0 & 0           & 0 \\
-            0  & 0 & 0           & 0
+            0  & 0 & \m 1 & 0 \\
+            0  & 0 & 0    & 0 \\
+            -1 & 0 & 0    & 0 \\
+            0  & 0 & 0    & 0
         \end{pmatrix*}, \displaybreak[0] \\
     \gamma_z(\zeta) &=
         \begin{pmatrix}
-            \phantom{-}\cosh(\zeta) & 0 & 0 & \ralminus\sinh(\zeta) \\
+            \phantom{-}\cosh(\zeta) & 0 & 0 & \m\sinh(\zeta) \\
             0                       & 1 & 0 & 0 \\
             0                       & 0 & 1 & 0 \\
-            -\sinh(\zeta)           & 0 & 0 & \phantom{\ralminus}\cosh(\zeta)
+            -\sinh(\zeta)           & 0 & 0 & \phantom{\m}\cosh(\zeta)
         \end{pmatrix}, \quad
         K_z = \begin{pmatrix*}[r]
-            0  & 0 & 0 & \ralminus 1 \\
+            0  & 0 & 0 & \m 1 \\
             0  & 0 & 0 & 0 \\
             0  & 0 & 0 & 0 \\
             -1 & 0 & 0 & 0
@@ -5848,12 +5855,12 @@ Denoting $\gamma_i'(0) = K_i$,
 \end{align*}
 We can combine these into the skew-symmetric matrix of Lorentz generators
 \[
-    \newcommand*{\m}{\ralminus}
+    \tightmatrix
     M = \begin{pmatrix*}[r]
             0\phantom{_x} & K_x           & K_y           & K_z \\
-            -K_x          & 0\phantom{_x} & J_z \,        & \m J_y \, \\
-            -K_y          & \m J_z \,     & 0\phantom{_x} & J_x \, \\
-            -K_z          & J_y \,        & \m J_x \,     & 0\phantom{_x}
+            -K_x          & 0\phantom{_x} & J_z \,        & - J_y \, \\
+            -K_y          & - J_z \,      & 0\phantom{_x} & J_x \, \\
+            -K_z          & J_y \,        & - J_x \,      & 0\phantom{_x}
         \end{pmatrix*}
 \]
 where in this form we notice that each entry $M_{\alpha\beta}$ can be expressed in terms of the Minkowski metric $\eta$ as
@@ -6180,8 +6187,8 @@ Consider the two-to-one homomorphism $\rho: \SU(2) \to \SO(3)$ from \S\ref{sec:l
 Our conventional basis for $\mathfrak{su}(2)$ is $\{-\frac{i}{2} \sigma_j\}$, so the path in $\SU(2)$ corresponding to $j = 3$ is
 \begin{align*}
     g_t &= \exp\bigl(-\tfrac{i}{2} t \sigma_3\bigr) \\
-        &= \begin{pmatrix}
-                e^{-\frac{it}{2}} & 0 \,\,\, \\
+        &= \tightmatrix\begin{pmatrix}
+                e^{-\frac{it}{2}} & 0 \;\, \\
                 0                 & e^{\frac{it}{2}}
             \end{pmatrix}.
 \end{align*}
@@ -6194,7 +6201,7 @@ For $\sigma_1$,
     \SwapAboveDisplaySkip
     \rho(g_t) \sigma_1 &= g_t \sigma_1 g_t^{-1} \\
         &= \begin{pmatrix}
-                e^{-\frac{it}{2}} & 0 \,\,\, \\
+                e^{-\frac{it}{2}} & 0 \;\, \\
                 0                 & e^{\frac{it}{2}}
             \end{pmatrix}
             \begin{pmatrix}
@@ -6202,12 +6209,12 @@ For $\sigma_1$,
                 1 & 0
             \end{pmatrix}
             \begin{pmatrix}
-                e^{\frac{it}{2}} & \!\!0 \\
+                e^{\frac{it}{2}} & 0 \; \\
                 0                & e^{- \frac{it}{2}}
             \end{pmatrix} \\
         &= \begin{pmatrix}
                 0      & e^{-it} \\
-                e^{it} & 0
+                e^{it} & 0 \;
             \end{pmatrix} \\
         &= \cos(t) \sigma_1 + \sin(t) \sigma_2,
 \end{align*}
@@ -6216,27 +6223,27 @@ for $\sigma_2$,
     \SwapAboveDisplaySkip
     \rho(g_t) \sigma_2 &= g_t \sigma_2 g_t^{-1} \\
         &= \begin{pmatrix}
-                e^{-\frac{it}{2}} & 0 \,\,\, \\
+                e^{-\frac{it}{2}} & 0 \;\, \\
                 0                 & e^{\frac{it}{2}}
             \end{pmatrix}
             \begin{pmatrix*}[r]
-                0 & \ralminus i \\
+                0 & \m i \\
                 i &  0
             \end{pmatrix*}
             \begin{pmatrix}
-                e^{\frac{it}{2}} & \!\!0 \\
+                e^{\frac{it}{2}} & 0 \; \\
                 0                & e^{- \frac{it}{2}}
             \end{pmatrix} \\
         &= \begin{pmatrix}
-                0                 & \ralminus ie^{-\frac{it}{2}} \\
+                0                 & \m ie^{-\frac{it}{2}} \\
                 ie^{\frac{it}{2}} & 0
             \end{pmatrix}
             \begin{pmatrix}
-                e^{\frac{it}{2}} & \!\!0 \\
+                e^{\frac{it}{2}} & 0 \; \\
                 0                & e^{-\frac{it}{2}}
             \end{pmatrix} \\
         &= \begin{pmatrix}
-                0       & \ralminus ie^{-it} \\
+                0       & \m ie^{-it} \\
                 ie^{it} & 0
             \end{pmatrix} \\
         &= -\sin(t) \sigma_1 + \cos(t) \sigma_2
@@ -6251,7 +6258,7 @@ and for $\sigma_3$,
             \end{pmatrix}
             \begin{pmatrix*}[r]
                 1 &  0 \\
-                0 & \ralminus 1
+                0 & \m 1
             \end{pmatrix*}
             \begin{pmatrix}
                 e^{\frac{it}{2}} & \!\!0 \\
@@ -6259,7 +6266,7 @@ and for $\sigma_3$,
             \end{pmatrix} \\
         &= \begin{pmatrix}
                 e^{-\frac{it}{2}} & 0 \,\,\, \\
-                0                 & \ralminus e^{\frac{it}{2}}
+                0                 & \m e^{\frac{it}{2}}
             \end{pmatrix}
             \begin{pmatrix}
                 e^{\frac{it}{2}} & \!\!0 \\
@@ -6307,7 +6314,7 @@ The path in $\SU(2)$ corresponding to $j = 1$ is
             \right) \displaybreak[0] \\
         &= \cos(\tfrac{t}{2}) \sigma_0 - i \sin(\tfrac{t}{2}) \sigma_1 \displaybreak[0] \\
         &= \begin{pmatrix}
-                \cos(\tfrac{t}{2})    & \ralminus i \sin(\tfrac{t}{2}) \\
+                \cos(\tfrac{t}{2})    & \m i \sin(\tfrac{t}{2}) \\
                 -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
             \end{pmatrix}.
 \end{align*}
@@ -6317,7 +6324,7 @@ For $\sigma_1$,
 \begin{align*}
     \rho(g_t) \sigma_1 &= g_t \sigma_1 g_t^{-1} \\
         &= \begin{pmatrix}
-                \cos(\tfrac{t}{2})    & \ralminus i \sin(\tfrac{t}{2}) \\
+                \cos(\tfrac{t}{2})    & \m i \sin(\tfrac{t}{2}) \\
                 -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
            \end{pmatrix}
            \begin{pmatrix}
@@ -6330,7 +6337,7 @@ For $\sigma_1$,
            \end{pmatrix} \\
         &= \begin{pmatrix}
                 -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2}) \\
-                \cos(\tfrac{t}{2})   & \ralminus i \sin(\tfrac{t}{2})
+                \cos(\tfrac{t}{2})   & \m i \sin(\tfrac{t}{2})
            \end{pmatrix}
            \begin{pmatrix}
                 \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
@@ -6342,20 +6349,20 @@ for $\sigma_2$,
 \begin{align*}
     \rho(g_t) \sigma_2 &= g_t \sigma_2 g_t^{-1} \\
         &= \begin{pmatrix}
-                \cos(\tfrac{t}{2})    & \ralminus i \sin(\tfrac{t}{2}) \\
+                \cos(\tfrac{t}{2})    & \m i \sin(\tfrac{t}{2}) \\
                 -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
            \end{pmatrix}
             \begin{pmatrix*}[r]
-                0 & \ralminus i \\
-                i &  0
+                0 & \m i \\
+                i &    0
             \end{pmatrix*}
             \begin{pmatrix}
                 \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
                 i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
            \end{pmatrix} \\
         &= \begin{pmatrix}
-                \sin(\tfrac{t}{2})   & \ralminus i \cos(\tfrac{t}{2}) \\
-                i \cos(\tfrac{t}{2}) &  \ralminus \sin(\tfrac{t}{2})
+                \sin(\tfrac{t}{2})   & \m i \cos(\tfrac{t}{2}) \\
+                i \cos(\tfrac{t}{2}) & \m \sin(\tfrac{t}{2})
             \end{pmatrix}
             \begin{pmatrix}
                 \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
@@ -6368,8 +6375,8 @@ for $\sigma_2$,
                     & -2 \cos(\tfrac{t}{2}) \sin(\tfrac{t}{2})
             \end{pmatrix} \\
         &= \begin{pmatrix}
-                \sin(t)   & \ralminus i \cos(t) \\
-                i \cos(t) & \ralminus \sin(t)
+                \sin(t)   & \m i \cos(t) \\
+                i \cos(t) & -\sin(t)
             \end{pmatrix} \\
         &= \cos(t) \sigma_2 + \sin(t) \sigma_3
 \end{align*}
@@ -6377,12 +6384,12 @@ and for $\sigma_3$,
 \begin{align*}
     \rho(g_t) \sigma_3 &= g_t \sigma_3 g_t^{-1} \\
         &= \begin{pmatrix}
-                \cos(\tfrac{t}{2})    & \ralminus i \sin(\tfrac{t}{2}) \\
+                \cos(\tfrac{t}{2})    & \m i \sin(\tfrac{t}{2}) \\
                 -i \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
            \end{pmatrix}
             \begin{pmatrix*}[r]
                 1 &  0 \\
-                0 & \ralminus 1
+                0 & \m 1
             \end{pmatrix*}
             \begin{pmatrix}
                 \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
@@ -6390,7 +6397,7 @@ and for $\sigma_3$,
            \end{pmatrix} \\
         &= \begin{pmatrix}
                 \cos(\tfrac{t}{2})     & i \sin(\tfrac{t}{2}) \\
-                - i \sin(\tfrac{t}{2}) & \ralminus \cos(\tfrac{t}{2})
+                - i \sin(\tfrac{t}{2}) & -\cos(\tfrac{t}{2})
             \end{pmatrix}
             \begin{pmatrix}
                 \cos(\tfrac{t}{2})   & i \sin(\tfrac{t}{2}) \\
@@ -6404,7 +6411,7 @@ and for $\sigma_3$,
             \end{pmatrix} \\
         &= \begin{pmatrix}
                 \cos(t)     & i \sin(t) \\
-                - i \sin(t) & \ralminus \cos(t)
+                - i \sin(t) & -\cos(t)
             \end{pmatrix} \\
         &= - \sin(t) \sigma_2 + \cos(t) \sigma_3.
 \end{align*}
@@ -6412,8 +6419,8 @@ Flipping the sign of $t$ to be consistent with our convention of rotating in a p
 \[
     \rho(g_t) = \begin{pmatrix}
             1 & 0       & 0 \\
-            0 & \cos(t) & \ralminus \sin(t) \\
-            0 & \sin(t) & \phantom{\ralminus} \cos(t) \\
+            0 & \cos(t) & \m \sin(t) \\
+            0 & \sin(t) & \phantom{\m} \cos(t) \\
         \end{pmatrix}
 \]
 which describes a (positive) rotation about the $x$-axis by $t$.
@@ -6423,8 +6430,8 @@ The path in $\SU(2)$ corresponding to $j = 2$ is
     g_t &= \exp\bigl(-\tfrac{i}{2} t \sigma_2\bigr) \\
         &= \cos(\tfrac{t}{2}) \sigma_0 - i\sin(\tfrac{t}{2}) \sigma_2 \\
         &= \begin{pmatrix*}[r]
-                \cos(\tfrac{t}{2})    & \ralminus \sin(\tfrac{t}{2}) \\
-                \sin(\tfrac{t}{2})    & \cos(\tfrac{t}{2})
+                \cos(\tfrac{t}{2}) & \m \sin(\tfrac{t}{2}) \\
+                \sin(\tfrac{t}{2}) & \cos(\tfrac{t}{2})
             \end{pmatrix*}.
 \end{align*}
 By similar calculations and after flipping $t$, we get
@@ -6474,8 +6481,8 @@ For the spin-up state,
                 \,1\, \\ 0
             \end{pmatrix}}
             {\begin{pmatrix}
-                \tfrac{1}{2} &  \phantom{\ralminus}0 \\
-                0 & \ralminus \tfrac{1}{2}
+                \tfrac{1}{2} & \phantom{\m}0 \\
+                0            & \m \tfrac{1}{2}
             \end{pmatrix}
             \begin{pmatrix}
                 \,1\, \\ 0
@@ -6495,8 +6502,8 @@ and for the spin-down state,
                 \,0\, \\ 1
             \end{pmatrix}}
             {\begin{pmatrix}
-                \tfrac{1}{2} &  \phantom{\ralminus}0 \\
-                0 & \ralminus \tfrac{1}{2}
+                \tfrac{1}{2} & \phantom{\m}0 \\
+                0            & \m \tfrac{1}{2}
             \end{pmatrix}
             \begin{pmatrix}
                 \,0\, \\ 1
@@ -6517,7 +6524,7 @@ For the $x$-axis,
                 \,1\, \\ 0
             \end{pmatrix}}
             {\begin{pmatrix}
-                0 & \tfrac{1}{2} \\
+                0            & \tfrac{1}{2} \\
                 \tfrac{1}{2} & 0
             \end{pmatrix}
             \begin{pmatrix}
@@ -6535,7 +6542,7 @@ For the $x$-axis,
                 \,0\, \\ 1
             \end{pmatrix}}
             {\begin{pmatrix}
-                0 & \tfrac{1}{2} \\
+                0            & \tfrac{1}{2} \\
                 \tfrac{1}{2} & 0
             \end{pmatrix}
             \begin{pmatrix}
@@ -6556,7 +6563,7 @@ and for the $y$-axis,
                 \,1\, \\ 0
             \end{pmatrix}}
             {\begin{pmatrix*}[r]
-                0 & \ralminus\frac{i}{2} \\
+                0           & \m\frac{i}{2} \\
                 \frac{i}{2} &  0
             \end{pmatrix*}
             \begin{pmatrix}
@@ -6574,7 +6581,7 @@ and for the $y$-axis,
                 \,0\, \\ 1
             \end{pmatrix}}
             {\begin{pmatrix*}[r]
-                0 & \ralminus\frac{i}{2} \\
+                0           & \m\frac{i}{2} \\
                 \frac{i}{2} & 0
             \end{pmatrix*}
             \begin{pmatrix}
@@ -6622,7 +6629,7 @@ Consider first $\mathfrak{sl}(n, \mathbb{C})$, which we know from exercise~\ref{
             \end{pmatrix}, \qquad
         h = \begin{pmatrix*}[r]
                 1 & 0 \\
-                0 & \ralminus 1
+                0 & \m 1
             \end{pmatrix*}
     \]
     of $\mathfrak{sl}(2, \mathbb{C})$ satisfying
