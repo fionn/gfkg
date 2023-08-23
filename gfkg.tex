@@ -19,6 +19,7 @@
 \usepackage[nobottomtitles*]{titlesec}
 \usepackage{titling}
 \usepackage{parskip}
+\usepackage{enumitem}
 
 \DeclareMicrotypeAlias{lmss}{cmr}
 
@@ -70,6 +71,8 @@
 \mleftright{}
 
 \intervalconfig{soft open fences}
+
+\setlist{leftmargin=*}
 
 \newtagform{nowidth}{ \llap\bgroup(}{)\egroup}  % chktex 9
 \newenvironment{nowidthtags}{\usetagform{nowidth}}{\ignorespacesafterend}
