@@ -437,7 +437,7 @@ Since the transition functions exist independently, they are automatically smoot
 
 \begin{ex}
 
-Show that $v + w$ and $gw \in \text{Vect}(M)$.
+Show that $v + w$ and $gw \in \Vect(M)$.
 
 \end{ex}
 
@@ -481,14 +481,14 @@ For the product,
 
 \begin{ex}\label{ex:module}
 
-Show that the following rules [hold] for all $v, w \in \text{Vect}(M)$ and $f, g \in C^\infty(M)$:
+Show that the following rules [hold] for all $v, w \in \Vect(M)$ and $f, g \in C^\infty(M)$:
 \begin{align*}
     f(v + w) &= fv + fw, \\
     (f + g)v &= fv + gv, \\
     (fg)v &= f(gv), \\
     1v &= v.
 \end{align*}
-(Here ``$1$'' denotes the constant function equal to $1$ on all of $M$.) Mathematically, we summarize these rules by saying that $\text{Vect}(M)$ is a \emph{module over} $C^\infty(M)$.
+(Here ``$1$'' denotes the constant function equal to $1$ on all of $M$.) Mathematically, we summarize these rules by saying that $\Vect(M)$ is a \emph{module over} $C^\infty(M)$.
 
 \end{ex}
 
@@ -518,7 +518,7 @@ For all $f \in C^\infty(M)$,
     (1v)(f) = 1v(f) = v(f).
 \]
 
-Therefore $\text{Vect}(M)$ is a module over $C^\infty(M)$.
+Therefore $\Vect(M)$ is a module over $C^\infty(M)$.
 
 \end{sol}
 
@@ -542,7 +542,7 @@ If $v^\mu\partial_\mu = 0$, we get $v^\mu$ = 0 from above.
 
 \begin{ex}
 
-Let $v, w \in \text{Vect}(M)$. Show that $v = w$ if and only if $v_p = w_p$ for all $p \in M$.
+Let $v, w \in \Vect(M)$. Show that $v = w$ if and only if $v_p = w_p$ for all $p \in M$.
 
 \end{ex}
 
@@ -815,9 +815,9 @@ But
                    &= v(f(\phi(p))) \\
                    &= w_{\phi(p)}(f)
 \end{align*}
-for some $w \in \text{Vect}(N)$.
+for some $w \in \Vect(N)$.
 
-It's tempting to write this as $v_{\phi(p)}(f)$, but $v \in \text{Vect}(M)$ whereas $\phi(p) \in N$.
+It's tempting to write this as $v_{\phi(p)}(f)$, but $v \in \Vect(M)$ whereas $\phi(p) \in N$.
 Instead we need exactly the pushforward of $v$, so we get $w_{\phi(p)} = {(\phi_* v)}_{\phi(p)}$ and the equality holds when $\phi(p) = q$.
 
 \end{sol}
@@ -907,7 +907,7 @@ When $x(0) = 0$ we get $x(t) = 0$ for all $t$. Otherwise, we get a singularity a
 
 \begin{ex}
 
-Show that $\phi_0$ is the identity map $\text{id}: X \to X$ and that for all $s, t \in \mathbb{R}$ we have $\phi_t \circ \phi_s = \phi_{t + s}$.
+Show that $\phi_0$ is the identity map $\id: X \to X$ and that for all $s, t \in \mathbb{R}$ we have $\phi_t \circ \phi_s = \phi_{t + s}$.
 
 \end{ex}
 
@@ -1081,7 +1081,7 @@ Show that $\omega + \mu$ and $f\omega$ are really 1-forms, i.e., show linearity 
 
 \begin{sol}
 
-Let $g, h \in C^\infty(M)$, $v, w \in \text{Vect}(M)$.
+Let $g, h \in C^\infty(M)$, $v, w \in \Vect(M)$.
 
 $\omega + \mu$ is linear over $C^\infty(M)$ since
 \begin{align*}
@@ -1108,7 +1108,7 @@ Show that $\Omega^1(M)$ is a module over $C^\infty(M)$ (see the definition in ex
 
 \begin{sol}
 
-Let $\omega, \mu \in \Omega^1(M)$, $v\in \text{Vect}(M)$.
+Let $\omega, \mu \in \Omega^1(M)$, $v\in \Vect(M)$.
 
 For all $f \in C^\infty(M)$,
 \[
@@ -1152,7 +1152,7 @@ for any $f, g, h \in C^\infty(M)$ and any $\alpha \in \mathbb{R}$.
 
 \begin{sol}
 
-Let $v \in \text{Vect}(M)$. First consider linearity.
+Let $v \in \Vect(M)$. First consider linearity.
 \begin{align*}
     d(f + g)v &= v(f + g) \\
               &= vf + vg \\
@@ -1187,7 +1187,7 @@ Suppose $f(x^1, \ldots, x^n)$ is a function on $\mathbb{R}^n$. Show that
 
 \begin{sol}\label{sol:gradient}
 
-Recall from solution~\ref{sol:basis} that $\left\{\partial_\mu\right\}$ forms a basis for $\mathbb{R}^n$, so $v = v^\mu \partial_\mu$ for some components $\left\{v^\mu\right\}$, $v \in \text{Vect}(\mathbb{R}^n)$. Consider some test vector $v$,
+Recall from solution~\ref{sol:basis} that $\left\{\partial_\mu\right\}$ forms a basis for $\mathbb{R}^n$, so $v = v^\mu \partial_\mu$ for some components $\left\{v^\mu\right\}$, $v \in \Vect(\mathbb{R}^n)$. Consider some test vector $v$,
 \[
     df(v) = v(f) = v^\mu \partial_\mu f.
 \]
@@ -1238,7 +1238,7 @@ In other words, if $\omega, \nu$ are two 1-forms on $M$ with $\omega_p = \nu_p$ 
 
 \begin{sol}\label{sol:welldefined1forms}
 
-Let $u, w \in \text{Vect}(M)$ with $u \neq w$. Let $u_p = w_p$, with $u_q \neq w_q$ necessarily, $q \in M, q \neq p$.
+Let $u, w \in \Vect(M)$ with $u \neq w$. Let $u_p = w_p$, with $u_q \neq w_q$ necessarily, $q \in M, q \neq p$.
 Consider the vector field $v = u - w$. Then to show that $\omega_p$ is well-defined, it is sufficient to show that for any $\omega = df$,
 \begin{align*}
     \omega_p(v_p) &= \omega(v)(p) \\
@@ -1275,12 +1275,12 @@ The dual of a linear map $f: V \to W$ is defined by
 \]
 where $f^*: W^* \to V^*$.
 
-Let $\text{id}: V \to V$ be the identity map on $V$. For some $v \in V$,
+Let $\id: V \to V$ be the identity map on $V$. For some $v \in V$,
 \begin{align*}
-    (\text{id}^*\omega)(v) &= \omega \bigl( \text{id}(v) \bigr) \\
+    (\id^*\omega)(v) &= \omega \bigl( \id(v) \bigr) \\
                            &= \omega(v)
 \end{align*}
-giving $\text{id}^*\omega = \omega$, therefore $\text{id}^*: V^* \to V^*$ is the identity map in the dual space.
+giving $\id^*\omega = \omega$, therefore $\id^*: V^* \to V^*$ is the identity map in the dual space.
 
 For the composition $gf = g \circ f$, recall the definition of the \ref{eq:pullbackfunction}. %chktex 2
 Let $h: X \to Y$ and consider the pullback
@@ -1365,7 +1365,7 @@ Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ denote rotation counterclockwise by th
 
 \begin{sol}
 
-Let $v = f_i(x, y)\partial_i$ be some vector in $\text{Vect}(\mathbb{R}^2)$ and $p = (x, y) \in \mathbb{R}^2$. For $\phi$ as in solutions~\ref{sol:pullbackrotation},~\ref{sol:pushforwardrotation},
+Let $v = f_i(x, y)\partial_i$ be some vector in $\Vect(\mathbb{R}^2)$ and $p = (x, y) \in \mathbb{R}^2$. For $\phi$ as in solutions~\ref{sol:pullbackrotation},~\ref{sol:pushforwardrotation},
 \begin{align*}
     {(\phi^* dx)}_p v &= d(\phi^* x)(v)(p) \\
         &= d(x \circ \phi)(v)(p) \\
@@ -1857,7 +1857,7 @@ Since any $\mu \in \Omega(N)$ can be expressed as $\mu = \mu_0 + \cdots + \mu_n$
 by linearity and only consider how $\phi^*$ acts on each $p$-form.
 
 The pullback of a $p$-form $\omega = \omega_1 \wedge \cdots \wedge \omega_p \in \Omega^p(N)$ should generalise the \ref{eq:pullback1form}.  %chktex 2
-So on a collection of vectors $v_1, \ldots, v_p \in \text{Vect}(M)$ we would like to get
+So on a collection of vectors $v_1, \ldots, v_p \in \Vect(M)$ we would like to get
 \begin{align*}
     (\phi^* \omega)(v_1, \ldots, v_p) &= \omega(\phi_* v_1, \ldots, \phi_* v_p) \\
         &=\omega_1 \wedge \cdots \wedge \omega_p (\phi_* v_1, \ldots, \phi_* v_p) \\
@@ -2112,7 +2112,7 @@ Show that its components in the standard basis are
 
 \begin{sol}
 
-For $v, w \in \text{Vect}(\mathbb{R}^4)$, the Minkowski metric $\eta$ is defined by
+For $v, w \in \Vect(\mathbb{R}^4)$, the Minkowski metric $\eta$ is defined by
 \[
     \eta(v, w) = -v^0 w^0 + v^1 w^1 + v^2 w^2 + v^3 w^3.
 \]
@@ -2892,7 +2892,7 @@ We are assuming $F$ is self-dual and and that $E$ is a \emph{plane wave} of the 
     E(x) = \mathbf{E} e^{i k_\mu x^\mu}
 \]
 where $\mathbf{E} = \mathbf{E}_j dx^j$ is a constant complex-valued 1-form on $\mathbb{R}^3$
-and $k \in {\text{Vect}(\mathbb{R}^4)}^*$ is the fixed \emph{energy-momentum} covector.
+and $k \in {\Vect(\mathbb{R}^4)}^*$ is the fixed \emph{energy-momentum} covector.
 By self-duality, we have
 \[
     B(x) = \mathbf{B} e^{i k_\mu x^\mu}
@@ -4316,7 +4316,7 @@ Let $u$, $v$ be vectors on $\mathbb{C}^n$ with some metric $g$ and $A$, $B$ be m
     This secondary requirement also applies to $\SL(n, \mathbb{R})$ and $\SL(n, \mathbb{C})$, so both of these groups are closed as well.
 
     \item For $G$ one of the orthogonal or unitary groups, $A \in G$ is a rotation about some axis by some angle $\theta$, say.
-    Then a matrix $A^{-1}$ rotating by $-\theta$ will satisfy $AA^{-1} = A^{-1}A = \text{id}$.
+    Then a matrix $A^{-1}$ rotating by $-\theta$ will satisfy $AA^{-1} = A^{-1}A = \id$.
     For $A$ unitary, $A^{-1} = A^\dagger$, the conjugate transpose, and for $A$ orthogonal this reduces to the transpose.
 
     For $G$ any of $\SL(n, \mathbb{R})$, $\SL(n, \mathbb{C})$, $\SO(p, q)$, $\SU(n)$, $A$ is invertible since $\det(A) = 1$.
@@ -4324,7 +4324,7 @@ Let $u$, $v$ be vectors on $\mathbb{C}^n$ with some metric $g$ and $A$, $B$ be m
 
     \item The standard $n \times n$ identity matrix satisfies
     \[
-        \innerp*{\text{id} \, u}{\text{id} \, v} = \innerp*{u}{v}, \qquad \det(\text{id}) = 1
+        \innerp*{\id \, u}{\id \, v} = \innerp*{u}{v}, \qquad \det(\id) = 1
     \]
     so the identity is in $\SL(n, \mathbb{R})$, $\SL(n, \mathbb{C})$, $\O(p, q)$, $\SO(p, q)$, $\U(n)$ and $\SU(n)$.
 
@@ -4375,9 +4375,9 @@ Since $G$ is a Lie group, the product map
     \mu &: G_0 \times G_0 \to G, \\
         &: (g, h) \mapsto gh
 \end{align*}
-is continuous so, since $G_0 \times G_0$ is connected, the image $\mu(G_0 \times G_0)$ is connected. $\mu(\text{id}, \text{id}) = \text{id}$, so $gh \in G_0$ and therefore $G_0$ is closed.
+is continuous so, since $G_0 \times G_0$ is connected, the image $\mu(G_0 \times G_0)$ is connected. $\mu(\id, \id) = \id$, so $gh \in G_0$ and therefore $G_0$ is closed.
 
-Similarly, consider the inversion map $g \mapsto g^{-1}$ which is also by definition continuous, so its image is connected. Since $\text{id} = \text{id}^{-1}$, this connected component is the identity component.
+Similarly, consider the inversion map $g \mapsto g^{-1}$ which is also by definition continuous, so its image is connected. Since $\id = \id^{-1}$, this connected component is the identity component.
 
 $G_0$ is therefore a subgroup of $G$. Smooth product and inverse operations imply it is a Lie group.
 
@@ -4393,9 +4393,9 @@ Conclude that the identity component of $\O(3)$ is $\SO(3)$.
 
 \begin{sol}
 
-Let $Q \in \O(3)$. Since $QQ^T = \text{id}$, $\det(QQ^T) = 1$, so $\det{Q} = \pm 1$.
+Let $Q \in \O(3)$. Since $QQ^T = \id$, $\det(QQ^T) = 1$, so $\det{Q} = \pm 1$.
 
-Let $R \in \O(3)$ be a rotation. This is smoothly parameterised by the angle $\theta$ and when $\theta = 0$, $R = \text{id}$.
+Let $R \in \O(3)$ be a rotation. This is smoothly parameterised by the angle $\theta$ and when $\theta = 0$, $R = \id$.
 Therefore $\det(R) = 1$ and $R$ is in the identity component.
 Therefore $R \in SO(3) \subset \O(3)$.
 
@@ -4442,7 +4442,7 @@ Therefore there is no smooth path between transformations with ${\Lambda^0}_0$ o
 Transformations with ${\Lambda^0}_0 \geq 1$ preserve the direction of time.
 Since $\delta_0^0 = 1$ (the identity preserves the direction of time), the group of proper orthochronous Lorentz transformations is the identity component, $\SO_0(3, 1)$.
 
-The Klein four-group $V_4 = \{\text{id}, P, T, PT\}$ is a discrete subgroup of $\O(3, 1)$. The transformation $PT \in \SO(3, 1)$ has ${(PT)}^0_0 = -1$, so $PT$ is not path-connected to the identity component.
+The Klein four-group $V_4 = \{\id, P, T, PT\}$ is a discrete subgroup of $\O(3, 1)$. The transformation $PT \in \SO(3, 1)$ has ${(PT)}^0_0 = -1$, so $PT$ is not path-connected to the identity component.
 We therefore have four disjoint connected components of the Lorentz group,
 \begin{align*}
     \SO_0(3, 1) &= \setbuilder*{\Lambda \in \O(3, 1) \given \det(\Lambda) = 1, {\Lambda^0}_0 \geq 1}, \\
@@ -4493,11 +4493,11 @@ Let $fg = gf = hg = gh = 1$. Then $fgf = f = fgh = h$ so the inverse is unique.
 
 Given two groups $G$ and $H$, we say a function $\rho: G \to H$ is a \emph{homomorphism} if $\rho(gh) = \rho(g) \rho(h)$.
 \[
-    \rho(g) = \rho(\text{id}_G g) = \rho(\text{id}_G) \rho(g)
+    \rho(g) = \rho(\id_G g) = \rho(\id_G) \rho(g)
 \]
-so $\rho(\text{id}_G) = \text{id}_H$.
+so $\rho(\id_G) = \id_H$.
 \[
-    \text{id}_H = \rho(\text{id}_G) = \rho(g^{-1} g) = \rho(g^{-1}) \rho(g)
+    \id_H = \rho(\id_G) = \rho(g^{-1} g) = \rho(g^{-1}) \rho(g)
 \]
 so $\rho(g^{-1}) = {\rho(g)}^{-1}$.
 
@@ -4549,7 +4549,7 @@ For some $z \in \mathbb{C}$ with $z = x + iy$, we have
 \[
     e^{i\theta} z = x \cos(\theta) - y \sin(\theta) + i \bigl( x \sin(\theta) + y \cos(\theta) \bigr)
 \]
-and for some vector $v \in \text{Vect}(\mathbb{R}^2)$ with components $(x, y)$,
+and for some vector $v \in \Vect(\mathbb{R}^2)$ with components $(x, y)$,
 \[
     \rho(e^{i\theta}) \begin{pmatrix} x \\ y \end{pmatrix}
         = \begin{pmatrix*}[r]
@@ -4844,7 +4844,7 @@ which implies $c_\mu \in \mathbb{R}$.
 
 Taking the trace,
 \[
-    \text{tr} \begin{pmatrix*}[l]
+    \tr \begin{pmatrix*}[l]
                 c_0 + c_3  & c_1 - ic_2 \\
                 c_1 + ic_2 & c_0 - c_3
               \end{pmatrix*}
@@ -5037,7 +5037,7 @@ Show that all the representations $U_j$ of $\SU(2)$ are equivalent to their dual
 
 $\rho^*$ is a homomorphism since
 \[
-    \bigl( \rho^*(\text{id}) f \bigr) v = f \bigl(\rho(\text{id}) v \bigr) = f(v),
+    \bigl( \rho^*(\id) f \bigr) v = f \bigl(\rho(\id) v \bigr) = f(v),
 \]
 i.e.\ $\rho^*$ preserves the identity, and
 \begin{align*}
@@ -5051,7 +5051,7 @@ so $\rho^*(gh) = \rho^*(g) \rho^*(h)$ and $\rho^*$ is a representation of $G$ on
 For $U_j$ a representation of $\SU(2)$,
 \begin{align*}
     \bigl( U_j^*(g) f \bigr) (v) &= f \bigl( U_j(g^{-1}) v \bigr) \\
-                                 &= f \bigl( (U_j(g^{-1}) \text{id}) v \bigr) \\
+                                 &= f \bigl( (U_j(g^{-1}) \id) v \bigr) \\
                                  &= f \bigl( g v \bigr)
 \end{align*}
 so representations of $\SU(2)$ are equivalent to their duals (isomorphic via the adjoint).
@@ -5143,7 +5143,7 @@ so $s_{12} = -s_{12} = 0$. This gives us
             s_{11} & 0 \\
             0      & s_{11}
         \end{pmatrix}
-        = s_{11} \cdot \text{id}.
+        = s_{11} \cdot \id.
 \]
 
 \end{sol}
@@ -5349,7 +5349,7 @@ Show that the range of $\rho: \SL(2, \mathbb{C}) \to \O(3, 1)$ lies in $\SO_0(3,
 
 \begin{sol}
 
-Consider $\text{id}_M = \sigma_0$. Then $\rho: \sigma_0 \mapsto \text{id} \in \SO_0(3, 1)$.
+Consider $\id_M = \sigma_0$. Then $\rho: \sigma_0 \mapsto \id \in \SO_0(3, 1)$.
 Since $\SL(2, \mathbb{C})$ is connected and $\rho$ is continuous, $\rho$ must map every element of $\SL(2, \mathbb{C})$ to the connected component of $\O(3, 1)$,
 \[
     \rho: \SL(2, \mathbb{C}) \to \SO_0(3, 1).
@@ -5374,7 +5374,7 @@ implies $\rho(-g) = \rho(g)$. Suppose $\rho(g) = \rho(h)$; then
     \rho(gh^{-1}) = \rho(g) {\rho(h)}^{-1} = 1
 \]
 which requires that $gh^{-1}$ commutes with all matrices $T \in M$, which, per exercise~\ref{ex:commutativescalarmultipleidentity}, implies that $gh^{-1}$ is a scalar multiple of the identity.
-The only scalar multiples of the identity in $\SO_0(3, 1)$ are $\pm \text{id}$, so $h = \pm g$ and $\rho$ is two-to-one.
+The only scalar multiples of the identity in $\SO_0(3, 1)$ are $\pm \id$, so $h = \pm g$ and $\rho$ is two-to-one.
 Since $\rho$ is also surjective, it is a double cover of $\SO_0(3, 1)$.
 
 \end{sol}
@@ -5467,7 +5467,7 @@ Denote
 \end{align*}
 The characteristic polynomial is
 \begin{align*}
-    p_N(\lambda) &= \det(N - \lambda \cdot \text{id}) \\
+    p_N(\lambda) &= \det(N - \lambda \cdot \id) \\
         %&= -\lambda \bigl(\lambda^2 + {(n^x)}^2 \bigr)
         %   + n^z(-\lambda n^z - n^x n^y) + n^y(n^x n^z -\lambda n^y) \\
         &= -\lambda^3 - \lambda
@@ -5496,19 +5496,19 @@ as ${(n^i)}^2 = 1 - {(n^j)}^2 - {(n^k)}^2$.
 Exponentiating,
 \begin{align*}
     \exp (tN)
-        &= \text{id} + tN + \frac{t^2}{2!} N^2 + \frac{t^3}{3!} N^3
+        &= \id + tN + \frac{t^2}{2!} N^2 + \frac{t^3}{3!} N^3
                      + \frac{t^4}{4!} N^4 + \cdots \\
-        &= \text{id} + tN + \frac{t^2}{2!} N^2 - \frac{t^3}{3!} N
+        &= \id + tN + \frac{t^2}{2!} N^2 - \frac{t^3}{3!} N
                      - \frac{t^4}{4!} N^2 + \cdots \\
-        &= \text{id} + \left( t - \frac{t^3}{3!} + \cdots \right) N
+        &= \id + \left( t - \frac{t^3}{3!} + \cdots \right) N
               + \left( \frac{t^2}{2!} - \frac{t^4}{4!} + \cdots \right) N^2 \\
-        &= \text{id} + \sin(t) N + \bigl(1 - \cos(t) \bigr) N^2
+        &= \id + \sin(t) N + \bigl(1 - \cos(t) \bigr) N^2
 \end{align*}
 which reproduces the matrix form of Rodrigues' rotation formula for a rotation about $n$ by an angle $t$.
 
-%If we denote $N^2 = N \otimes N - \text{id}$,
+%If we denote $N^2 = N \otimes N - \id$,
 %\[
-%    \exp(tN) = \text{id} \cdot \cos(t) + \sin(t) N + \bigl(1 - \cos(t) \bigr) N \otimes N
+%    \exp(tN) = \id \cdot \cos(t) + \sin(t) N + \bigl(1 - \cos(t) \bigr) N \otimes N
 %\]
 %which is the standard vector form.
 
@@ -5530,10 +5530,10 @@ and expand it as a power series in $s$ and $t$, keeping only the lowest-order te
 \begin{align*}
     &\exp(s J_x) \exp(t J_y) - \exp(t J_y) \exp(s J_x) \\
     &\qquad\begin{aligned}
-        &= (\text{id} + sJ_x + \cdots) (\text{id} + tJ_y + \cdots)
-           - (\text{id} + tJ_y + \cdots) (\text{id} + sJ_x + \cdots) \\
-        &= (\text{id} + sJ_x + tJ_y + st J_x J_y + \cdots)
-           - (\text{id} + sJ_x + tJ_y + st J_y J_x + \cdots) \\
+        &= (\id + sJ_x + \cdots) (\id + tJ_y + \cdots)
+           - (\id + tJ_y + \cdots) (\id + sJ_x + \cdots) \\
+        &= (\id + sJ_x + tJ_y + st J_x J_y + \cdots)
+           - (\id + sJ_x + tJ_y + st J_y J_x + \cdots) \\
         &= st(J_x J_y - J_y J_x) + \cdots.
     \end{aligned}
 \end{align*}
@@ -5659,11 +5659,11 @@ by the Cauchy product formula.
 For a fixed $T$, the function
 \begin{align*}
     f_T: t \mapsto \exp(tT) &= \sum_{n = 0}^\infty \frac{{t^n}T^n}{n!} \\
-        &= \text{id} + tT + \frac{{(tT)}^2}{2} + \frac{{(tT)}^3}{3!} + \cdots
+        &= \id + tT + \frac{{(tT)}^2}{2} + \frac{{(tT)}^3}{3!} + \cdots
 \end{align*}
 is smooth since it is polynomial in $t$.
 
-From the above expansion, we get that $\displaystyle \lim_{t \to 0} \exp(tT) = \text{id}$.
+From the above expansion, we get that $\displaystyle \lim_{t \to 0} \exp(tT) = \id$.
 Differentiating,
 \begin{align*}
     \frac{d}{dt} \exp(tT) &= \frac{d}{dt} \sum_{n = 0}^\infty \frac{{t^n}T^n}{n!} \\
