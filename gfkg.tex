@@ -83,6 +83,10 @@
 \newenvironment{tightmatrix}
     {\settightmatrix}{}
 
+\makeatletter
+\newcommand*{\labeltarget}[1]{\Hy@raisedlink{\hypertarget{#1}{}}}
+\makeatother
+
 \newcommand*{\https}[1]{\normalsize\texttt{\href{https://#1/}{#1}}}
 \newcommand*{\norm}[1]{\ensuremath{\left\Vert#1\right\Vert}}
 
@@ -2220,9 +2224,10 @@ In physics, the quantity
     \frac{1}{2} \bigl( \innerp{E}{E} + \innerp{B}{B} \bigr)
 \]
 is called the \emph{energy density} of the electromagnetic field. The quantity
-\[
-    \frac{1}{2} \bigl( \innerp{E}{E} - \innerp{B}{B} \bigr) \label{eq:lagrangianvacuumem}
-\]
+\begin{equation*}
+    \labeltarget{eq:emlagrangianvacuum}
+    \frac{1}{2} \bigl( \innerp{E}{E} - \innerp{B}{B} \bigr)
+\end{equation*}
 is called the \emph{Lagrangian} for the vacuum Maxwell's equations, which we discuss more in Chapter 4 of Part II in greater generality.
 
 \end{ex}
@@ -2265,7 +2270,7 @@ Alternatively, we could use the Hodge star and calculate $\innerp{\star B}{\star
 
 \begin{ex}
 
-In $\mathbb{R}^4$, let $F$ be the 2-form given by $F = B + E \wedge dt$, where $E$ and $B$ are given by \hyperref[ex:esquaredbsquared]{the formul\ae\ above}. Using the Minkowski metric on $\mathbb{R}^4$, calculate $-\frac{1}{2} \innerp{F}{F}$ and relate it to \hyperref[eq:lagrangianvacuumem]{the Lagrangian above}.
+In $\mathbb{R}^4$, let $F$ be the 2-form given by $F = B + E \wedge dt$, where $E$ and $B$ are given by \hyperref[ex:esquaredbsquared]{the formul\ae\ above}. Using the Minkowski metric on $\mathbb{R}^4$, calculate $-\frac{1}{2} \innerp{F}{F}$ and relate it to \hyperlink{eq:emlagrangianvacuum}{the Lagrangian above}.
 
 \end{ex}
 
