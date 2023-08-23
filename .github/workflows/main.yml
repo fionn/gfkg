@@ -75,6 +75,7 @@ jobs:
             gfkg.ps
             gfkg.sha256
           generate_release_notes: true
+          fail_on_unmatched_files: true
 
   publish:
 
@@ -91,6 +92,9 @@ jobs:
     environment:
       name: pages
       url: ${{ steps.publish.outputs.page_url }}
+
+    concurrency:
+      group: pages
 
     steps:
 
