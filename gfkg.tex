@@ -5960,14 +5960,14 @@ Check these. Note that in~\ref{sol:liebracketmatrix:linearity}, the term `scalar
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:liebracketmatrix}
 
 In the case of matrix Lie groups, where the Lie algebra $\mathfrak{g}$ consists of matrices and the Lie bracket is the commutator, it is easy to check the following identities:
 \begin{enumerate}
-    \item $[v, w] = -[w, v]$ for all $v, w \in \mathfrak{g}$,
-    \item $[u, \alpha v + \beta w] = \alpha [u, v] + \beta [u, v]$
+    \item $[v, w] = -[w, v]$ for all $v, w \in \mathfrak{g}$,\label{sol:liebracketmatrix:anticommutativity}
+    \item $[u, \alpha v + \beta w] = \alpha [u, v] + \beta [u, w]$
           for all $u, v, w \in \mathfrak{g}$ and scalars $\alpha$, $\beta$,\label{sol:liebracketmatrix:linearity}
-    \item the \emph{Jacobi identity}: $\big[u, [v, w]\big] + \big[v, [w, u]\big] + \big[w, [u, v]\big] = 0$.
+    \item the \emph{Jacobi identity}: $\big[u, [v, w]\big] + \big[v, [w, u]\big] + \big[w, [u, v]\big] = 0$.\label{sol:liebracketmatrix:jacobiidentity}
 \end{enumerate}
 
 See solution~\ref{sol:liebracketvectorfields}, which is identical.
@@ -6711,6 +6711,114 @@ For $n \geq 2$, consider generators $T_a$ similar to the $E_{ij}$s of $\mathfrak
 There are $n^2 - 1$ such linearly independent entities and therefore they form a basis of $\mathfrak{su}(n)$.
 As before, we can construct $[T_a, T_b] = f_{abc} T_c$ for $f_{abc}$ structure constants.
 Trusting that these constants are non-zero, every element of $\mathfrak{su}(n)$ is a linear combination of the Lie bracket of other elements and therefore $\mathfrak{su}(n)$ is semisimple.
+
+\end{sol}
+
+\begin{ex}
+
+Show that if $\mathfrak{g}$ and $\mathfrak{h}$ are Lie algebras, so is the direct sum $\mathfrak{g} \oplus \mathfrak{h}$, with bracket given by
+\[
+    \bigl[(x, x'), (y, y') \bigr] = \bigl( [x, y], [x'\!, y'] \bigr).
+\]
+Show that if $G$ and $H$ are Lie groups with Lie algebras $\mathfrak{g}$ and $\mathfrak{h}$, the Lie algebra of $G \times H$ is isomorphic to $\mathfrak{g} \oplus \mathfrak{h}$.
+Show that if $\mathfrak{g}$ and $\mathfrak{h}$ are semisimple, so is $\mathfrak{g} \oplus \mathfrak{h}$.
+
+\end{ex}
+
+\begin{sol}
+
+To show that $\mathfrak{g} \oplus \mathfrak{h}$ is a Lie algebra, we must check identities
+\ref{sol:liebracketmatrix:anticommutativity}, %chktex 2
+\ref{sol:liebracketmatrix:linearity} and      %chktex 2
+\ref{sol:liebracketmatrix:jacobiidentity}     %chktex 2
+from solution~\ref{sol:liebracketmatrix}.
+
+\begin{enumerate}
+
+    \item For anticommutativity,
+    \begin{align*}
+        \bigl[(x, x'), (y, y') \bigr] &= \bigl( [x, y], [x'\!, y'] \bigr) \\
+                                      &= \bigl( -[y, x], -[y'\!, x'] \bigr) \\
+                                      &= -\bigl[(y, y'), (x, x') \bigr].
+    \end{align*}
+
+    \item For linearity,
+    \begin{align*}
+        \bigl[(x, x'), \alpha (y, y') + \beta (z, z') \bigr]
+            &= \bigl[ (x, x'), (\alpha y + \beta z, \alpha y' + \beta z') \bigr] \\
+            &= \bigl( [x, \alpha y + \beta z], [x', \alpha y' + \beta z'] \bigr) \\
+            &= \bigl( \alpha [x, y] + \beta [x, z],
+                      \alpha [x', y'] + \beta [x', z'] \bigr) \\
+            &= \alpha \bigl( [x, y], [x', y'] \bigr)
+               + \beta \bigl( [x, z], [x', z'] \bigr) \\
+            &= \alpha \bigl[ (x, x'), (y, y') \bigr]
+               + \beta \bigl[ (x, x'), (z, z') \bigr].
+    \end{align*}
+
+    \item For the Jacobi identity,
+    \begin{align*}
+        \bigl[ (x, x'), [(y, y'), (z, z')] \bigr]
+            &= \bigl[ (x, x'), \bigl( [y, z], [y', z'] \bigr) \bigr] \\
+            &= \bigl( \bigl[ x, [y, z] \bigr], \bigl[ x', [y', z'] \bigr] \bigr)
+    \end{align*}
+    and similarly,
+    \begin{align*}
+        \bigl[ (y, y'), [(z, z'), (x, x')] \bigr]
+            &= \bigl( \bigl[ y, [z, x] \bigr], \bigl[ y', [z', x'] \bigr] \bigr), \\
+        \bigl[ (z, z'), [(x, x'), (y, y')] \bigr]
+            &= \bigl( \bigl[ z, [x, y] \bigr], \bigl[ z', [x', y'] \bigr] \bigr)
+    \end{align*}
+    so
+    \begin{align*}
+        \begin{aligned}[b]
+        &\bigl[ (x, x'), [(y, y'), (z, z')] \bigr] \\
+        &+ \bigl[ (y, y'), [(z, z'), (x, x')] \bigr] \\
+        &+ \bigl[ (z, z'), [(x, x'), (y, y')] \bigr]
+        \end{aligned}
+            &= \bigl( \bigl[ x, [y, z] \bigr],
+                      \bigl[ x'\!, [y'\!, z'] \bigr] \bigr) \\
+            &\mathrel{\phantom{=}}{}
+               + \bigl( \bigl[ y, [z, x] \bigr],
+                        \bigl[ y'\!, [z'\!, x'] \bigr] \bigr) \\
+            &\mathrel{\phantom{=}}{}
+               + \bigl( \bigl[ z, [x, y] \bigr],
+                        \bigl[ z'\!, [x'\!, y'] \bigr] \bigr) \\
+            &= \begin{aligned}[t]
+                    \bigl( & \bigl[ x, [y, z] \bigr]
+                           + \bigl[ y, [z, x] \bigr]
+                           + \bigl[ z, [x, y] \bigr], \bigr. \\
+                    \bigl. & \bigl[ x'\!, [y'\!, z'] \bigr]
+                           + \bigl[ y'\!, [z'\!, x'] \bigr]
+                           + \bigl[ z'\!, [x'\!, y'] \bigr] \bigr)
+                \end{aligned} \\
+            &=(0, 0).
+    \end{align*}
+
+\end{enumerate}
+
+Consider the linear map
+\begin{align*}
+    f &: \mathfrak{g} \oplus \mathfrak{h} \to T_{\id}\, G \times H \\
+      &: (x, x') \mapsto x \oplus x'
+\end{align*}
+which preserves the Lie bracket above as
+\begin{align*}
+    f \bigl( \bigl[(x, x'), (y, y') \bigr] \bigr)
+        &= f \bigl( [x, y], [x'\!, y'] \bigr) \\
+        &= [x, y] \oplus [x'\!, y'] \\
+        &= [x \oplus x', y \oplus y'] \\
+        &= \bigl[ f(x, x'), f(y, y') \bigr].
+\end{align*}
+Since $f$ is bijective, the Lie algebra of $G \times H$ is isomorphic to $\mathfrak{g} \oplus \mathfrak{h}$.
+
+If $\mathfrak{g}$, $\mathfrak{h}$ are semisimple then any element of $\mathfrak{g}$, $\mathfrak{h}$ can be written as a linear combination of the Lie bracket of other elements.
+By linearity, we need only consider $x = [y, z] \in \mathfrak{g}$ and $x' = [y', z'] \in \mathfrak{h}$.
+Then
+\[
+    (x, x') = \bigl( [y, z], [y', z'] )
+            = \bigl[ (y, y'), (z, z') \bigr]
+\]
+so $\mathfrak{g} \oplus \mathfrak{h}$ is also semisimple.
 
 \end{sol}
 
