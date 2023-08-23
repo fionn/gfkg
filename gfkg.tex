@@ -663,7 +663,7 @@ Since our manifold is $\mathbb{R}$, the ``usual coordinate function'' in this ca
 
 \begin{ex}
 
-Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be rotation counterclockwise by an angle $\theta$. Let $x$, $y$ be the usual coordinate functions on $\mathbb{R}^2$. Show that
+Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be [a] rotation counterclockwise by an angle $\theta$. Let $x$, $y$ be the usual coordinate functions on $\mathbb{R}^2$. Show that
 \begin{align*}
     \phi^* x &= \cos(\theta) x - \sin(\theta) y, \\
     \phi^* y &= \sin(\theta) x + \cos(\theta) y.
@@ -885,9 +885,9 @@ Let $v$ be the vector field $x^2 \partial_x + y \partial_y$ on $\mathbb{R}^2$. C
 
 Integral curves satisfy $\gamma'(t) = v_{\gamma(t)}$, $\gamma(0) = p$.
 
-Denote $\gamma(t) = (x(t), y(t)) \in \mathbb{R}^2$. Then from the definition of tangent curves,
+Denote $\gamma(t) = \bigl(x(t), y(t) \bigr) \in \mathbb{R}^2$. Then from the definition of tangent curves,
 \begin{align*}
-    \frac{d}{dt} f(\gamma(t)) &= \frac{d}{dt} f(x, y) \\
+    \frac{d}{dt} f \bigl(\gamma(t) \bigr) &= \frac{d}{dt} f(x, y) \\
         &= \partial_x f(x, y) \dot{x} + \partial_y f(x, y) \dot{y} \\
         &\overset{!}{=} x^2 \partial_x f(x, y) + y \partial_y f(x, y)
 \end{align*}
@@ -945,7 +945,7 @@ so $v = \partial_r$, $w = \frac{\partial_\theta}{r}$.
 Then
 \allowdisplaybreaks[3]
 \begin{align*}
-    [v, w]f &= v \bigl( w(f)) - w(v(f) \bigr) \\
+    [v, w]f &= v \bigl( w(f) \bigr) - w \bigl( v(f) \bigr) \\
         &= v\left(\frac{\partial_\theta f}{r}\right) - w(\partial_r f) \\
         &= \partial_r\left(\frac{\partial_\theta f}{r}\right)
             - \frac{\partial_\theta}{r}(\partial_r f) \\
@@ -961,7 +961,7 @@ so $[v, w] = -\frac{w}{r}$.
 
 We could also do this the hard way,
 \begin{align*}
-    [v, w]f &= v \bigl( w(f)) - w(v(f) \bigr) \\
+    [v, w]f &= v \bigl( w(f) \bigr) - w \bigl( v(f) \bigr) \\
         &= \frac{(x \partial_x + y \partial_y)(x \partial_y f - y \partial_x f) - (x \partial_y - y \partial_x)(x \partial_x f + y \partial_y f)}{x^2 + y^2} \\
         &= \frac{\splitdfrac{x \partial_x (x\partial_y f)
                              - x\partial_x(y \partial_x f)
@@ -1344,7 +1344,7 @@ Using the fact that the exterior derivative is \emph{natural}, i.e. $\phi^*(df) 
         &= v(\phi^* x) (t) \\
         &= v(x \circ \phi)(t) \\
         &= v \bigl( \sin(t) \bigr) \\
-        &= f(t) \partial_t \sin(t) \\
+        &= f(t) \, \partial_t \sin(t) \\
         &= f(t) \cos(t) \\
         &= f(t) \cos(t) \partial_t t \\
         &= \cos(t) v(t) \\
