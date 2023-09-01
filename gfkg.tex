@@ -108,6 +108,8 @@
 
 \newcommand*{\m}{\ensuremath\:\, \mathllap{-}}
 
+\newcommand*{\pheq}{\ensuremath\mathrel{\phantom{=}}\negmedspace{}}
+
 \newcommand*{\GL}{\ensuremath\text{GL}}
 \newcommand*{\SL}{\ensuremath\text{SL}}
 \renewcommand*{\O}{\ensuremath\text{O}}
@@ -1384,8 +1386,8 @@ Let $v = f_i(x, y)\partial_i$ be some vector in $\Vect(\mathbb{R}^2)$ and $p = (
         &= d(x \circ \phi)(v)(p) \\
         &= v \bigl( \cos(\theta) x - \sin(\theta) y \bigr) \\
         &= f_1(x, y) \partial_x \bigl( \cos(\theta) x - \sin(\theta) y \bigr) \\
-        &\mathrel{\phantom{=}}{} + f_2(x, y) \partial_y \bigl( \cos(\theta) x
-                                 - \sin(\theta) y \bigr) \\
+        &\pheq + f_2(x, y) \partial_y \bigl( \cos(\theta) x
+               - \sin(\theta) y \bigr) \\
         &= f_1(x, y) \cos(\theta) - f_2(x, y) \sin(\theta) \\
         &= \cos(\theta) f_1(x, y) \partial_x x
            - \sin(\theta) f_2(x, y) \partial_y y \\
@@ -2483,17 +2485,17 @@ Denote $\omega = \omega_x dx + \omega_y dy + \omega_z dz$. The gradient is
         &= d(\omega_x dx) + d(\omega_y dy) + d(\omega_z dz) \\
         &= d\omega_x \wedge dx + d\omega_y \wedge dy + d\omega_z \wedge dz \\
         &= \partial_y \omega_x dy \wedge dx + \partial_z \omega_x dz \wedge dx \\
-        &\mathrel{\phantom{=}}{} + \partial_x \omega_y dx \wedge dy + \partial_z \omega_y dz \wedge dy \\
-        &\mathrel{\phantom{=}}{} + \partial_x \omega_z dx \wedge dz + \partial_y \omega_z dy \wedge dz \\
+        &\pheq + \partial_x \omega_y dx \wedge dy + \partial_z \omega_y dz \wedge dy \\
+        &\pheq + \partial_x \omega_z dx \wedge dz + \partial_y \omega_z dy \wedge dz \\
         &= (\partial_y \omega_z - \partial_z \omega_y) \d y \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \d z \wedge dx \\
-        &\mathrel{\phantom{=}}{} +(\partial_x \omega_y - \partial_y \omega_x) \d x \wedge dy.
+        &\pheq + (\partial_z \omega_x - \partial_x \omega_z) \d z \wedge dx \\
+        &\pheq +(\partial_x \omega_y - \partial_y \omega_x) \d x \wedge dy.
 \end{align*}
 Then the Hodge dual of $d\omega$ is
 \begin{align*}
     \star d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \star (dy \wedge dz) \\
-        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \star (dz \wedge dx) \\
-        &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) \star (dx \wedge dy) \\
+        &\pheq + (\partial_z \omega_x - \partial_x \omega_z) \star (dz \wedge dx) \\
+        &\pheq + (\partial_x \omega_y - \partial_y \omega_x) \star (dx \wedge dy) \\
         &= \left(\partial_y \omega_z - \partial_z \omega_y\right) \d x
             + \left(\partial_z \omega_x - \partial_x \omega_z\right) \d y
             + \left(\partial_x \omega_y - \partial_y \omega_x\right) \d z,
@@ -2756,10 +2758,10 @@ by making use of the result from exercise~\ref{ex:pformspaceandtime} and reversi
 \]
 Applying the Hodge star to each term, for $\star_S \partial_t E \wedge dt$ we get
 \begin{align*}
-    \star (\star_S \partial_t E \wedge dt) &= \star \bigl(
-            \partial_t E_x dy \wedge dz \wedge dt \\
-            &\phantom{= \star \,\, } + \partial_t E_y dz \wedge dx \wedge dt \\
-            &\phantom{= \star \,\, } + \partial_t E_z dx \wedge dy \wedge dt \bigr) \\
+    \star (\star_S \partial_t E \wedge dt)
+        &= \star \bigl(\partial_t E_x dy \wedge dz \wedge dt \\
+        &\phantom{= \star \;\; } + \partial_t E_y dz \wedge dx \wedge dt \\
+        &\phantom{= \star \;\; } + \partial_t E_z dx \wedge dy \wedge dt \bigr) \\
         &= - \partial_t E,
 \end{align*}
 for the 3-form on space $d_S \star_S E$ we get
@@ -2966,13 +2968,13 @@ In terms of components,
         &= ik_0 (\mathbf{E}_x dy \wedge dz
                  + \mathbf{E}_y dz \wedge dx
                  + \mathbf{E}_z dx \wedge dy) \\
-        &\mathrel{\phantom{=}}{} + k_i \mathbf{E}_j dx^i \wedge dx^j \\
+        &\pheq + k_i \mathbf{E}_j dx^i \wedge dx^j \\
         &= ik_0 (\mathbf{E}_x dy \wedge dz
                  + \mathbf{E}_y dz \wedge dx
                  + \mathbf{E}_z dx \wedge dy) \\
-        &\mathrel{\phantom{=}}{} + (k_x \mathbf{E}_y - k_y \mathbf{E}_x) \d x \wedge dy \\
-        &\mathrel{\phantom{=}}{} + (k_y \mathbf{E}_z - k_z \mathbf{E}_y) \d y \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (k_z \mathbf{E}_x - k_x \mathbf{E}_z) \d z \wedge dx.
+        &\pheq + (k_x \mathbf{E}_y - k_y \mathbf{E}_x) \d x \wedge dy \\
+        &\pheq + (k_y \mathbf{E}_z - k_z \mathbf{E}_y) \d y \wedge dz \\
+        &\pheq + (k_z \mathbf{E}_x - k_x \mathbf{E}_z) \d z \wedge dx.
 \end{align*}
 Equating coefficients, we get the homogeneous system
 \begin{align*}
@@ -3680,8 +3682,8 @@ Show Stokes' theorem applied to $S$ boils down to the classic Stokes' theorem.
 Let $\omega = \omega_x dx + \omega_y dy + \omega_z dz$ be a 1-form on $\mathbb{R}^3$, so the exterior derivative, as in solution~\ref{sol:curl1form}, is
 \begin{align*}
     d\omega &= (\partial_y \omega_z - \partial_z \omega_y) \d y \wedge dz \\
-        &\mathrel{\phantom{=}}{} + (\partial_z \omega_x - \partial_x \omega_z) \d z \wedge dx \\
-        &\mathrel{\phantom{=}}{} + (\partial_x \omega_y - \partial_y \omega_x) \d x \wedge dy.
+        &\pheq + (\partial_z \omega_x - \partial_x \omega_z) \d z \wedge dx \\
+        &\pheq + (\partial_x \omega_y - \partial_y \omega_x) \d x \wedge dy.
 \end{align*}
 
 %Let $\{e^1, e^2\}$ be an oriented orthonormal basis on $\Omega^1(S)$. Then the ``area'' form on $S$, which is not necessarily exact, is given by
@@ -4205,7 +4207,7 @@ Let $\Lambda$ be the Lorentz transformation with rapidity $\phi$ mixing up $t$ a
 Then for some vector $v = v^\mu \partial_\mu$ on $\mathbb{R}^4$, the components of $\Lambda v$ transform as
 \[
     {\Lambda^\mu}_\nu v^\nu = \begin{pmatrix}
-        \phantom{-} \cosh(\phi) v^0 - \sinh(\phi) v^1 \\
+        \!\phantom{-} \cosh(\phi) v^0 - \sinh(\phi) v^1 \\
         -\sinh(\phi) v^0 + \cosh(\phi) v^1 \\
         \;\;\;\; v^2 \\
         \;\;\;\; v^3
@@ -6312,7 +6314,7 @@ The path in $\SU(2)$ corresponding to $j = 1$ is
                     + \frac{{\bigl(-\tfrac{i}{2} t\bigr)}^{4\!\!}}{4!}
                     + \cdots
             \right) \\*
-        &\mathrel{\phantom{=}}{} + \sigma_1 \cdot \left(
+        &\pheq + \sigma_1 \cdot \left(
                 \frac{- \tfrac{i}{2} t}{1}
                 + \frac{{\bigl(-\tfrac{i}{2} t\bigr)}^{3\!\!}}{3!}
                 + \frac{{\bigl(-\tfrac{i}{2} t\bigr)}^{5\!\!}}{5!}
@@ -6323,7 +6325,7 @@ The path in $\SU(2)$ corresponding to $j = 1$ is
                     + \frac{{\bigl(\tfrac{t}{2}\bigr)}^{4\!\!}}{4!}
                     + \cdots
             \right) \\*
-        &\mathrel{\phantom{=}}{} + i \sigma_1 \cdot \left(
+        &\pheq + i \sigma_1 \cdot \left(
                 - \tfrac{t}{2}
                 + \frac{{\bigl(\tfrac{t}{2}\bigr)}^{3\!\!}}{3!}
                 - \frac{{\bigl(-\tfrac{t}{2}\bigr)}^{5\!\!}}{5!}
@@ -6683,12 +6685,12 @@ Notice that
            (\delta^\rho_\gamma g_{\delta\nu} - \delta^\rho_\delta g_{\gamma\nu}) \\
         &= \delta^\mu_\alpha g_{\beta\rho} \delta^\rho_\gamma g_{\delta\nu}
            - \delta^\mu_\alpha g_{\beta\rho} \delta^\rho_\delta g_{\gamma\nu} \\
-        &\mathrel{\phantom{=}}{}
+        &\pheq
            - \delta^\mu_\beta g_{\alpha\rho} \delta^\rho_\gamma g_{\delta\nu}
            + \delta^\mu_\beta g_{\alpha\rho} \delta^\rho_\delta g_{\gamma\nu} \\
         &= g_{\beta\gamma} \delta^\mu_\alpha g_{\delta\nu}
            - g_{\beta\delta} \delta^\mu_\alpha g_{\gamma\nu} \\
-        &\mathrel{\phantom{=}}{}
+        &\pheq
            - g_{\alpha\gamma} \delta^\mu_\beta g_{\delta\nu}
            + g_{\alpha\delta} \delta^\mu_\beta g_{\gamma\nu},
 \end{align*}
@@ -6701,7 +6703,7 @@ so
            - g_{\beta\delta} \delta^\mu_\alpha g_{\gamma\nu}
            - g_{\alpha\gamma} \delta^\mu_\beta g_{\delta\nu}
            + g_{\alpha\delta} \delta^\mu_\beta g_{\gamma\nu} \\
-        &\mathrel{\phantom{=}}{}
+        &\pheq
            - g_{\delta\alpha} \delta^\mu_\gamma g_{\beta\nu}
            + g_{\delta\beta} \delta^\mu_\gamma g_{\alpha\nu}
            + g_{\gamma\alpha} \delta^\mu_\delta g_{\beta\nu}
@@ -6710,7 +6712,7 @@ so
                             - \delta^\mu_\delta g_{\alpha\nu})
            - g_{\beta\delta} (\delta^\mu_\alpha g_{\gamma\nu}
                               - \delta^\mu_\gamma g_{\alpha\nu}) \\
-        &\mathrel{\phantom{=}}{}
+        &\pheq
            - g_{\alpha\gamma} (\delta^\mu_\beta g_{\delta\nu}
                                - \delta^\mu_\delta g_{\beta\nu})
            + g_{\alpha\delta} (\delta^\mu_\beta g_{\gamma\nu}
@@ -6801,10 +6803,10 @@ from solution~\ref{sol:liebracketmatrix}.
         \end{aligned}
             &= \bigl( \bigl[ x, [y, z] \bigr],
                       \bigl[ x'\!, [y'\!, z'] \bigr] \bigr) \\
-            &\mathrel{\phantom{=}}{}
+            &\pheq
                + \bigl( \bigl[ y, [z, x] \bigr],
                         \bigl[ y'\!, [z'\!, x'] \bigr] \bigr) \\
-            &\mathrel{\phantom{=}}{}
+            &\pheq
                + \bigl( \bigl[ z, [x, y] \bigr],
                         \bigl[ z'\!, [x'\!, y'] \bigr] \bigr) \\
             &= \begin{aligned}[t]
