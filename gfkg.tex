@@ -585,7 +585,7 @@ Let $u, v, w \in T_p M$ and $\alpha, \beta \in \mathbb{R}$.
 
 To check associativity,
 \begin{align*}
-    (u + (v + w))(f) &= u(f) + (v + w)(f) \\
+    \bigl(u + (v + w) \bigr) (f) &= u(f) + (v + w)(f) \\
                      &= u(f) + v(f) + w(f) \\
                      &= \bigl(u(f) + v(f)\bigr) + w(f) \\
                      &= (u + v)(f) + w(f),
@@ -706,7 +706,7 @@ If $\phi$ is a positive rotation by a (fixed) angle $\theta$, we can express it 
         \end{pmatrix}.
 \]
 As before, consider the chart $\varphi(p) = \left\{x^\mu(p)\right\} = \left\{x(p), y(p)\right\}$.
-Then $\phi^* x(p) = x(\phi(p))$ is the $x$-coordinate, so for $p = (u, v)$,
+Then $\phi^* x(p) = x\bigl(\phi(p)\bigr)$ is the $x$-coordinate, so for $p = (u, v)$,
 \begin{align*}
     \phi^* x(p) &= x \bigl( \phi(p) \bigr) \\
                 &= \cos(\theta) u - \sin(\theta) v \\
@@ -3267,7 +3267,7 @@ so
 
 Integrating along $\gamma_0$,
 \begin{align*}
-    \int_{\gamma_0} E &= \int_0^1 E_{\gamma_0(t)}(\gamma_0'(t)) \d t \\
+    \int_{\gamma_0} E &= \int_0^1 E_{\gamma_0(t)} \bigl(\gamma_0'(t) \bigr) \d t \\
         &= \int_0^1 \frac{-\pi \cos \bigl( \pi(1 - t) \bigr) \cos \bigl( \pi(1 - t) \bigr)
                           - \pi \sin \bigl( \pi(1 - t) \bigr) \sin \bigl( \pi(1 - t) \bigr)}
                          {{\cos \bigl( \pi(1 - t) \bigr)}^2 + {\sin \bigl( \pi(1 - t) \bigr)}^2} dt \\
@@ -3276,7 +3276,7 @@ Integrating along $\gamma_0$,
 \end{align*}
 and along $\gamma_1$,
 \begin{align*}
-    \int_{\gamma_1} E &= \int_0^1 E_{\gamma_1(t)}(\gamma_1'(t)) \d t \\
+    \int_{\gamma_1} E &= \int_0^1 E_{\gamma_1(t)} \bigl(\gamma_1'(t) \bigr) \d t \\
         &= \int_0^1 \frac{\pi \cos \bigl( \pi(1 + t) \bigr) \cos \bigl( \pi(1 + t) \bigr)
                           + \pi \sin \bigl( \pi(1 + t) \bigr) \sin \bigl( \pi(1 + t) \bigr)}
                          {{\cos \bigl( \pi(1 - t) \bigr)}^2 + {\sin \bigl( \pi(1 - t) \bigr)}^2} dt \\
