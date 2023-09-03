@@ -113,14 +113,15 @@ jobs:
         working-directory: ${{ steps.download.outputs.download-path }}
 
       - name: Render Markdown
+        id: markdown
+        uses: fionn/render-markdown@v0.0.2
+        with:
+          token: ${{ github.token }}
+
+      - name: Write index.html
         run: |
-          html="$(curl -fsSL -H "Accept: application/vnd.github+json" \
-                             -H "X-GitHub-Api-Version: 2022-11-28" \
-                             -H "Content-Type: text/x-markdown" \
-                  --data-binary @README.md \
-                  "https://api.github.com/markdown/raw")"
-          echo -e "<!doctype html>\n<html>\n<body>\n$html\n</body>\n</html>" \
-            > ${{ steps.download.outputs.download-path }}/index.html
+          echo '${{ steps.markdown.outputs.html }}' \
+            >  ${{ steps.download.outputs.download-path }}/index.html
 
       - name: Upload tarball
         uses: actions/upload-pages-artifact@v1
