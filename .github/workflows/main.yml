@@ -114,7 +114,7 @@ jobs:
 
       - name: Render Markdown
         id: markdown
-        uses: fionn/render-markdown@v0.0.2
+        uses: fionn/render-markdown@v0.0.3
         with:
           token: ${{ github.token }}
 
