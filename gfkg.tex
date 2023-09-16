@@ -694,15 +694,15 @@ Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ be [a] rotation counterclockwise by an
 If $\phi$ is a positive rotation by a (fixed) angle $\theta$, we can express it as
 \[
     \phi: \begin{pmatrix}
-            u \\ v
+            u \\ \,v\,
         \end{pmatrix}
         \mapsto
         \begin{pmatrix*}[r]
-            \cos(\theta) & -\sin(\theta) \\
+            \cos(\theta) & \m\sin(\theta) \\
             \sin(\theta) & \cos(\theta)
         \end{pmatrix*}
         \begin{pmatrix}
-            u \\ v
+            u \\ \,v\,
         \end{pmatrix}
         =
         \begin{pmatrix}
@@ -1313,7 +1313,8 @@ giving ${(gf)}^* = f^* g^*$.
 
 We can also pretend that we don't know this is a pullback and use only the definition of the dual space above, by saying
 \begin{align*}
-    ({(g \circ f)}^*\omega)(v) &= \omega \bigl( (g \circ f)(v) \bigr) \\
+    \bigl( {(g \circ f)}^*\omega \bigr)(v)
+        &= \omega \bigl( (g \circ f)(v) \bigr) \\
         &= (g^* \omega) \bigl( f(v) \bigr) \\
         &= (f^* g^* \omega)(v).
 \end{align*}
@@ -1383,7 +1384,7 @@ Let $\phi: \mathbb{R}^2 \to \mathbb{R}^2$ denote rotation counterclockwise by th
 
 \begin{sol}
 
-Let $v = f_i(x, y)\partial_i$ be some vector in $\Vect(\mathbb{R}^2)$ and $p = (x, y) \in \mathbb{R}^2$. For $\phi$ as in solutions~\ref{sol:pullbackrotation},~\ref{sol:pushforwardrotation},
+Let $v = f_i(x, y) \partial_i$ be some vector in $\Vect(\mathbb{R}^2)$ and $p = (x, y) \in \mathbb{R}^2$. For $\phi$ as in solutions~\ref{sol:pullbackrotation},~\ref{sol:pushforwardrotation},
 \begin{align*}
     {(\phi^* dx)}_p v &= d(\phi^* x)(v)(p) \\
         &= d(x \circ \phi)(v)(p) \\
@@ -1501,7 +1502,8 @@ Consider the action on the coordinate vector field $\partial_\lambda$,
 \end{nowidthtags}
 We could instead use the result from exercise~\ref{ex:coordinatetransformation1form}, again acting on the coordinate vector field $\partial_\lambda$,
 \begin{align*}
-   \phi^*(dx'^\nu)\partial_\lambda &= \phi^*\left(\frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \right) \partial_\lambda \\
+   \phi^*(dx'^\nu)\partial_\lambda
+        &= \phi^*\left(\frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \! \right) \partial_\lambda \\
         &= \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu (\phi_* \partial_\lambda) \\
         &\equiv \frac{\partial x'^\nu}{\partial x^\mu} dx^\mu \partial_\lambda
 \end{align*}
@@ -2988,9 +2990,9 @@ Equating coefficients, we get the homogeneous system
 which is equivalent to $K_{ij} \mathbf{E}_j = 0$ for the skew-Hermitian matrix
 \[
     K = \begin{pmatrix*}[r]
-            ik_0 & k_z & -k_y \\
+            ik_0 & k_z  & -k_y \\
             -k_z & ik_0 & k_x \\
-            k_y & -k_x & ik_0
+            k_y  & -k_x & ik_0
         \end{pmatrix*}
 \]
 with determinant
@@ -3676,7 +3678,7 @@ Therefore, by \ref{eq:stokestheorem}, % chktex 2
 \begin{ex}
 
 Suppose that $S \subset \mathbb{R}^3$ is a 2-dimensional compact orientable submanifold with boundary.
-Show Stokes' theorem applied to $S$ boils down to the classic Stokes' theorem.
+Show [that] Stokes' theorem applied to $S$ boils down to the classic Stokes' theorem.
 
 \end{ex}
 
@@ -4234,7 +4236,7 @@ On Minkowski space with metric $\eta$ as in exercise~\ref{ex:minkowskimetric}, t
         &\mathrel{\phantom{=}}{} + \bigl( \cosh(\phi) \sinh(\phi) - \sinh(\phi) \cosh(\phi) \bigr) v^0 w^1 \\
         &\mathrel{\phantom{=}}{} + \bigl( \sinh(\phi) \cosh(\phi) - \cosh(\phi) \sinh(\phi) \bigr) v^1 w^0 \\
         &\mathrel{\phantom{=}}{} + v^2 w^2 + v^3 w^3 \\
-        &= - v^0 w^0 + v^1 w^1 + v^2 w^2 + v^3 w^3 \\
+        &\mathrel{=}{} - v^0 w^0 + v^1 w^1 + v^2 w^2 + v^3 w^3 \\
         &= \eta(v, w)
 \end{align*}
 so $\Lambda$ preserves the inner product and is therefore in $\O(3, 1)$.
@@ -4570,7 +4572,7 @@ For some $z \in \mathbb{C}$ with $z = x + iy$, we have
 \]
 and for some vector $v \in \Vect(\mathbb{R}^2)$ with components $(x, y)$,
 \[
-    \rho(e^{i\theta}) \begin{pmatrix} x \\ y \end{pmatrix}
+    \rho(e^{i\theta}) \begin{pmatrix} x \\ \,y\, \end{pmatrix}
         = \begin{pmatrix*}[r]
             x \cos(\theta) - y \sin(\theta) \\
             x \sin(\theta) + y \cos(\theta)
