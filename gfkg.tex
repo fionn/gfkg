@@ -126,6 +126,7 @@
 
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Vect}{Vect}
+\DeclareMathOperator{\sign}{sign}
 \newcommand*{\id}{\op{\mathrm{id}}}
 
 \title{Gauge Fields, Knots and Gravity Solutions}
@@ -2324,7 +2325,7 @@ Show that any even permutation of a given basis has the same orientation, while 
 
 Let $\left\{e_\mu\right\}$ and $\left\{f_\mu\right\}$ be two bases related by $T: e_\mu \mapsto f_\mu$. We say that $\left\{e_\mu\right\}$ and $\left\{f_\mu\right\}$ have the same orientation if $\det(T) > 0$ and the opposite orientation if $\det(T) < 0$.
 
-Permuting the basis by some permutation $\pi$ corresponds to a transformation by permutation matrix $T_\pi: e_\mu \mapsto f_\mu$. Since $\det(T_\pi) = \text{sign}(\pi)$, this preserves the orientation when $\pi$ is even and reverses it when $\pi$ is odd.
+Permuting the basis by some permutation $\pi$ corresponds to a transformation by permutation matrix $T_\pi: e_\mu \mapsto f_\mu$. Since $\det(T_\pi) = \sign(\pi)$, this preserves the orientation when $\pi$ is even and reverses it when $\pi$ is odd.
 
 \end{sol}
 
@@ -2437,7 +2438,7 @@ Let $\left\{e^\mu\right\}$ be a positively oriented orthonormal basis on an $n$-
 \[
     \star (e^{i_1} \wedge \cdots \wedge e^{i_p}) = \pm e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}
 \]
-where the sign is determined by $\text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p)$.
+where the sign is determined by $\sign(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p)$.
 
 $p$-forms $\omega = \omega_I e^I$ and $\mu = \mu_J e^J$ in terms of basis 1-forms are
 \[
@@ -2465,8 +2466,8 @@ Then,
 \begin{align*}
     \omega \wedge \star \mu &= \pm \omega_I \mu_J \delta^{IJ} e^{i_1} \wedge \cdots \wedge e^{i_p} \wedge e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n} \\
         &= \pm \omega_I \mu_J \delta^{IJ} e^{i_1} \wedge \cdots \wedge e^{i_n} \\
-        &= \text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \omega_I \mu_J \delta^{IJ} e^{i_1} \wedge \cdots \wedge e^{i_n} \\
-        &= {\text{sign}(i_1, \ldots, i_n)}^2 \epsilon(i_1) \cdots \epsilon(i_p) \omega_I \mu_J \delta^{IJ} e^1 \wedge \cdots \wedge e^n \\
+        &= \sign(i_1, \ldots, i_n) \, \epsilon(i_1) \cdots \epsilon(i_p) \, \omega_I \mu_J \delta^{IJ} e^{i_1} \wedge \cdots \wedge e^{i_n} \\
+        &= {\sign(i_1, \ldots, i_n)}^2 \epsilon(i_1) \cdots \epsilon(i_p) \, \omega_I \mu_J \delta^{IJ} e^1 \wedge \cdots \wedge e^n \\
         &= \omega_I \mu_J \delta^{IJ} \epsilon(i_1) \cdots \epsilon(i_p) e^1 \wedge \cdots \wedge e^n \\
         &= \innerp{\omega}{\mu} \, \text{vol}.
 \end{align*}
@@ -2590,13 +2591,13 @@ Let $M$ be an oriented semi-Riemannian manifold of dimension $n$ and signature $
 
 Let $\omega = \omega_I e^{i_1} \wedge e^{i_p}$ be a $p$-form on $M$. Then
 \[
-    \star \omega = \text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \omega_I e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}
+    \star \omega = \sign(i_1, \ldots, i_n) \, \epsilon(i_1) \cdots \epsilon(i_p) \, \omega_I e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}
 \]
 so
 \begin{align*}
     \SwapAboveDisplaySkip
-    \star^2 \omega &= \text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \star (\omega_I e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}) \\
-        &= \text{sign}(i_1, \ldots, i_n) \text{sign}(i_{p + 1}, \ldots, i_n, i_1, \ldots, i_p) \epsilon(i_1) \cdots \epsilon(i_n) \omega \\
+    \star^2 \omega &= \sign(i_1, \ldots, i_n) \, \epsilon(i_1) \cdots \epsilon(i_p) \star (\omega_I e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}) \\
+        &= \sign(i_1, \ldots, i_n) \sign(i_{p + 1}, \ldots, i_n, i_1, \ldots, i_p) \, \epsilon(i_1) \cdots \epsilon(i_n) \omega \\
         &= {(-1)}^{p (n - p)} {(-1)}^s \omega \\
         &= {(-1)}^{p (n - p) + s} \omega.
 \end{align*}
@@ -2608,8 +2609,8 @@ so
 Let $M$ be an oriented semi-Riemannian manifold of dimension $n$ and signature $(s, n - s)$. Let $e^\mu$ be an orthonormal basis of 1-forms on some chart. Define the \emph{Levi--Civita symbol} for $1 \leq i_j \leq n$ by
 \[
     \epsilon_{i_1 \cdots i_n} = \begin{dcases*}
-            \text{sign}(i_1, \ldots, i_n) & \text{all $i_j$ distinct}, \\
-            0                             & otherwise.
+            \sign(i_1, \ldots, i_n) & \text{all $i_j$ distinct}, \\
+            0                       & otherwise.
         \end{dcases*}
 \]
 Show that for any $p$-form
@@ -2627,8 +2628,8 @@ we have
 
 Taking the Hodge dual of $\omega$,
 \begin{align*}
-    \star \omega &= \frac{1}{p!} \text{sign}(i_1, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \omega_{i_1 \cdots i_p} e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n} \\
-        &= \frac{1}{p!} \text{sign}(i_1, \ldots, i_p, i_{p + 1}, \ldots, i_n) \epsilon(i_1) \cdots \epsilon(i_p) \omega_{i_1 \cdots i_p} e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}.
+    \star \omega &= \frac{1}{p!} \sign(i_1, \ldots, i_n) \, \epsilon(i_1) \cdots \epsilon(i_p) \, \omega_{i_1 \cdots i_p} e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n} \\
+        &= \frac{1}{p!} \sign(i_1, \ldots, i_p, i_{p + 1}, \ldots, i_n) \, \epsilon(i_1) \cdots \epsilon(i_p) \, \omega_{i_1 \cdots i_p} e^{i_{p + 1}} \wedge \cdots \wedge e^{i_n}.
 \end{align*}
 We're free to rename $i_{p + 1}, \ldots, i_n$ to $j_1, \ldots, j_{n - p}$ and, if we use the Levi--Civita symbol,
 \begin{align*}
