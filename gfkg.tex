@@ -117,14 +117,16 @@
 \newcommand*{\U}{\ensuremath\text{U}}
 \newcommand*{\SU}{\ensuremath\text{SU}}
 
-\renewcommand*{\d}{\ensuremath\mathop{}\mathopen{}d}
+\newcommand*{\op}[1]{\ensuremath\mathop{}\mathopen{}#1}
+
+\renewcommand*{\d}{\op{d}}
 
 \NewCommandCopy{\binstar}{\star}
-\renewcommand*{\star}{\ensuremath\mathop{}\mathopen\binstar\mathord{}}
+\renewcommand*{\star}{\op{\binstar}\mathord{}}
 
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Vect}{Vect}
-\newcommand*{\id}{\ensuremath\mathop{}\mathopen{}\mathrm{id}}
+\newcommand*{\id}{\op{\mathrm{id}}}
 
 \title{Gauge Fields, Knots and Gravity Solutions}
 \author{Fionn Fitzmaurice \hspace{2em} \https{fionn.github.io/gfkg}}
@@ -1359,9 +1361,9 @@ Using the fact that the exterior derivative is \emph{natural}, i.e. $\phi^*(df) 
         &= v(\phi^* x) (t) \\
         &= v(x \circ \phi)(t) \\
         &= v \bigl( \sin(t) \bigr) \\
-        &= f(t) \, \partial_t \sin(t) \\
+        &= f(t) \op{\partial}_t \sin(t) \\
         &= f(t) \cos(t) \\
-        &= f(t) \cos(t) \partial_t t \\
+        &= f(t) \cos(t) \op{\partial}_t t \\
         &= \cos(t) v(t) \\
         &= \cos(t) \d t(v).
 \end{align*}
