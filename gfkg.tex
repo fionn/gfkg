@@ -6858,4 +6858,57 @@ so $\mathfrak{g} \oplus \mathfrak{h}$ is also semisimple.
 
 \end{sol}
 
+\chapter{Bundles and Connections}
+
+\begin{epigraph}
+    No, no. These concepts were not dreamed up. They were natural and real.
+\end{epigraph}
+
+\section{Bundles}
+
+\begin{ex}
+
+Given a manifold $M$, define charts for $TM$ starting from charts $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ for $M$ as follows.
+Let $V_\alpha$ be the subset of $TM$ given by
+\[
+    V_\alpha = \setbuilder*{v \in TM \given \pi(v) \in U_\alpha}.
+\]
+Show that every point in $TM$ lies in some set $V_\alpha$.
+Define maps $\psi_\alpha: V_\alpha \to \mathbb{R}^n \times \mathbb{R}^n$ by
+\[
+    \psi_\alpha(v) = \bigl( \varphi_\alpha (\pi(v)), {(\varphi_\alpha)}_* v\bigr),
+\]
+where we think of ${(\varphi_\alpha)}_* v$, which is really a tangent vector to $\mathbb{R}^n$, as a vector in $\mathbb{R}^n$.
+Give $TM$ the topology in which open sets are the unions of set of the form $O \subseteq V_\alpha$ such that $\psi_\alpha(O) \subseteq \mathbb{R}^n \times \mathbb{R}^n$ is open.
+Check that $\psi_\alpha$ are charts, so that $TM$ is a manifold.
+Check that $\pi: TM \to M$ is smooth.
+
+\end{ex}
+
+\begin{sol}
+
+A \emph{bundle} is a manifold $E$ (the total space), a manifold $M$ (the base space) and a surjection $\pi: E \to M$. For each point $p \in M$, the \emph{fiber} over $p$ is $E_p = \setbuilder*{q \in E \given \pi(q) = p}$.
+
+The open sets $U_\alpha$ cover $M$ so, as the projection $\pi: TM \to M$ is surjective, for all $p \in M$ there exists $v \in TM$ such that $\pi(v) \in U_\alpha$.
+As the tangent bundle
+\[
+    TM = \bigcup_{p \in M} \{p\} \times T_p M,
+\]
+every $v \in TM$ is an element of some fiber $\{p\} \times T_p M$ and so is in some set $V_\alpha$.
+
+Under the image of $\psi_\alpha$ we get a tuple $(x^\mu, e_\mu)$, say, where
+$\varphi_\alpha^{-1}(x^\mu)$ uniquely defines $p \in M$,
+${(\varphi_\alpha)}_*^{-1}(e_\mu)$ uniquely defines $v_p \in T_p M$
+and therefore $\psi_\alpha^{-1}$ exists.
+With the given topology on $TM$, $\psi_\alpha$ maps open sets to open sets and its inverse
+\[
+    \psi_\alpha^{-1}: \psi_\alpha(O) \to O \subset V_\alpha
+\]
+does too, so the maps $\psi_\alpha$ are continuous and therefore are charts for $TM$.
+
+Since $\psi_\alpha$ is smooth, its first component $\tilde{\psi}_\alpha = \varphi_\alpha \circ \pi$ is also smooth.
+Then $\pi = \varphi_\alpha^{-1} \circ \tilde{\psi}_\alpha$ is the composition of smooth functions and therefore must also be smooth.
+
+\end{sol}
+
 \end{document}
