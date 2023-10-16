@@ -6911,4 +6911,40 @@ Then $\pi = \varphi_\alpha^{-1} \circ \tilde{\psi}_\alpha$ is the composition of
 
 \end{sol}
 
+\begin{ex}
+
+Given bundles $\pi: E \to M$ and $\pi': E' \to M'$, show that the maps $\psi: E \to E'$ and $\phi: M \to M'$ are a bundle morphism if and only if $\pi' \circ \psi = \phi \circ \pi$.
+%This condition is shown in Figure 4, where we have drawn the total spaces $E$ and $E'$ over the corresponding base spaces $M$ and $M'$.
+Show that $\psi$ uniquely determines $\phi$.
+
+\end{ex}
+
+\begin{sol}
+
+A \emph{morphism} between bundles $\pi: E \to M$ and $\pi': E' \to M'$ is a map $\psi: E \to E'$ together with a map $\phi: M \to M'$ such that $\psi$ maps each fiber $E_p$ into the fiber $E'_{\phi(p)}$.
+
+\[
+    \begin{tikzcd}[row sep=2.1em]
+        E \rar[bend left=10]{\psi} \dar[swap]{\pi} & E' \dar{\pi'} \\
+        M \rar[bend left=10]{\phi}                 & M'
+    \end{tikzcd}
+\]
+
+Let $v \in E_p$, $v' \in E'_{\phi(p)}$. Assuming we have a bundle morphism,
+\[
+    (\phi \circ \pi)(v) = \phi(p), \qquad
+    (\pi' \circ \psi)(v) = \pi'(v') = \phi(p)
+\]
+so $\pi' \circ \psi = \phi \circ \pi$.
+
+Let $v \in E_p$ and $\psi: v \mapsto v' \in E'_q$ for some $q \in M'$. Then the first equation $(\phi \circ \pi)(v) = \phi(p)$ remains and
+\[
+    (\pi' \circ \psi)(v) = \pi'(v') = q.
+\]
+Then the condition $\pi' \circ \psi = \phi \circ \pi$ requires $q = \phi(p)$ so we have a bundle morphism.
+
+It follows that $\psi$ uniquely determines $\phi$, since $\phi'(p) = \phi(p)$ implies $\phi' = \phi$ as $p$ is arbitrary.
+
+\end{sol}
+
 \end{document}
