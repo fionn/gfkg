@@ -6866,7 +6866,7 @@ so $\mathfrak{g} \oplus \mathfrak{h}$ is also semisimple.
 
 \section{Bundles}
 
-\begin{ex}
+\begin{ex}\label{ex:tangentbundlemanifold}
 
 Given a manifold $M$, define charts for $TM$ starting from charts $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$ for $M$ as follows.
 Let $V_\alpha$ be the subset of $TM$ given by
@@ -6911,7 +6911,7 @@ Then $\pi = \varphi_\alpha^{-1} \circ \tilde{\psi}_\alpha$ is the composition of
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:bundlemorphism}
 
 Given bundles $\pi: E \to M$ and $\pi': E' \to M'$, show that the maps $\psi: E \to E'$ and $\phi: M \to M'$ are a bundle morphism if and only if $\pi' \circ \psi = \phi \circ \pi$.
 %This condition is shown in Figure 4, where we have drawn the total spaces $E$ and $E'$ over the corresponding base spaces $M$ and $M'$.
@@ -6944,6 +6944,23 @@ Let $v \in E_p$ and $\psi: v \mapsto v' \in E'_q$ for some $q \in M'$. Then the 
 Then the condition $\pi' \circ \psi = \phi \circ \pi$ requires $q = \phi(p)$ so we have a bundle morphism.
 
 It follows that $\psi$ uniquely determines $\phi$, since $\phi'(p) = \phi(p)$ implies $\phi' = \phi$ as $p$ is arbitrary.
+
+\end{sol}
+
+\begin{ex}
+
+Check that $\phi_*$ is smooth when we make the tangent bundle into a manifold as in
+\hyperref[ex:tangentbundlemanifold]{the previous exercise}.
+
+\end{ex}
+
+\begin{sol}
+
+Here $\phi: M \to M'$ induces the pushforward $\phi_*: TM \to TM'$ between tangent bundles.
+
+Using the same construction as in exercise~\ref{ex:bundlemorphism}, we have that $\pi' \circ \phi_* = \phi \circ \pi$.
+From exercise~\ref{ex:tangentbundlemanifold} we have that $\pi$, $\pi'$ are smooth.
+Therefore, assuming $\phi$ is smooth, $\phi_*$ is smooth.
 
 \end{sol}
 
