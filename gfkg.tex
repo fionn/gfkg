@@ -6978,4 +6978,32 @@ If $\phi$ is a diffeomorphism then $\phi_*$ is smooth (from solution~\ref{sol:pu
 
 \end{sol}
 
+\begin{ex}
+
+Show that for any manifold $M$, the tangent bundle $\pi: TM \to M$ is locally trivial.
+
+\end{ex}
+
+\begin{sol}
+
+Recall that for manifolds $M$ and $F$, a \emph{trivial bundle} over $M$ with \emph{standard fiber} $F$ is $\pi: E \to M$ with total space $E = M \times F$ and projection given by $\pi(p, f) = p$ for all $(p, f) \in E$, so the fiber over $p$ is $E_p = \{p\} \times F$.
+
+A bundle $\pi: E \to M$ is \emph{locally trivial} with \emph{standard fiber} $F$ if for each point $p \in M$, there is a neighbourhood $U$ of $p$ and a bundle isomorphism
+\[
+    \phi: E |_U \to U \times F
+\]
+sending each fiber $E_p$ to the fiber $\{p\} \times F$.
+
+For the tangent bundle $\pi: TM \to M$, for every point $p \in M$ we have a neighbourhood $U$ of $p$ which has a corresponding restriction of $TM$ to $U$ as
+\[
+    TM|_U = \setbuilder*{v \in TM \given \pi(v) \in U}.
+\]
+An obvious bundle isomorphism
+\[
+    \phi: TM|_U \to U \times T_p M
+\]
+sends $E_p$ to $\{p\} \times T_p M$, so $\phi$ is a \emph{local trivialisation} and the tangent bundle is locally trivial.
+
+\end{sol}
+
 \end{document}
