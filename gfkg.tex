@@ -6954,13 +6954,27 @@ Check that $\phi_*$ is smooth when we make the tangent bundle into a manifold as
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:pushforwardtangentbundlesmooth}
 
 Here $\phi: M \to M'$ induces the pushforward $\phi_*: TM \to TM'$ between tangent bundles.
 
 Using the same construction as in exercise~\ref{ex:bundlemorphism}, we have that $\pi' \circ \phi_* = \phi \circ \pi$.
 From exercise~\ref{ex:tangentbundlemanifold} we have that $\pi$, $\pi'$ are smooth.
 Therefore, assuming $\phi$ is smooth, $\phi_*$ is smooth.
+
+\end{sol}
+
+\begin{ex}
+
+Show that if $\phi: M \to M'$ is a diffeomorphism, then $\phi_*: TM \to TM'$ is a bundle isomorphism.
+
+\end{ex}
+
+\begin{sol}
+
+The bundle morphism $\phi_*$ is an \emph{isomorphism} if $\phi_*$ and $\phi$ are both diffeomorphisms.
+
+If $\phi$ is a diffeomorphism then $\phi_*$ is smooth (from solution~\ref{sol:pushforwardtangentbundlesmooth}) and $\phi_*^{-1}$ exists and is smooth, so $\phi_*$ is also a diffeomorphism and therefore a bundle isomorphism.
 
 \end{sol}
 
