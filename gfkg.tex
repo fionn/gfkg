@@ -787,7 +787,7 @@ Then
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:pushforwardislinear}
 
 Show that the pushforward operation
 \[
@@ -6978,7 +6978,7 @@ If $\phi$ is a diffeomorphism then $\phi_*$ is smooth (from solution~\ref{sol:pu
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:tangentbundlelocallytrivial}
 
 Show that for any manifold $M$, the tangent bundle $\pi: TM \to M$ is locally trivial.
 
@@ -7022,6 +7022,32 @@ The neighbourhood $U$ of $p \in S^1$ corresponds to restriction
     E|_U = \setbuilder*{t \in (0, \infty) \given \pi(t) \in U}
 \]
 which is not isomorphic to $U \times F$.
+
+\end{sol}
+
+\section{Vector Bundles}
+
+\begin{ex}
+
+Check that the tangent bundle of a manifold is a vector bundle.
+
+\end{ex}
+
+\begin{sol}
+
+An $n$-dimensional \emph{real vector bundle} is a locally trivial bundle $\pi: E \to M$ such that each fiber $E_p$ is an $n$-dimensional vector space with a \emph{fiberwise linear} local trivialisation, i.e.\ a local trivialisation $\phi: E|_U \to U \times \mathbb{R}^n$ that maps each fiber $E_p$ to the fiber $\{p\} \times \mathbb{R}^n$ linearly.
+
+From exercise~\ref{ex:pushforwardislinear}, the pushforward is linear.
+From exercise~\ref{ex:tangentbundlelocallytrivial}, the tangent bundle $\pi: TM \to M$ has a local trivialisation.
+
+Let $U_\alpha \subset M$ be a neighbourhood of some $p \in M$, a manifold with charts $\varphi_\alpha: U_\alpha \to \mathbb{R}^n$.
+Then we can construct a fiberwise linear local trivialisation of the tangent bundle from the pushforward as
+\begin{align*}
+    \phi_\alpha &: TM|_{U_\alpha} \to U_\alpha \times \mathbb{R}^n \\
+                &: v \mapsto \bigl( \pi(v), {(\varphi_\alpha)}_* v \bigr)
+\end{align*}
+where we think of tangent vectors on $\mathbb{R}^n$ as elements of $\mathbb{R}^n$,
+so the tangent bundle is a vector bundle.
 
 \end{sol}
 
