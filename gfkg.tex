@@ -7085,4 +7085,19 @@ Let $\psi: E \to E'$ be a diffeomorphic vector bundle morphism. Then $\psi^{-1}$
 
 \end{sol}
 
+\begin{ex}
+
+Show that a section of the tangent bundle is a vector field.
+
+\end{ex}
+
+\begin{sol}
+
+A \emph{section} of a bundle $\pi: E \to M$ is a function $s: M \to E$ such that for any $p \in M$, $s(p) \in E_p$.
+For a trivial bundle $E = M \times F$, if we have a section $s$ then there is a function $f: M \to F$ such that $s(p) = \bigl(p, f(p) \bigr) \in E_p$.
+
+The tangent bundle $\pi: TM \to M$ is locally trivial, so a section $s: U \to TM|_U$ restricted to some $U \subset M$ specifies a function $f: \{p\} \to T_p M$ and therefore a section of the tangent bundle is a vector field.
+
+\end{sol}
+
 \end{document}
