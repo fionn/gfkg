@@ -7100,4 +7100,42 @@ The tangent bundle $\pi: TM \to M$ is locally trivial, so a section $s: U \to TM
 
 \end{sol}
 
+\begin{ex}
+
+Show that $\Gamma(E)$ is a module over $C^\infty(M)$.
+
+\end{ex}
+
+\begin{sol}
+
+Suppose $E$ is a vector bundle over $M$. Let $s$, $s'$ be sections of $E$ and $f,g \in C^\infty(M)$.
+We define the sections $s + s'$ and $fs$ as
+\[
+    (s + s')(p) = s(p) + s'(p), \qquad
+    (fs)(p) = f(p) s(p).
+\]
+Then
+\[
+    f(s + s')(p) = fs(p) + fs'(p)
+\]
+so $f(s + s') = fs + fs'$,
+\begin{align*}
+    \bigl((f + g)s\bigr)(p) &= (f + g)(p) s(p) \\
+                            &= f(p) s(p) + g(p) s(p)
+\end{align*}
+so $(f + g)s = fs + gs$,
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \bigl((fg) s\bigr) (p) &= (fg)(p) s(p) \\
+                           &= fg(p) s(p)
+\end{align*}
+so $(fg)s = f(gs)$ and, for $1 \in C^\infty(M)$ the constant function equal to $1$,
+\begin{align*}
+    (1s)(p) &= 1(p) s(p) \\
+            &= s(p)
+\end{align*}
+so $1s = s$ and therefore $\Gamma(E)$ is a module over $C^\infty(M)$.
+
+\end{sol}
+
 \end{document}
