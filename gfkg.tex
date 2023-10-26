@@ -7190,4 +7190,31 @@ This holds for any $p \in M$, so since $E^*$ is a manifold we can generalise to 
 
 \end{sol}
 
+\begin{ex}
+
+Show that if $s$ is a section of a vector bundle $E$ over $M$ and $\lambda$ is a section of $E^*$, there is a smooth function $\lambda(s)$ on $M$ given by
+\[
+    \lambda(s)(p) = \lambda(p)\bigl(s(p)\bigr)
+\]
+for all $p \in M$. Show that $\lambda(s)$ depends $C^\infty(M)$-linearly on $\lambda$ and $s$.
+
+\end{ex}
+
+\begin{sol}
+
+With sections $s: p \mapsto s_p \in E_p$, $\lambda: p \mapsto \lambda_p \in E^*_p$, we can construct a function
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \lambda(s) &: M \to \mathbb{R} \\
+               &: p \mapsto \lambda_p (s_p)
+\end{align*}
+defined for all $p \in M$.
+As $s$, $\lambda$ are sections of fiberwise-linear bundles and, as vector or covector fields,
+\[
+    s: C^\infty(M) \to C^\infty(M), \qquad \lambda: \Vect(M) \to C^\infty(M),
+\]
+$\lambda(s)$ depends $C^\infty(M)$-linearly on $\lambda$ and $s$.
+
+\end{sol}
+
 \end{document}
