@@ -7058,7 +7058,7 @@ Check that the Möbius strip is a real line bundle if we regard the standard fib
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:reallinebundle}
 
 Let $U_\alpha$ be a neighbourhood of $\theta \in S^1$.
 The Möbius strip as a non-trivial bundle $\pi: E \to S^1$ has local trivialisation
@@ -7135,6 +7135,30 @@ so $(fg)s = f(gs)$ and, for $1 \in C^\infty(M)$ the constant function equal to $
             &= s(p)
 \end{align*}
 so $1s = s$ and therefore $\Gamma(E)$ is a module over $C^\infty(M)$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that every section of the Möbius strip (viewed as a real line bundle over $S^1$) vanishes somewhere.
+Conclude that the Möbius strip has no basis of sections, hence is not trivial.
+
+\end{ex}
+
+\begin{sol}
+
+Consider the Möbius strip $\pi: E \to S^1$ as a real line bundle, i.e.\ with bundle isomorphism as in solution~\ref{sol:reallinebundle}.
+Assuming this holds globally, we have sections of the form $s: \theta \mapsto \bigl(\theta, f(\theta) \bigr) \in S^1 \times \mathbb{R}$ for $f: S^1 \to \mathbb{R}$.
+
+For any point $\theta \in S^1$, we require $s(\theta) = s(\theta + 2 \pi)$. But
+\begin{align*}
+    s(\theta + 2 \pi) &= \bigl(\theta + 2 \pi, f(\theta + 2 \pi) \bigr) \\
+                      &= \bigl(\theta, -f(\theta) \bigr)
+\end{align*}
+since the fiber must be inverted after a full turn. Then at $\theta = 0$, $s(0) = (0, 0)$.
+
+If we try to express our section in terms of a basis $\{e_i\}$ as $s = s^i e_i$, then $s^i e_i (0) = (0, 0)$ implies the functions $\{e_i\}$ are not linearly independent.
+We therefore have no basis of sections, hence the Möbius strip is non-trivial.
 
 \end{sol}
 
