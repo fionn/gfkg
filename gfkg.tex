@@ -7162,4 +7162,32 @@ We therefore have no basis of sections, hence the Möbius strip is non-trivial.
 
 \end{sol}
 
+\section{Vector Bundle Constructions}
+
+\begin{ex}
+
+Check the above statement.
+Also, show that given a basis of sections $e_i$ of a vector bundle $E$, there is a unique \emph{dual basis} $e^i$ of sections of $E^*$ such that for each point $p \in M$, $e^i(p)$ is the basis of $E^*_p$ dual to the basis $e_i(p)$ of $E_p$.
+
+\end{ex}
+
+\begin{sol}
+
+We must check that the \emph{dual vector bundle} $\pi: E^* \to M$ with total space
+\[
+    E^* = \bigcup_{p \in M} E^*_p
+\]
+is a manifold, where each fiber $E^*_p$ is dual to $E_p$, so that we can find a fiberwise linear local trivialisation.
+
+Since the vector bundle $E$ over $M$ has a locally linear fiberwise trivialisation and each fiber $E^*_p$ is isomorphic to $E_p$, we have local fiberwise trivialisation
+\[
+    \phi: E^*|_U \to U \times \mathbb{R}^n
+\]
+for some $U \subset M$ mapping each fiber $E^*_p$ to the fiber $\{p\} \times \mathbb{R}^n$. Restricting to the second component gives us a chart on $E^*|_U$ for any $U$, so we have an atlas.
+
+Given a basis of sections $\{e_i\}$ on $E$, we get a basis of sections $\{e_i(p)\}$ on $E_p$ with obvious dual basis $\{e^i(p)\}$ on $E^*_p$.
+This holds for any $p \in M$, so since $E^*$ is a manifold we can generalise to a basis of sections $\{e^i\}$ on $E^*$.
+
+\end{sol}
+
 \end{document}
