@@ -7091,7 +7091,7 @@ Show that a section of the tangent bundle is a vector field.
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:sectionoftangentbundle}
 
 A \emph{section} of a bundle $\pi: E \to M$ is a function $s: M \to E$ such that for any $p \in M$, $s(p) \in E_p$.
 For a trivial bundle $E = M \times F$, if we have a section $s$ then there is a function $f: M \to F$ such that $s(p) = \bigl(p, f(p) \bigr) \in E_p$.
@@ -7214,6 +7214,18 @@ As $s$, $\lambda$ are sections of fiberwise-linear bundles and, as vector or cov
     s: C^\infty(M) \to C^\infty(M), \qquad \lambda: \Vect(M) \to C^\infty(M),
 \]
 $\lambda(s)$ depends $C^\infty(M)$-linearly on $\lambda$ and $s$.
+
+\end{sol}
+
+\begin{ex}
+
+Show that a section of the cotangent bundle is the same as a 1-form.
+
+\end{ex}
+
+\begin{sol}
+
+As in solution~\ref{sol:sectionoftangentbundle}, the cotangent bundle $\pi: T^*M \to M$ is locally trivial, so a section $s: U \to T^*M|_U$ restricted to some $U \subset M$ specifies a function $f: \{p\} \to T^*_p M$ and therefore a section of the tangent bundle is a 1-form.
 
 \end{sol}
 
