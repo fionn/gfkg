@@ -7254,7 +7254,7 @@ The tensor product vector bundle $E \otimes E'$ is also a vector bundle, analogo
 
 \end{sol}
 
-\begin{ex}
+\begin{ex}\label{ex:directsumandtensorproductsections}
 
 Suppose that $E$ and $E'$ are vector bundles over $M$, $s$ is a section of $E$ and $s'$ is a section of $E'$.
 Show that there is a unique section $(s, s')$ of $E \oplus E'$ such that for each point $p \in M$, $(s, s')(p) = \bigl(s(p), s'(p)\bigr)$.
@@ -7275,6 +7275,25 @@ and
     s \otimes s' &: M \to E \otimes E' \\
                  &: p \mapsto s(p) \otimes s'(p).
 \end{align*}
+
+\end{sol}
+
+\begin{ex}
+
+Suppose that $E$ and $E'$ are vector bundles over $M$.
+Show that any section of $E \otimes E'$ can be written, not necessarily uniquely, as a locally finite sum of sections of the form $s \otimes s'$, where $s \in \Gamma(E)$ and $s' \in \Gamma(E')$.
+
+\end{ex}
+
+\begin{sol}
+
+From exercise~\ref{ex:directsumandtensorproductsections}, given $s \in \Gamma(E)$ and $s' \in \Gamma(E')$, we get a section $s \otimes s'$ of $E \otimes E'$. This is itself a locally finite sum of the desired form.
+
+Since we have fiberwise local linear trivialisations, we can express $s$, $s'$ in terms of basis sections $\{e_i\}$, $\{e'_j\}$ as
+\[
+    s \otimes s' = s^{ij} \, e_i \otimes e'_j
+\]
+which is defined on all neighbourhoods $U_\alpha \subset M$.
 
 \end{sol}
 
