@@ -7254,4 +7254,28 @@ The tensor product vector bundle $E \otimes E'$ is also a vector bundle, analogo
 
 \end{sol}
 
+\begin{ex}
+
+Suppose that $E$ and $E'$ are vector bundles over $M$, $s$ is a section of $E$ and $s'$ is a section of $E'$.
+Show that there is a unique section $(s, s')$ of $E \oplus E'$ such that for each point $p \in M$, $(s, s')(p) = \bigl(s(p), s'(p)\bigr)$.
+Show that there is a unique section $s \otimes s'$ of $E \otimes E'$ such that for each $p \in M$, $(s \otimes s')(p) = s(p) \otimes s'(p)$.
+
+\end{ex}
+
+\begin{sol}
+
+This simply amounts to defining sections on the direct sum and tensor product vector bundles in the obvious way. Let $(s, s') \in \Gamma(E \oplus E')$ and $s \otimes s' \in \Gamma(E \otimes E')$ and we get unique sections
+\begin{align*}
+    (s, s') &: M \to E \oplus E' \\
+            &: p \mapsto \bigl(s(p), s'(p)\bigr)
+\end{align*}
+and
+\begin{align*}
+    \SwapAboveDisplaySkip
+    s \otimes s' &: M \to E \otimes E' \\
+                 &: p \mapsto s(p) \otimes s'(p).
+\end{align*}
+
+\end{sol}
+
 \end{document}
