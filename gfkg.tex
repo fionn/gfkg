@@ -7229,4 +7229,29 @@ As in solution~\ref{sol:sectionoftangentbundle}, the cotangent bundle $\pi: T^*M
 
 \end{sol}
 
+\begin{ex}
+
+Check this fact.
+
+\end{ex}
+
+\begin{sol}
+
+Given two vector bundles $E$, $E'$ over $M$, we define the \emph{direct sum vector bundle} $E \oplus E'$ over $M$ which has fiber $E_p \oplus E'_p$ over $p$ and the \emph{tensor product vector bundle} $E \otimes E'$ with fiber $E_p \otimes E'_p$ over $p$.
+
+To see that $E \oplus E'$ is a vector bundle, note that for $U$ a neighbourhood of $p \in M$, each bundle $E$, $E'$ has fiberwise local linear trivialisation
+\[
+    \phi: E|_U \to U \times \mathbb{R}^n, \qquad
+    \phi': E'|_U \to U \times \mathbb{R}^m
+\]
+from which we can construct a fiberwise local linear trivialisation
+\[
+    \psi: E|_U \oplus E'|_U \to U \times \mathbb{R}^{n + m}
+\]
+mapping fibers $E_p \oplus E'_p$ to $\{p\} \times \mathbb{R}^{n + m}$.
+
+The tensor product vector bundle $E \otimes E'$ is also a vector bundle, analogously.
+
+\end{sol}
+
 \end{document}
