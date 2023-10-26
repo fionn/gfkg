@@ -7171,7 +7171,7 @@ Also, show that given a basis of sections $e_i$ of a vector bundle $E$, there is
 
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:dualvectorbundle}
 
 We must check that the \emph{dual vector bundle} $\pi: E^* \to M$ with total space
 \[
@@ -7294,6 +7294,44 @@ Since we have fiberwise local linear trivialisations, we can express $s$, $s'$ i
     s \otimes s' = s^{ij} \, e_i \otimes e'_j
 \]
 which is defined on all neighbourhoods $U_\alpha \subset M$.
+
+\end{sol}
+
+\begin{ex}
+
+Suppose that $E$ is a vector bundle over $M$.
+Define the \emph{exterior algebra bundle} $\Lambda E$ over $M$ to have total space equal to the union of the vector spaces $\Lambda E_p$ and projection map $\pi$ sending $\Lambda E_p$ to $p$.
+Show how to make $\Lambda E$ into a manifold such that $\pi: \Lambda E \to M$ is a vector bundle.
+
+\end{ex}
+
+\begin{sol}
+
+Using the same argument as in solution~\ref{sol:dualvectorbundle}, since $E$ is a vector bundle, we have charts $\varphi_\alpha: V_\alpha \to \mathbb{R}^n$ from which we can construct charts
+\begin{align*}
+    \psi_\alpha &: \Lambda E \to \mathbb{R}^n \times \mathbb{R}^{2^n} \\
+                &: \omega \mapsto \bigl(
+                        \varphi_\alpha(\pi(\omega)), {(\varphi_\alpha)}_* \omega
+                   \bigr)
+\end{align*}
+where for some $\omega = \omega_1 + \cdots + \omega_{2^n}$, with each $\omega_i = \omega_i^1 \wedge \cdots \wedge \omega_i^q$ for some $q \leq n$, we have the pushforward
+\[
+    {(\varphi_\alpha)}_* \omega ={(\varphi_\alpha)}_* \omega_1 + \cdots + {(\varphi_\alpha)}_* \omega_{2^n}
+\]
+with each
+\[
+    {(\varphi_\alpha)}_* \omega_i ={(\varphi_\alpha)}_* \omega_i^1 \wedge \cdots \wedge {(\varphi_\alpha)}_* \omega_i^q
+\]
+and, as in exercise~\ref{ex:tangentbundlemanifold}, we think of ${(\varphi_\alpha)}_* \omega$ as a vector in $\mathbb{R}^{2^n}$.
+The charts $\{\psi_\alpha\}$ form an atlas, so $\Lambda E$ is a manifold.
+
+From this, we get an obvious local trivialisation
+\begin{align*}
+    \phi_\alpha &: \Lambda E|_U \to U \times \mathbb{R}^{2^n} \\
+                &: \omega \mapsto \bigl( \pi(\omega), {(\varphi_\alpha)}_* \omega \bigr)
+\end{align*}
+mapping fibers $\Lambda E_p$ to $\{p\} \times \mathbb{R}^{2^n}$.
+This is a fiberwise linear local trivialisation, so $\pi: \Lambda E \to M$ is a vector bundle.
 
 \end{sol}
 
