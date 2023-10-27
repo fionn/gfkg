@@ -1636,7 +1636,7 @@ so the components of a 1-form are covariant.
 
 \end{sol}
 
-\section{\emph{p}-Forms}
+\section{\emph{p}-Forms}\label{sec:pforms}
 
 \begin{ex}\label{ex:triplewedgeproduct}
 
@@ -1806,7 +1806,7 @@ Show that $\Lambda V$ is the direct sum of the subspaces $\Lambda^p V$:
 and that the dimension of $\Lambda V$ is $2^n$ if $V$ is $n$-dimensional.
 \end{ex}
 
-\begin{sol}
+\begin{sol}\label{sol:exterioralgebradirectsumofsubspaces}
 
 $\Lambda^p V$ is the subspace of $\Lambda V$ consisting of linear combinations of $p$-fold products of vectors in $V$.
 
@@ -7332,6 +7332,28 @@ From this, we get an obvious local trivialisation
 \end{align*}
 mapping fibers $\Lambda E_p$ to $\{p\} \times \mathbb{R}^{2^n}$.
 This is a fiberwise linear local trivialisation, so $\pi: \Lambda E \to M$ is a vector bundle.
+
+\end{sol}
+
+\begin{ex}
+
+Show that $\Lambda E$ is the direct sum of bundles $\Lambda^i E$,
+\[
+    \Lambda E = \bigoplus_{i = 0}^n \Lambda^i E
+\]
+where $n$ is the dimension of the fibers of $E$ and the vector bundle $\Lambda^i E$ has fiber over $p \in M$ given by $\Lambda^i E_p$.
+Show that sections of $\Lambda^0 E$ are in natural one-to-one correspondence with functions on $M$ and sections of $\Lambda^1 E$ are in natural one-to-one correspondence with sections of $E$.
+
+\end{ex}
+
+\begin{sol}
+
+The bundles $\Lambda^i E$ are vector bundles, so $\Lambda E = \bigoplus \Lambda^i E$ as per solution~\ref{sol:exterioralgebradirectsumofsubspaces}.
+
+Recall from \S\ref{sec:pforms} that, for some vector space $V$, $\Lambda^0 V \cong \mathbb{R}$.
+Section of $\Lambda^0 E$, $s: M \to \Lambda^0 E$, are therefore functions on $M$.
+
+Similarly, we identify $\Lambda^1 E \cong E$, so sections of $\Lambda^1 E$ correspond to sections of $E$.
 
 \end{sol}
 
