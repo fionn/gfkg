@@ -7409,4 +7409,34 @@ Any $\omega \in \Gamma(\Lambda^i T^* M)$ is an $i$-fold exterior product of sect
 
 \end{sol}
 
+\begin{ex}
+
+Show that these conditions imply $g_{\alpha\beta} = g^{-1}_{\beta\alpha}$.
+Show that for any sequences $\alpha_1, \ldots, \alpha_n$ and $\beta_1, \ldots, \beta_m$ with $\alpha_1 = \beta_1$, $\alpha_n = \beta_m$, they imply
+\[
+    g_{\alpha_1 \alpha_2} \cdots g_{\alpha_{n - 1} \alpha_n}
+        = g_{\beta_1 \beta_2} \cdots g_{\beta_{m - 1} \beta_m}.
+\]
+
+\end{ex}
+
+\begin{sol}
+
+The conditions are that on $U_\alpha$, $g_{\alpha \alpha} = 1$ and the \emph{cocycle condition} that on $U_\alpha \cap U_\beta \cap U_\gamma$, $g_{\alpha\beta} g_{\beta\gamma} g_{\gamma\alpha} = 1$.
+
+The cocycle condition gives us $g_{\alpha\beta} g_{\beta\alpha} g_{\alpha\alpha} = 1$. Since $g_{\alpha\alpha} = 1$ we get $g_{\alpha\beta} g_{\beta\alpha} = 1$, implying $g_{\alpha\beta} = g^{-1}_{\beta\alpha}$.
+
+The cocycle condition implies $g_{\alpha\beta} g_{\beta\gamma} g_{\gamma\alpha} g^{-1}_{\gamma\alpha} = g^{-1}_{\gamma\alpha}$, so
+\[
+    g_{\alpha\beta} g_{\beta\gamma} = g_{\alpha\gamma}.
+\]
+Then for any sequences $\alpha_1, \ldots, \alpha_n$ and $\beta_1, \ldots, \beta_m$, we can contract to get
+\begin{align*}
+    g_{\alpha_1 \alpha_2} \cdots g_{\alpha_{n - 1} \alpha_n} &= g_{\alpha_1 \alpha_n}, \\
+    g_{\beta_1 \beta_2} \cdots g_{\beta_{m - 1} \beta_m} &= g_{\beta_1 \beta_m}.
+\end{align*}
+If $\alpha_1 = \beta_1$, $\alpha_n = \beta_m$, these transition functions are obviously equal.
+
+\end{sol}
+
 \end{document}
