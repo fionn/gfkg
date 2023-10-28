@@ -7530,4 +7530,29 @@ and so $T$ is also of the form
 
 \end{sol}
 
+\section{Gauge Transformations}
+
+\begin{ex}
+
+Check that if $\phi: \mathbb{R}^4 \to \mathbb{C}^3$ is a solution of this equation, so is $U_1(g) \phi$ for any $g \in \SU(2)$.
+
+\end{ex}
+
+\begin{sol}
+
+The equation for a self-interacting pion field is
+\[
+    (\partial^\mu \partial_\mu + m^2) \phi + \lambda \phi^i \phi_i \phi = 0
+\]
+with $\lambda > 0$, where $\phi^i \phi_i$ is the inner product on $\mathbb{C}^3$.
+Transforming by $g \in \SU(2)$ according to the spin-1 representation $\phi \to \phi' = U_1(g) \phi$,
+\begin{align*}
+    (\partial^\mu \partial_\mu + m^2) \phi' + \lambda \innerp*{\phi'}{\phi'} \phi'
+        &= U_1(g)(\partial^\mu \partial_\mu + m^2 + \lambda \phi^i \phi_i) \phi \\
+        &= 0
+\end{align*}
+since $U_1(g)$ is constant and the inner product is invariant under $\SU(2)$ transformations, hence $U_1(g) \phi$ is also a solution.
+
+\end{sol}
+
 \end{document}
