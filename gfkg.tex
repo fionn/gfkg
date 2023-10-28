@@ -7439,4 +7439,54 @@ If $\alpha_1 = \beta_1$, $\alpha_n = \beta_m$, these transition functions are ob
 
 \end{sol}
 
+\begin{ex}
+
+Prove that if $g_{\alpha\alpha} = 1$ and $g_{\alpha\beta} g_{\beta\gamma} g_{\gamma\alpha} = 1$ where defined, $\pi: E \to M$ is a vector bundle.
+(Hint: first show how to give each fiber $E_p$ the structure of a vector space and then show that $E$ is trivial over each set $U_\alpha$, with a fiberwise linear local trivialisation.)
+
+\end{ex}
+
+\begin{sol}
+
+For a manifold $M$ covered by open sets $\{U_\alpha\}$, $V$ a vector space and $G$ a group with representation $\rho: G \to \GL(V)$, let $g_{\alpha\beta}: U_\alpha \cap U_\beta \to G$ and write $\rho \bigl(g_{\alpha\beta}(p) \bigr) \equiv g_{\alpha\beta}$ for short.
+
+Consider the space
+\[
+    T = \bigcup_{\alpha} U_\alpha \times V.
+\]
+We identify $(p, v) \in U_\alpha \times V$ with $(p, v') \in U_\beta \times V$ if $v = g_{\alpha\beta} v'$.
+Define the relation $\sim: T \times T \to T$ for $p \in U_\alpha \cap U_\beta$ as
+\[
+    (p, v) \sim (p, g_{\beta\alpha}v).
+\]
+Note that for all $(p, v) \in T$, $\sim$ is obviously reflexive and symmetric.
+From the cocycle condition we also get transitivity, so $\sim$ is an equivalence relation on $T$ and we can construct equivalence classes ${[p, v]}_\alpha = {[p, v']}_\beta$ as
+\[
+    {[p, v]}_\alpha = \setbuilder*{ (p, v') \in U_\beta \times V \given v' = g_{\beta\alpha} v }.
+\]
+Each fiber $E_p$ is then the set of all equivalence classes at $p \in M$.
+
+To show that the fiber $E_p$ is a vector space, we must show that elements ${[p, v]}_\alpha \in E_p$ obey the vector space axioms under transition functions $g_{\alpha\beta}$.
+For $v, w \in V$,
+\begin{align*}
+    \SwapAboveDisplaySkip
+    {[p, v]}_\alpha + {[p, w]}_\alpha &= {[p, g_{\beta\alpha}v]}_\beta
+                                         + {[p, g_{\beta\alpha} w]}_\beta \\
+        &= {[p, g_{\beta\alpha}v + g_{\beta\alpha}w]}_\beta \\
+        &= {[p, g_{\beta\alpha}(v + w)]}_\beta \\
+        &= {[p, (v + w)]}_\alpha
+\end{align*}
+so vector addition on equivalence classes is well-defined and the other vector space axioms hold similarly.
+
+The total space is then the quotient space $E = T / \sim$.
+The bundle $\pi: E \to M$ has local trivialisation
+\begin{align*}
+    \SwapAboveDisplaySkip
+    \phi_\alpha &: E|_{U_\alpha} \to U_\alpha \times V \\
+                &: {[p, v]}_\alpha \mapsto (p, v)
+\end{align*}
+which is indeed fiberwise linear, so we have a vector bundle.
+
+\end{sol}
+
 \end{document}
