@@ -7489,4 +7489,45 @@ which is indeed fiberwise linear, so we have a vector bundle.
 
 \end{sol}
 
+\begin{ex}
+
+Show that if the above condition holds, and $p \in U_\alpha \cap U_\beta$, then $T$ is also of the form
+\[
+    {[p, v']}_\beta \mapsto {[p, d\rho(x') v']}_\beta
+\]
+for some\footnote{$x' \in \mathfrak{g}$, $v' \in V$.} $x' \in \mathfrak{g}$.
+
+\end{ex}
+
+\begin{sol}
+
+The above condition is that the transformation $T: E_p \to E_p$ \emph{lives in} $\mathfrak{g}$ if it is of the form
+\[
+    T: {[p, v]}_\alpha \mapsto {[p, d\rho(x) v]}_\beta
+\]
+for some $x \in \mathfrak{g}$.
+
+Since we identify ${[p, v]}_\alpha = {[p, g_{\beta\alpha} v]}_\beta$, we can equivalently say
+\[
+    T: {[p, g_{\beta\alpha} v]}_\beta \mapsto {[p, g_{\beta\alpha} d\rho(x) v]}_\beta.
+\]
+In terms of $v' = g_{\beta\alpha} v$,
+\[
+    {[p, g_{\beta\alpha} d\rho(x) v]}_\beta =
+    {[p, g_{\beta\alpha} d\rho(x) g_{\alpha\beta} v']}_\beta.
+\]
+Just as we transform the group element by taking the adjoint, we have $x' = g_{\beta\alpha} x g_{\alpha\beta}$ for $x \in \mathfrak{g}$. Then
+\[
+    g_{\beta\alpha} d\rho(x) g_{\alpha\beta}
+        = g_{\beta\alpha} x(\rho) g_{\alpha\beta}
+        = x'(\rho)
+        = d\rho(x')
+\]
+and so $T$ is also of the form
+\[
+    T: {[p, v']}_\beta \mapsto {[p, d\rho(x') v']}_\beta.
+\]
+
+\end{sol}
+
 \end{document}
