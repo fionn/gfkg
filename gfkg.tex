@@ -7373,58 +7373,20 @@ Show that the sections of $\Lambda^i E$ form a subspace of the sections of $\Lam
 For sections $\omega, \mu$ of $\Lambda E$, for some point $p \in M$ we get $\omega(p), \mu(p) \in \Lambda E_p$, from which we can obviously define the exterior product $\omega(p) \wedge \mu(p) \in \Lambda E_p$ and therefore we have a section $\omega \wedge \mu \in \Gamma(\Lambda E)$.
 
 Let $f, g \in C^\infty(M)$ and sections $\omega, \mu, \nu \in \Gamma(\Lambda E)$.
-\[
-    (\omega + \mu)(p) = \omega(p) + \mu(p) = \mu(p) + \omega(p)
-\]
-so $\omega + \mu = \mu + \omega$ (commutativity of addition),
-\begin{align*}
-    \bigl(\omega + (\mu + \nu)\bigr) (p) &= \omega(p) + (\mu + \nu)(p) \\
-        &= \omega(p) + \mu(p) + \nu(p) \\
-        &= (\omega + \mu)(p) + \nu(p)
-\end{align*}
-so $\omega + (\mu + \nu) = (\omega + \mu) + \nu$ (associativity of addition),
-\begin{align*}
-    \bigl(\omega \wedge (\mu \wedge \nu)\bigr)(p) &= \omega(p) \wedge (\mu \wedge \nu)(p) \\
-        &= \omega(p) \wedge \mu(p) \wedge \nu(p) \\
-        &= (\omega \wedge \mu)(p) \wedge \nu(p)
-\end{align*}
-so $\omega \wedge (\mu \wedge \nu) = (\omega \wedge \mu) \wedge \nu$ (associativity of the exterior product),
-\begin{align*}
-    \bigl(\omega \wedge (\mu + \nu)\bigr)(p) &= \omega(p) \wedge (\mu + \nu)(p) \\
-        &= \omega(p) \wedge \bigl(\mu(p) + \nu(p)\bigr) \\
-        &= \omega(p) \wedge \mu(p) + \omega(p) \wedge \nu(p)
-\end{align*}
-so $\omega \wedge (\mu + \nu) = \omega \wedge \mu + \omega \wedge \nu$ (left distributivity),
-\begin{align*}
-    \bigl((\omega + \mu) \wedge \nu\bigr)(p) &= (\omega + \mu)(p) \wedge \nu(p) \\
-        &= \bigl(\omega(p) + \mu(p)\bigr) \wedge \nu(p) \\
-        &= \omega(p) \wedge \nu(p) + \mu(p) \wedge \nu(p)
-\end{align*}
-so $(\omega + \mu) \wedge \nu = \omega \wedge \nu + \mu \wedge \nu$ (right distributivity),
-\begin{align*}
-    \bigl(f(g\omega)\bigr)(p) &= f(p) (g\omega)(p) \\
-        &= f(p) g(p) \omega(p) \\
-        &= (fg)(p) \omega(p)
-\end{align*}
-so $f(g\omega) = (fg)\omega$,
-\begin{align*}
-    \bigl(f(\mu + \nu) \bigr)(p) &= f(p) (\mu + \nu)(p) \\
-        &= f(p) \bigl(\mu(p) + \nu(p) \bigr) \\
-        &= f(p) \mu(p) + f(p) \nu (p)
-\end{align*}
-so $f(\mu + \nu) = f\mu + f\nu$,
-\begin{align*}
-    \bigl( (f + g) \omega \bigr)(p) &= (f + g)(p) \omega(p) \\
-        &= \bigl(f(p) + g(p) \bigr) \omega(p) \\
-        &= f(p) \omega(p) + g(p) \omega(p)
-\end{align*}
-so $(f + g)\omega = f\omega + g\omega$
-and, for $1 \in C^\infty(M)$ the constant function equal to $1$,
-\begin{align*}
-    (1\omega)(p) &= 1(p) \omega(p) \\
-                 &= \omega(p)
-\end{align*}
-so $1\omega = \omega$ and $\Gamma(\Lambda E)$ is an algebra over $C^\infty(M)$.
+It is trivial to see by applying to some $p \in M$ that
+\begin{gather*}
+    \omega + \mu = \mu + \omega, \quad
+    \omega + (\mu + \nu) = (\omega + \mu) + \nu, \quad
+    \omega \wedge (\mu \wedge \nu) = (\omega \wedge \mu) \wedge \nu, \\
+    \omega \wedge (\mu + \nu) = \omega \wedge \mu + \omega \wedge \nu, \qquad
+    (\omega + \mu) \wedge \nu = \omega \wedge \nu + \mu \wedge \nu, \\
+    1 \omega = \omega, \quad
+    f(g\omega) = (fg)\omega, \quad
+    f(\mu + \nu) = f\mu + f\nu, \quad
+    (f + g)\omega = f\omega + g\omega
+\end{gather*}
+for $1 \in C^\infty(M)$ the constant function equal to $1$,
+so $\Gamma(\Lambda E)$ is an algebra over $C^\infty(M)$.
 
 $\Gamma(\Lambda^i E) \subseteq \Gamma(\Lambda E)$ and sections of $\Lambda^i E$ are linear combinations of $i$-fold exterior products of sections of $E$, so obviously $\Gamma(\Lambda^i E)$ is a subspace of $\Gamma(\Lambda E)$.
 
