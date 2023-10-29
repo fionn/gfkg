@@ -131,6 +131,7 @@
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\Vect}{Vect}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\End}{End}
 \newcommand*{\id}{\op{\mathrm{id}}}
 
 \title{Gauge Fields, Knots and Gravity Solutions}
@@ -3225,7 +3226,7 @@ Since $P^* P^* F = F$, we automatically get the corollary that if $F$ is anti-se
 
 \end{sol}
 
-\chapter{De Rham Theory in Electromagnetism}
+\chapter{De Rham Theory in Electromagnetism}\label{ch:derhamtheory}
 
 \begin{epigraph}
     I was at first almost frightened when I saw such mathematical force made to bear upon the subject, and then wondered to see that the subject stood it so well.
@@ -7552,6 +7553,40 @@ Transforming by $g \in \SU(2)$ according to the spin-1 representation $\phi \to 
         &= 0
 \end{align*}
 since $U_1(g)$ is constant and the inner product is invariant under $\SU(2)$ transformations, hence $U_1(g) \phi$ is also a solution.
+
+\end{sol}
+
+\begin{ex}
+
+Show this.
+(Hint: use a local trivialisation and the `partition of unity' trick described in \hyperref[ch:derhamtheory]{Chapter~6} of Part~\ref{part:electromagnetism} to reduce this to the case of a trivial bundle.)
+
+\end{ex}
+
+\begin{sol}
+
+We want to show that all $C^\infty(M)$-linear maps
+\[
+    T: \Gamma(E) \to \Gamma(E)
+\]
+correspond to sections of $\End(E) = E \otimes E^*$.
+Let $p \in U_\alpha \subset M$, $s \in \Gamma(E)$ and $\{f_\alpha\}$ be a partition of unity, so
+\[
+    s = \sum_\alpha f_\alpha s
+\]
+and, since $T$ is $C^\infty(M)$-linear,
+\[
+    Ts = \sum_\alpha f_\alpha Ts, \qquad
+    T = \sum_\alpha f_\alpha T.
+\]
+We have two local fiberwise linear trivialisations
+\begin{align*}
+    \psi_\alpha &: \End(E)|_{U_\alpha} \to U_\alpha \times \End(V), \\
+    \phi_\alpha &: E|_{U_\alpha} \to U_\alpha \times V
+\end{align*}
+so a section $s: M \to E$ locally specifies a function $h_\alpha: U_\alpha \to V$,
+a section $T: M \to \End(E)$ locally specifies a function $T_\alpha: U_\alpha \to \End(V)$ and we have that $T_\alpha \cong f_\alpha T$.
+This allows us to work in the trivialisation, where any $C^\infty(U_\alpha)$-linear map in $\End(V)$ is of the form of $T_\alpha$.
 
 \end{sol}
 
