@@ -7590,4 +7590,38 @@ This allows us to work in the trivialisation, where any $C^\infty(U_\alpha)$-lin
 
 \end{sol}
 
+\begin{ex}
+
+Show that the product or inverse of gauge transformations is a gauge transformation, and that the identity is a gauge transformation.
+
+\end{ex}
+
+\begin{sol}
+
+Suppose $\pi: E \to M$ is a $G$-bundle and $T \in \End(E)$. If $T(p)$ lives in $G$ for all $p \in M$, we say that $T$ is a \emph{gauge transformation} and claim that the set of all gauge transformations $\mathcal{G}$ is a group, with products and inverses given by
+\[
+    (fh)(p) = f(p) h(p), \qquad f^{-1}(p) = {f(p)}^{-1}.
+\]
+Let $f, h \in \mathcal{G}$, i.e.
+\[
+    f: {[p, v]}_\alpha \mapsto {[p, g_f v]}_\alpha, \qquad
+    h: {[p, v]}_\alpha \mapsto {[p, g_h v]}_\alpha
+\]
+for some $g_f, g_h \in G$. Then with the product as above, we get
+\[
+    (fg): {[p, v]}_\alpha \mapsto {[p, g_f g_h v]}_\alpha
+\]
+which is in $\mathcal{G}$ as $g_f g_h \in G$ and
+\[
+    f^{-1}: {[p, v]}_\alpha \mapsto {[p, g_f^{-1} v]}_\alpha
+\]
+where $g_f^{-1}$ exists since $G$ is a group, so $f^{-1} \in \mathcal{G}$ and the product and inverse of gauge transformations are again gauge transformations.
+Let
+\[
+    \id_\mathcal{G}: {[p, v]}_\alpha \mapsto {[p, \id_G v]}_\alpha = {[p, v]}_\alpha
+\]
+and notice that $\id_\mathcal{G} \in \mathcal{G}$, so the identity is also a gauge transformation.
+
+\end{sol}
+
 \end{document}
