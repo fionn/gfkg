@@ -7624,4 +7624,33 @@ and notice that $\id_\mathcal{G} \in \mathcal{G}$, so the identity is also a gau
 
 \end{sol}
 
+\section{Connections}
+
+\begin{ex}
+
+Check that $A(v)$ is well-defined, i.e., independent of how we write $A$ as a sum $\sum T_i \otimes \omega_i$.
+
+\end{ex}
+
+\begin{sol}
+
+By expressing $A$ as the above sum, we get
+\[
+    A(v) = \sum_i \omega_i (v) T_i.
+\]
+However, we should be free to choose some other sections $T'_i$ of $\End(E)$ and corresponding 1-forms $\omega'_i$ on $M$, requiring
+\[
+    \sum_i T_i \otimes \omega_i = \sum_i T'_i \otimes \omega'_i.
+\]
+Then
+\begin{align*}
+    \SwapAboveDisplaySkip
+    A(v) &= \sum_i \bigl(T_i \otimes \omega_i\bigr) (v) \\
+         &= \sum_i \bigl(T'_i \otimes \omega'_i\bigr) (v) \\
+         &= \sum_i \omega'_i (v) T'_i
+\end{align*}
+so $A(v)$ is well-defined.
+
+\end{sol}
+
 \end{document}
