@@ -8,7 +8,7 @@ jobs:
 
     name: Build
     runs-on: ubuntu-22.04
-    container: registry.gitlab.com/islandoftex/images/texlive:TL2023-2023-10-15-full
+    container: registry.gitlab.com/islandoftex/images/texlive:TL2025-2025-02-21-full
 
     steps:
 
