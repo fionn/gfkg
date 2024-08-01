@@ -7,13 +7,15 @@ jobs:
   build:
 
     name: Build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     container: registry.gitlab.com/islandoftex/images/texlive:TL2025-2025-02-21-full
 
     steps:
 
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set Git safe.directory
         run: git config --global --add safe.directory $GITHUB_WORKSPACE
@@ -35,7 +37,7 @@ jobs:
         run: sha256sum gfkg.pdf gfkg.ps | tee gfkg.sha256
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gfkg
           path: |
@@ -53,7 +55,7 @@ jobs:
     name: Release
     needs: build
     if: startsWith(github.ref, 'refs/tags')
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     permissions:
       contents: write
@@ -61,7 +63,7 @@ jobs:
     steps:
 
       - name: Download artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: gfkg
 
@@ -69,7 +71,7 @@ jobs:
         run: sha256sum -c --strict gfkg.sha256
 
       - name: Create release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             gfkg.pdf
@@ -83,7 +85,7 @@ jobs:
     name: Publish
     needs: build
     if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     permissions:
       pages: write
@@ -101,10 +103,12 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Download artifacts
         id: download
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: gfkg
           path: site
@@ -115,7 +119,7 @@ jobs:
 
       - name: Render Markdown
         id: markdown
-        uses: fionn/render-markdown@v0.0.5
+        uses: fionn/render-markdown@v0.0.6
         with:
           token: ${{ github.token }}
 
@@ -125,10 +129,10 @@ jobs:
             >  ${{ steps.download.outputs.download-path }}/index.html
 
       - name: Upload tarball
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ steps.download.outputs.download-path }}
 
       - name: Publish
         id: publish
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
